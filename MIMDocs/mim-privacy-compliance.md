@@ -1,6 +1,6 @@
 ---
 title: Az adatkezelés Microsoft Identity Manager | Microsoft Docs
-description: Ismerje meg Microsoft Identity Manager az adatkezelést, hogy indentify és jelentsen a környezetre vonatkozó adatokról, az adott rendszeren az operatív funkciók és a követelmények alapján végezze el a műveleteket.
+description: A környezeten belüli adatok azonosítására és jelentésére szolgáló Microsoft Identity Manager adatok kezelésének megismerése érdekében az operatív funkciók és követelmények alapján végezze el a megfelelő műveleteket a rendszeren.
 keywords: ''
 author: billmath
 ms.author: billmath
@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.prod: microsoft-identity-manager
 ms.assetid: b0b39631-66df-4c5f-80c9-a1774346f816
 ms.suite: ems
-ms.openlocfilehash: e95cf26b62e582eaa3c07c40e551bc5930d3b1b0
-ms.sourcegitcommit: a96944ac96f19018c43976617686b7c3696267d7
+ms.openlocfilehash: b89f7561869e154ed5639835d1233e19e356ee76
+ms.sourcegitcommit: f87be3d09cee6a8880b3a6babf32e0d064fde36b
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "79044106"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87176744"
 ---
 # <a name="microsoft-identity-manager-data-handling"></a>Az adatkezelés Microsoft Identity Manager 
 
@@ -46,12 +46,12 @@ Ha nem biztos abban, hogy a szolgáltatói forrás nyomon követheti ezt a felha
 - Felhasználói objektumok adatai felülvizsgálatának vagy keresésének elvégzése
     - A szinkronizálási szolgáltatás ügyfelének megnyitása
         - A metaverse Designer használatával megtekintheti az attribútumok folyamatának importálását és elsőbbségét.
-![webkiszolgáló – adatvédelem – compliance_1. PNG](media/mim-privacy-compliance/mim-privacy-compliance_1.PNG)
-        - A metaverse Search segítségével bármely objektumra és attribútumra rákereshet a következő adatbázison ![belül:-adatvédelem-COMPLIANCE_2. png](media/mim-privacy-compliance/mim-privacy-compliance_2.PNG)
+![mim-privacy-compliance_1.PNG](media/mim-privacy-compliance/mim-privacy-compliance_1.PNG)
+        - A metaverse Search segítségével bármely objektumra és attribútumra rákereshet az adatbázison belül ![mim-privacy-compliance_2.PNG](media/mim-privacy-compliance/mim-privacy-compliance_2.PNG)
  
 Az objektum megkeresése után az objektumra kattintva megnyílik a felhasználói profil oldal. Az objektum részletes adatai az objektumra, annak attribútumaira, utolsó módosítására és forrására, valamint a kapcsolódó csatlakoztatott adatforrásokra vonatkozó részletes információkat tartalmazzák az alábbi felügyeleti ügynök konfigurációs példából származtatva.
 
-![webszolgáltatások – adatvédelem – megfelelőség. PNG](media/mim-privacy-compliance/mim-privacy-compliance.PNG)
+![mim-privacy-compliance.PNG](media/mim-privacy-compliance/mim-privacy-compliance.PNG)
 
 ### <a name="service-and-portal--pam"></a>Szolgáltatás és portál/PAM
 Ha a szolgáltatás egy példánya, a portál vagy a PAM telepítve van, akkor fontos, hogy a felhasználók keressenek rá. 
@@ -110,7 +110,7 @@ A felhasználókra és az objektumokra vonatkozó személyes adatok általában 
 
 A felügyeleti műveletek végrehajtásához a rendszergazdáknak az [itt](https://docs.microsoft.com/previous-versions/mim/jj590183(v%3dws.10))megadott szinkronizálási műveletek vagy adminisztrátorok részének kell lenniük.
 
-Az adatok frissítése a szolgáltatótól származó szabályok meghatározásával történik. A felügyeleti konzol segít azonosítani a szolgáltató forrását, hogy frissítse azt a forrásnál. Egy másik lehetőség a szinkronizálási szabály vagy a szabály kiterjedésének szabályozása az Adatfrissítés vezérléséhez, ha a HR-adatforrást továbbra is meg kell őrizni. Ezek a avialible által támogatott beállítások.
+Az adatok frissítése a szolgáltatótól származó szabályok meghatározásával történik. A felügyeleti konzol segít azonosítani a szolgáltató forrását, hogy frissítse azt a forrásnál. Egy másik lehetőség a szinkronizálási szabály vagy a szabály kiterjedésének szabályozása az Adatfrissítés vezérléséhez, ha a HR-adatforrást továbbra is meg kell őrizni. Ezek a támogatott lehetőségek közül választhatnak.
 
 További információ az attribútumok frissítésének különböző módjairól: alább. 
 
@@ -147,7 +147,7 @@ A szinkronizációs szolgáltatás az adatkezelés számos módja, vagy az üzle
 
 Javasoljuk, hogy a Service &-portálon tartsa meg az alapértelmezett 30 nap rendszererőforrás-megőrzési konfigurációt. Ez azt jelzi, hogy a szolgáltatás Mikor törlődik, nem csak az adatok kérelmezését, hanem minden olyan objektumot, amelyet törölni kell a rendszerből. A folyamat elvégzése után a rendszer törli az objektumhoz csatolt összes adatkapcsolatot, amely tartalmazza az összes SSPR regisztrációs adattal. Ez a művelet az objektum törlési konfigurációját játssza le. Az objektumok GUID azonosítóját egyetlen táblázat tárolja. A Build 4.4.1459 lévő tábla teljes méretének csökkentése érdekében a folyamathoz egy FIM_DeleteExpiredSystemObjectsJob részleteket tartalmazó folyamatot vettünk fel, amely [itt](https://support.microsoft.com/en-us/help/4012498/hotfix-rollup-package-build-4-4-1459-0-is-available-for-microsoft-iden)található.
 
-![srrc – adatvédelem – megfelelőség – adatvédelmi nyilatkozat. PNG](media/mim-privacy-compliance/mim-privacy-compliance-srrc.PNG)
+![mim-privacy-compliance-srrc.PNG](media/mim-privacy-compliance/mim-privacy-compliance-srrc.PNG)
 
 
 ### <a name="bhold"></a>BHOLD
@@ -155,13 +155,13 @@ Javasoljuk, hogy a Service &-portálon tartsa meg az alapértelmezett 30 nap ren
 A szinkronizálási szolgáltatáshoz kapcsolódó legtöbb rendszer bhold úgy is konfigurálható, hogy a forrás objektum, például a HR eltávolítása után törölje a törlést. Ez a felügyeleti ügynökön van konfigurálva. és az objektum-törlési szabályok vezérlik a szinkronizálási szolgáltatás funkciói című témakörben leírtak szerint.
 
 Egy másik lehetőség, hogy a felhasználói objektumot közvetlenül a BHOLD Core felhasználói felületről távolítsa el. A telepítéstől függően ez megfelelően működhet, de vegye figyelembe, hogy a kiépítési logika újból létrehozhatja ezt a felhasználót, ha nem törölte a forrást.
-![bholdr – adatvédelem – megfelelőség – adatvédelmi nyilatkozat. PNG](media/mim-privacy-compliance/mim-privacy-compliance-bholdr.PNG)
+![mim-privacy-compliance-bholdr.PNG](media/mim-privacy-compliance/mim-privacy-compliance-bholdr.PNG)
 
 
 ### <a name="certificate-management"></a>Tanúsítványkezelés
 Ha törölni szeretne egy felhasználót a CM-ből, törölje a felhasználót az Active Directoryban.
 
-A Tanúsítványkezelő, mert csak a tanúsítványszolgáltatásokból származó profilt fogja tárolni a sAMAccountName. Miután a felhasználó törölve lett az AD-ből, a felhasználó gyorsítótára csak a tanúsítványokhoz van regisztrálva. Az adatbázisban nem ajánlott törölni semmit, mivel ez a környezet működésének általános károsodását okozhatja.
+A Tanúsítványkezelő, mert csak a tanúsítványszolgáltatásokból származó profilt fogja tárolni a sAMAccountName. Miután a felhasználó törölve lett az AD-ből, a felhasználói gyorsítótár csak a regisztrált tanúsítványokhoz van jelen. Az adatbázisban nem ajánlott törölni semmit, mivel ez a környezet működésének általános károsodását okozhatja.
 
 ## <a name="opt-out-of-telemetry"></a>Telemetria
 A korábbi buildek az egyes központi telepítésekhez tartozó névtelen telemetria gyűjtésére használt FIM/a rendszerkiszolgálói adatok, és HTTPS-kapcsolaton keresztül továbbítják a Microsoft-kiszolgálókra. Ezeket az adatmennyiségeket a Microsoft használta fel a FIM/a Windows későbbi verzióinak fejlesztéséhez a múltban.
@@ -171,11 +171,11 @@ A korábbi buildek az egyes központi telepítésekhez tartozó névtelen teleme
 
 Ha le szeretné tiltani az adatgyűjtést a korábbi verzióban, futtassa a módosítási módot, és törölje a következő parancssort:
 
-![alapszintű adatvédelem – megfelelőség – CEIP. PNG](media/mim-privacy-compliance/mim-privacy-compliance-ceip.PNG)
+![mim-privacy-compliance-ceip.PNG](media/mim-privacy-compliance/mim-privacy-compliance-ceip.PNG)
 
 vagy szerkessze a beállításjegyzéket, és állítsa az értéket 0: (összetevő) CEIP HKLM\SOFTWARE\Microsoft\Forefront Identity Manager\2010
 
-![ceip2 – adatvédelem – megfelelőség – adatvédelmi nyilatkozat. PNG](media/mim-privacy-compliance/mim-privacy-compliance-ceip2.PNG)
+![mim-privacy-compliance-ceip2.PNG](media/mim-privacy-compliance/mim-privacy-compliance-ceip2.PNG)
 
 ## <a name="next-steps"></a>Következő lépések 
 - [Az SQL-hez kapcsolódó adatvédelmi útmutató](https://docs.microsoft.com/sql/relational-databases/security/microsoft-sql-and-the-gdpr-requirements?view=sql-server-2017)
