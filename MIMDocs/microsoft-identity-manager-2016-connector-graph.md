@@ -1,20 +1,20 @@
 ---
 title: A Microsoft Graph Microsoft Identity Manager-összekötője | Microsoft Docs
-author: fimguy
 description: A Microsoft Graph Microsoft Identity Manager-összekötő lehetővé teszi a külső felhasználói AD-fiók életciklus-felügyeletét. Ebben a forgatókönyvben a szervezet felkérte a vendégeket az Azure AD-címtárba, és hozzáférést kíván biztosítani a vendégeknek a helyszíni Windows-hitelesítéshez vagy a Kerberos-alapú alkalmazásokhoz
 keywords: ''
+author: billmath
 ms.author: billmath
 manager: daveba
 ms.date: 10/02/2018
 ms.topic: article
 ms.prod: microsoft-identity-manager
 ms.assetid: 94a74f1c-2192-4748-9a25-62a526295338
-ms.openlocfilehash: 462b649ca02519e5af5c3b1243506a74efa7052a
-ms.sourcegitcommit: a96944ac96f19018c43976617686b7c3696267d7
+ms.openlocfilehash: 63ebdbc229c7d2dabbbb5a06f7dbbd5f3d367796
+ms.sourcegitcommit: cd503e8e9933d39d6fbf894c7d27bf9566301ac8
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "79044259"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88168354"
 ---
 # <a name="microsoft-identity-manager-connector-for-microsoft-graph"></a>Microsoft Graph Microsoft Identity Manager-összekötő
 
@@ -22,7 +22,7 @@ ms.locfileid: "79044259"
 ## <a name="summary"></a>Összefoglalás 
 
 
-A [Microsoft Graph Microsoft Identity Manager-összekötő](http://go.microsoft.com/fwlink/?LinkId=717495) további integrációs forgatókönyveket tesz lehetővé prémium szintű Azure ad ügyfelek számára.  Az informatikai felületek a [beMicrosoft Graph API](https://developer.microsoft.com/en-us/graph/) v1-től és a Beta-tól kapott további objektumokat a fakiszolgálói szinkronizálási szolgáltatásban.
+A [Microsoft Graph Microsoft Identity Manager-összekötő](https://go.microsoft.com/fwlink/?LinkId=717495) további integrációs forgatókönyveket tesz lehetővé prémium szintű Azure ad ügyfelek számára.  Az informatikai felületek a [beMicrosoft Graph API](https://developer.microsoft.com/en-us/graph/)v1-től és a Beta-tól kapott további objektumokat a fakiszolgálói szinkronizálási szolgáltatásban   .
 
 ## <a name="scenarios-covered"></a>Érintett forgatókönyvek
 
@@ -37,7 +37,7 @@ Ha meg szeretné tudni, hogyan konfigurálhatja a címtár-szinkronizálást úg
 ### <a name="other-identity-management-scenarios"></a>Más Identitáskezelés-kezelési forgatókönyvek
 
 
-Az összekötő más, a felhasználók, csoportok és kapcsolattartási objektumok létrehozására, olvasására, frissítésére és törlésére is használható az Azure ad-ben, az Azure ad-vel való felhasználói és csoportos szinkronizáláson túl. A lehetséges forgatókönyvek kiértékelése során vegye figyelembe a következőket: ez az összekötő nem üzemeltethető olyan forgatókönyvben, amely átfedésben van, tényleges vagy lehetséges szinkronizálási ütközést eredményez egy Azure AD Connect központi telepítéssel.  [Azure ad Connect](https://www.microsoft.com/en-us/download/details.aspx?id=47594) a helyszíni címtárak Azure ad-vel való integrálásának ajánlott módszere, ha a felhasználókat és csoportokat a helyszíni címtárakból az Azure ad-be szinkronizálja.  Azure AD Connect sokkal több szinkronizálási funkcióval rendelkezik, és olyan forgatókönyveket tesz lehetővé, mint például a jelszó és az eszközök visszaírási, amelyek nem használhatók a famodul által létrehozott objektumok esetében. Ha az adatok bekerülnek AD DSba, például győződjön meg róla, hogy ki van zárva a Azure AD Connect az objektumoknak az Azure AD-címtárba való visszaállítására tett kísérletből.  Az összekötő nem használható olyan Azure AD-objektumok módosítására is, amelyeket a Azure AD Connect hozott létre.
+Az összekötő más, a felhasználók, csoportok és kapcsolattartási objektumok létrehozására, olvasására, frissítésére és törlésére is használható az Azure ad-ben, az Azure ad-vel való felhasználói és csoportos szinkronizáláson túl. A lehetséges forgatókönyvek kiértékelése során vegye figyelembe a következőket: ez az összekötő nem üzemeltethető olyan forgatókönyvben, amely átfedésben van, tényleges vagy lehetséges szinkronizálási ütközést eredményez egy Azure AD Connect központi telepítéssel.  [Azure ad Connect](https://www.microsoft.com/en-us/download/details.aspx?id=47594)   a helyszíni címtárak és az Azure AD integrálásának ajánlott módja a felhasználók és csoportok szinkronizálása a helyszíni címtárakból az Azure AD-be.  Azure AD Connect sokkal több szinkronizálási funkcióval rendelkezik, és olyan forgatókönyveket tesz lehetővé, mint például a jelszó és az eszközök visszaírási, amelyek nem használhatók a famodul által létrehozott objektumok esetében. Ha az adatok bekerülnek AD DSba, például győződjön meg róla, hogy ki van zárva a Azure AD Connect az objektumoknak az Azure AD-címtárba való visszaállítására tett kísérletből.  Az összekötő nem használható olyan Azure AD-objektumok módosítására is, amelyeket a Azure AD Connect hozott létre.
 
 
 
@@ -58,7 +58,7 @@ Az összekötő más, a felhasználók, csoportok és kapcsolattartási objektum
 
 2. kép Alkalmazásazonosító
 
-3.  Új ügyfél-titkos kód generálása az összes\> beállítás – kulcsok megnyitásával. Állítsa be a kulcs leírását, és válassza ki a szükséges időtartamot. Mentse a módosításokat. A lap kihagyása után a titkos érték nem lesz elérhető.
+3.  Új ügyfél-titkos kód generálása az összes beállítás – kulcsok megnyitásával \> . Állítsa be a kulcs leírását, és válassza ki a szükséges időtartamot. Mentse a módosításokat. A lap kihagyása után a titkos érték nem lesz elérhető.
 
 ![](media/microsoft-identity-manager-2016-ma-graph/fdbae443f9e6ccb650a0cb73c9e1a56f.png)
 
@@ -75,7 +75,7 @@ Az alkalmazásnak hozzá kell adni a következő engedélyeket, hogy az a forgat
 | Művelet objektummal | Engedély szükséges                                                                  | Engedély típusa |
 |-----------------------|--------------------------------------------------------------------------------------|-----------------|
 | Csoport importálása          | `Group.Read.All` vagy `Group.ReadWrite.All`                                                | Alkalmazás     |
-| Felhasználó importálása           | `User.Read.All`, `User.ReadWrite.All`, `Directory.Read.All` vagy`Directory.ReadWrite.All` | Alkalmazás     |
+| Felhasználó importálása           | `User.Read.All`, `User.ReadWrite.All` , `Directory.Read.All` vagy`Directory.ReadWrite.All` | Alkalmazás     |
 
 A szükséges engedélyekkel kapcsolatos további részletek [itt](https://developer.microsoft.com/en-us/graph/docs/concepts/permissions_reference)találhatók.
 
@@ -98,8 +98,8 @@ A szükséges engedélyekkel kapcsolatos további részletek [itt](https://devel
 
 
 
-9.  A synchronization Service Manager felhasználói felületén válassza az **Összekötők** és **Létrehozás**lehetőséget.
-Válassza a **Graph (Microsoft)** lehetőséget, hozzon létre egy összekötőt, és adjon meg egy leíró nevet.
+9.  A Synchronization Service Manager felhasználói felületén válassza az **Összekötők**   és **Létrehozás**lehetőséget.
+Válassza a **Graph (Microsoft)** lehetőséget   , hozzon létre egy összekötőt, és adjon meg egy leíró nevet.
 
 ![](media/microsoft-identity-manager-2016-graph-b2b-scenario/d95c6b2cc7951b607388cbd25920d7d0.png)
 
@@ -159,7 +159,7 @@ Az attribútumok által támogatott típusok listája:
 
 A többértékű attribútumok (gyűjtemény) a fenti listából bármelyik típushoz is támogatottak.
 
-Az összekötő a (z`id`) "" attribútumot használja a Anchor és a DN számára az összes objektumra vonatkozóan.  Ezért az átnevezés nem szükséges, mert Graph API nem teszi lehetővé az objektum számára az "id" attribútum módosítását.
+Az összekötő a (z) " `id` " attribútumot használja a Anchor és a DN számára az összes objektumra vonatkozóan.  Ezért az átnevezés nem szükséges, mert Graph API nem teszi lehetővé az objektum számára az "id" attribútum módosítását.
 
 
 ## <a name="access-token-lifetime"></a>Hozzáférési jogkivonat élettartama
@@ -200,7 +200,7 @@ DateTime, Timestamp, Call stack" /\>
 \</source\>
 ```
 >[!NOTE]
->Ha a "felügyeleti ügynök futtatása külön folyamatban" beállítás engedélyezve van, akkor `dllhost.exe.config` a helyett a `miiserver.exe.config`következőt kell használni:.
+>Ha a "felügyeleti ügynök futtatása külön folyamatban" beállítás engedélyezve van, akkor `dllhost.exe.config` a helyett a következőt kell használni: `miiserver.exe.config` .
 
 **A hozzáférési jogkivonat lejárt, hiba**
 
@@ -216,11 +216,11 @@ Példa erre az [Azure ad PowerShell-modul nyilvános előzetes kiadásának](htt
 
 ![](media/microsoft-identity-manager-2016-ma-graph/a26ded518f94b9b557064b73615c71f6.png)
 
-New-AzureADPolicy-definition \@({"TokenLifetimePolicy": {"version": 1, **"AccessTokenLifetime": "5:00:00"**}} ")-DisplayName" OrganizationDefaultPolicyScenario "-IsOrganizationDefault \$igaz-type" TokenLifetimePolicy "
+New-AzureADPolicy-definition \@ ({"TokenLifetimePolicy": {"version": 1, **"AccessTokenLifetime": "5:00:00"**}} ")-DisplayName" OrganizationDefaultPolicyScenario "-IsOrganizationDefault \$ igaz-type" TokenLifetimePolicy "
 
 ## <a name="next-steps"></a>További lépések
 
 - [Graph Explorer, a HTTP-hívással kapcsolatos problémák elhárításához]( https://developer.microsoft.com/en-us/graph/graph-explorer)
 - [A Microsoft Graph verziószámozása, támogatása és megváltoztatási szabályzatai](https://developer.microsoft.com/en-us/graph/docs/concepts/versioning_and_support)
-- [Microsoft Identity Manager-összekötő letöltése Microsoft Graph](http://go.microsoft.com/fwlink/?LinkId=717495)
-a teljes[körű üzembe helyezéshez]( ~/microsoft-identity-manager-2016-graph-b2b-scenario.md)
+- Microsoft Graph Microsoft Identity Manager- [összekötő letöltése](https://go.microsoft.com/fwlink/?LinkId=717495) 
+ [A többplatformos B2B végpontok közötti üzembe helyezése]( ~/microsoft-identity-manager-2016-graph-b2b-scenario.md)
