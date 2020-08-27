@@ -8,19 +8,19 @@ manager: daveba
 ms.date: 10/18/2019
 ms.topic: article
 ms.prod: microsoft-identity-manager
-ms.openlocfilehash: 01d5427c3672354ff6c2dc4259c1f2e43e380a8c
-ms.sourcegitcommit: c9f5f960fd39745bf5b57161a2fd0238c88d035a
+ms.openlocfilehash: 66cb97afa69decfde8df9f3c78f15c48abd7982b
+ms.sourcegitcommit: d6178a67014d66d37056c13d10328ae03e3cd781
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/22/2020
-ms.locfileid: "85133549"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88970379"
 ---
 # <a name="microsoft-identity-manager-2016-news-and-updates"></a>Microsoft Identity Manager 2016 Hírek és frissítések
 
 A Microsoft Identity Manager (bevezető) 2016 a Forefront Identity Manager identitás-és hozzáférés-kezelési képességeire épül. Elődjéhez hasonlóan a MIM a szervezeti felhasználók, hitelesítő adatok, házirendek és hozzáférési jogosultságok kezelésében nyújt segítséget.  A MIM 2016 emellett hibrid funkciókat és az emelt szintű hozzáférések felügyeletére szolgáló képességeket biztosít, és új platformokat is támogat.
 
 
-A felügyeleti webszolgáltatások segítségével a szervezetek az automatizált munkafolyamatokkal, az üzleti szabályokkal és az adatközpont heterogén platformokkal való egyszerű integrálásával egyszerűsíthetik az identitás-életciklus kezelését. A webhelye lehetővé teszi, hogy a szervezet jogosult legyen a felhasználók és a hozzáférési jogosultságok használatára a helyszíni alkalmazások Active Directory számára, és Azure AD Connect elérhetővé teheti az Azure AD-ben az Office 365 és a felhőben üzemeltetett alkalmazások számára. Gyakori a betekintő eljárási helyzetek a következők:
+A felügyeleti webszolgáltatások segítségével a szervezetek az automatizált munkafolyamatokkal, az üzleti szabályokkal és az adatközpont heterogén platformokkal való egyszerű integrálásával egyszerűsíthetik az identitás-életciklus kezelését. A webszolgáltatások lehetővé teszik a szervezet számára, hogy a megfelelő felhasználói és hozzáférési jogokkal rendelkezzenek a helyszíni alkalmazások Active Directory számára, és Azure AD Connect elérhetővé tehetik az Azure AD-ben Microsoft 365 és a felhőben üzemeltetett alkalmazások számára. Gyakori a betekintő eljárási helyzetek a következők:
  - Automatikus identitás-és csoport-kiépítés az üzleti házirend és a munkafolyamat-vezérelt kiépítés alapján
  - A könyvtárak tartalmának integrálása HR-rendszerekkel és más forrásokkal
  - A címtárak, adatbázisok és helyszíni alkalmazások közötti identitások szinkronizálása közös API-k és protokollok, Microsoft által szállított összekötők és partner által szállított összekötők használatával

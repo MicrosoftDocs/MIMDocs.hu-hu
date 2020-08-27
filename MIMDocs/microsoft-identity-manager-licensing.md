@@ -11,12 +11,12 @@ ms.prod: microsoft-identity-manager
 ms.assetid: ''
 ms.reviewer: billmath
 ms.suite: ems
-ms.openlocfilehash: 62a6b936dc30b8593c8758a6158244d0f6dbbc4f
-ms.sourcegitcommit: a96944ac96f19018c43976617686b7c3696267d7
+ms.openlocfilehash: b7b0dd73e5a87f338dc8cd91e61ee6a19c84068a
+ms.sourcegitcommit: d6178a67014d66d37056c13d10328ae03e3cd781
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "79043018"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88970362"
 ---
 # <a name="microsoft-identity-manager-2016-licensing-and-downloads"></a>Microsoft Identity Manager 2016 licencelés és letöltések
 
@@ -30,7 +30,7 @@ A Microsoft Identity Manager 2016 licenc felhasználónként történik.  A lice
 
 A Microsoft Identity Manager 2016 prémium szintű Azure Active Directory (P1 és P2) része, amely Enterprise Mobility + Security részét képezi.
 
-Prémium szintű Azure AD egy [Microsoft-nagyvállalati szerződés](https://www.microsoft.com/licensing/licensing-programs/enterprise.aspx), a [nyílt Mennyiségi licencprogram](https://www.microsoft.com/licensing/licensing-programs/open-license.aspx)és a [Cloud Solution Providers](https://go.microsoft.com/fwlink/?LinkId=614968&clcid=0x409) program segítségével érhető el. Az Azure és az Office 365-előfizetők prémium szintű Azure Active Directory P1 és P2 online is vásárolhatnak.  További információk: [Azure Active Directory díjszabása](https://azure.microsoft.com/pricing/details/active-directory/).
+Prémium szintű Azure AD egy [Microsoft-nagyvállalati szerződés](https://www.microsoft.com/licensing/licensing-programs/enterprise.aspx), a [nyílt Mennyiségi licencprogram](https://www.microsoft.com/licensing/licensing-programs/open-license.aspx)és a [Cloud Solution Providers](https://go.microsoft.com/fwlink/?LinkId=614968&clcid=0x409) program segítségével érhető el. Az Azure és Microsoft 365 előfizetők prémium szintű Azure Active Directory P1 és P2 online is vásárolhatnak.  További információk: [Azure Active Directory díjszabása](https://azure.microsoft.com/pricing/details/active-directory/).
 
 ### <a name="mim-cals"></a>Web-ügyféllicencek
 
@@ -47,17 +47,17 @@ Mielőtt megkezdené a webszolgáltatások új telepítését vagy egy korábbi 
 Ha új telepítést indít, le kell töltenie az adott forgatókönyvhöz kapcsolódó egyes, a rendszerhez tartozó összes egyes rendszerelem-összetevő telepítési fájljait. Ezután töltse le a fájlok frissítéseit, majd töltse le a letöltőközpontból különálló letöltéseket tartalmazó további összetevőket.
 
 
-| Forgatókönyv | Összetevő | A forgatókönyvhöz szükséges? | DVD ISO-mappa neve | Megjegyzések |
+| Használati eset | Összetevő | A forgatókönyvhöz szükséges? | DVD ISO-mappa neve | Megjegyzések |
 |----------|-----------|---------------------   |-------------------|----------|--------------|
 |Szinkronizálás| Szinkronizálási szolgáltatás (beleértve az AD-összekötőt) | Igen | `Synchronization Service` | |
 | Szinkronizálás | PCNS | Nem | `Password Change Notification Service` |  A tartományvezérlőkön való telepítéshez |
-| Szinkronizálás | Összekötők az LDAP, az SQL, a Web Services, a PowerShell, a Lotus Domino, a Graph | Nem | N/A | Terjesztés a letöltőközpont használatával |
+| Szinkronizálás | Összekötők az LDAP, az SQL, a Web Services, a PowerShell, a Lotus Domino, a Graph | Nem | n.a. | Terjesztés a letöltőközpont használatával |
 | az emelt szintű hozzáférések felügyeletével | MIM szolgáltatás | Igen | `Service and Portal` | |
-| Önkiszolgáló | A fakiszolgálói portál | Igen | `Service and Portal` | |
-| Önkiszolgáló | Beépülő modulok és bővítmények | Nem | `Add-ins and extensions` | A végfelhasználói számítógépekre történő telepítéshez |
-| Önkiszolgáló | SCSM-jelentéskészítés | Nem | `Data Warehouse Support Scripts` | |
-| Önkiszolgáló | Hibrid jelentéskészítő ügynök | Nem | N/A | Terjesztés a letöltőközpont használatával |
-| Önkiszolgáló | Nyelvi csomagok | Nem | `LANGUAGE Packs` | |
+| Önkiszolgálás | A fakiszolgálói portál | Igen | `Service and Portal` | |
+| Önkiszolgálás | Beépülő modulok és bővítmények | Nem | `Add-ins and extensions` | A végfelhasználói számítógépekre történő telepítéshez |
+| Önkiszolgálás | SCSM-jelentéskészítés | Nem | `Data Warehouse Support Scripts` | |
+| Önkiszolgálás | Hibrid jelentéskészítő ügynök | Nem | n.a. | Terjesztés a letöltőközpont használatával |
+| Önkiszolgálás | Nyelvi csomagok | Nem | `LANGUAGE Packs` | |
 | Tanúsítványkezelés | CM | Igen | `Certificate Management` | |
 | Tanúsítványkezelés | CM tömeges ügyfél | Nem | `CM Bulk Client` | |
 | Tanúsítványkezelés | CM-ügyfél | Nem | `CM Client`  | |
@@ -82,12 +82,12 @@ Tekintse meg a legfrissebb frissítési kiadáshoz tartozó [Identity Manager ve
 
 Annak megállapításához, hogy mely frissítési fájlok szükségesek, ez a táblázat a frissítésben szereplő összetevők és a hozzá tartozó patch (MSP) fájl nevét sorolja fel.
 
-| Forgatókönyv | Összetevő | DVD ISO-mappa neve | A frissítési javítókészlet megfelelő fájljának neve |
+| Használati eset | Összetevő | DVD ISO-mappa neve | A frissítési javítókészlet megfelelő fájljának neve |
 |----------|-----------|-   |-------------------|----------|--------------|
 |Szinkronizálás| Szinkronizálási szolgáltatás | `Synchronization Service` | `MIMSyncService_x64*.msp` |
-| Önkiszolgáló | A fakiszolgálói portál | `Service and Portal` | `MIMService_x64*msp` |
-| Önkiszolgáló | Beépülő modulok és bővítmények | `Add-ins and extensions` | `MIMAddinsExtensions*msp` |
-| Önkiszolgáló | Nyelvi csomagok | `LANGUAGE Packs` | `LANGUAGE Packs.zip` |
+| Önkiszolgálás | A fakiszolgálói portál | `Service and Portal` | `MIMService_x64*msp` |
+| Önkiszolgálás | Beépülő modulok és bővítmények | `Add-ins and extensions` | `MIMAddinsExtensions*msp` |
+| Önkiszolgálás | Nyelvi csomagok | `LANGUAGE Packs` | `LANGUAGE Packs.zip` |
 | Hozzáférés-kezelés (BHOLD) | BHOLD | `BHOLD` | `AccessManagementConnector.msi`, `BHOLD*.msi` |
 | Tanúsítványkezelés | CM |  `Certificate Management` | `MIMCM*.msp` |
 | Tanúsítványkezelés | CM tömeges ügyfél |  `CM Bulk Client` |`MIMCMBulkClient*msp` |
@@ -103,13 +103,13 @@ A következő letöltések is relevánsak lehetnek:
 
 - [Webszolgáltatási hibrid jelentéskészítő ügynök](https://www.microsoft.com/download/details.aspx?id=55112)
 
-- [Általános LDAP-összekötő, általános SQL-összekötő, gráf-összekötő, Lotus Domino-összekötő, PowerShell-összekötő, webszolgáltatás-összekötő](http://go.microsoft.com/fwlink/?LinkId=717495)
+- [Általános LDAP-összekötő, általános SQL-összekötő, gráf-összekötő, Lotus Domino-összekötő, PowerShell-összekötő, webszolgáltatás-összekötő](https://go.microsoft.com/fwlink/?LinkId=717495)
 
 - [A SharePoint felhasználói profil tárolójának összekötője](https://www.microsoft.com/download/details.aspx?id=41164)
 
 - Ha még nem rendelkezik Active Directory tartománnyal, és beállít egy PAM-forgatókönyvet a kísérletezéshez, tekintse meg a következőt: a rendszerszintű [2016 SP1 PAM üzembehelyezési szkriptek](sp1-deployment-scripts.md).
 
-## <a name="next-steps"></a>További lépések
+## <a name="next-steps"></a>Következő lépések
 
 - További információ a [Microsoft Identity Manager 2016](microsoft-identity-manager-2016.md)-es verzióban elérhető forgatókönyvekről.
 - Olvassa el a [kapacitás-tervezési útmutatót](capacity-planning-guide.md).
