@@ -9,20 +9,20 @@ ms.date: 10/02/2018
 ms.topic: article
 ms.prod: microsoft-identity-manager
 ms.assetid: 94a74f1c-2192-4748-9a25-62a526295338
-ms.openlocfilehash: 63ebdbc229c7d2dabbbb5a06f7dbbd5f3d367796
-ms.sourcegitcommit: cd503e8e9933d39d6fbf894c7d27bf9566301ac8
+ms.openlocfilehash: c426dff583ca51ca77bcb18fe024bf38698e3530
+ms.sourcegitcommit: 3ff309115a0f3de114e3dff4eb3927dd7b01df4d
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/13/2020
-ms.locfileid: "88168354"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90570761"
 ---
 # <a name="microsoft-identity-manager-connector-for-microsoft-graph"></a>Microsoft Graph Microsoft Identity Manager-összekötő
 
 
-## <a name="summary"></a>Összefoglalás 
+## <a name="summary"></a>Összegzés 
 
 
-A [Microsoft Graph Microsoft Identity Manager-összekötő](https://go.microsoft.com/fwlink/?LinkId=717495) további integrációs forgatókönyveket tesz lehetővé prémium szintű Azure ad ügyfelek számára.  Az informatikai felületek a [beMicrosoft Graph API](https://developer.microsoft.com/en-us/graph/)v1-től és a Beta-tól kapott további objektumokat a fakiszolgálói szinkronizálási szolgáltatásban   .
+A [Microsoft Graph Microsoft Identity Manager-összekötő](https://go.microsoft.com/fwlink/?LinkId=717495) további integrációs forgatókönyveket tesz lehetővé prémium szintű Azure ad ügyfelek számára.  Az informatikai felületek a [beMicrosoft Graph API](https://developer.microsoft.com/en-us/graph/) v1-től és a Beta-tól kapott további objektumokat a fakiszolgálói szinkronizálási szolgáltatásban.
 
 ## <a name="scenarios-covered"></a>Érintett forgatókönyvek
 
@@ -37,7 +37,7 @@ Ha meg szeretné tudni, hogyan konfigurálhatja a címtár-szinkronizálást úg
 ### <a name="other-identity-management-scenarios"></a>Más Identitáskezelés-kezelési forgatókönyvek
 
 
-Az összekötő más, a felhasználók, csoportok és kapcsolattartási objektumok létrehozására, olvasására, frissítésére és törlésére is használható az Azure ad-ben, az Azure ad-vel való felhasználói és csoportos szinkronizáláson túl. A lehetséges forgatókönyvek kiértékelése során vegye figyelembe a következőket: ez az összekötő nem üzemeltethető olyan forgatókönyvben, amely átfedésben van, tényleges vagy lehetséges szinkronizálási ütközést eredményez egy Azure AD Connect központi telepítéssel.  [Azure ad Connect](https://www.microsoft.com/en-us/download/details.aspx?id=47594)   a helyszíni címtárak és az Azure AD integrálásának ajánlott módja a felhasználók és csoportok szinkronizálása a helyszíni címtárakból az Azure AD-be.  Azure AD Connect sokkal több szinkronizálási funkcióval rendelkezik, és olyan forgatókönyveket tesz lehetővé, mint például a jelszó és az eszközök visszaírási, amelyek nem használhatók a famodul által létrehozott objektumok esetében. Ha az adatok bekerülnek AD DSba, például győződjön meg róla, hogy ki van zárva a Azure AD Connect az objektumoknak az Azure AD-címtárba való visszaállítására tett kísérletből.  Az összekötő nem használható olyan Azure AD-objektumok módosítására is, amelyeket a Azure AD Connect hozott létre.
+Az összekötő más, a felhasználók, csoportok és kapcsolattartási objektumok létrehozására, olvasására, frissítésére és törlésére is használható az Azure ad-ben, az Azure ad-vel való felhasználói és csoportos szinkronizáláson túl. A lehetséges forgatókönyvek kiértékelése során vegye figyelembe a következőket: ez az összekötő nem üzemeltethető olyan forgatókönyvben, amely átfedésben van, tényleges vagy lehetséges szinkronizálási ütközést eredményez egy Azure AD Connect központi telepítéssel.  [Azure ad Connect](https://www.microsoft.com/en-us/download/details.aspx?id=47594) a helyszíni CÍMTÁRAK Azure ad-vel való integrálásának ajánlott módszere, ha a felhasználókat és csoportokat a helyszíni címtárakból az Azure ad-be szinkronizálja.  Azure AD Connect sokkal több szinkronizálási funkcióval rendelkezik, és olyan forgatókönyveket tesz lehetővé, mint például a jelszó és az eszközök visszaírási, amelyek nem használhatók a famodul által létrehozott objektumok esetében. Ha az adatok bekerülnek AD DSba, például győződjön meg róla, hogy ki van zárva a Azure AD Connect az objektumoknak az Azure AD-címtárba való visszaállítására tett kísérletből.  Az összekötő nem használható olyan Azure AD-objektumok módosítására is, amelyeket a Azure AD Connect hozott létre.
 
 
 
@@ -75,7 +75,7 @@ Az alkalmazásnak hozzá kell adni a következő engedélyeket, hogy az a forgat
 | Művelet objektummal | Engedély szükséges                                                                  | Engedély típusa |
 |-----------------------|--------------------------------------------------------------------------------------|-----------------|
 | Csoport importálása          | `Group.Read.All` vagy `Group.ReadWrite.All`                                                | Alkalmazás     |
-| Felhasználó importálása           | `User.Read.All`, `User.ReadWrite.All` , `Directory.Read.All` vagy`Directory.ReadWrite.All` | Alkalmazás     |
+| Felhasználó importálása           | `User.Read.All`, `User.ReadWrite.All` , `Directory.Read.All` vagy `Directory.ReadWrite.All` | Alkalmazás     |
 
 A szükséges engedélyekkel kapcsolatos további részletek [itt](https://developer.microsoft.com/en-us/graph/docs/concepts/permissions_reference)találhatók.
 
@@ -98,8 +98,8 @@ A szükséges engedélyekkel kapcsolatos további részletek [itt](https://devel
 
 
 
-9.  A Synchronization Service Manager felhasználói felületén válassza az **Összekötők**   és **Létrehozás**lehetőséget.
-Válassza a **Graph (Microsoft)** lehetőséget   , hozzon létre egy összekötőt, és adjon meg egy leíró nevet.
+9.  A Synchronization Service Manager felhasználói felületén válassza az **Összekötők** és **Létrehozás**lehetőséget.
+Válassza a **Graph (Microsoft)** lehetőséget, hozzon létre egy összekötőt, és adjon meg egy leíró nevet.
 
 ![](media/microsoft-identity-manager-2016-graph-b2b-scenario/d95c6b2cc7951b607388cbd25920d7d0.png)
 
@@ -138,7 +138,7 @@ A globális paraméterek lap a következő beállításokat tartalmazza:
 
     -   Exportálás (Hozzáadás, frissítés, törlés)
 
--   Csoport
+-   Group
 
     -   Teljes/különbözeti importálás
 
@@ -151,9 +151,9 @@ Az attribútumok által támogatott típusok listája:
 
 -   `Edm.String`
 
--   `Edm.DateTimeOffset`(karakterlánc az összekötő térben)
+-   `Edm.DateTimeOffset` (karakterlánc az összekötő térben)
 
--   `microsoft.graph.directoryObject`(hivatkozás az összekötő területére a támogatott objektumok bármelyikéhez)
+-   `microsoft.graph.directoryObject` (hivatkozás az összekötő területére a támogatott objektumok bármelyikéhez)
 
 -   `microsoft.graph.contact`
 
