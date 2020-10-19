@@ -16,12 +16,12 @@ ms.date: 01/23/2019
 ms.author: esergeev
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: f6e43abea8b58ccff7fa376b266a91cb138f5aa9
-ms.sourcegitcommit: a96944ac96f19018c43976617686b7c3696267d7
+ms.openlocfilehash: 157fd8d2a6b4296899f90c661e12ba6e19743d0f
+ms.sourcegitcommit: 22fa4dac943a0c6b0815b711bd1996f77a390e7c
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "79044385"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92174527"
 ---
 # <a name="connect-to-your-directories"></a>Csatlakozás a címtárakhoz
 
@@ -33,19 +33,19 @@ Ez a cikk & azokat az összekötőket ismerteti, amelyek a 2,0-as verzióban tá
 
 ## <a name="supported-connectors-in-mim-2016-sp1"></a>Támogatott összekötők a 2016 SP1 rendszerben
 
-| Name (Név) | A csatlakoztatott adatforrás támogatott verziói & technikai hivatkozások |
+| Összekötő neve | A csatlakoztatott adatforrás támogatott verziói & technikai hivatkozások |
 | ---- | ----------------------------------------------- |
-| Active Directory tartományi szolgáltatások | Active Directory a Windows Server 2012-2019 |
+| Active Directory Domain Services | Active Directory a Windows Server 2012-2019 |
 | Active Directory Lightweight Directory-szolgáltatások (ADLDS) | Active Directory Lightweight Directory-szolgáltatások (ADLDS) |
-| Active Directory globális címlista (GAL) | Active Directory globális címlista (GAL) – Exchange 2013 – 2019 |
+| Active Directory globális címlista (GAL) | Active Directory globális címlista (GAL) az Exchange 2013-2019 |
 | Extensible Connectivity 2.0 | Bármely hívás- vagy fájlalapú adatforrás |
 | FIM szolgáltatás | Webszolgáltatások. Vegye figyelembe, hogy a fakiszolgálói szinkronizációs szolgáltatásnak és a webszolgáltatásnak azonos verziójúnak kell lennie. |
-| IBM DB2 Universal Database | IBM DB2 9,5-es vagy 9,7-es verzió; IBM DB2 OLEDB v 9.5 FP5 vagy v 9.7 FP1 |
-| IBM Directory Server | IBM Tivoli Directory Server 6.x |
-| Novell eDirectory | Novell eDirectory 8.7.3, 8.8.5 és 8.8.6 |
-| Oracle Database | Oracle Database 10g vagy 11g; 64 bites ügyfél |
-| Microsoft SQL Server | SQL Server 2012 – 2017 |
-| Oracle (korábban Sun és Netscape) Directory Server kiszolgálók | Sun Directory Server 6.x, 7.x és Oracle 11 |
+| IBM DB2 Universal Database | IBM DB2 9,5-es vagy 9,7-es verzió; IBM DB2 OLEDB v 9.5 FP5 vagy v 9.7 FP1 <br/> Általános SQL-összekötő használata a későbbi verziókhoz|
+| IBM Directory Server | IBM Tivoli Directory Server 6.x <br/> Általános LDAP-összekötő használata a későbbi verziókhoz|
+| Novell eDirectory | Novell eDirectory 8.7.3, 8.8.5 és 8.8.6 <br/> Általános LDAP-összekötő használata a későbbi verziókhoz|
+| Oracle Database | Oracle Database 10g vagy 11g; 64 bites ügyfél <br/> Általános SQL-összekötő használata a későbbi verziókhoz|
+| Microsoft SQL Server | SQL Server 2012 – 2017 <br/> Általános SQL-összekötő használata későbbi verziókban vagy SQL Azure|
+| Oracle (korábban Sun és Netscape) Directory Server kiszolgálók | Sun Directory Server 6.x, 7.x és Oracle 11<br/> Általános LDAP-összekötő használata a későbbi verziókhoz |
 | [Windows PowerShell-összekötő](https://msdn.microsoft.com/library/dn640417.aspx) | Windows PowerShell 2.0 vagy újabb |
 | [Microsoft Azure Active Directory-összekötő](https://msdn.microsoft.com/library/dn511001.aspx) | Microsoft Azure Active Directory (új központi telepítések esetén nem ajánlott) |
 | [Általános LDAP-összekötő](https://msdn.microsoft.com/library/dn510997.aspx) | [LDAP v3-as kiszolgáló (RFC 4510 szabványnak megfelelő)](reference/microsoft-identity-manager-2016-connector-genericldap.md#overview-of-the-generic-ldap-connector) |
