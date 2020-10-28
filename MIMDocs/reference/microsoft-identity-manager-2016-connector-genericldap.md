@@ -16,13 +16,13 @@ ms.prod: microsoft-identity-manager
 ms.date: 06/26/2018
 ms.author: billmath
 ms.openlocfilehash: bb6460ebf4106aa8c9295be0db3ce9da426b0778
-ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
+ms.sourcegitcommit: c214bb0b1373b65b1c9c215379fd820ab0c13f0f
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/10/2020
-ms.locfileid: "79044386"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "92761014"
 ---
-# <a name="generic-ldap-connector-technical-reference"></a>Általános LDAP-összekötő – technikai útmutató
+# <a name="generic-ldap-connector-technical-reference"></a>Általános LDAP-összekötő – műszaki útmutató
 Ez a cikk az általános LDAP-összekötőt ismerteti. A cikk a következő termékekre vonatkozik:
 
 * Microsoft Identity Manager 2016 (MIM2016)
@@ -32,7 +32,7 @@ Ez a cikk az általános LDAP-összekötőt ismerteti. A cikk a következő term
 A MIM2016 és a FIM2010R2 esetében az összekötő letölthető a [Microsoft letöltőközpontból](http://go.microsoft.com/fwlink/?LinkId=717495).
 
 Az IETF RFC-k használatára való hivatkozáskor a dokumentum a következő formátumot használja: (RFC [RFC Number]/[szakasz az RFC-dokumentumban]), például (RFC 4512/4.3).
-További információkat a következő helyen talál: [https://tools.ietf.org/](https://tools.ietf.org/). A bal oldali panelen adjon meg egy RFC-számot a **doc beolvasás** párbeszédpanelen, és ellenőrizze, hogy érvényes-e.
+További információkat itt talál: [https://tools.ietf.org/](https://tools.ietf.org/) . A bal oldali panelen adjon meg egy RFC-számot a **doc beolvasás** párbeszédpanelen, és ellenőrizze, hogy érvényes-e.
 
 ## <a name="overview-of-the-generic-ldap-connector"></a>Az általános LDAP-összekötő áttekintése
 Az általános LDAP-összekötő lehetővé teszi a szinkronizációs szolgáltatás integrálását egy LDAP v3-kiszolgálóval.
@@ -45,9 +45,9 @@ Magas szintű perspektívából a következő funkciókat támogatja az összek�
 
 | Szolgáltatás | Támogatás |
 | --- | --- |
-| Csatlakoztatott adatforrás |Az összekötő minden LDAP v3-kiszolgáló (RFC 4510-kompatibilis) esetében támogatott. A következővel lett tesztelve: <li>Microsoft Active Directory Lightweight Directory-szolgáltatások (AD LDS)</li><li>Microsoft Active Directory globális katalógus (AD GC)</li><li>389 Directory-kiszolgáló</li><li>Apache Directory Server</li><li>IBM Tivoli DS</li><li>Isode könyvtár</li><li>NetIQ eDirectory</li><li>Novell eDirectory</li><li>DJ megnyitása</li><li>A DS megnyitása</li><li>Az LDAP megnyitása (openldap.org)</li><li>Oracle (korábban Sun) Directory Server Enterprise Edition</li><li>RadiantOne Virtual Directory-kiszolgáló (VDS)</li><li>Sun One Directory-kiszolgáló</li><li>Microsoft Active Directory tartományi szolgáltatások (AD DS)</li><ul><li>A legtöbb esetben a beépített Active Directory-összekötőt kell használnia, mivel előfordulhat, hogy egyes funkciók nem működnek</li></ul>**A jelentős ismert könyvtárak vagy szolgáltatások nem támogatottak:**<li>Microsoft Active Directory tartományi szolgáltatások (AD DS)<ul><li>Jelszó-módosítási értesítési szolgáltatás (PCN)</li><li>Exchange-kiépítés</li><li>Aktív szinkronizáló eszközök törlése</li><li>A nTDescurityDescriptor támogatása</li></ul></li><li>Oracle Internet Directory (OID)</li> |
-| Forgatókönyvek |<li>Objektumok életciklusának kezelése</li><li>Csoport kezelése</li><li>Jelszavas kezelés</li> |
-| Üzemeltetés |Az összes LDAP-címtárban a következő műveletek támogatottak: <li>Teljes importálás</li><li>Exportálás</li>A következő műveletek csak a megadott címtárakban támogatottak:<li>Különbözeti importálás</li><li>Jelszó beállítása, jelszó módosítása</li> |
+| Csatlakoztatott adatforrás |Az összekötő minden LDAP v3-kiszolgáló (RFC 4510-kompatibilis) esetében támogatott. A következővel lett tesztelve: <li>Microsoft Active Directory Lightweight Directory-szolgáltatások (AD LDS)</li><li>Microsoft Active Directory globális katalógus (AD GC)</li><li>389 Directory-kiszolgáló</li><li>Apache Directory-kiszolgáló</li><li>IBM Tivoli DS</li><li>Isode könyvtár</li><li>NetIQ eDirectory</li><li>Novell eDirectory</li><li>DJ megnyitása</li><li>A DS megnyitása</li><li>Az LDAP megnyitása (openldap.org)</li><li>Oracle (korábban Sun) Directory Server Enterprise Edition</li><li>RadiantOne Virtual Directory-kiszolgáló (VDS)</li><li>Sun One Directory-kiszolgáló</li><li>Microsoft Active Directory tartományi szolgáltatások (AD DS)</li><ul><li>A legtöbb esetben a beépített Active Directory-összekötőt kell használnia, mivel előfordulhat, hogy egyes funkciók nem működnek</li></ul>**A jelentős ismert könyvtárak vagy szolgáltatások nem támogatottak:**<li>Microsoft Active Directory tartományi szolgáltatások (AD DS)<ul><li>Jelszó-módosítási értesítési szolgáltatás (PCN)</li><li>Exchange-kiépítés</li><li>Aktív szinkronizáló eszközök törlése</li><li>A nTDescurityDescriptor támogatása</li></ul></li><li>Oracle Internet Directory (OID)</li> |
+| Forgatókönyvek |<li>Objektumok életciklusának kezelése</li><li>Csoportkezelés</li><li>Jelszókezelés</li> |
+| Műveletek |Az összes LDAP-címtárban a következő műveletek támogatottak: <li>Teljes importálás</li><li>Exportálás</li>A következő műveletek csak a megadott címtárakban támogatottak:<li>Különbözeti importálás</li><li>Jelszó beállítása, jelszó módosítása</li> |
 | Séma |<li>A rendszer az LDAP-sémából észlelt sémát (RFC3673 és RFC4512/4.2)</li><li>Támogatja a strukturális osztályokat, az AUX-osztályokat és a extensibleObject objektumosztály (RFC4512/4.3)</li> |
 
 ### <a name="delta-import-and-password-management-support"></a>Különbözeti Importálás és jelszavas kezelés támogatása
@@ -62,7 +62,7 @@ Támogatott könyvtárak a különbözeti importáláshoz és a jelszavak kezel�
 * 389 Directory-kiszolgáló
   * A különbözeti importálás összes műveletét támogatja
   * Támogatja a jelszó beállítása és a jelszó módosítása
-* Apache Directory Server
+* Apache Directory-kiszolgáló
   * A nem támogatja a különbözeti importálást, mert ez a könyvtár nem rendelkezik állandó változásnapló-naplóval
   * A jelszó beállítása
 * IBM Tivoli DS
@@ -114,12 +114,12 @@ Az LDAPs esetében SSL 3,0 vagy TLS protokollt kell használnia. Az SSL 2,0 nem 
 
 ### <a name="required-controls-and-features"></a>Szükséges vezérlők és szolgáltatások
 Az összekötő megfelelő működéséhez az alábbi LDAP-vezérlőknek/szolgáltatásoknak elérhetőnek kell lenniük az LDAP-kiszolgálón:  
-Igaz/hamis szűrők `1.3.6.1.4.1.4203.1.5.3`
+`1.3.6.1.4.1.4203.1.5.3` Igaz/hamis szűrők
 
-Az igaz/hamis szűrőt gyakran nem az LDAP-címtárak támogatják, és a **kötelező szolgáltatások nem találhatók**a **globális oldalon** . LDAP-lekérdezések létrehozásához **vagy** szűrőkhöz használható, például több objektumtípus importálásakor. Ha egynél több objektumtípust is importálhat, akkor az LDAP-kiszolgáló támogatja ezt a funkciót.
+Az igaz/hamis szűrőt gyakran nem az LDAP-címtárak támogatják, és a **kötelező szolgáltatások nem találhatók** a **globális oldalon** . LDAP-lekérdezések létrehozásához **vagy** szűrőkhöz használható, például több objektumtípus importálásakor. Ha egynél több objektumtípust is importálhat, akkor az LDAP-kiszolgáló támogatja ezt a funkciót.
 
 Ha olyan könyvtárat használ, amelyben egy egyedi azonosító található, akkor a következőnek is elérhetőnek kell lennie (további információért lásd a [horgonyok konfigurálása](#configure-anchors) szakaszt):  
-Az összes operatív attribútum `1.3.6.1.4.1.4203.1.5.1`
+`1.3.6.1.4.1.4203.1.5.1` Minden operatív attribútum
 
 Ha a címtár több objektummal rendelkezik, mint ami elfér a címtárban, akkor javasolt a lapozás használata. A lapozás működéséhez a következő lehetőségek egyikére van szükség:
 
@@ -141,10 +141,10 @@ Az összekötő megpróbálja felderíteni a kiszolgálón lévő beállítások
 ### <a name="delta-import"></a>Különbözeti importálás
 A különbözeti importálás csak akkor érhető el, ha a rendszer egy támogatási könyvtárat észlelt. Jelenleg a következő módszereket használják:
 
-* LDAP-Accesslog. Lásd: [http://www.openldap.org/doc/admin24/overlays.html#Access naplózása](http://www.openldap.org/doc/admin24/overlays.html#Access%20Logging)
-* LDAP-changelog. Lásd: [http://tools.ietf.org/html/draft-good-ldap-changelog-04](http://tools.ietf.org/html/draft-good-ldap-changelog-04)
+* LDAP-Accesslog. Lásd: [ http://www.openldap.org/doc/admin24/overlays.html#Access naplózás](http://www.openldap.org/doc/admin24/overlays.html#Access%20Logging)
+* LDAP-changelog. Lásd [http://tools.ietf.org/html/draft-good-ldap-changelog-04](http://tools.ietf.org/html/draft-good-ldap-changelog-04)
 * Időbélyeg. A Novell/NetIQ eDirectory esetében az összekötő az utolsó dátum/idő használatával hozza létre a létrehozott és frissített objektumokat. A Novell/NetIQ eDirectory nem biztosít megfelelő módszert a törölt objektumok lekéréséhez. Ez a beállítás akkor is használható, ha az LDAP-kiszolgálón nincs más különbözeti importálási módszer. Ez a beállítás nem tudja importálni a törölt objektumokat.
-* USNChanged. Lásd: [https://msdn.microsoft.com/library/ms677627.aspx](https://msdn.microsoft.com/library/ms677627.aspx)
+* USNChanged. Lásd [https://msdn.microsoft.com/library/ms677627.aspx](https://msdn.microsoft.com/library/ms677627.aspx)
 
 ### <a name="not-supported"></a>Nem támogatott
 A következő LDAP-funkciók nem támogatottak:
@@ -152,14 +152,14 @@ A következő LDAP-funkciók nem támogatottak:
 * LDAP-hivatkozások kiszolgálók között (RFC 4511/4.1.10)
 
 ## <a name="create-a-new-connector"></a>Új összekötő létrehozása
-Általános LDAP-összekötő létrehozásához a **szinkronizációs szolgáltatásban** válassza a **felügyeleti ügynök** lehetőséget, és **hozzon létre**. Válassza ki az **általános LDAP (Microsoft)** összekötőt.
+Általános LDAP-összekötő létrehozásához a **szinkronizációs szolgáltatásban** válassza a **felügyeleti ügynök** lehetőséget, és **hozzon létre** . Válassza ki az **általános LDAP (Microsoft)** összekötőt.
 
 ![CreateConnector](./media/microsoft-identity-manager-2016-connector-genericldap/createconnector.png)
 
-### <a name="connectivity"></a>Kapcsolat
+### <a name="connectivity"></a>Kapcsolatok
 A kapcsolat lapon meg kell adnia a gazdagép, a port és a kötési adatokat. Attól függően, hogy melyik kötés van kiválasztva, a következő részben további információkat is megadhat.
 
-![Kapcsolat](./media/microsoft-identity-manager-2016-connector-genericldap/connectivity.png)
+![Kapcsolatok](./media/microsoft-identity-manager-2016-connector-genericldap/connectivity.png)
 
 * A kapcsolat időtúllépési beállítása csak a kiszolgálóhoz való első kapcsolódáskor használatos a séma észlelése során.
 * Ha a kötés névtelen, akkor sem a Felhasználónév, sem a jelszó, sem a tanúsítvány nincs használatban.
@@ -172,7 +172,7 @@ Az **attribútum aliasa** szövegmező a sémában a RFC4522 szintaxissal meghat
 
 A következő példa a konfiguráció megjelenését szemlélteti:
 
-![Kapcsolat](./media/microsoft-identity-manager-2016-connector-genericldap/connectivityattributes.png)
+![Kapcsolatok](./media/microsoft-identity-manager-2016-connector-genericldap/connectivityattributes.png)
 
 Jelölje be a **műveleti attribútumok belefoglalása a sémába** jelölőnégyzetet, hogy a kiszolgáló által létrehozott attribútumokat is tartalmazza. Ezek olyan attribútumokat tartalmaznak, mint az objektum létrehozásakor és a legutóbbi frissítés ideje.
 
@@ -181,7 +181,7 @@ Jelölje be **az bővíthető attribútumok belefoglalása a sémában** jelöl�
 ### <a name="global-parameters"></a>Globális paraméterek
 A globális paraméterek lapon konfigurálja a DN-t a különbözeti változási naplóba és további LDAP-funkciókra. A lap előre fel van töltve az LDAP-kiszolgáló által biztosított információkkal.
 
-![Kapcsolat](./media/microsoft-identity-manager-2016-connector-genericldap/globalparameters.png)
+![Kapcsolatok](./media/microsoft-identity-manager-2016-connector-genericldap/globalparameters.png)
 
 A felső szakasz a kiszolgáló által biztosított információkat (például a kiszolgáló nevét) jeleníti meg. Az összekötő azt is ellenőrzi, hogy a kötelező vezérlők szerepelnek-e a gyökérszintű DSE. Ha ezek a vezérlők nem szerepelnek a felsorolásban, a rendszer figyelmeztetést jelenít meg. Egyes LDAP-címtárak nem listázza a gyökérszintű DSE összes funkcióját, és lehetséges, hogy az összekötő probléma nélkül működik, még akkor is, ha van figyelmeztetés.
 
@@ -193,14 +193,14 @@ A **támogatott vezérlők** jelölőnégyzetekkel szabályozhatja az egyes műv
 * Ha mindhárom lehetőség (pagedResultsControl, VLVControl és SortControl) nincs kiválasztva, akkor az összekötő egyetlen műveletbe importálja az összes objektumot, ami sikertelen lehet, ha nagyméretű könyvtár.
 * A ShowDeletedControl csak akkor használatos, ha a különbözeti importálási módszer a USNChanged.
 
-A change log DN a különbözeti változási napló által használt névhasználati környezet, például: **CN = changelog**. Ezt az értéket meg kell adni, hogy el lehessen végezni a különbözeti importálást.
+A change log DN a különbözeti változási napló által használt névhasználati környezet, például: **CN = changelog** . Ezt az értéket meg kell adni, hogy el lehessen végezni a különbözeti importálást.
 
 Az alábbi lista az alapértelmezett változási napló DNs-listáját tartalmazza:
 
-| Directory | Különbözeti változási napló |
+| Címtár | Különbözeti változási napló |
 | --- | --- |
 | Microsoft AD LDS és AD GC |Automatikusan észlelhető. USNChanged. |
-| Apache Directory Server |Nem érhető el. |
+| Apache Directory-kiszolgáló |Nem érhető el. |
 | Címtár 389 |Változási napló. Használandó alapértelmezett érték: **CN = changelog** |
 | IBM Tivoli DS |Változási napló. Használandó alapértelmezett érték: **CN = changelog** |
 | Isode könyvtár |Változási napló. Használandó alapértelmezett érték: **CN = changelog** |
@@ -221,7 +221,7 @@ Ez a lap a DN összetevő, például a szervezeti egység (OU) leképezésére s
 
 ![Kiépítési hierarchia](./media/microsoft-identity-manager-2016-connector-genericldap/provisioninghierarchy.png)
 
-A kiépítési hierarchia konfigurálásával beállíthatja, hogy az összekötő automatikusan hozzon létre egy struktúrát, ha szükséges. Ha például van egy névtér DC = contoso, DC = com és egy új objektum CN = Joe, OU = Seattle, c = US, DC = contoso, DC = com kiépítve, akkor az összekötő létrehozhat egy ország típusú objektumot a US és a Seattle organizationalUnit, ha még nincsenek jelen a címtárban.
+A kiépítési hierarchia konfigurálásával beállíthatja, hogy az összekötő automatikusan hozzon létre egy struktúrát, ha szükséges. Ha például van egy névtér DC = contoso, DC = com, és egy új objektum CN = Joe, OU = Seattle, c = US, DC = contoso, DC = com kiépítve, akkor az összekötő létrehozhat egy ország típusú objektumot a US és a Seattle organizationalUnit, ha azok még nem szerepelnek a címtárban.
 
 ### <a name="configure-partitions-and-hierarchies"></a>Partíciók és hierarchiák konfigurálása
 A partíciók és hierarchiák lapon jelölje ki az importálni és exportálni kívánt objektumokat tartalmazó összes névteret.
@@ -247,7 +247,7 @@ Ez a lap mindig előre konfigurált értékkel rendelkezik, és nem módosíthat
 
 Az alábbi lista felsorolja az LDAP-kiszolgálókat és a használt horgonyt:
 
-| Directory | Horgony attribútum |
+| Címtár | Horgony attribútum |
 | --- | --- |
 | Microsoft AD LDS és AD GC |objectGUID |
 | 389 Directory-kiszolgáló |megkülönböztető név |
