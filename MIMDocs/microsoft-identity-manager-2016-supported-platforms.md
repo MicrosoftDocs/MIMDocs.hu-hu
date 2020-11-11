@@ -5,23 +5,23 @@ keywords: ''
 author: billmath
 ms.author: billmath
 manager: daveba
-ms.date: 10/19/2019
+ms.date: 11/2/2020
 ms.topic: article
 ms.prod: microsoft-identity-manager
 ms.assetid: 4978f60d-044d-4e84-8d93-65801fce1144
 ms.reviewer: ''
 ms.suite: ems
 ms.custom: mim
-ms.openlocfilehash: f1f8fb9f443bcafb720b1fd0e9880c93a9772c22
-ms.sourcegitcommit: 22fa4dac943a0c6b0815b711bd1996f77a390e7c
+ms.openlocfilehash: b4737be2036e40f431b26d522678f135aa267d22
+ms.sourcegitcommit: 78c2d7e5ba4bec276d5a9bf8860bc126d9bd9c33
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92174547"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94492378"
 ---
 # <a name="supported-platforms-for-mim-2016"></a>A MIM 2016 által támogatott platformok
 
-Ez a tábla a Microsoft Identity Manager 2016 egyes összetevői által támogatott platformokat és verziókat ismerteti. A csillaggal (*) jelölt verziókat kizárólag a MIM 2016 1. szervizcsomagja támogatja. A * * * jelölésű verziók csak a webszolgáltatások 2016 Service Pack 2 vagy újabb gyorsjavításában támogatottak. Az "NR" jelölésű, nem javasolt verziók használata támogatott, de nem ajánlott, ha az adott platform új központi telepítését indítja.
+Ez a tábla a Microsoft Identity Manager 2016 egyes összetevői által támogatott platformokat és verziókat ismerteti. A * *-vel jelölt verziók csak a 2016 Service Pack 1, a Service Pack 2 vagy újabb gyorsjavításban támogatottak. A * * * jelölésű verziók csak a webszolgáltatások 2016 Service Pack 2 vagy újabb gyorsjavításában támogatottak. Az "NR" jelölésű, nem javasolt verziók használata támogatott, de nem ajánlott, ha az adott platform új központi telepítését indítja.
 
 
 | **MIM-összetevő** | **Platform** | **Verzió** |

@@ -13,11 +13,11 @@ audience: developer
 ms.reviewer: mwahl
 ms.suite: ems
 ms.openlocfilehash: 9a2dd84e121217772a8831653b2e4790436c32ec
-ms.sourcegitcommit: c214bb0b1373b65b1c9c215379fd820ab0c13f0f
+ms.sourcegitcommit: 78c2d7e5ba4bec276d5a9bf8860bc126d9bd9c33
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "92761002"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94492446"
 ---
 # <a name="certificate-management-rest-api-service-details"></a>Tanúsítványkezelő REST API szolgáltatás részletei
 A következő szakaszok ismertetik a Microsoft Identity Manager (felügyeleti pont) tanúsítványkezelő (CM) REST API részleteit.
@@ -42,7 +42,7 @@ MIM CM REST API hívásokat a vezérlők kezelik. A következő táblázat tarta
 ## <a name="http-request-and-response-headers"></a>HTTP-kérelem és-válasz fejlécei
 Az API-nak küldött HTTP-kérelmeknek tartalmaznia kell a következő fejléceket (ez a lista nem teljes):
 
-Fejléc | Leírás
+Fejléc | Description
 -------|------------
 Engedélyezés | Kötelező. A tartalom a hitelesítési módszertől függ. A metódus konfigurálható, és a Windows beépített hitelesítése (WIA) vagy Active Directory összevonási szolgáltatások (AD FS) (ADFS) alapján végezhető el.
 Content-Type | Kötelező, ha a kérelem törzse van. Kell lennie `application/json` .
@@ -52,7 +52,7 @@ Cookie | A munkamenet cookie-je. A hitelesítési módszertől függően kötele
 
 A HTTP-válaszok a következő fejléceket tartalmazzák (ez a lista nem teljes):
 
-Fejléc | Leírás
+Fejléc | Description
 -------|------------
 Content-Type | Az API mindig visszatér `application/json` .
 Content-Length | A kérés törzsének hossza (ha van), bájtban megadva.

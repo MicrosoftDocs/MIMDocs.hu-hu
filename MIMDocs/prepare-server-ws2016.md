@@ -12,17 +12,17 @@ ms.assetid: 51507d0a-2aeb-4cfd-a642-7c71e666d6cd
 ms.reviewer: mwahl
 ms.suite: ems
 ms.openlocfilehash: cf8261c4e6f6529fd82760206b62b689a75d0acb
-ms.sourcegitcommit: a96944ac96f19018c43976617686b7c3696267d7
+ms.sourcegitcommit: 78c2d7e5ba4bec276d5a9bf8860bc126d9bd9c33
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "79382312"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94492412"
 ---
 # <a name="set-up-an-identity-management-server-windows-server-2016-or-2019"></a>Identitáskezelés-felügyeleti kiszolgáló beállítása: Windows Server 2016 vagy 2019
 
 > [!div class="step-by-step"]
-> [«Tartomány](preparing-domain.md)
-> előkészítése[SQL Server»](prepare-server-sql2016.md)
+> [«Tartomány előkészítése](preparing-domain.md) 
+>  [SQL Server»](prepare-server-sql2016.md)
 > 
 
 > [!NOTE]
@@ -36,7 +36,7 @@ ms.locfileid: "79382312"
 > - **Corpservice** -kiszolgáló neve
 > - **Corpsync** -szinkronizálási kiszolgáló neve
 > - SQL Server neve – **corpsql**
-> - Jelszó<strong>Pass@word1</strong>
+> - Jelszó <strong>Pass@word1</strong>
 
 ## <a name="join-windows-server-2016-to-your-domain"></a>A Windows Server 2016 csatlakoztatása a tartományhoz
 
@@ -44,9 +44,9 @@ Indítsa el a Windows Server 2016 rendszerű gépet, amely legalább 8 12GB RAM-
 
 1. Rendszergazdaként jelentkezzen be az új számítógépre.
 
-2. A Vezérlőpulton osszon ki a számítógépnek egy statikus IP-címet a hálózaton. Konfigurálja úgy a hálózati adaptert, hogy DNS-lekérdezéseket küldjön az előző lépésben megadott tartományvezérlő IP-címére, és állítsa a számítógép nevét a **CORPSERVICE**értékre.  A művelethez szükség lesz a kiszolgáló újraindítására.
+2. A Vezérlőpulton osszon ki a számítógépnek egy statikus IP-címet a hálózaton. Konfigurálja úgy a hálózati adaptert, hogy DNS-lekérdezéseket küldjön az előző lépésben megadott tartományvezérlő IP-címére, és állítsa a számítógép nevét a **CORPSERVICE** értékre.  A művelethez szükség lesz a kiszolgáló újraindítására.
 
-3. Nyissa meg a Vezérlőpultot, és csatlakoztassa a számítógépet az utolsó lépésben konfigurált tartományhoz ( *contoso.com*).  Ez a művelet magában foglalja a tartományi rendszergazda felhasználónevet és hitelesítő adatait (például *Contoso\Rendszergazda*).  Miután az üdvözlő üzenet megjelenik, zárja be a párbeszédpanelt, és még egyszer indítsa újra a kiszolgálót.
+3. Nyissa meg a Vezérlőpultot, és csatlakoztassa a számítógépet az utolsó lépésben konfigurált tartományhoz ( *contoso.com* ).  Ez a művelet magában foglalja a tartományi rendszergazda felhasználónevet és hitelesítő adatait (például *Contoso\Rendszergazda* ).  Miután az üdvözlő üzenet megjelenik, zárja be a párbeszédpanelt, és még egyszer indítsa újra a kiszolgálót.
 
 4. Jelentkezzen be a számítógépre *CORPSERVICE* helyi számítógép-rendszergazdaként, például *Contoso\MIMINSTALL*.
 
@@ -80,21 +80,21 @@ A kiszolgálói biztonsági házirendben engedélyezze az újonnan létrehozott 
 
 2. Keresse meg a **Helyi házirend > Felhasználói jogok kiosztása** csomópontot.
 
-3. A részleteket tartalmazó ablaktáblán kattintson a jobb gombbal a **Bejelentkezés szolgáltatásként**lehetőségre, majd válassza a **Tulajdonságok**lehetőséget.
+3. A részleteket tartalmazó ablaktáblán kattintson a jobb gombbal a **Bejelentkezés szolgáltatásként** lehetőségre, majd válassza a **Tulajdonságok** lehetőséget.
 
     ![Kép: Helyi biztonsági házirend](media/MIM-DeployWS3.png)
 
-4. Kattintson a **felhasználó vagy csoport hozzáadása**elemre, majd a szövegmezőbe írja be a `contoso\MIMSync; contoso\MIMMA; contoso\MIMService; contoso\SharePoint; contoso\SqlServer; contoso\MIMSSPR`következőt a szerepkör alapján **: kattintson a Névellenőrzés elemre**, majd az **OK**gombra.
+4. Kattintson a **felhasználó vagy csoport hozzáadása** elemre, majd a szövegmezőbe írja be a következőt a szerepkör alapján: kattintson a Névellenőrzés elemre `contoso\MIMSync; contoso\MIMMA; contoso\MIMService; contoso\SharePoint; contoso\SqlServer; contoso\MIMSSPR` , majd az **OK** gombra. **Check Names**
 
 5. Kattintson az **OK** gombra a **Bejelentkezés szolgáltatásként – tulajdonságok** ablak bezárásához.
 
-6.  A részleteket tartalmazó ablaktáblán kattintson a jobb gombbal a **számítógép hálózati elérésének megtagadása**elemre, majd válassza a **tulajdonságok**lehetőséget. >
+6.  A részleteket tartalmazó ablaktáblán kattintson a jobb gombbal a **számítógép hálózati elérésének megtagadása** elemre, majd válassza a **tulajdonságok** lehetőséget. >
 
 7. Kattintson a **Felhasználó vagy csoport hozzáadása** gombra, a szövegmezőbe írja be a következőt: `contoso\MIMSync; contoso\MIMService`, majd kattintson az **OK** gombra.
 
 8. Az **OK** gombbal zárja be **A számítógép hálózati elérésének megtagadása – tulajdonságok** ablakot.
 
-9. A részleteket tartalmazó ablaktáblán kattintson a jobb gombbal a **helyi bejelentkezés megtagadása**elemre, majd válassza a **Tulajdonságok**lehetőséget.
+9. A részleteket tartalmazó ablaktáblán kattintson a jobb gombbal a **helyi bejelentkezés megtagadása** elemre, majd válassza a **Tulajdonságok** lehetőséget.
 
 10. Kattintson a **Felhasználó vagy csoport hozzáadása** gombra, a szövegmezőbe írja be a következőt: `contoso\MIMSync; contoso\MIMService`, majd kattintson az **OK** gombra.
 
@@ -129,5 +129,5 @@ A 2016 SP2 összetevőinek telepítése előtt győződjön meg arról, hogy az 
     ```
 
 > [!div class="step-by-step"]  
-> [«Tartomány](preparing-domain.md)
-> előkészítése[SQL Server»](prepare-server-sql2016.md)
+> [«Tartomány előkészítése](preparing-domain.md) 
+>  [SQL Server»](prepare-server-sql2016.md)

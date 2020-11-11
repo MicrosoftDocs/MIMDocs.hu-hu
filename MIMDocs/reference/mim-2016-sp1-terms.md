@@ -11,16 +11,16 @@ ms.prod: microsoft-identity-manager
 ms.assetid: b0b39631-66df-4c5f-80c9-a1774346f816
 ms.reviewer: fimguy
 ms.suite: ems
-ms.openlocfilehash: afe167cdcd6ca548ef34e802f5606bee6ba5b31e
-ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
+ms.openlocfilehash: 6e6af5be6c091be74c7162ef9c960c89a3302ba2
+ms.sourcegitcommit: 78c2d7e5ba4bec276d5a9bf8860bc126d9bd9c33
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/10/2020
-ms.locfileid: "92760895"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94492565"
 ---
 # <a name="microsoft-identity-manager-2016-sp1-terminology"></a>Microsoft Identity Manager 2016 SP1 – terminológia
 
-Ez a dokumentum a Microsoft Identity Manager 2016 SP1-ben hivatkozott kifejezések átfogó listáját tartalmazza.
+Ez a dokumentum a Microsoft Identity Manager 2016 SP1 és újabb verziókban hivatkozott kifejezések átfogó listáját tartalmazza.
 
 ## <a name="a"></a>A
 
@@ -59,7 +59,7 @@ Ez a dokumentum a Microsoft Identity Manager 2016 SP1-ben hivatkozott kifejezés
 **engedélyezési munkafolyamat** : olyan tevékenységek munkafolyamata, amelyeknek a kérésnek az adatbázisba való véglegesítése előtt el kell végeznie. Ilyenek például az adatellenőrzés és a jóváhagyás.
 <br/>
 
-## <a name="c"></a>C#
+## <a name="c"></a>C
 
 **regisztrációs attribútum törlése** : ez az attribútum törli a hitelesítési munkafolyamathoz társított regisztrációt. Egy kérdés és válasz kihívás esetében például a válaszokat a következő helyen tárolja a rendszer: a rendszer a webhelyre 2016 a regisztrációs adat formájában. Ha a regisztráció törlése jelölőnégyzet be van jelölve, és a rendszer menti a munkafolyamatot, a rendszer törli a regisztrációs adatforgalmi listát, hogy a felhasználók újra regisztráljanak.
 
@@ -85,7 +85,7 @@ erdők **közötti csoportos számítás** : olyan beépített tevékenység, am
 **egyéni kifejezés** : a függvények vagy attribútumok speciális módban való definiálásához használt leíró nyelv.
 <br/>
 
-## <a name="d"></a>T
+## <a name="d"></a>D
 
 **célhely (vagy cél erőforrás-definíció kérés után)** : egy készlet, amelybe az erőforrás egy olyan kérelem miatt mozog, amely megváltoztatja az adott erőforrás attribútumait.
 
@@ -189,11 +189,11 @@ Attribútum **importálása (IAF)** : az attribútum importálása folyamatban v
 
 **zárolási kapu** : munkafolyamat-tevékenység a kérelmek feldolgozásának hitelesítési fázisában egy olyan felhasználó kizárásához, aki nem tudott hitelesíteni. Lásd még a "zárolás" és a "QA Gate" bejegyzést.
 
-**zárolási küszöb** : ez egy egész szám típusú vezérlőelem, amely meghatározza, hogy a felhasználók hányszor tudják befejezni a hitelesítési munkafolyamatot, mielőtt kizárták őket a zárolás időtartamára.Az alapértelmezett beállítás a 3. Az alsó korlát 0, a felső korlát 99.
+**zárolási küszöb** : ez egy egész szám típusú vezérlőelem, amely meghatározza, hogy a felhasználók hányszor tudják befejezni a hitelesítési munkafolyamatot, mielőtt kizárták őket a zárolás időtartamára. Az alapértelmezett beállítás a 3. Az alsó korlát 0, a felső korlát 99.
 
-**zárolás időtartama** : ez egy egész szám típusú vezérlőelem, amely meghatározza, hogy az időtartam hány perc múlva legyen zárolva a felhasználó számára a zárolási küszöb megnyomása után.Az alapértelmezett beállítás 15 perc.A beállítás alsó határértéke 1, a felső korlát pedig 9999.A felső korlát lehetővé teszi, hogy a rendszergazda a felső korlátot egy napnál hosszabb ideig állítsa be.
+**zárolás időtartama** : ez egy egész szám típusú vezérlőelem, amely meghatározza, hogy az időtartam hány perc múlva legyen zárolva a felhasználó számára a zárolási küszöb megnyomása után.  Az alapértelmezett beállítás 15 perc.  A beállítás alsó határértéke 1, a felső korlát pedig 9999. A felső korlát lehetővé teszi, hogy a rendszergazda a felső korlátot egy napnál hosszabb ideig állítsa be.
 
-**zárolási küszöbértékek a végleges zárolás előtt** : ez egy egész számú vezérlőelem, amely lehetővé teszi a rendszergazda számára, hogy numerikus értéket állítson be ahhoz, hogy a felhasználók hányszor tudják elérni a zárolási küszöbértéket, mielőtt véglegesen kizárták őket.  Az állandó zárolás azt jelenti, hogy a felhasználót a rendszergazdának kell feloldania. Alapértelmezés szerint ez a beállítás a 3 értékre van állítva.A beállítás tartománya 1 és 99 között van.
+**zárolási küszöbértékek a végleges zárolás előtt** : ez egy egész számú vezérlőelem, amely lehetővé teszi a rendszergazda számára, hogy numerikus értéket állítson be ahhoz, hogy a felhasználók hányszor tudják elérni a zárolási küszöbértéket, mielőtt véglegesen kizárták őket.  Az állandó zárolás azt jelenti, hogy a felhasználót a rendszergazdának kell feloldania. Alapértelmezés szerint ez a beállítás a 3 értékre van állítva. A beállítás tartománya 1 és 99 között van.
 <br/>
 
 ## <a name="m"></a>M
@@ -499,7 +499,7 @@ Az **áttérési felügyeleti házirend szabályának (TMPR) beállítása** : e
 
 **zárolt csoport** : az a csoport, amelyben a csoport tagsága a csoport tulajdonosától eltérő felhasználók által módosítható.
 
-**univerzális csoport** : az univerzális hatókörű csoportok egy Active Directory csoport, amely egy adott erdő tagjait tartalmazhatja. Az univerzális csoportok bármilyen tartományhoz vagy erdőhöz hozzárendelhetők. A terjesztési listák jellemzően univerzális hatókörrel rendelkeznek.Az univerzális hatókörű biztonsági csoportok az azonos erdőben lévő erőforrásokat is biztonságossá tehetik.
+**univerzális csoport** : az univerzális hatókörű csoportok egy Active Directory csoport, amely egy adott erdő tagjait tartalmazhatja. Az univerzális csoportok bármilyen tartományhoz vagy erdőhöz hozzárendelhetők. A terjesztési listák jellemzően univerzális hatókörrel rendelkeznek.  Az univerzális hatókörű biztonsági csoportok az azonos erdőben lévő erőforrásokat is biztonságossá tehetik.
 
 **frissítési kérelem** : egy erőforrás attribútumainak módosításához szükséges kérelem.
 

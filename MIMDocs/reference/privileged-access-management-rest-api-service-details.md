@@ -13,11 +13,11 @@ audience: developer
 ms.reviewer: mwahl
 ms.suite: ems
 ms.openlocfilehash: 00a2f4d9c44747d50139655d368e42b11fbd388c
-ms.sourcegitcommit: c214bb0b1373b65b1c9c215379fd820ab0c13f0f
+ms.sourcegitcommit: 78c2d7e5ba4bec276d5a9bf8860bc126d9bd9c33
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "92760990"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94492429"
 ---
 # <a name="pam-rest-api-service-details"></a>PAM REST API szolgáltatás részletei
 A következő részekben a Microsoft Identity Manager (a () Privileged Access Management (PAM) REST API részleteit tárgyaljuk.
@@ -26,7 +26,7 @@ A következő részekben a Microsoft Identity Manager (a () Privileged Access Ma
 
 Az API-nak küldött HTTP-kérelmeknek tartalmaznia kell a következő fejléceket (ez a lista nem teljes):
 
-Fejléc | Leírás
+Fejléc | Description
 -------|------------
 Engedélyezés | Kötelező. A tartalom a hitelesítési módszertől függ, amely konfigurálható, és a WIA (integrált Windows-hitelesítés) vagy ADFS-alapú lehet.
 Content-Type | Kötelező, ha a kérelem törzse van. Értékre kell állítani `application/json` .
@@ -37,7 +37,7 @@ Cookie | A munkamenet cookie-je. A hitelesítési módszertől függően kötele
 
 A HTTP-válaszoknak tartalmaznia kell a következő fejléceket (ez a lista nem teljes):
 
-Fejléc | Leírás
+Fejléc | Description
 -------|------------
 Content-Type | Az API mindig visszatér `application/json` .
 Content-Length | A kérés törzsének hossza (ha van), bájtban megadva.
@@ -89,7 +89,7 @@ A PAM REST API kérelmek tartalmazhatnak szűrőket a válaszba foglalandó tula
 
 A szűrők megadhatják a PAM-kérések tulajdonságait, a PAM-szerepköröket. vagy függőben lévő PAM-kérések. Például: *expirationtime tulajdonságok* , *DisplayName* vagy bármely más érvényes tulajdonsága egy PAM-kérelem, PAM-szerepkör vagy függőben lévő kérelem.
 
-Az API a következő operátorokat támogatja a szűrési kifejezésekben: *és* , *EQUAL* , *NotEqual* , *GreaterThan* , *LessThan* , *GreaterThenOrEqueal* és *LessThanOrEqual* . 
+Az API a következő operátorokat támogatja a szűrési kifejezésekben: *és* , *EQUAL* , *NotEqual* , *GreaterThan* , *LessThan* , *GreaterThenOrEqueal* és *LessThanOrEqual*. 
 
 A következő példák a szűrőket tartalmazzák:
 

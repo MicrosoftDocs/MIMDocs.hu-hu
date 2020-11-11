@@ -7,14 +7,14 @@ manager: daveba
 ms.date: 10/29/2018
 ms.topic: article
 ms.prod: microsoft-identity-manager
-ms.openlocfilehash: 69ebe774ddea0176fb26ef74b8f4352e4bb5d039
-ms.sourcegitcommit: a96944ac96f19018c43976617686b7c3696267d7
+ms.openlocfilehash: 6cf0914b196673bb2e99d6d679fad46833c58b00
+ms.sourcegitcommit: 78c2d7e5ba4bec276d5a9bf8860bc126d9bd9c33
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "79042168"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94492259"
 ---
-# <a name="mim-sp1-4414360--service-dynamic-logging"></a>Dinamikus naplózás a MIM SP1-es (4.4.1436.0-s) verziójában
+# <a name="mim-2016-sp1-4414360--service-dynamic-logging"></a>A webszolgáltatási 2016 SP1 (4.4.1436.0) szolgáltatás dinamikus naplózása
 
 A 4.4.1436.0-s verzióban új naplózási funkció mutatkozott be, amellyel a rendszergazdák és a támogatási szakemberek a felügyeleti szolgáltatás újraindítása nélkül kapcsolhatják be a naplózást.
 
@@ -31,7 +31,7 @@ A dinamikus naplózás szintjeit [itt](https://msdn.microsoft.com/library/ms7330
 - Critical (Kritikus) = az alapértelmezett szintű szolgáltatás csak a kritikus eseményeket naplózza
 - A 8. sorba (dynamicLogging mode="true" loggingLevel="Critical") írja be a kívánt naplózási szint értékét
 
-A dinamikus naplózási konfiguráció a 266. sor: Microsoft. ResourceManagement. Service. exe. config fájlban található.
+A dinamikus naplózási konfiguráció a 266. sorban található: Microsoft.ResourceManagement.Service.exe.config
 
 ![A különféle elérhető naplózási területeket mutató kiemelt szakaszok](media/mim-service-dynamic-logging/screen02.png)
 

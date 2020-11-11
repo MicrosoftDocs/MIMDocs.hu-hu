@@ -9,12 +9,12 @@ ms.date: 09/11/2017
 ms.topic: article
 ms.prod: microsoft-identity-manager
 ms.assetid: ''
-ms.openlocfilehash: fb3cf6e5b00c1bd0c01d86aff474dc2ff28c2815
-ms.sourcegitcommit: a96944ac96f19018c43976617686b7c3696267d7
+ms.openlocfilehash: 848bdbb793de97eb9512de93febd939bb45a52d3
+ms.sourcegitcommit: 78c2d7e5ba4bec276d5a9bf8860bc126d9bd9c33
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "79042253"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94492293"
 ---
 # <a name="microsoft-bhold-suite-sp1-60-installation-guide"></a>Microsoft BHOLD Suite SP1 (6,0) – telepítési útmutató
 
@@ -30,7 +30,7 @@ A Microsoft® BHOLD Suite Service Pack 1 (SP1) olyan alkalmazások gyűjteménye
 
 
 > [!NOTE]
-> **A**következőkre vonatkozik: Microsoft Identity Manager 2016 SP1
+> **A** következőkre vonatkozik: Microsoft Identity Manager 2016 SP1 vagy újabb
 
 ## <a name="what-this-document-covers"></a>A dokumentum tartalma
 
@@ -38,7 +38,7 @@ Ez a dokumentum azt ismerteti, hogyan tervezze meg az BHOLD üzemelő példány�
 
 ## <a name="pre-requisite-knowledge"></a>Előfeltételek ismerete
 
-Ez a dokumentum azt feltételezi, hogy a szoftverek kiszolgáló számítógépekre történő telepítésének alapvető ismerete. Azt is feltételezi, hogy a Active Directory® tartományi szolgáltatások, a Microsoft Identity Manager SP1 (FIM) és a Microsoft SQL Server 2012 adatbázis-szoftver alapvető ismeretekkel rendelkezik. A jelen dokumentáció hatókörén kívül a függő technológiák (például a AD DS és a FIM) beállításának és konfigurálásának leírása. További információ a Microsoft BHOLD-modulok által végrehajtott függvényekről: [a Microsoft BHOLD Suite fogalmi útmutatója](https://technet.microsoft.com/library/jj134102(v=ws.10).aspx).
+Ez a dokumentum azt feltételezi, hogy a szoftverek kiszolgáló számítógépekre történő telepítésének alapvető ismerete. Azt is feltételezi, hogy a Active Directory® tartományi szolgáltatások, a Forefront vagy a Microsoft Identity Manager (FIM) és a Microsoft SQL Server 2012 Database szoftver alapvető ismeretekkel rendelkezik. A jelen dokumentáció hatókörén kívül a függő technológiák (például a AD DS és a FIM) beállításának és konfigurálásának leírása. További információ a Microsoft BHOLD-modulok által végrehajtott függvényekről: [a Microsoft BHOLD Suite fogalmi útmutatója](https://technet.microsoft.com/library/jj134102(v=ws.10).aspx).
 
 ## <a name="audience"></a>Célközönség
 
@@ -99,7 +99,7 @@ A Windows konfigurálható úgy, hogy a Microsoft legfelső szintű tanúsítvá
 
 ![IIS telepítése BHOLD](media/bhold-installation-guide/iis-install-bhold.png)
 
-Ha a BHOLD Suite SP1 szervizcsomagot a Windows Server 2012-es vagy 2016-es ```C:\Windows\System32\inetsrv\config```verziójára telepíti, a BHOLD-weblapok addig nem lesznek elérhetők, amíg nem módosítja a applicationHost. config fájlt. A ```<globalModules>``` (z) szakaszban ```preCondition="bitness64``` adja hozzá a szöveget a ```<add name="SPNativeRequestModule"``` következő megkezdéséhez:
+Ha a BHOLD Suite SP1 szervizcsomagot a Windows Server 2012-es vagy 2016-es verziójára telepíti, a BHOLD-weblapok addig nem lesznek elérhetők, amíg nem módosítja a applicationHost.config fájlt ```C:\Windows\System32\inetsrv\config``` . A (z) ```<globalModules>``` szakaszban adja hozzá ```preCondition="bitness64``` a szöveget a következő megkezdéséhez ```<add name="SPNativeRequestModule"``` :
 
 ```<add name="SPNativeRequestModule" image="C:\Program Files\Common Files\Microsoft Shared\Web Server Extensions\15\isapi\spnativerequestmodule.dll" preCondition="bitness64"/>```
 

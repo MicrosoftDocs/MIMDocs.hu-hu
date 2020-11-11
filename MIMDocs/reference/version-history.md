@@ -9,12 +9,12 @@ ms.date: 10/18/2019
 ms.topic: reference
 ms.prod: microsoft-identity-manager
 ms.assetid: ''
-ms.openlocfilehash: fa4e5ade14c1a3df94b868d149472c1b42d1c59c
-ms.sourcegitcommit: d6178a67014d66d37056c13d10328ae03e3cd781
+ms.openlocfilehash: 530229a3e5217955e974021ba42870f415e66033
+ms.sourcegitcommit: 78c2d7e5ba4bec276d5a9bf8860bc126d9bd9c33
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "92761038"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94492514"
 ---
 # <a name="identity-manager-version-release-history"></a>Az Identity Manager verziójának korábbi kiadásai
 
@@ -26,6 +26,14 @@ A Microsoft Identity Manager csapat rendszeresen frissítéseket szabadít fel. 
 >A Microsoft BHOLD Suite összetevőinek korábbi verzióit a BHOLD- [modulok verziójának korábbi](version-bhold-history.md)verzióiban találja.
 >
 >Az általános LDAP, az általános SQL, a Web Services, a PowerShell, a Graph és a Lotus Domino-összekötő korábbi verziói a [Connector verziójának korábbi](microsoft-identity-manager-2016-connector-version-history.md)verzióiban találhatók.  
+
+## <a name="mim-version-463550"></a>4.6.355.0-verzió
+- Állapot: november 6., 2020
+- [Gyorsjavítás letöltése](https://www.microsoft.com/download/details.aspx?id=102301)
+- [TUDÁSBÁZISCIKK 4585922](https://support.microsoft.com/help/4585922)
+
+Ez a gyorsjavítás a fakiszolgálói szinkronizációs kezelő, a címtárszolgáltatás és a webszolgáltatási portál összetevőinek frissítéseit tartalmazza, valamint az előző gyorsjavításokból származó, a webhelyhez 2016 SP2-hez készült kumulatív frissítéseket is tartalmaz.
+
 
 ## <a name="mim-version-462630"></a>4.6.263.0-verzió
 - Állapot: augusztus 7., 2020
@@ -241,7 +249,7 @@ A 4.4.1749.0-ben a következő problémák lettek kijavítva.
 - Az országkód nélküli msidmPhoneGatePhoneNumber attribútum nem a DefaultCountryCode értéket használja MFASettings.xmlban.
 - A tagságok beállítása dinamikusan frissíthető anélkül, hogy a FIM_TemporalEventsJob kellene támaszkodnia.
 - A szinkronizálási szabályok nem támogatják az attribútum-flow szabályok létrehozását olyan attribútumok esetén, amelyek neve tartalmazza a kivonatot vagy a font szimbólumot (#).
-  
+  
 #### <a name="privilege-access-management"></a>Jogosultság-hozzáférés kezelése 
 
 - New-PAMDomainConfiguration PowerShell-parancsmag helytelen értéket állít be a tartományi megbízhatósági konfigurációhoz, ami hibát okoz (ez az ismeretlen kérési paraméter nem dolgozható fel).
@@ -249,9 +257,9 @@ A 4.4.1749.0-ben a következő problémák lettek kijavítva.
 #### <a name="microsoft-identity-portal"></a>Microsoft Identity Portal
 
 - Kivétel jelenik meg az Identity felügyeleti portál fő képernyőjén, és megjelenik egy Bezárás gomb is.
-- Az elemek törlése ablakban helytelenül jelenik meg a gombok.Ez a probléma az Internet Explorerben, a Firefoxban és a Chrome-ban fordult elő. 
-- A Keresés gomb átfedésben van az erőforrás-választó gombbal az engedélyezési munkafolyamat jóváhagyási tevékenység ablakában. Ez a probléma az Internet Explorerben, a Firefoxban és a Chrome-ban fordult elő. 
-- A csoport tulajdonságai felugró ablakban a gomb területen átfedésben van a listanézet navigációs vezérlői a tagok törlése vezérlőben.Ez a probléma az Internet Explorerben, a Firefoxban és a Chrome-ban fordult elő.
+- Az elemek törlése ablakban helytelenül jelenik meg a gombok.  Ez a probléma az Internet Explorerben, a Firefoxban és a Chrome-ban fordult elő. 
+- A Keresés gomb átfedésben van az erőforrás-választó gombbal az engedélyezési munkafolyamat jóváhagyási tevékenység ablakában. Ez a probléma az Internet Explorerben, a Firefoxban és a Chrome-ban fordult elő. 
+- A csoport tulajdonságai felugró ablakban a gomb területen átfedésben van a listanézet navigációs vezérlői a tagok törlése vezérlőben.  Ez a probléma az Internet Explorerben, a Firefoxban és a Chrome-ban fordult elő.
 - Több FELHASZNÁLÓIFELÜLET-elem nem jelenik meg megfelelően. A következő elemek vannak kijavítva:
 
     - Fel és le nyilak egyes tulajdonságlapokon.
@@ -263,21 +271,21 @@ A 4.4.1749.0-ben a következő problémák lettek kijavítva.
 - Egy objektum-felügyeleti képernyőn (például terjesztési csoportok), ha több objektum van kiválasztva a jelölőnégyzet bejelölésével, és az objektumok hosszú megjelenítendő névvel rendelkeznek. A párbeszédpanelek mérete függőlegesen, így a vezérlő nem terjeszti ki a böngésző képernyőjének végét.
 - Egy objektum-kezelés vagy lista képernyőjén (például terjesztési csoportok) a kijelölt elemek vezérlő feljebb helyezheti a képernyőt, hogy közvetlenül a táblázatos listákban szereplő utolsó objektum alá kerüljön.
 - A Safari böngészőben a Filter Builder (például a speciális keresés) nem működik.
-- a portál az attribútumérték megjelenítésére szolgáló párbeszédpaneleken a rövidebb szavakat a cellába helyezi el, nem pedig balra igazítva. 
+- a portál az attribútumérték megjelenítésére szolgáló párbeszédpaneleken a rövidebb szavakat a cellába helyezi el, nem pedig balra igazítva. 
 - Egyes böngésző-verziók esetében a kijelölt elemek nem frissülnek, amikor módosul az elem kijelölése.
-- A párbeszédpanelek és a vágólapra való másolás a TAB billentyűvel való kiemeléskor.  
-- Az Internet Explorer 10 esetében, amikor egy objektum rácsának megjelenítését (például terjesztési csoportokat) jeleníti meg, a "a fenti kereséshez használni kívánt terjesztési csoportok keresése" szalagcím befedi a gomb menüszalagjának egyik részét, és nem jelenik meg a párbeszédpanel közepén.  
+- A párbeszédpanelek és a vágólapra való másolás a TAB billentyűvel való kiemeléskor.  
+- Az Internet Explorer 10 esetében, amikor egy objektum rácsának megjelenítését (például terjesztési csoportokat) jeleníti meg, a "a fenti kereséshez használni kívánt terjesztési csoportok keresése" szalagcím befedi a gomb menüszalagjának egyik részét, és nem jelenik meg a párbeszédpanel közepén.  
 - Miután telepített egy frissítést a webszolgáltatási portálra, a portál nem fog megjelenni az Internet Explorerben.
-- Ha a Firefox böngészőben a speciális keresés funkciót használja, akkor az ENTER billentyű lenyomásakor az attribútum értéke mező hibát jelez.  
+- Ha a Firefox böngészőben a speciális keresés funkciót használja, akkor az ENTER billentyű lenyomásakor az attribútum értéke mező hibát jelez.  
 
 #### <a name="certificate-management"></a>Tanúsítványkezelés
 
 - Egy kérelem kezdeményezője (tanúsítványkezelő) nem tud lemondani egy, a végrehajtási engedéllyel rendelkező felhasználó által duplikált vagy elfelejtett kérelmet.
 - Ha a modern alkalmazásból próbálja meg megújítani a TPM virtuális intelligens kártyát, a rendszer tiltott kivételt ad vissza.
-- Egyes intelligenskártya-tevékenységek során a CertificateManagement-adatbázishoz meglévő kapcsolatok váratlanul nyitva maradnak.  
+- Egyes intelligenskártya-tevékenységek során a CertificateManagement-adatbázishoz meglévő kapcsolatok váratlanul nyitva maradnak.  
 - Ha a rendszer a MIM CM konfigurációs varázsló futtatása előtt próbálkozik a felügyeleti pont tanúsítványkezelő (CM) frissítésének telepítésével, a frissítés sikertelen lesz, és a probléma nem kapcsolódik a problémához.
-- A MIM CM konfigurációs varázsló nem jeleníti meg a termék verziószámával kapcsolatos információkat, és az embléma helytelenül jelenik meg.  
-- A Rendszerfelügyeleti webszolgáltatások tanúsítványkezelő jelentésének exportált adatainak eltérése eltér a jelentés adatainak.Az oszlop oszlopai nem mindig egyeznek az oszlopfejlécek értékével.
+- A MIM CM konfigurációs varázsló nem jeleníti meg a termék verziószámával kapcsolatos információkat, és az embléma helytelenül jelenik meg.  
+- A Rendszerfelügyeleti webszolgáltatások tanúsítványkezelő jelentésének exportált adatainak eltérése eltér a jelentés adatainak.  Az oszlop oszlopai nem mindig egyeznek az oszlopfejlécek értékével.
 
 ## <a name="version-4416420"></a>4.4.1642.0 verziója
 

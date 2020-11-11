@@ -16,11 +16,11 @@ ms.prod: microsoft-identity-manager
 ms.date: 06/26/2018
 ms.author: billmath
 ms.openlocfilehash: bb6460ebf4106aa8c9295be0db3ce9da426b0778
-ms.sourcegitcommit: c214bb0b1373b65b1c9c215379fd820ab0c13f0f
+ms.sourcegitcommit: 78c2d7e5ba4bec276d5a9bf8860bc126d9bd9c33
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "92761014"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94492497"
 ---
 # <a name="generic-ldap-connector-technical-reference"></a>Általános LDAP-összekötő – műszaki útmutató
 Ez a cikk az általános LDAP-összekötőt ismerteti. A cikk a következő termékekre vonatkozik:
@@ -43,7 +43,7 @@ A címtárakhoz való csatlakozáshoz a root/admin fiókot használjuk.  Ha más
 
 Magas szintű perspektívából a következő funkciókat támogatja az összekötő jelenlegi kiadása:
 
-| Szolgáltatás | Támogatás |
+| Jellemző | Támogatás |
 | --- | --- |
 | Csatlakoztatott adatforrás |Az összekötő minden LDAP v3-kiszolgáló (RFC 4510-kompatibilis) esetében támogatott. A következővel lett tesztelve: <li>Microsoft Active Directory Lightweight Directory-szolgáltatások (AD LDS)</li><li>Microsoft Active Directory globális katalógus (AD GC)</li><li>389 Directory-kiszolgáló</li><li>Apache Directory-kiszolgáló</li><li>IBM Tivoli DS</li><li>Isode könyvtár</li><li>NetIQ eDirectory</li><li>Novell eDirectory</li><li>DJ megnyitása</li><li>A DS megnyitása</li><li>Az LDAP megnyitása (openldap.org)</li><li>Oracle (korábban Sun) Directory Server Enterprise Edition</li><li>RadiantOne Virtual Directory-kiszolgáló (VDS)</li><li>Sun One Directory-kiszolgáló</li><li>Microsoft Active Directory tartományi szolgáltatások (AD DS)</li><ul><li>A legtöbb esetben a beépített Active Directory-összekötőt kell használnia, mivel előfordulhat, hogy egyes funkciók nem működnek</li></ul>**A jelentős ismert könyvtárak vagy szolgáltatások nem támogatottak:**<li>Microsoft Active Directory tartományi szolgáltatások (AD DS)<ul><li>Jelszó-módosítási értesítési szolgáltatás (PCN)</li><li>Exchange-kiépítés</li><li>Aktív szinkronizáló eszközök törlése</li><li>A nTDescurityDescriptor támogatása</li></ul></li><li>Oracle Internet Directory (OID)</li> |
 | Forgatókönyvek |<li>Objektumok életciklusának kezelése</li><li>Csoportkezelés</li><li>Jelszókezelés</li> |
@@ -152,7 +152,7 @@ A következő LDAP-funkciók nem támogatottak:
 * LDAP-hivatkozások kiszolgálók között (RFC 4511/4.1.10)
 
 ## <a name="create-a-new-connector"></a>Új összekötő létrehozása
-Általános LDAP-összekötő létrehozásához a **szinkronizációs szolgáltatásban** válassza a **felügyeleti ügynök** lehetőséget, és **hozzon létre** . Válassza ki az **általános LDAP (Microsoft)** összekötőt.
+Általános LDAP-összekötő létrehozásához a **szinkronizációs szolgáltatásban** válassza a **felügyeleti ügynök** lehetőséget, és **hozzon létre**. Válassza ki az **általános LDAP (Microsoft)** összekötőt.
 
 ![CreateConnector](./media/microsoft-identity-manager-2016-connector-genericldap/createconnector.png)
 
@@ -193,7 +193,7 @@ A **támogatott vezérlők** jelölőnégyzetekkel szabályozhatja az egyes műv
 * Ha mindhárom lehetőség (pagedResultsControl, VLVControl és SortControl) nincs kiválasztva, akkor az összekötő egyetlen műveletbe importálja az összes objektumot, ami sikertelen lehet, ha nagyméretű könyvtár.
 * A ShowDeletedControl csak akkor használatos, ha a különbözeti importálási módszer a USNChanged.
 
-A change log DN a különbözeti változási napló által használt névhasználati környezet, például: **CN = changelog** . Ezt az értéket meg kell adni, hogy el lehessen végezni a különbözeti importálást.
+A change log DN a különbözeti változási napló által használt névhasználati környezet, például: **CN = changelog**. Ezt az értéket meg kell adni, hogy el lehessen végezni a különbözeti importálást.
 
 Az alábbi lista az alapértelmezett változási napló DNs-listáját tartalmazza:
 
