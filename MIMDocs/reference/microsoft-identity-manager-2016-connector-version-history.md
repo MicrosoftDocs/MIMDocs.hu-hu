@@ -4,7 +4,7 @@ description: Ez a témakör felsorolja a Forefront Identity Manager (FIM) és a 
 services: active-directory
 documentationcenter: ''
 author: EugeneSergeev
-manager: daveba
+manager: aashiman
 editor: ''
 reviewer: markwahl-msft
 ms.assetid: 6a0c66ab-55df-4669-a0c7-1fe1a091a7f9
@@ -13,16 +13,16 @@ ms.topic: article
 ms.prod: microsoft-identity-manager
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 01/23/2019
+ms.date: 11/11/2020
 ms.author: esergeev
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: 3062058bc53a75c66959803ebb5b33849c11868b
-ms.sourcegitcommit: babd0299472aa7e8c8d9af1b464bf4e91318aed8
+ms.openlocfilehash: ba69b18f3712384da79095d625eb9008a07b741e
+ms.sourcegitcommit: dae61d97c9db5402d35e2757a1ce844d16236032
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 09/28/2020
-ms.locfileid: "92761062"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94532120"
 ---
 # <a name="connector-version-release-history"></a>Összekötő verziókiadásai
 
@@ -44,6 +44,17 @@ Kapcsolódó hivatkozások:
 * A [PowerShell-összekötő](microsoft-identity-manager-2016-connector-powershell.md) referenciájának dokumentációja
 * A [Lotus Domino-összekötő](microsoft-identity-manager-2016-connector-domino.md) referenciájának dokumentációja
 * A [SharePoint felhasználói profil tároló-összekötő](https://go.microsoft.com/fwlink/?LinkID=331344) referenciájának dokumentációja
+
+## <a name="1113460-november-2020"></a>1.1.1346.0 (2020 november)
+### <a name="fixed-issues"></a>Megoldott problémák
+- Gráf-összekötő
+  - Kijavítva egy probléma a helyi összekötő gyorsítótárának sérülése miatt, ami a különbözeti importálási hibákat okozta
+  - Az összekötő által jelentett, a teljes importálás során felderítési hibákat okozó duplikált bejegyzések hibája javítva
+  - Kijavítva az összetett adattípusok helytelen importálásával kapcsolatos hibát, például *employeeOrgData*
+- Általános SQL-összekötő
+  - Hiba történt az SQL natív hitelesítési hibája miatt, mert a DSN kapcsolódási karakterlánc tulajdonsága *TrustedConnection* *hamis* értékre van állítva. 
+- Általános LDAP-összekötő
+  - Kijavítva a *OpenLDAP* *accessLog* bejegyzéseinek a különbözeti importáláson való feldolgozásával kapcsolatos hibát, ami helytelen csoporttagság-változásokat és egyéb hibákat okoz
 
 ## <a name="1113020-september-2020"></a>1.1.1302.0 (szeptember 2020)
 ### <a name="fixed-issues"></a>Megoldott problémák
@@ -68,7 +79,7 @@ Kapcsolódó hivatkozások:
   > Ha már használja a vendég meghívást az összekötő 1.1.1170.0, frissítse a szinkronizálási szabályokat a következő logikával:
 
   - Kimenő folyamatok
-    - A rendszer meghívja a felhasználót, amikor exportálja a felhasználó létrehozását, és az Exportálás tartalmaz egy *mail* attribútumot, de nem *userPrincipalName attribútumot* .  Ha a *userPrincipalName* meg van adva, a rendszer a meghívása helyett felhasználót hoz létre.
+    - A rendszer meghívja a felhasználót, amikor exportálja a felhasználó létrehozását, és az Exportálás tartalmaz egy *mail* attribútumot, de nem *userPrincipalName attribútumot*.  Ha a *userPrincipalName* meg van adva, a rendszer a meghívása helyett felhasználót hoz létre.
     - A *UserType* attribútum csak azt határozza meg, hogy egy felhasználó *tagja* vagy *vendég* lesz-e (alapértelmezés szerint *tag* , ha nincs beállítva)
   - Bejövő folyamatok
     - A külső felhasználók *userPrincipalName* a "as-is" értéket jeleníti meg
@@ -311,7 +322,7 @@ Kiadás dátuma: 2017 március
 ### <a name="enhancements"></a>Fejlesztések
 
 * Általános SQL:</br>
-  **Forgatókönyv tünetei:**   Ez az SQL-összekötő jól ismert korlátozása, ahol csak egy adott objektumtípus hivatkozását engedélyezzük, és a tagokkal való kereszthivatkozásra van szükség. </br>
+  **Forgatókönyv tünetei:**  Ez az SQL-összekötő jól ismert korlátozása, ahol csak egy adott objektumtípus hivatkozását engedélyezzük, és a tagokkal való kereszthivatkozásra van szükség. </br>
   **Megoldás leírása:** A hivatkozások feldolgozási lépésében a "*" beállítás van kiválasztva, az Objektumtípusok összes kombinációja vissza lesz visszaadva a Szinkronizáló motornak.
 
 > [!Important]
