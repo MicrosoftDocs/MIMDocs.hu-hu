@@ -13,11 +13,11 @@ reviewer: markwahl-msft
 ms.reviewer: mwahl
 ms.suite: ems
 ms.openlocfilehash: 26dcaf121c4fd980d296ffee893af3ca66249c6c
-ms.sourcegitcommit: ea16fea5d69aff58b862468d4bebfb05100d037a
+ms.sourcegitcommit: dae61d97c9db5402d35e2757a1ce844d16236032
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 06/12/2020
-ms.locfileid: "84749244"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96035616"
 ---
 # <a name="support-update-for-azure-ad-premium-customers-using-microsoft-identity-manager"></a>Támogatási frissítés prémium szintű Azure AD ügyfelek számára a Microsoft Identity Manager használatával
 
