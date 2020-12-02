@@ -11,12 +11,12 @@ ms.prod: microsoft-identity-manager
 ms.assetid: bfc7cb64-60c7-4e35-b36a-bbe73b99444b
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: 3b99bd6d8f10c993d65e026bab23deeb65c547e9
-ms.sourcegitcommit: a96944ac96f19018c43976617686b7c3696267d7
+ms.openlocfilehash: d6cd6c88992dc3c7dc80cd93d21907319ece0136
+ms.sourcegitcommit: 2bbb6815b7dfae877eec966c1dc40ea8da847d62
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "79043953"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96522149"
 ---
 # <a name="planning-a-bastion-environment"></a>Megerősített környezet tervezése
 
@@ -122,7 +122,7 @@ Bár kényelmetlen lehet, különítse el a felhasználók számára kijelölt m
 
 - **Biztonságos rendszerindítás** az aláíratlan kód betöltésére irányuló támadók vagy kártevők elleni védelem érdekében.
 
-- **Szoftverkorlátozások** használatával biztosítható, hogy csak az engedélyezett felügyeleti szoftverek legyenek futtathatók a felügyeleti gazdagépeken. Az ügyfelek az AppLockert használhatják erre a célra – az engedélyezett alkalmazások listájának megadásával – a kártevő programok és a nem támogatott alkalmazások futtatásának megakadályozásához.
+- **Szoftverkorlátozások** használatával biztosítható, hogy csak az engedélyezett felügyeleti szoftverek legyenek futtathatók a felügyeleti gazdagépeken. A feladathoz tartozó AppLocker használatával a jogosult alkalmazások jóváhagyott listája használható, így megakadályozható a kártevő szoftverek és a nem támogatott alkalmazások végrehajtása.
 
 - **Teljes mennyiségű titkosítás** a számítógépek fizikai elvesztése, például a távolról használt felügyeleti laptopok ellen.
 
@@ -174,15 +174,15 @@ New-ADGroup -name 'CONTOSO$$$' -GroupCategory Security -GroupScope DomainLocal -
 
 A tartományvezérlő naplózásra vonatkozó csoportházirend-beállításainak tartalmazniuk kell a fiókkezelés naplózásának és a címtárszolgáltatás-hozzáférés naplózásának sikeres és a sikertelen eseményeit is. Ez a Csoportházirend kezelése konzolon hajtható végre úgy, hogy a műveletet a meglévő tartomány rendszergazdája végzi el a meglévő tartományhoz csatlakoztatott munkaállomáson:
 
-3. **Nyissa meg a** > **felügyeleti eszközök** > **csoportházirend felügyelet**menüpontot.
+3. **Nyissa meg a**  >  **felügyeleti eszközök**  >  **csoportházirend felügyelet** menüpontot.
 
-4. Navigáljon az **erdő: contoso. local** > **tartományok** > **contoso. local** > **tartományvezérlők** > **Alapértelmezett tartományvezérlői házirend**elemre. Ekkor megjelenik egy tájékoztató üzenet.
+4. Navigáljon az **erdő: contoso. local**  >  **tartományok**  >  **contoso. local**  >  **tartományvezérlők**  >  **Alapértelmezett tartományvezérlői házirend** elemre. Ekkor megjelenik egy tájékoztató üzenet.
 
     ![Alapértelmezett tartományvezérlői házirend – képernyőkép](media/pam-group-policy-management.jpg)
 
 5. Kattintson a jobb gombbal az **Alapértelmezett tartományvezérlői házirend** elemre, majd válassza a **Szerkesztés** lehetőséget. Megjelenik egy új ablak.
 
-6. A csoportházirend-felügyeleti szerkesztő ablak Alapértelmezett tartományvezérlői házirend fájában navigáljon a **számítógép-konfigurációs** > **házirendek** > **Windows-beállítások** > **biztonsági beállítások** > **helyi házirendek** > **naplózási házirend**elemre.
+6. A csoportházirend-felügyeleti szerkesztő ablak Alapértelmezett tartományvezérlői házirend fájában navigáljon a **számítógép-konfigurációs**  >  **házirendek**  >  **Windows-beállítások**  >  **biztonsági beállítások**  >  **helyi házirendek**  >  **naplózási házirend** elemre.
 
     ![Csoportházirendkezelés-szerkesztő – képernyőkép](media/pam-group-policy-management-editor.jpg)
 
@@ -228,7 +228,7 @@ A következő lépések véghajtásával adhat meg olvasási hozzáférést a *P
 
 3. Kattintson a jobb gombbal a **contoso.local** tartományra, és válassza a **Vezérlés delegálása** parancsot.
 
-4. A kijelölt felhasználók és csoportok lapon kattintson a **Hozzáadás**gombra.
+4. A kijelölt felhasználók és csoportok lapon kattintson a **Hozzáadás** gombra.
 
 5. A Felhasználók, számítógépek vagy csoportok kiválasztása előugró ablakban kattintson a **Helyek** elemre, és váltson át a *priv.contoso.local* helyre. Az objektum nevéhez írja be a *Tartományi rendszergazdák* értéket, és kattintson a **Névellenőrzés** gombra. Amikor megjelenik egy előugró ablak, írja be a *priv\rendszergazda* felhasználónevet és a jelszót.
 
