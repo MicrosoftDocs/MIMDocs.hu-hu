@@ -13,16 +13,16 @@ ms.topic: article
 ms.prod: microsoft-identity-manager
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 11/11/2020
+ms.date: 12/31/2020
 ms.author: esergeev
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: ba69b18f3712384da79095d625eb9008a07b741e
-ms.sourcegitcommit: dae61d97c9db5402d35e2757a1ce844d16236032
+ms.openlocfilehash: 84eae9e65a2ea65c210e026ccafa58d95c434539
+ms.sourcegitcommit: 36752980300a51a0b30442ea23b9934eb8b5c752
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94532120"
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97835312"
 ---
 # <a name="connector-version-release-history"></a>Összekötő verziókiadásai
 
@@ -44,6 +44,11 @@ Kapcsolódó hivatkozások:
 * A [PowerShell-összekötő](microsoft-identity-manager-2016-connector-powershell.md) referenciájának dokumentációja
 * A [Lotus Domino-összekötő](microsoft-identity-manager-2016-connector-domino.md) referenciájának dokumentációja
 * A [SharePoint felhasználói profil tároló-összekötő](https://go.microsoft.com/fwlink/?LinkID=331344) referenciájának dokumentációja
+
+## <a name="1113470-december-2020"></a>1.1.1347.0 (2020. december)
+### <a name="fixed-issues"></a>Megoldott problémák
+- Gráf-összekötő
+  - Kijavítva egy probléma az összekötővel, amely hibásan küld B2B-meghívásokat levelezési csoport vagy névjegy létrehozásakor
 
 ## <a name="1113460-november-2020"></a>1.1.1346.0 (2020 november)
 ### <a name="fixed-issues"></a>Megoldott problémák
@@ -91,7 +96,7 @@ Kapcsolódó hivatkozások:
 - Lotus Notes-összekötő
    - A másodlagos megjegyzések címeiből származó csoportokat a *AdminP* folyamat már nem törli. A közvetlen törlési művelet most már használatban van
 - Általános LDAP-összekötő
-   - Kijavított egy hibát az LDAP-címtár műveleti attribútumaival, például a *pwdUpdateTime* , nem látható a sémában
+   - Kijavított egy hibát az LDAP-címtár műveleti attribútumaival, például a *pwdUpdateTime*, nem látható a sémában
 ### <a name="enhancements"></a>Fejlesztések
 - Gráf-összekötő   
    - A külső vendég felhasználók UPN-je már nem jelenik meg, hanem az összekötő térben látható az e-mailek megjelenítéséhez
@@ -101,10 +106,10 @@ Kapcsolódó hivatkozások:
    - Engedélyek megadására a Graph connectorhoz társított Azure AD-alkalmazáshoz
    - Összekötő-konfiguráció befejezése szakasz a külső felhasználók meghívásához: a meghívó átirányítási URL-címének (kötelező) beállítása, valamint a meghívó e-mailek küldésének kiválasztása
    - Kötelező attribútumok beállítása a kimenő szinkronizálási szabályban:
-     - "Vendég" => *userType* (csak kezdeti folyamat)
-     - külső e-mail-cím => *userPrincipalName*
-     - CustomExpression ("CN =" + csObjectID + ", OBJECT = user") => *DN* (csak kezdeti folyamat)
-     - csObjectID => *azonosítója* (csak kezdeti folyamat)
+     - "Vendég" =>*userType* (csak kezdeti folyamat)
+     - külső e-mail-cím =>*userPrincipalName*
+     - CustomExpression ("CN =" + csObjectID + ", OBJECT = user") =>*DN* (csak kezdeti folyamat)
+     - csObjectID =>*azonosítója* (csak kezdeti folyamat)
 
 ## <a name="1111300-february-2020"></a>1.1.1130.0 (február 2020)
 ### <a name="fixed-issues"></a>Megoldott problémák
@@ -218,7 +223,7 @@ Kapcsolódó hivatkozások:
 ### <a name="enhancements"></a>Fejlesztések
 * Lotus Notes: * az időtúllépés növelésének lehetősége a felhasználói felületen
 * A Graph Connector (nyilvános előzetes verzió) * Password attribútum az importálás során szűrve az "exportálás nem újraimportálása" lehetőséggel.
-    * A (z) $filter lekérdezési paraméter támogatása – a különbözeti lekérdezésben működő összes szűrővel végzett műveletekhez csak a (z) [here](https://developer.microsoft.com/en-us/graph/docs/concepts/paging)
+    * A (z) $filter lekérdezési paraméter támogatása – a különbözeti lekérdezésben működő összes szűrővel végzett műveletekhez csak a (z) [](https://developer.microsoft.com/en-us/graph/docs/concepts/paging)
 
 ## <a name="118300"></a>1.1.830.0
 
@@ -433,7 +438,7 @@ Március 2016 előtt az összekötők támogatási témakörökként jelentek me
 > [!NOTE]
 > Microsoft Identity Manager vagy AADConnect frissítése bármely ECMA2-összekötő használatával. 
 
-Az összekötő definícióját frissíteni kell az egyeztetéshez, vagy a következő hibaüzenetet fogja kapni az alkalmazás eseménynaplójában: a 6947-es figyelmeztetési azonosító jelentése: "szerelvény verziója a HRE-összekötő konfigurációjában (" X.X.XXX. X ") korábbi, mint a tényleges verzió (" X.X.XXX. X ") a" C:\Program Files\Microsoft Azure AD Sync\Extensions\Microsoft.IAM.Connector.GenericLdap.dll ".
+Az összekötő definícióját frissíteni kell a frissítéshez, vagy a következő hibaüzenetet fogja kapni az alkalmazás 6947 eseménynaplójában: "C:\Program Files\Microsoft Azure AD Sync\Extensions\Microsoft.IAM.Connector.GenericLdap.dll" ("X. X. XXX. X") a (z) HRE-összekötő konfigurációja ("X. X. XXX. X") tényleges verziójánál korábbi, mint
 
 A definíció frissítése:
 * Az összekötő-példány tulajdonságainak megnyitása
