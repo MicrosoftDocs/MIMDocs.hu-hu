@@ -17,12 +17,12 @@ ms.date: 12/31/2020
 ms.author: esergeev
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: 84eae9e65a2ea65c210e026ccafa58d95c434539
-ms.sourcegitcommit: 36752980300a51a0b30442ea23b9934eb8b5c752
+ms.openlocfilehash: f0b61059f9010523fa4f7b6a6ced987e5ab2dc49
+ms.sourcegitcommit: 8f81767ec92e1b80658aaebb9463aa4d62396d43
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/31/2020
-ms.locfileid: "97835312"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97927693"
 ---
 # <a name="connector-version-release-history"></a>Összekötő verziókiadásai
 
@@ -32,7 +32,7 @@ Az összekötők összekapcsolják az adott csatlakoztatott adatforrásokat a Mi
 > Ez a témakör elsősorban a FIM-és a bekapcsolási összekötők esetében érhető el. Az alábbi összekötők nem támogatottak az Azure AD Connect-on való telepítéskor. A megadott buildre való frissítéskor a rendszer előre telepíti a kiadott összekötőket Azure AD Connect.
 
 
-Ez a témakör felsorolja az általános összekötők csomag összes olyan verzióját, amely külön lett kiadva a webszolgáltatásból.  A következő helyen található összekötők listáját tekintheti meg: [támogatott összekötők a webszolgáltatások 2016 SP1 verziójában](../supported-management-agents.md).  Néhány partner ilyen módon hozta létre a saját összekötőit, és a wiki FIM 2010 és a Webáruház [2016: felügyeleti ügynökök](https://social.technet.microsoft.com/wiki/contents/articles/1589.fim-2010-mim-2016-management-agents-from-partners.aspx)teljes listája elérhető a partnerektől.
+Ez a témakör felsorolja az általános összekötők csomagjának minden olyan verzióját, amely külön lett kibocsátva a webhelyről.  A következő helyen található összekötők listáját tekintheti meg: [támogatott összekötők a webszolgáltatások 2016 SP2-ben](../supported-management-agents.md).  Néhány partner ilyen módon hozta létre a saját összekötőit, és a wiki FIM 2010 és a Webáruház [2016: felügyeleti ügynökök](https://social.technet.microsoft.com/wiki/contents/articles/1589.fim-2010-mim-2016-management-agents-from-partners.aspx)teljes listája elérhető a partnerektől.
 
 
 Kapcsolódó hivatkozások:
@@ -464,4 +464,8 @@ A FIM-hez készült Azure AD-összekötő egy korai technológia volt az azonos�
 
 ## <a name="next-steps"></a>Következő lépések
 
-További információ az [általános LDAP](microsoft-identity-manager-2016-connector-genericldap.md) -összekötő dokumentációjában bővebben az[általános SQL-összekötő](microsoft-identity-manager-2016-connector-genericsql.md) dokumentációjában tájékozódhat bővebben a [webszolgáltatások összekötő](microsoft-identity-manager-2016-ma-ws.md) dokumentációjában további információt a [PowerShell](microsoft-identity-manager-2016-connector-powershell.md) -összekötő dokumentációjában talál. További információ a [Lotus Domino-összekötő](microsoft-identity-manager-2016-connector-domino.md) dokumentációjában olvashatók.
+További információk az [általános LDAP-összekötő](microsoft-identity-manager-2016-connector-genericldap.md) dokumentációjában.
+További információ az[általános SQL-összekötő](microsoft-identity-manager-2016-connector-genericsql.md) dokumentációjában.
+További információk a [Web Services-összekötő](microsoft-identity-manager-2016-ma-ws.md) dokumentációjában olvashatók.
+További információk a [PowerShell-összekötő](microsoft-identity-manager-2016-connector-powershell.md) dokumentációjában.
+További információ a [Lotus Domino-összekötő](microsoft-identity-manager-2016-connector-domino.md) dokumentációjában.

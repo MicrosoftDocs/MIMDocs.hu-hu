@@ -5,25 +5,29 @@ keywords: ''
 author: billmath
 ms.author: billmath
 manager: daveba
-ms.date: 09/14/2017
+ms.date: 10/1/2018
 ms.topic: reference
 ms.prod: microsoft-identity-manager
 ms.assetid: ''
-ms.openlocfilehash: 1ff755aef697b92206745426e7820526db0666d3
-ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
+ms.openlocfilehash: 4e3c247370c6c78e7814d894e9f0a6166d2e397a
+ms.sourcegitcommit: 8f81767ec92e1b80658aaebb9463aa4d62396d43
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/10/2020
-ms.locfileid: "92760966"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97927608"
 ---
 # <a name="bhold-modules-version-release-history"></a>BHOLD-modulok verziójának korábbi kiadásai
 
 A Microsoft Identity Manager csapat rendszeresen kiad a korábbi [verziókban](version-history.md) felsorolt frissítéseket. Ebből a cikkből megtudhatja, hogy nyomon követheti-e a BHOLD számára kiadott verziókat, a Microsoft Identity Manager alösszetevőjét. Ezután eldöntheti, hogy frissítenie kell-e a legújabb verzióra.
 
+## <a name="version-60620"></a>6.0.62.0 verziója
+
+- Állapot: október 2018
+- [Letöltés](https://www.microsoft.com/download/details.aspx?id=55950)
+
 ## <a name="version-60360"></a>6.0.36.0 verziója
 
 - Állapot: 2017. szeptember 7.
-- [Letöltés](https://www.microsoft.com/en-us/download/details.aspx?id=55950)
 
 ### <a name="enhancements"></a>Fejlesztések 
 A BHOLD verziójának 6.0.36.0 a következő fejlesztéseket tartalmazza:

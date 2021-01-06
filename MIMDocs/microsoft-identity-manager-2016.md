@@ -5,15 +5,15 @@ keywords: ''
 author: billmath
 ms.author: billmath
 manager: daveba
-ms.date: 10/18/2019
+ms.date: 1/5/2021
 ms.topic: article
 ms.prod: microsoft-identity-manager
-ms.openlocfilehash: 66cb97afa69decfde8df9f3c78f15c48abd7982b
-ms.sourcegitcommit: d6178a67014d66d37056c13d10328ae03e3cd781
+ms.openlocfilehash: 280a0c63aa10c2d8c5a805d97486d95471702831
+ms.sourcegitcommit: 8f81767ec92e1b80658aaebb9463aa4d62396d43
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88970379"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97927659"
 ---
 # <a name="microsoft-identity-manager-2016-news-and-updates"></a>Microsoft Identity Manager 2016 Hírek és frissítések
 
@@ -25,13 +25,13 @@ A felügyeleti webszolgáltatások segítségével a szervezetek az automatizál
  - A könyvtárak tartalmának integrálása HR-rendszerekkel és más forrásokkal
  - A címtárak, adatbázisok és helyszíni alkalmazások közötti identitások szinkronizálása közös API-k és protokollok, Microsoft által szállított összekötők és partner által szállított összekötők használatával
 
-Az általános támogatás alatt álló jelenlegi kiadások a következő: a 2016 Service Pack 1 és a Service Pack 2 (SP2).  Azok a felhasználók, akik a (z) 2016 2016 SP1 előtti FIM-vagy a fakiszolgáló-verziót futtatják
+A rögzített és az Azure-támogatási szabályzatok által támogatott jelenlegi bekövetkező kiadási csomagok a 2016 Service Pack 2 (SP2) és újabb gyorsjavítások.  Azok a felhasználók, akik a (z) 2016 2016 SP2 előtti FIM-vagy a rendszerverzió-verziót futtatják
 
-A Microsoft rendszeresen kézbesíti a webszolgáltatások frissítéseit, beleértve az ügyfelek kéréseinek fejlesztését és a hibajavításokat egy folyamatos kiadási ciklusban.
+A Microsoft rendszeresen kézbesíti a webszolgáltatások frissítéseit, beleértve az ügyfelek kéréseinek fejlesztéseit és a hibajavításokat egy folyamatos kiadási ciklusban a gyorsjavítások és szervizcsomagok használatával. A legújabb [verzióra](./reference/version-history.md) mutató hivatkozásokat a korábbi verziók című szakaszban tekintheti meg.
 
 ## <a name="updates-in-mim-2016-sp2"></a>A webalkalmazás 2016 SP2-ben elérhető frissítései
 
-A 2016-es szervizcsomaggal ellátott Service Pack 2 a meglévő gyorsjavítások összesítését tartalmazza a címtárszolgáltatás 2016 SP1 óta. Emellett bevezeti a csoportosan felügyelt szolgáltatásfiókok használatát a felügyeleti csomag szinkronizációs szolgáltatásához és a rendszerhez. További részletek a következő címen találhatók: a 2016-es [verzió kiadási előzményei](./reference/version-history.md)
+A 2016-es szervizcsomaggal ellátott Service Pack 2 a meglévő gyorsjavítások összesítését tartalmazza a címtárszolgáltatás 2016 SP1 óta. Emellett bevezeti a csoportosan felügyelt szolgáltatásfiókok használatát a felügyeleti csomag szinkronizációs szolgáltatásához és a rendszerhez. További részletek a következő címen találhatók: a webalkalmazás [2016 verziójának korábbi kiadásai](./reference/version-history.md).
 
 ### <a name="support-update-for-azure-active-directory-premium-customers"></a>prémium szintű Azure Active Directory ügyfelek támogatásának frissítése
 Prémium szintű Azure AD ügyfelek esetében a standard szintű támogatás a 2020. júniustól kezdődően érhető el, január 2021. További információkért lásd az [Azure ad támogatási folyamatát](support-update-for-azure-active-directory-premium-customers.md).
@@ -44,11 +44,9 @@ Prémium szintű Azure AD ügyfelek esetében a standard szintű támogatás a 2
 
 ### <a name="recent-software-releases"></a>Közelmúltbeli szoftverek kiadásai
 
-- A weblapon- [összekötő kiadásai](./reference/microsoft-identity-manager-2016-connector-version-history.md), utoljára frissítve 2019. július
-- [Webkiszolgálói szinkronizálás, szolgáltatás, portál, cm, beépülő modulok és ügyfél-kiadások](./reference/version-history.md) utolsó frissítése október 2019
+- A közelmúltbeli [Összekötők kiadásai](./reference/microsoft-identity-manager-2016-connector-version-history.md), utolsó frissítés december 2020
+- [Webkiszolgálói szinkronizálás, szolgáltatás, portál, cm, beépülő modulok és ügyfél-kiadások](./reference/version-history.md) utolsó frissítése november 2020
 - A [BHOLD-modulok kiadásainak](./reference/version-bhold-history.md) utolsó frissítése október 2018
-
-
 
 
 ## <a name="related-topics"></a>Kapcsolódó témakörök
