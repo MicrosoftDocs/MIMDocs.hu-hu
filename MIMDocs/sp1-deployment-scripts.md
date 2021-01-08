@@ -1,6 +1,6 @@
 ---
-title: MIM2016 SP1 PAM üzembehelyezési szkriptek
-description: Ez az oldal a Privileged Identity Manager parancsfájlokkal történő konfigurálást ismertető cikksorozat tagja. Tartalma a környezettel kapcsolatos előfeltételeket ismerteti.
+title: A kiépítési rendszer PAM-telepítési parancsfájljai
+description: Ez a lap a Microsoft Identity Manager parancsfájlok használatával történő konfigurálásával kapcsolatos cikkek sorozatának részét képezi. Tartalma a környezettel kapcsolatos előfeltételeket ismerteti.
 keywords: ''
 author: billmath
 ms.author: billmath
@@ -11,16 +11,16 @@ ms.prod: microsoft-identity-manager
 ms.assetid: 4b524ae7-6610-40a0-8127-de5a08988a8a
 ms.reviewer: ''
 ms.suite: ems
-ms.openlocfilehash: eeee6473f7471d4c961a4f4d3113d1af73ddaffe
-ms.sourcegitcommit: a96944ac96f19018c43976617686b7c3696267d7
+ms.openlocfilehash: e7eea2c72df3ca9893acc5f6989afa9c488f384e
+ms.sourcegitcommit: 89511939730501458295fc8499490b2b378ce637
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "79044412"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98010455"
 ---
-# <a name="mim2016-sp1-pam-deployment-scripts"></a>MIM2016 SP1 PAM üzembehelyezési szkriptek
+# <a name="mim-pam-deployment-scripts"></a>A kiépítési rendszer PAM-telepítési parancsfájljai
 
-Ebben a szervizcsomagban elérhetővé tesszük az üzembehelyezési szkriptek egy csoportját, amelyek megkönnyítik a PAM üzembe helyezését. A szkriptek a letöltőközpontból érhetők el. A parancsfájlok használatának megkísérlése előtt fontos, hogy megfeleljen az alábbi követelményeknek:
+A 2016-es szervizcsomaggal elvégezhető Service Pack 1 üzembe helyezési parancsfájlokat tartalmaz, amelyek megkönnyítik a PAM üzembe helyezését. Ezek a parancsfájlok a letöltőközpontban érhetők el. A parancsfájlok használatának megkísérlése előtt fontos, hogy megfeleljen az alábbi követelményeknek:
 
 1. Az operációs rendszer minden kiszolgálón legalább Windows Server 2012 R2.
 2. A DNS-t úgy kell konfigurálni, hogy engedélyezze a névfeloldást a tartományvezérlők és az összetevő-kiszolgálók között.

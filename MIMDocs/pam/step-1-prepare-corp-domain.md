@@ -1,6 +1,6 @@
 ---
 title: A PAM üzembe helyezése, 1. lépés – CORP tartomány | Microsoft Docs
-description: CORP tartomány előkészítése létező vagy új identitásokkal a Privileged Identity Manager számára
+description: A CORP tartomány előkészítése meglévő vagy új identitásokkal a Microsoft Identity Manager által felügyelt
 keywords: ''
 author: billmath
 ms.author: billmath
@@ -11,12 +11,12 @@ ms.prod: microsoft-identity-manager
 ms.assetid: 4b524ae7-6610-40a0-8127-de5a08988a8a
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: c21228dad923d80ab63c255c1184b7de04a0ff3d
-ms.sourcegitcommit: a96944ac96f19018c43976617686b7c3696267d7
+ms.openlocfilehash: 4c9c5736d0215d0423eb989dc5a194a0a00c3c50
+ms.sourcegitcommit: 89511939730501458295fc8499490b2b378ce637
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "79043732"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98010427"
 ---
 # <a name="step-1---prepare-the-host-and-the-corp-domain"></a>1. lépés – A gazdagép és a CORP tartomány előkészítése
 
@@ -33,9 +33,9 @@ Ez a szakasz ismerteti, hogyan állíthat be tartományvezérlőt egy CORP tarto
 
 ### <a name="install-windows-server"></a>A Windows Server telepítése
 
-Telepítse a Windows Server 2012 R2 vagy a Windows Server 2016 Technical Preview 4 vagy újabb verzióját egy virtuális gépre a *CORPDC* elnevezésű számítógép létrehozásához.
+Telepítse a Windows Server 2012 R2-es vagy újabb verzióját egy virtuális gépre egy *CORPDC* nevű számítógép létrehozásához.
 
-1. Válasszon a **Windows Server 2012 R2 Standard (kiszolgáló grafikus felhasználói felülettel) x64** és a **Windows Server 2016 Technical Preview (Server with Desktop Experience)** (Kiszolgáló asztali felülettel) lehetőség közül.
+1. Válassza **a Windows server 2012 R2 standard (kiszolgáló grafikus felhasználói felülettel) x64** vagy a **Windows Server 2016 (kiszolgáló asztali** felülettel) lehetőséget.
 
 2. Olvassa el és fogadja el a licencfeltételeket.
 
@@ -123,13 +123,13 @@ A meglévő erdőkben be kell állítania a naplózást ahhoz, hogy létre lehes
 
 Minden tartományban jelentkezzen be egy tartományvezérlőre tartományi rendszergazdaként, és hajtsa végre az alábbi lépéseket:
 
-1. Nyissa **meg a** > **felügyeleti eszközök** (vagy a Windows Server 2016, **Windows felügyeleti eszközök**) eszközt, és indítsa el **csoportházirend felügyeletet**.
+1. Nyissa **meg a**  >  **felügyeleti eszközök** (vagy a Windows Server 2016, **Windows felügyeleti eszközök**) eszközt, és indítsa el **csoportházirend felügyeletet**.
 
-2. Keresse meg az ehhez a tartományhoz tartozó tartományvezérlői szabályzatot.  Ha új tartományt hozott létre a contoso. local számára, navigáljon az **erdő: contoso. local** > **tartományok** > **contoso. local** > **tartományvezérlők** > **Alapértelmezett tartományvezérlői házirend**elemre. Ekkor megjelenik egy tájékoztató üzenet.
+2. Keresse meg az ehhez a tartományhoz tartozó tartományvezérlői szabályzatot.  Ha új tartományt hozott létre a contoso. local számára, navigáljon az **erdő: contoso. local**  >  **tartományok**  >  **contoso. local**  >  **tartományvezérlők**  >  **Alapértelmezett tartományvezérlői házirend** elemre. Ekkor megjelenik egy tájékoztató üzenet.
 
 3. Kattintson a jobb gombbal az **Alapértelmezett tartományvezérlői házirend** elemre, majd válassza a **Szerkesztés** lehetőséget. Ekkor megjelenik egy új ablak.
 
-4. A csoportházirend-felügyeleti szerkesztő ablak Alapértelmezett tartományvezérlői házirend fájában navigáljon a **számítógép-konfigurációs** > **házirendek** > **Windows-beállítások** > **biztonsági beállítások** > **helyi házirendek** > **naplózási házirend**elemre.
+4. A csoportházirend-felügyeleti szerkesztő ablak Alapértelmezett tartományvezérlői házirend fájában navigáljon a **számítógép-konfigurációs**  >  **házirendek**  >  **Windows-beállítások**  >  **biztonsági beállítások**  >  **helyi házirendek**  >  **naplózási házirend** elemre.
 
 5. A részletek ablaktábláján kattintson a jobb gombbal a **Fiókkezelés naplózása** elemre, és válassza a **Tulajdonságok** parancsot. Válassza ki **A következő házirend-beállítások megadása** lehetőséget, jelölje be a **Sikeres** és a **Sikertelen** beállítást, majd kattintson az **Alkalmaz** és az **OK** gombra.
 

@@ -9,16 +9,16 @@ ms.date: 09/26/2017
 ms.topic: reference
 ms.prod: microsoft-identity-manager
 ms.assetid: ''
-ms.openlocfilehash: e0912d09a0fd180be784b3eeefc17d5fd0449a3a
-ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
+ms.openlocfilehash: 0eedee975a785bd20ee37c85262a0c5f678b09b5
+ms.sourcegitcommit: 89511939730501458295fc8499490b2b378ce637
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/10/2020
-ms.locfileid: "92760918"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98010710"
 ---
 # <a name="resource-control-display-configuration-xml-reference"></a>Erőforrás-vezérlő megjelenítési konfigurációs XML-hivatkozása
 
-Az erőforrás-vezérlés megjelenítési konfigurációs (RCDC) erőforrásai olyan felhasználó által definiált erőforrások, amelyek segítségével szabályozható, hogy a Microsoft Identity Manager 2016 SP1 () adattárban lévő más erőforrások hogyan jelenjenek meg a felhasználói felületen (UI) a végfelhasználó számára. Minden RCDC-erőforrás tartalmaz egy XML-konfigurációs fájlt, amelyet a felhasználói felületi szöveg és a felhasználói felület vezérlőelem hozzáadására, módosítására vagy eltávolítására válthat. Míg a RCDC 2016 SP1 számos alapértelmezett erőforrást biztosít, egyéni RCDC-erőforrásokat is létrehozhat egyéni erőforrásokhoz. További információ a RCDC felhasználói felületének a FIM-portálon való használatáról: [Bevezetés a FIM-portál konfigurálásához és testreszabásához](http://go.microsoft.com/fwlink/?LinkID=165848) a FIM dokumentációjában.
+Az erőforrás-vezérlés megjelenítési konfigurációs (RCDC) erőforrásai olyan felhasználó által definiált erőforrások, amelyek segítségével szabályozható, hogy a Microsoft Identity Manager 2016 SP1 () adattárban lévő más erőforrások hogyan jelenjenek meg a felhasználói felületen (UI) a végfelhasználó számára. Minden RCDC-erőforrás tartalmaz egy XML-konfigurációs fájlt, amelyet a felhasználói felületi szöveg és a felhasználói felület vezérlőelem hozzáadására, módosítására vagy eltávolítására válthat. Míg a RCDC 2016 SP1 számos alapértelmezett erőforrást biztosít, egyéni RCDC-erőforrásokat is létrehozhat egyéni erőforrásokhoz. További információ a RCDC felhasználói felületének a FIM-portálon való használatáról: [Bevezetés a FIM-portál konfigurálásához és testreszabásához](/previous-versions/mim/ee534913(v=ws.10)) a FIM dokumentációjában.
 
 
 ## <a name="known-issues"></a>Ismert problémák
@@ -53,17 +53,17 @@ A **ObjectControlConfiguration** elem XSD-sémája a következő:
 
 A **ObjectControlConfiguration** elem a következő elemeket tartalmazza:
 
-- **ObjectDataSource** : ez az elem határozza meg az erőforrás-vezérlő (RC) által használt adatforrás-osztály TypeName paraméterét. A leírás és a séma definíciójának megtekintéséhez tekintse meg a jelen dokumentum következő adatforrások című szakaszát. Egy **ObjectControlConfiguration** -elem legfeljebb 32 csomópontot tartalmazhat a **ObjectDataSource** elemből.
+- **ObjectDataSource**: ez az elem határozza meg az erőforrás-vezérlő (RC) által használt adatforrás-osztály TypeName paraméterét. A leírás és a séma definíciójának megtekintéséhez tekintse meg a jelen dokumentum következő adatforrások című szakaszát. Egy **ObjectControlConfiguration** -elem legfeljebb 32 csomópontot tartalmazhat a **ObjectDataSource** elemből.
 
-- **XmlDataSource** : ez egy egyszerű adatforrás, amelyet leggyakrabban az összefoglalás oldal kialakításának megadására használnak. A leírás és a séma definíciójának megtekintéséhez tekintse meg a jelen dokumentum következő adatforrások című szakaszát. Egy **ObjectControlConfiguration** : az elem legfeljebb 32 csomópontot tartalmazhat a **XmlDataSource** elemben.
+- **XmlDataSource**: ez egy egyszerű adatforrás, amelyet leggyakrabban az összefoglalás oldal kialakításának megadására használnak. A leírás és a séma definíciójának megtekintéséhez tekintse meg a jelen dokumentum következő adatforrások című szakaszát. Egy **ObjectControlConfiguration**: az elem legfeljebb 32 csomópontot tartalmazhat a **XmlDataSource** elemben.
 
-- **Panel** : a rendszergazda testreszabhatja a RCDC oldal elrendezését, ha módosítja a panel elemein belüli elemeket. További információt a jelen dokumentum későbbi részében, a panel szakaszban talál. Egy **ObjectControlConfiguration** elemnek csak egy panel elemből kell állnia.
+- **Panel**: a rendszergazda testreszabhatja a RCDC oldal elrendezését, ha módosítja a panel elemein belüli elemeket. További információt a jelen dokumentum későbbi részében, a panel szakaszban talál. Egy **ObjectControlConfiguration** elemnek csak egy panel elemből kell állnia.
 
-- **Események** : a rendszergazdák nem biztosíthatnak testreszabott kódokat, ez a funkció korlátozott. Ez az az esemény, amelyet egy panel vagy egy vezérlő bocsáthat ki, az állapot változása alapján. További információ: a jelen dokumentum későbbi részében található események szakasz. Egy **ObjectControlConfiguration** elem opcionálisan egy **Event** elemet is tartalmazhat. Általánosságban elmondható, hogy az egyéni **események** használata csak akkor támogatott, ha a későbbi fejlesztésekben nem kifejezetten fejlesztettük őket.
+- **Események**: a rendszergazdák nem biztosíthatnak testreszabott kódokat, ez a funkció korlátozott. Ez az az esemény, amelyet egy panel vagy egy vezérlő bocsáthat ki, az állapot változása alapján. További információ: a jelen dokumentum későbbi részében található események szakasz. Egy **ObjectControlConfiguration** elem opcionálisan egy **Event** elemet is tartalmazhat. Általánosságban elmondható, hogy az egyéni **események** használata csak akkor támogatott, ha a későbbi fejlesztésekben nem kifejezetten fejlesztettük őket.
 
 ## <a name="data-sources"></a>Adatforrások
 
-A Microsoft Identity Manager adatforrásokat használ a felhasználói felületi összetevőkhöz való adatkötéshez. Ez segít megkönnyíteni az adatok elkülönítését a bemutató rétegből. A RCDC erőforrás-konfigurációs adatforrások két típusa létezik: **ObjectDataSource** és **XmlDataSource** .
+A Microsoft Identity Manager adatforrásokat használ a felhasználói felületi összetevőkhöz való adatkötéshez. Ez segít megkönnyíteni az adatok elkülönítését a bemutató rétegből. A RCDC erőforrás-konfigurációs adatforrások két típusa létezik: **ObjectDataSource** és **XmlDataSource**.
 
 -   A **ObjectDataSources** olyan Microsoft .net osztályt ad meg, amely az RC-nek szolgáltatja az adatkészletet. A rendelkezésre álló ObjectDataSources rögzített készlete biztosított, hogy a rendszergazda a RCDCs készítésekor is használni tudja a használatot.
 
@@ -110,7 +110,7 @@ Az alábbi példa olyan RCDC kódrészletet mutat be, amely három adatforrást 
 |---|---|---|---|
 | **XMLDataSource**            | Az adatforrás XML-adatforrást jelöl. Az adattípusok XSL vagy Embedded XSL formátumban is lehetnek:<ul><li>XSL formátum a Microsoft.IdentityManagement.WebUI.Controls.dllban:<br/>```<my:XmlDataSource my:Name="summaryTransformXsl" my:Parameters="Microsoft.IdentityManagement. WebUI.Controls.Resources.DefaultSummary.xsl"> </my:XmlDataSource>```</li><li>Beágyazott XSL-formátum:<br/>```<my:XmlDataSource my:Name="RequestStatusTransformXsl"><xsl:stylesheet version="1.0" xmlns:xsl=http://www.w3.org/1999/XSL/Transform xmlns:msxsl="urn:schemas-microsoft-com:xslt"></xsl:stylesheet></my:XmlDataSource>```</li></ul>  | Nem | `Xpath[;namespaces]`ahol `Xpath` egy érvényes XML XPath a szükséges Megjegyzés kiválasztásához, leggyakrabban "/" (root). `namespaces` az előtag = URI karakterláncok választható listája. A karakterláncot pontosvesszővel kell elválasztani, ha az XPath a névtérbeli XML-fájlon való működéshez szükséges. |
 | **ReferenceDeltaDataSource** | Az adatforrás a többértékű hivatkozási attribútumok különbözeteit jelöli. Csak a Group és a set RCDC esetében használatos. <br/> Bár az adatforrás nem korlátozódik a csoportokra vagy a készletekre, a RCDC-gazdagépen programkód-módosításokat kell elküldenie az ilyen különbözetek beküldéséhez. Jelenleg a Group és a set az egyetlen olyan gazdagép, amely felismeri ezt az adatforrást.  | Igen | `[AttributeName].Add` ahol a a `[AttributeName]` hivatkozási attribútum és a visszaadott adatértékek jelentik a Delta-kiegészítéseket.<ul><li>Például: `[ReferenceAttribute].Add`</li><li>Például: `<my:Property my:Name="Value" my:Value="{Binding Source=delta, Path=ExplicitMember.Add, Mode=TwoWay}"/>`</li></ul>`[AttributeName].Remove` ahol a a `[AttributeName]` hivatkozási attribútumot jelöli, és a visszaadott adatértékek a különbözeti eltávolítások. <br/> DeltaXml <!-- Is bold formatting needed for DeltaXml? --> |
-|**RequestDetailsDataSource**| Az adatforrás a kérelmek objektumainak RequestParameter attribútumát jelöli. A paraméter beállítja a többértékű attribútumoknál megjelenítendő attribútumérték maximális számát, amelyet a rendszer csak a RCDC használ. `<my:ObjectDataSource my:TypeName="RequestDetailsDataSource" my:Name="requestDetails" my:Parameters="1000" />`| Nem | DeltaXml |
+|**RequestDetailsDataSource**| Az adatforrás a kérelmek objektumainak RequestParameter attribútumát jelöli. A paraméter beállítja a többértékű attribútumoknál megjelenítendő attribútumok maximális számát. Csak a RCDC esetében használatos. `<my:ObjectDataSource my:TypeName="RequestDetailsDataSource" my:Name="requestDetails" my:Parameters="1000" />`| Nem | DeltaXml |
 |**RequestStatusDataSource**| Az adatforrás a kérelmek objektumainak **RequestStatusDetails** attribútumát jelöli. Csak a RCDC esetében használatos. | Nem | DeltaXml |
 
 Egyéni XML-adatforrás definiálásához használja a következő XML-kódot:
@@ -202,9 +202,9 @@ Az Event elem XSD-sémája a következő:
 
 Egy **esemény** üres elem, és a következő attribútumokkal rendelkezik:
 
-- **Név** : ez az esemény egyedi neve. A **ObjectControlConfiguration** egyetlen támogatott esemény a betöltési esemény. Ez az esemény akkor aktiválódik, amikor a lapot először betöltik.
+- **Név**: ez az esemény egyedi neve. A **ObjectControlConfiguration** egyetlen támogatott esemény a betöltési esemény. Ez az esemény akkor aktiválódik, amikor a lapot először betöltik.
 
-- **Kezelő** : Ez a kezelő egyedi neve. Az esemény indításakor általában egy program metódust kell meghívni a vezérlő állapotának módosítására. A következő esetek nem támogatottak:
+- **Kezelő**: Ez a kezelő egyedi neve. Az esemény indításakor általában egy program metódust kell meghívni a vezérlő állapotának módosítására. A következő esetek nem támogatottak:
 
    - Meglévő kezelő eltávolítása egy meglévő vezérlőből.
    - Új kezelő létrehozása.
@@ -235,17 +235,17 @@ A **panel** elem a RCDC elrendezésének alapvető eleme. A panel elemének XSD-
 </xsd:element>
 ```
 
-A **panel** elem ismétlődő elemet tartalmaz, **csoportosítást** . További információt a jelen dokumentum csoportosítási szakasza tartalmaz.
+A **panel** elem ismétlődő elemet tartalmaz, **csoportosítást**. További információt a jelen dokumentum csoportosítási szakasza tartalmaz.
 
 A panel elemének jellemzői a következők:
 
-- **Name (név** ): a panel neve. Ez egy kötelező, karakterlánc típusú attribútum.
+- **Name (név**): a panel neve. Ez egy kötelező, karakterlánc típusú attribútum.
 
-- **DisplayAsWizard** : ez az attribútum jelenleg elavult. A RCDC megfelelő VerbContext attribútuma szabályozza, hogy az erőforrás-elrendezés varázsló módban vagy Tab módban van-e. Ha a beállítás értéke 0 (létrehozási mód), akkor a varázsló mód is. Ellenkező esetben tabulátor módban van. További információ: Bevezetés a FIM-portál konfigurálásához és testreszabásához a dokumentációban.
+- **DisplayAsWizard**: ez az attribútum jelenleg elavult. A RCDC megfelelő VerbContext attribútuma szabályozza, hogy az erőforrás-elrendezés varázsló módban vagy Tab módban van-e. Ha a beállítás értéke 0 (létrehozási mód), akkor a varázsló mód is. Ellenkező esetben tabulátor módban van. További információ: Bevezetés a FIM-portál konfigurálásához és testreszabásához a dokumentációban.
 
-- **Caption** : ez az attribútum jelenleg elavult. A felhasználó megadhatja a lapok feliratait úgy, hogy olyan csoportot is megad, amely csak fejléc-információkat tartalmaz. További információt a jelen dokumentum csoportosítási szakasza tartalmaz.
+- **Caption**: ez az attribútum jelenleg elavult. A felhasználó megadhatja a lapok feliratait úgy, hogy olyan csoportot is megad, amely csak fejléc-információkat tartalmaz. További információt a jelen dokumentum csoportosítási szakasza tartalmaz.
 
-- **AutoValidate** : ez egy opcionális logikai attribútum. Ha az igaz értékre van állítva, a rendszer az aktuális lapon lévő összes vezérlőn aktiválja az ellenőrzést. Ha hiányzik az attribútum, alapértelmezés szerint igaz értékre van állítva. A szolgáltatás a válaszban tulajdonsággal együtt használható. További információ: "válaszban" a jelen dokumentum későbbi részében.
+- **AutoValidate**: ez egy opcionális logikai attribútum. Ha az igaz értékre van állítva, a rendszer az aktuális lapon lévő összes vezérlőn aktiválja az ellenőrzést. Ha hiányzik az attribútum, alapértelmezés szerint igaz értékre van állítva. A szolgáltatás a válaszban tulajdonsággal együtt használható. További információ: "válaszban" a jelen dokumentum későbbi részében.
 
 ## <a name="grouping-element"></a>Csoportosítási elem
 A **csoportosítási** elem a panel teljes elrendezését határozza meg. Olyan tárolóként működik, amely az egyes vezérlőket különböző területekhez és lapokhoz csoportosítja. A csoportosítási elem XSD-sémája a következő:
@@ -271,49 +271,49 @@ A **csoportosítási** elem a panel teljes elrendezését határozza meg. Olyan 
 
 Háromféle **csoportosítási** elem létezik:
 
-- **Fejléc csoportosítása** : a fejlécek csoportosítása nem kötelező. Egy **panelen** csak egy fejléc-csoportosítás lehet. A panel tetején egy fejléc jelenik meg feliratként. Ebben a csoportosításban csak egy UocCaptionControl lehet használni. A fejlécek csoportosítására példát a minta szakasza tartalmaz.
+- **Fejléc csoportosítása**: a fejlécek csoportosítása nem kötelező. Egy **panelen** csak egy fejléc-csoportosítás lehet. A panel tetején egy fejléc jelenik meg feliratként. Ebben a csoportosításban csak egy UocCaptionControl lehet használni. A fejlécek csoportosítására példát a minta szakasza tartalmaz.
 
-- **Tartalom csoportosítása** : legalább egy tartalom-csoportosításra van szükség. Egy panelen több tartalom csoportosítása is lehetséges. A tartalom csoportosítása egy RCDC lap fő tartalmaként jelenik meg. Minden tartalom csoportosítása egy lapon jelenik meg ugyanabban a panelen, és 1 – 256 vezérlővel rendelkezhet. Tekintse meg a példák szakaszt a **tartalom csoportosítására** .
+- **Tartalom csoportosítása**: legalább egy tartalom-csoportosításra van szükség. Egy panelen több tartalom csoportosítása is lehetséges. A tartalom csoportosítása egy RCDC lap fő tartalmaként jelenik meg. Minden tartalom csoportosítása egy lapon jelenik meg ugyanabban a panelen, és 1 – 256 vezérlővel rendelkezhet. Tekintse meg a példák szakaszt a **tartalom csoportosítására**.
 
-- **Összesítő csoportosítás** : az összegző csoportosítás nem kötelező. Egy panelen csak egyetlen összegző csoportosítás lehet. Egy összefoglaló csoportosítás megjelenik egy panel utolsó lapján. Egy összegző csoportosításban csak egy **UocHtmlSummary** -vezérlő használható a kérés elküldése előtt a felhasználó által végrehajtott módosítások megjelenítéséhez. Tekintse meg az összefoglalás csoportosítására vonatkozó példát a példák szakaszban.
+- **Összesítő csoportosítás**: az összegző csoportosítás nem kötelező. Egy panelen csak egyetlen összegző csoportosítás lehet. Egy összefoglaló csoportosítás megjelenik egy panel utolsó lapján. Egy összegző csoportosításban csak egy **UocHtmlSummary** -vezérlő használható a kérés elküldése előtt a felhasználó által végrehajtott módosítások megjelenítéséhez. Tekintse meg az összefoglalás csoportosítására vonatkozó példát a példák szakaszban.
 
 Mindegyik csoportosítási típus a következő elemeket tartalmazza:
 
-- **Súgó** : ez az elem Súgó szöveget tartalmaz egy lapon. Azt is megteheti, hogy hozzáad egy, a laphoz tartozó súgófájl hivatkozását.
+- **Súgó**: ez az elem Súgó szöveget tartalmaz egy lapon. Azt is megteheti, hogy hozzáad egy, a laphoz tartozó súgófájl hivatkozását.
 
-- **Vezérlők** : az elemmel kapcsolatos további információkért tekintse meg a jelen dokumentum vezérlő szakaszát. Minden csoportosításhoz a csoportosítás típusától függően 1 – 256 vezérlőnek kell tartoznia.
+- **Vezérlők**: az elemmel kapcsolatos további információkért tekintse meg a jelen dokumentum vezérlő szakaszát. Minden csoportosításhoz a csoportosítás típusától függően 1 – 256 vezérlőnek kell tartoznia.
 
-- **Események** : az elemmel kapcsolatos további információkért tekintse meg a jelen dokumentum események szakaszát. Az egyes Csoportosítások lehetőségként egy eseményt is tartalmazhatnak. A csoportosítási elemekben támogatott események a következők:
+- **Események**: az elemmel kapcsolatos további információkért tekintse meg a jelen dokumentum események szakaszát. Az egyes Csoportosítások lehetőségként egy eseményt is tartalmazhatnak. A csoportosítási elemekben támogatott események a következők:
 
-    - **BeforeLeave** : ezt az eseményt akkor indítja el a rendszer, ha a felhasználó készen áll egy lap egy tartalmi csoportosításban való elhagyására.
-    - **AfterEnter** : ez az esemény akkor aktiválódik, ha a felhasználó készen áll egy lap megadására egy tartalom-csoportosításban.
+    - **BeforeLeave**: ezt az eseményt akkor indítja el a rendszer, ha a felhasználó készen áll egy lap egy tartalmi csoportosításban való elhagyására.
+    - **AfterEnter**: ez az esemény akkor aktiválódik, ha a felhasználó készen áll egy lap megadására egy tartalom-csoportosításban.
 
 A csoportosítás a következő hét attribútumot tartalmazhatja:
 
-- **Név** : Ez a csoport kötelező neve. A **névnek** egyedinek kell lennie a **panelen** belül.
+- **Név**: Ez a csoport kötelező neve. A **névnek** egyedinek kell lennie a **panelen** belül.
 
-- **Caption** : a **felirat** fejléc-feliratként jelenik meg a fejlécben. Megjelenik a tartalom vagy az összesítő csoport lap felirata.
+- **Caption**: a **felirat** fejléc-feliratként jelenik meg a fejlécben. Megjelenik a tartalom vagy az összesítő csoport lap felirata.
 
-- **Leírás** : egy nem kötelező karakterlánc-attribútum, a **Leírás** csak akkor működik, ha egy tartalom-csoportosításban van használatban. Ezzel az elemmel részletesen megadhatja a végfelhasználónak az ugyanazon a lapon található információkat.
-
-    >[!NOTE]
-    >Ha ez az attribútum egy összegző csoportosításban van használatban, az XML érvénytelennek tekintendő. Ha ezt az attribútumot használja egy fejléc-csoportosításban, az XML-fájl érvényes, de figyelmen kívül lesz hagyva.
-    >
-
-- **Engedélyezve** : egy opcionális logikai attribútum, amely engedélyezve van, értéke TRUE (igaz), ha hiányzik. Ha az engedélyezve érték hamis, a végfelhasználó letiltott lapot lát. Ez az attribútum csak a tartalmi csoportosításban működik.
+- **Leírás**: egy nem kötelező karakterlánc-attribútum, a **Leírás** csak akkor működik, ha egy tartalom-csoportosításban van használatban. Ezzel az elemmel részletesen megadhatja a végfelhasználónak az ugyanazon a lapon található információkat.
 
     >[!NOTE]
     >Ha ez az attribútum egy összegző csoportosításban van használatban, az XML érvénytelennek tekintendő. Ha ezt az attribútumot használja egy fejléc-csoportosításban, az XML-fájl érvényes, de figyelmen kívül lesz hagyva.
     >
 
-- **Látható** : az attribútum hamis értékre állításával elrejtheti az RCDC lapjait vagy annak fejlécét. Alapértelmezés szerint ez a nem kötelező, logikai típusú attribútum igaz értékre van állítva. Ez az attribútum csak a tartalom csoportosításakor működik.
+- **Engedélyezve**: egy opcionális logikai attribútum, amely engedélyezve van, értéke TRUE (igaz), ha hiányzik. Ha az engedélyezve érték hamis, a végfelhasználó letiltott lapot lát. Ez az attribútum csak a tartalmi csoportosításban működik.
+
+    >[!NOTE]
+    >Ha ez az attribútum egy összegző csoportosításban van használatban, az XML érvénytelennek tekintendő. Ha ezt az attribútumot használja egy fejléc-csoportosításban, az XML-fájl érvényes, de figyelmen kívül lesz hagyva.
+    >
+
+- **Látható**: az attribútum hamis értékre állításával elrejtheti az RCDC lapjait vagy annak fejlécét. Alapértelmezés szerint ez a nem kötelező, logikai típusú attribútum igaz értékre van állítva. Ez az attribútum csak a tartalom csoportosításakor működik.
 
     >[!NOTE]
     >Ha egy panelen csak egyetlen tartalom van csoportosítva, ez a funkció nem működik. Ha a panelen egynél több tartalom van csoportosítva, az a korábban leírtaknak megfelelően viselkedik.
 
-- **IsHeader** : ez az attribútum egy nem kötelező, logikai attribútum, amely meghatározza, hogy a csoportosítás a fejlécek csoportosítása-e. Ha ez az attribútum nincs megadva, az értéke hamis.
+- **IsHeader**: ez az attribútum egy nem kötelező, logikai attribútum, amely meghatározza, hogy a csoportosítás a fejlécek csoportosítása-e. Ha ez az attribútum nincs megadva, az értéke hamis.
 
-- **IsSummary** : ez egy nem kötelező, logikai attribútum, amely meghatározza, hogy a csoportosítás összesítő csoportosítás-e. Ha ez az attribútum nincs megadva, az értéke hamis.
+- **IsSummary**: ez egy nem kötelező, logikai attribútum, amely meghatározza, hogy a csoportosítás összesítő csoportosítás-e. Ha ez az attribútum nincs megadva, az értéke hamis.
 
 ### <a name="examples-for-types-of-grouping-elements"></a>Példák a csoportosítási elemek típusaira
 Ez a szakasz példákat tartalmaz a groups elemre.
@@ -429,25 +429,25 @@ Egy csoportosítási elem egy vagy több **vezérlő** elemet tartalmaz. A vezé
 
 A vezérlő elem a következő elemeket tartalmazza:
 
-- **Súgó** : ezt az elemet a rendszer figyelmen kívül hagyja. Csak a csoportosításban működik.
+- **Súgó**: ezt az elemet a rendszer figyelmen kívül hagyja. Csak a csoportosításban működik.
 
-- **CustomProperties** : ez az elem nem támogatott.
+- **CustomProperties**: ez az elem nem támogatott.
 
-- **Beállítások** : ez az elem csak a **UocDropDownList** vagy a **UocRadioButtonList** vezérlőkkel együtt használható. Nem működik más vezérlőkkel. Az elem struktúrájáért tekintse meg a jelen dokumentum beállítások szakaszát. Tekintse meg a jelen dokumentum egyes vezérlők szakaszát, és tekintse meg, hogyan használja a vezérlők a beállításokat.
+- **Beállítások**: ez az elem csak a **UocDropDownList** vagy a **UocRadioButtonList** vezérlőkkel együtt használható. Nem működik más vezérlőkkel. Az elem struktúrájáért tekintse meg a jelen dokumentum beállítások szakaszát. Tekintse meg a jelen dokumentum egyes vezérlők szakaszát, és tekintse meg, hogyan használja a vezérlők a beállításokat.
 
-- **Gombok** : ez az elem csak a **UocListView** vezérlővel együtt használható. Más vezérlők esetében nem működik. További információkért tekintse meg a jelen dokumentum UocListView című szakaszát.
+- **Gombok**: ez az elem csak a **UocListView** vezérlővel együtt használható. Más vezérlők esetében nem működik. További információkért tekintse meg a jelen dokumentum UocListView című szakaszát.
 
-- **Tulajdonságok** : ez az elem minden vezérlőben használható a vezérlők további viselkedésének megadásához. Az elemmel kapcsolatos további információkért tekintse meg a jelen dokumentum tulajdonságok szakaszát.
+- **Tulajdonságok**: ez az elem minden vezérlőben használható a vezérlők további viselkedésének megadásához. Az elemmel kapcsolatos további információkért tekintse meg a jelen dokumentum tulajdonságok szakaszát.
 
-- **Események** : az elem struktúrája a jelen dokumentum korábbi, események szakaszában található. Tekintse meg a jelen dokumentum egyes vezérlők szakaszát, amelyből megtudhatja, hogy mely események vannak használatban a vezérlőben.
+- **Események**: az elem struktúrája a jelen dokumentum korábbi, események szakaszában található. Tekintse meg a jelen dokumentum egyes vezérlők szakaszát, amelyből megtudhatja, hogy mely események vannak használatban a vezérlőben.
 
 A vezérlő elem a következő 10 attribútumot tartalmazhatja:
 
-- **Név** : Ez a vezérlő neve. A vezérlőelemek nevének az egyes paneleken belül egyedinek kell lennie. Ez egy kötelező, karakterlánc típusú attribútum.
+- **Név**: Ez a vezérlő neve. A vezérlőelemek nevének az egyes paneleken belül egyedinek kell lennie. Ez egy kötelező, karakterlánc típusú attribútum.
 
-- **TypeName** : ez az attribútum határozza meg, hogy milyen típusú vezérlő van. Ez egy kötelező, karakterlánc típusú attribútum. Tekintse meg a jelen dokumentum egyes vezérlők szakaszát minden egyes vezérlőelem nevénél.
+- **TypeName**: ez az attribútum határozza meg, hogy milyen típusú vezérlő van. Ez egy kötelező, karakterlánc típusú attribútum. Tekintse meg a jelen dokumentum egyes vezérlők szakaszát minden egyes vezérlőelem nevénél.
 
-- **Felirat** : ezt az attribútumot használhatja a vezérlő feliratának felvételéhez. A felirat általában a vezérlőelem által megjelenített vagy beléptetésre kerülő adatmegjelenített név. Explicit módon megadhatja a felirat értékét, vagy megadhatja azt a séma attribútum megjelenítendő neve információval. A felirat a normál méretű vezérlőelem bal szélső oldalán jelenik meg. Ha egy vezérlőelem a teljes képernyőre kiterjed, megjelenik a felirat a vezérlőn. Ez egy opcionális, karakterlánc típusú attribútum. További információ az adatforrások attribútummal vagy tulajdonság értékkel való kötéséről: Properties (Tulajdonságok) szakasz.
+- **Felirat**: ezt az attribútumot használhatja a vezérlő feliratának felvételéhez. A felirat általában a vezérlőelem által megjelenített vagy beléptetésre kerülő adatmegjelenített név. Explicit módon megadhatja a felirat értékét, vagy megadhatja azt a séma attribútum megjelenítendő neve információval. A felirat a normál méretű vezérlőelem bal szélső oldalán jelenik meg. Ha egy vezérlőelem a teljes képernyőre kiterjed, megjelenik a felirat a vezérlőn. Ez egy opcionális, karakterlánc típusú attribútum. További információ az adatforrások attribútummal vagy tulajdonság értékkel való kötéséről: Properties (Tulajdonságok) szakasz.
 
     Az alábbi példa azt szemlélteti, hogyan lehet explicit módon használni a feliratokat:
 
@@ -461,11 +461,11 @@ A vezérlő elem a következő 10 attribútumot tartalmazhatja:
     <my:Control my:Name="DynamicAlias" my:TypeName="UocTextBox" my:Caption="{Binding Source=schema, Path=Alias.DisplayName, Mode=OneWay}">…<my:Control/>
     ```
 
-- **Engedélyezve** : ez egy nem kötelező, logikai típusú attribútum. Ha ezt az attribútumot hamis értékre állítja, akkor a felhasználó letilthatja a vezérlőt. Az alapértelmezett érték TRUE (igaz).
+- **Engedélyezve**: ez egy nem kötelező, logikai típusú attribútum. Ha ezt az attribútumot hamis értékre állítja, akkor a felhasználó letilthatja a vezérlőt. Az alapértelmezett érték TRUE (igaz).
 
-- **Látható** : ez egy nem kötelező, logikai típusú attribútum. Ez az attribútum a teljes vezérlő elrejtésére használható. Az alapértelmezett érték TRUE (igaz).
+- **Látható**: ez egy nem kötelező, logikai típusú attribútum. Ez az attribútum a teljes vezérlő elrejtésére használható. Az alapértelmezett érték TRUE (igaz).
 
-- **Leírás** : használja ezt a nem kötelező karakterlánc-attribútumot, hogy tartalmazzon egy leírást, amely segít a végfelhasználónak megérteni, hogy mit kell tenni a vezérlőben, vagy mi a vezérlő. Explicit módon megadhatja a Leírás értékét, vagy összekapcsolhatja azt a séma attribútumának leírási adataival.
+- **Leírás**: használja ezt a nem kötelező karakterlánc-attribútumot, hogy tartalmazzon egy leírást, amely segít a végfelhasználónak megérteni, hogy mit kell tenni a vezérlőben, vagy mi a vezérlő. Explicit módon megadhatja a Leírás értékét, vagy összekapcsolhatja azt a séma attribútumának leírási adataival.
 
     A leírás egy normál méretű vezérlőelem bal szélső oldalán jelenik meg a felirat alatt. Ha egy vezérlőelem a teljes képernyőre kiterjed, a leírás megjelenik a vezérlő tetején a felirat alatt. Az adatforrások attribútummal vagy tulajdonsággal való kötésével kapcsolatos információkért tekintse meg a jelen dokumentum tulajdonságok szakaszát.
 
@@ -475,23 +475,23 @@ A vezérlő elem a következő 10 attribútumot tartalmazhatja:
     <my:Control my:Name="ExplicitAlias" my:TypeName="UocTextBox" my:Caption="Explicit Alias" my:Description="This is explicit description.">…<my:Control/>
     ```
 
-    Ez a példa azt szemlélteti, hogyan használható a leírás egy adatforrással. Ha a dokumentumban korábban bemutatott adatforrás sablonját használta, az adatforrás **séma** . Javasoljuk, hogy az attribútum **leírását** egy Description attribútummal kösse.
+    Ez a példa azt szemlélteti, hogyan használható a leírás egy adatforrással. Ha a dokumentumban korábban bemutatott adatforrás sablonját használta, az adatforrás **séma**. Javasoljuk, hogy az attribútum **leírását** egy Description attribútummal kösse.
 
     ```XML
     <my:Control my:Name="DynamicAlias" my:TypeName="UocTextBox" my:Caption="{Binding Source=schema, Path=Alias.DisplayName, Mode=OneWay}" my:Description="{Binding Source=schema, Path=Alias.Description, Mode=OneWay}">…<my:Control/>
     ```
 
-- **ExpandArea** : ez az attribútum azt jelzi, hogy a vezérlő a teljes képernyőre nyúlik-e. Ez egy nem kötelező, logikai típusú attribútum. Az alapértelmezett érték false (hamis).
+- **ExpandArea**: ez az attribútum azt jelzi, hogy a vezérlő a teljes képernyőre nyúlik-e. Ez egy nem kötelező, logikai típusú attribútum. Az alapértelmezett érték false (hamis).
 
     >[!NOTE]
     >A felirat és a Leírás attribútumok le vannak tiltva, ha az attribútum értéke TRUE (igaz). A UocLabel vezérlőelem használatával megadhatja a kibontott vezérlő feliratát.
     >
 
-- **Tipp** : ez egy opcionális, karakterlánc típusú attribútum. A hint attribútum szövege segít a végfelhasználónak eldönteni, hogy mi a vezérlőelem érvényes bemenete. A tipp megjelenik a vezérlő alatt.
+- **Tipp**: ez egy opcionális, karakterlánc típusú attribútum. A hint attribútum szövege segít a végfelhasználónak eldönteni, hogy mi a vezérlőelem érvényes bemenete. A tipp megjelenik a vezérlő alatt.
 
-- **AutoPostback** : ez egy nem kötelező, logikai típusú attribútum. Az alapértelmezett érték a hamis. Ha hamis értékre van állítva, akkor előfordulhat, hogy az oldal frissítése nem frissíti a vezérlőt. A AutoPostback-vel kapcsolatos információkért keresse meg a Microsoft ASP.NET UI Control tulajdonságát ugyanazon a néven.
+- **AutoPostback**: ez egy nem kötelező, logikai típusú attribútum. Az alapértelmezett érték a hamis. Ha hamis értékre van állítva, akkor előfordulhat, hogy az oldal frissítése nem frissíti a vezérlőt. A AutoPostback-vel kapcsolatos információkért keresse meg a Microsoft ASP.NET UI Control tulajdonságát ugyanazon a néven.
 
-- **RightsLevel** : ez egy opcionális, karakterlánc típusú attribútum. Ezt az attribútumot csak egy adatforrással rendelkező beágyazott jogokkal lehet kötni. A vezérlő dinamikusan be van kapcsolva vagy le van tiltva a felhasználó jogai alapján. További információ az adatforrások attribútummal vagy tulajdonság értékkel való kötéséről: a jelen dokumentum tulajdonságok szakasza.
+- **RightsLevel**: ez egy opcionális, karakterlánc típusú attribútum. Ezt az attribútumot csak egy adatforrással rendelkező beágyazott jogokkal lehet kötni. A vezérlő dinamikusan be van kapcsolva vagy le van tiltva a felhasználó jogai alapján. További információ az adatforrások attribútummal vagy tulajdonság értékkel való kötéséről: a jelen dokumentum tulajdonságok szakasza.
 
     Ez a példa azt szemlélteti, hogyan használható egy **RightsLevel** attribútum egy adatforrással. Ha a dokumentum korábbi részében bemutatott adatforrás sablonját használta, az adatforrás **jogosultságokat** tartalmaz. Használja az attribútum nevét elérési útnak.
     <!--- no example provided -->
@@ -521,9 +521,9 @@ Az egyes vezérlők viselkedésének további testreszabásához használhatja a
 
 Minden tulajdonsághoz a következő két kötelező attribútum tartozik:
 
-- **Név** : Ez a karakterlánc típusú attribútum a tulajdonság egyedi neve. A különböző vezérlők eltérő tulajdonságokkal rendelkeznek. Vannak olyan általános tulajdonságok, amelyeket az összes vezérlő használhat. Ha többet szeretne megtudni arról, hogy mely nevek érhetők el egy adott vezérlőelem esetében, tekintse meg a jelen dokumentum általános tulajdonságok és egyéni vezérlők szakaszát.
+- **Név**: Ez a karakterlánc típusú attribútum a tulajdonság egyedi neve. A különböző vezérlők eltérő tulajdonságokkal rendelkeznek. Vannak olyan általános tulajdonságok, amelyeket az összes vezérlő használhat. Ha többet szeretne megtudni arról, hogy mely nevek érhetők el egy adott vezérlőelem esetében, tekintse meg a jelen dokumentum általános tulajdonságok és egyéni vezérlők szakaszát.
 
-- **Érték** : Ez a tulajdonság értéke. Az érték adattípusa attól függ, hogy melyik tulajdonsághoz van hozzárendelve. Tekintse meg a következő szakaszt az adott tulajdonságok megengedett formátuma beállításnál.
+- **Érték**: Ez a tulajdonság értéke. Az érték adattípusa attól függ, hogy melyik tulajdonsághoz van hozzárendelve. Tekintse meg a következő szakaszt az adott tulajdonságok megengedett formátuma beállításnál.
 
 
 #### <a name="bind-property-with-data-source-content"></a>A kötés tulajdonsága az adatforrás tartalmával
@@ -561,7 +561,7 @@ Az alábbi XML-kód azt mutatja be, hogyan köthető egy adatforrás egy **tulaj
 
 Az ebben a dokumentumban megadott összes RCDC-vezérlő rendelkezhet az ebben a szakaszban ismertetett általános tulajdonságokkal. Ezeket a tulajdonságokat a különböző vezérlőkre jellemző egyéb tulajdonságokkal is használhatja.
 
-- **Kötelező** : Ez a tulajdonság azt jelzi, hogy a mező vagy kötelező mező vagy választható mező. Egy kötelező mezőt ki kell tölteni egy értékkel. A karakterlánc-bevitel nem támogatja az üres értéket. Egy nem kötelező mező üres maradhat. Ha ez a mező egy kötelezően kitöltendő értékkel rendelkező mező, a bemeneti vezérlő tetején egy hibaüzenet jelenik meg. Explicit módon megadhatja, hogy egy mező kötelező vagy nem kötelező. A mezőt egy attribútum és egy erőforrástípus közötti adott kötés sémájának adataival is összekapcsolhatja. Alapértelmezés szerint, ha ez a tulajdonság hiányzik, az azt jelenti, hogy a vezérlő egy opcionális beviteli vezérlő.
+- **Kötelező**: Ez a tulajdonság azt jelzi, hogy a mező vagy kötelező mező vagy választható mező. Egy kötelező mezőt ki kell tölteni egy értékkel. A karakterlánc-bevitel nem támogatja az üres értéket. Egy nem kötelező mező üres maradhat. Ha ez a mező egy kötelezően kitöltendő értékkel rendelkező mező, a bemeneti vezérlő tetején egy hibaüzenet jelenik meg. Explicit módon megadhatja, hogy egy mező kötelező vagy nem kötelező. A mezőt egy attribútum és egy erőforrástípus közötti adott kötés sémájának adataival is összekapcsolhatja. Alapértelmezés szerint, ha ez a tulajdonság hiányzik, az azt jelenti, hogy a vezérlő egy opcionális beviteli vezérlő.
 
     A következő példa egy explicit értéket használ ehhez a tulajdonsághoz:
 
@@ -575,9 +575,9 @@ Az ebben a dokumentumban megadott összes RCDC-vezérlő rendelkezhet az ebben a
     <my:Property my:Name="Required" my:Value="{Binding Source=schema, Path=DisplayName.Required}"/>
     ```
 
-- **Readonly** : Ha ezt a tulajdonságot igaz értékre állítja, a végfelhasználó csak olvasható módban tudja megtapasztalni a vezérlőt. Ez egy nem kötelező, logikai típusú attribútum. Az alapértelmezett érték false (hamis). Előfordulhat azonban, hogy a tulajdonság viselkedését felülírja a felhasználó által a vezérlővel kötött adatkötések típusa. Ha például egy felhasználó nem rendelkezik a mező frissítéséhez szükséges jogosultságokkal, és a mező beágyazott jogokkal van kötve, a felhasználó csak olvasható módban látja el az adattípust, még ha ez a tulajdonság hamis értékre van állítva.
+- **Readonly**: Ha ezt a tulajdonságot igaz értékre állítja, a végfelhasználó csak olvasható módban tudja megtapasztalni a vezérlőt. Ez egy nem kötelező, logikai típusú attribútum. Az alapértelmezett érték false (hamis). Előfordulhat azonban, hogy a tulajdonság viselkedését felülírja a felhasználó által a vezérlővel kötött adatkötések típusa. Ha például egy felhasználó nem rendelkezik a mező frissítéséhez szükséges jogosultságokkal, és a mező beágyazott jogokkal van kötve, a felhasználó csak olvasható módban látja el az adattípust, még ha ez a tulajdonság hamis értékre van állítva.
 
-- **Válaszban** : Ez a tulajdonság határozza meg a vezérlő értékére vonatkozó korlátozásokat. A tulajdonságérték formátuma a .NET StringRegex standard által támogatott formátumok. További információ: .net- [keretrendszer reguláris kifejezések](http://go.microsoft.com/fwlink/?LinkId=165361). Ha a vezérlő egy érték beírására szolgál, akkor a rendszer a tulajdonságban megadott korlátozás szerint ellenőrzi az értéket, amikor a felhasználó az aktuális oldal elhagyását kísérli meg. A hibaüzenet a vezérlő azon felül jelenik meg, amely érvénytelen bemenettel rendelkezik. A felhasználó explicit módon megadhat egy sztring reguláris kifejezést. A felhasználó az adott attribútum sémájának adataival is köthető. Alapértelmezés szerint, ha ez a tulajdonság hiányzik, az azt jelenti, hogy a vezérlő nem ellenőrzi a bemeneti karakterláncok korlátozásait.
+- **Válaszban**: Ez a tulajdonság határozza meg a vezérlő értékére vonatkozó korlátozásokat. A tulajdonságérték formátuma a .NET StringRegex standard által támogatott formátumok. További információ: .net- [keretrendszer reguláris kifejezések](https://go.microsoft.com/fwlink/?LinkId=165361). Ha a vezérlő egy érték beírására szolgál, akkor a rendszer a tulajdonságban megadott korlátozás szerint ellenőrzi az értéket, amikor a felhasználó az aktuális oldal elhagyását kísérli meg. A hibaüzenet a vezérlő azon felül jelenik meg, amely érvénytelen bemenettel rendelkezik. A felhasználó explicit módon megadhat egy sztring reguláris kifejezést. A felhasználó az adott attribútum sémájának adataival is köthető. Alapértelmezés szerint, ha ez a tulajdonság hiányzik, az azt jelenti, hogy a vezérlő nem ellenőrzi a bemeneti karakterláncok korlátozásait.
 
     A következő példa egy explicit értéket használ ehhez a tulajdonsághoz:
 
@@ -591,7 +591,7 @@ Az ebben a dokumentumban megadott összes RCDC-vezérlő rendelkezhet az ebben a
     <my:Property my:Name="RegularExpression" my:Value="{Binding Source=schema, Path=Alias.StringRegex, Mode=OneWay}"/>
     ```
 
-- **Látható** : ez egy nem kötelező, logikai típusú attribútum. Ez az attribútum a teljes vezérlő elrejtésére használható. Az alapértelmezett érték TRUE (igaz).
+- **Látható**: ez egy nem kötelező, logikai típusú attribútum. Ez az attribútum a teljes vezérlő elrejtésére használható. Az alapértelmezett érték TRUE (igaz).
 
 
 <h3 id="options-element">Beállítások elem</h3>
@@ -623,11 +623,11 @@ A következő XSD-séma a Options elemhez tartozik:
 
 A **Options** elem a következő tulajdonságokkal rendelkezik:
 
-- **Érték** : Ez a karakterlánc típusú kötelező attribútum. Az Value attribútumnak egyedinek kell lennie az adott vezérlőn belül. Csak A – Z, kis-és nagybetűket nem megkülönböztető karakterek használhatók.
+- **Érték**: Ez a karakterlánc típusú kötelező attribútum. Az Value attribútumnak egyedinek kell lennie az adott vezérlőn belül. Csak A – Z, kis-és nagybetűket nem megkülönböztető karakterek használhatók.
 
-- **Caption** : Ez a kötelező attribútum az egyes lehetőségek megjelenítendő neve.
+- **Caption**: Ez a kötelező attribútum az egyes lehetőségek megjelenítendő neve.
 
-- **Tipp** : ez egy opcionális attribútum. Ezzel az attribútummal további információkat és tippeket adhat a végfelhasználónak.
+- **Tipp**: ez egy opcionális attribútum. Ezzel az attribútummal további információkat és tippeket adhat a végfelhasználónak.
 
 
 ## <a name="environment-variables"></a>Környezeti változók
@@ -646,7 +646,7 @@ A következő környezeti változók bármelyik RCDC-konfigurációban használh
 
 ## <a name="debug-xml-configuration-files"></a>XML-konfigurációs fájlok hibakeresése
 
-Ha egy RCDC XML-konfigurációs fájljait fejleszt vagy módosít, a hibák csökkentése érdekében az XML-fájlnak az XSD-fájlokkal való érvényesítését egy szerkesztővel, például a Microsoft Visual Studio használatával végezheti el. További információ: [Bevezetés a Visual Studio 2005-es XML-eszközeibe](http://go.microsoft.com/fwlink/?LinkID=74512).
+Ha egy RCDC XML-konfigurációs fájljait fejleszt vagy módosít, a hibák csökkentése érdekében az XML-fájlnak az XSD-fájlokkal való érvényesítését egy szerkesztővel, például a Microsoft Visual Studio használatával végezheti el. További információ: [Bevezetés a Visual Studio 2005-es XML-eszközeibe](https://go.microsoft.com/fwlink/?LinkID=74512).
 
 
 ## <a name="customize-help-files"></a>Súgófájlok testreszabása
@@ -657,7 +657,7 @@ Ha új erőforrásokat és attribútumokat hoz létre, érdemes lehet frissíten
 >A HTML formázási és szerkesztési alapjaival kapcsolatos információkat ebben a cikkben nem találja. A felhasználóknak ismerniük kell a HTML-fájlok szerkesztésének módját.
 
 ### <a name="location-of-help-files"></a>Súgófájlok helye
-A Microsoft Identity Management 2016 SP1 portál összes súgófájl a Rendszerfelügyeleti `<ProgramFiles>\Common Files\Microsoft Shared\Web Server Extensions\12\Template\Layouts\MSILM2\Help\1033\html` webszolgáltatások kiszolgálójának mappájában található.
+A Microsoft Identity Manager 2016 SP1 portálhoz tartozó összes súgófájl a `<ProgramFiles>\Common Files\Microsoft Shared\Web Server Extensions\12\Template\Layouts\MSILM2\Help\1033\html` fakiszolgálói szolgáltatás kiszolgálóján lévő mappában található.
 
 ### <a name="locate-a-specific-help-file"></a>Egy adott súgófájl megkeresése
 A FIM-portál összes súgófájl egy globálisan egyedi azonosítóval (GUID) van elnevezve. Az egyéni erőforrás helyes fájljának megkeresése:
@@ -779,21 +779,21 @@ Ez a szakasz a Microsoft Identity Manager 2016 SP1 által biztosított egyes vez
 
 ### <a name="uocbutton"></a>UocButton
 
-**Név** : UocButton
+**Név**: UocButton
 
-**Leírás** : ez egy egyszerű gomb vezérlőelem, amely bizonyos műveletek elindítására használható. Mivel azonban nem adhatja meg a saját kezelőjét, a vezérlő használata korlátozott.
+**Leírás**: ez egy egyszerű gomb vezérlőelem, amely bizonyos műveletek elindítására használható. Mivel azonban nem adhatja meg a saját kezelőjét, a vezérlő használata korlátozott.
 
-**Tulajdonságok** :
+**Tulajdonságok**:
 
 - Az összes gyakori tulajdonság: ezekkel a tulajdonságokkal kapcsolatban lásd: <a href="#common-properties">Általános tulajdonságok</a>.
 
-- **Text** : Ez a tulajdonság határozza meg a gombon megjelenő szöveget. Ez egy opcionális, karakterlánc típusú attribútum. A szöveg egy explicit karakterlánc-értéket vesz fel.
+- **Text**: Ez a tulajdonság határozza meg a gombon megjelenő szöveget. Ez egy opcionális, karakterlánc típusú attribútum. A szöveg egy explicit karakterlánc-értéket vesz fel.
 
-**Események** :
+**Események**:
 
-- **OnButtonClicked** : az esemény a gombra kattintáskor lesz kibocsátva.
+- **OnButtonClicked**: az esemény a gombra kattintáskor lesz kibocsátva.
 
-**Példa** :
+**Példa**:
 
 ![UocButton-vezérlő](media/rcd-configuration-xml-reference/image017.png)
 
@@ -814,27 +814,27 @@ my:Hint="Click the button">
 
 ### <a name="uoccaptioncontrol"></a>UocCaptionControl
 
-**Név** : UocCaptionControl
+**Név**: UocCaptionControl
 
-**Leírás** : Ez a vezérlő egy RCDC lap feliratának megjelenítésére szolgál. Ez a vezérlő csak egyetlen vezérlőelemként használható a fejlécek csoportosításában. Ha más kontextusban használja, a renderelési problémákat vagy a portál hibáját okozhatja.
+**Leírás**: Ez a vezérlő egy RCDC lap feliratának megjelenítésére szolgál. Ez a vezérlő csak egyetlen vezérlőelemként használható a fejlécek csoportosításában. Ha más kontextusban használja, a renderelési problémákat vagy a portál hibáját okozhatja.
 
-**Mód** : csak olvasható (egyirányú szűrési)
+**Mód**: csak olvasható (egyirányú szűrési)
 
-**Tulajdonságok** :
+**Tulajdonságok**:
 
 - Az összes gyakori tulajdonság: ezekkel a tulajdonságokkal kapcsolatban lásd: <a href="#common-properties">Általános tulajdonságok</a>.
 
 - **MaxHeight:** Ez a tulajdonság határozza meg az ikon maximális magasságát a felirat szakaszban. Ez a tulajdonság nem kötelező. Ez a tulajdonság képpontban egész értéket vesz fel. Az alapértelmezett érték 32 képpont.
 
-**Események** :
+**Események**:
 
 - Nincsenek események ehhez a vezérlőhöz.
 
-**Példa** :
+**Példa**:
 
 ![UocCaptionControl-vezérlő](media/rcd-configuration-xml-reference/image020.jpg)
 
-A következő kódrészlet létrehoz egy **fejléc feliratot** :
+A következő kódrészlet létrehoz egy **fejléc feliratot**:
 
 ```
 <!--Sample header caption control-->
@@ -870,28 +870,28 @@ A következő kódrészlet a **megjelenítendő név** dinamikus feliratát hozz
 
 ### <a name="uoccheckbox"></a>UocCheckBox
 
-**Név** : UocCheckBox
+**Név**: UocCheckBox
 
-**Leírás** : ez egy egyszerű jelölőnégyzetes vezérlő. Azt javasoljuk, hogy a felhasználó a vezérlőt logikai típusú adattípussal kösse. Ez a vezérlő csak olvasható vezérlőelemként vagy frissíthető vezérlőelemként használható a-hez kötődő információk alapján.
+**Leírás**: ez egy egyszerű jelölőnégyzetes vezérlő. Azt javasoljuk, hogy a felhasználó a vezérlőt logikai típusú adattípussal kösse. Ez a vezérlő csak olvasható vezérlőelemként vagy frissíthető vezérlőelemként használható a-hez kötődő információk alapján.
 
 >[!NOTE]
->Ebben a kiadásban, ha a jelölőnégyzet vezérlőelemet használja a szerkesztési módban egy logikai attribútum megjelenítéséhez, ha az attribútumhoz korábban nincs hozzárendelve érték, akkor az erőforrás-vezérlő **hamis** értéket ad hozzá az attribútumhoz, amikor az **OK gombra** kattint a szerkesztési módban. A következő lépésekkel mindig létrehozhat egy logikai attribútumot, amely azt feltételezi, hogy a nem létező érték megegyezik a **Hamis értékkel** , vagy más vezérlők, például egy választógomb használata a logikai attribútumok esetében.
+>Ebben a kiadásban, ha a jelölőnégyzet vezérlőelemet használja a szerkesztési módban egy logikai attribútum megjelenítéséhez, ha az attribútumhoz korábban nincs hozzárendelve érték, akkor az erőforrás-vezérlő **hamis** értéket ad hozzá az attribútumhoz, amikor az **OK gombra** kattint a szerkesztési módban. A következő lépésekkel mindig létrehozhat egy logikai attribútumot, amely azt feltételezi, hogy a nem létező érték megegyezik a **Hamis értékkel**, vagy más vezérlők, például egy választógomb használata a logikai attribútumok esetében.
 
-**Tulajdonságok** :
+**Tulajdonságok**:
 
 - Az összes gyakori tulajdonság: ezekkel a tulajdonságokkal kapcsolatban lásd: <a href="#common-properties">Általános tulajdonságok</a>.
 
-- **DefaultValue** : ez egy nem kötelező, logikai típusú tulajdonság. Az alapértelmezett érték false (hamis). Ez a mező a jelölőnégyzet alapértelmezett viselkedését határozza meg. Ezt explicit módon megadhatja.
+- **DefaultValue**: ez egy nem kötelező, logikai típusú tulajdonság. Az alapértelmezett érték false (hamis). Ez a mező a jelölőnégyzet alapértelmezett viselkedését határozza meg. Ezt explicit módon megadhatja.
 
-- **Bejelölve** : ez egy nem kötelező, logikai típusú tulajdonság. Az alapértelmezett érték false (hamis). Ez az érték felülírja a DefaultValue tulajdonságot, ha az a DefaultValue értékkel együtt szerepel. Ez a mező a jelölőnégyzet viselkedését határozza meg. A DefaultValue-hez hasonlóan ez explicit módon vagy a kiszolgálóról származó adatokkal is megadható.
+- **Bejelölve**: ez egy nem kötelező, logikai típusú tulajdonság. Az alapértelmezett érték false (hamis). Ez az érték felülírja a DefaultValue tulajdonságot, ha az a DefaultValue értékkel együtt szerepel. Ez a mező a jelölőnégyzet viselkedését határozza meg. A DefaultValue-hez hasonlóan ez explicit módon vagy a kiszolgálóról származó adatokkal is megadható.
 
-- **Text** : ez egy opcionális, karakterlánc típusú attribútum. A szöveg a jelölőnégyzet jobb oldalán jelenik meg. Ezzel a tulajdonsággal adhat meg olyan szöveget, amely további információkat biztosít a végfelhasználó számára.
+- **Text**: ez egy opcionális, karakterlánc típusú attribútum. A szöveg a jelölőnégyzet jobb oldalán jelenik meg. Ezzel a tulajdonsággal adhat meg olyan szöveget, amely további információkat biztosít a végfelhasználó számára.
 
-**Események** :
+**Események**:
 
-- **CheckedChanged** : Ha a jelölőnégyzet állapota megváltozik, az eseményt a rendszer kibocsátja.
+- **CheckedChanged**: Ha a jelölőnégyzet állapota megváltozik, az eseményt a rendszer kibocsátja.
 
-**Példa** :
+**Példa**:
 
 A következő példában egyéni kötés jön létre az egyéni erőforrástípus és a **IsConfigurationType** attribútum között. Az XML az egyéni erőforrástípus RCDC van használatban.
 
@@ -913,25 +913,25 @@ A következő kódrészlet **dinamikus jelölőnégyzetet** hoz létre, ahogy az
 
 ### <a name="uoccommonmultivaluecontrol"></a>UocCommonMultiValueControl
 
-**Név** : UocCommonMultiValueControl
+**Név**: UocCommonMultiValueControl
 
-**Leírás** : ez egy többsoros szövegbeviteli vezérlőelem, amely támogatja a speciális karakterlánc-formázást. A többértékű bejegyzések között minden érték pontosvesszővel van elválasztva egymástól (;) vagy egy sortörés a szövegmezőben. Javasoljuk, hogy a vezérlőt a többértékű, a rövid karakterlánc és az egész szám típusú adatmennyiséggel társítsa. Ez a vezérlő a írásvédett és a frissíthető módot is támogatja.
+**Leírás**: ez egy többsoros szövegbeviteli vezérlőelem, amely támogatja a speciális karakterlánc-formázást. A többértékű bejegyzések között minden érték pontosvesszővel van elválasztva egymástól (;) vagy egy sortörés a szövegmezőben. Javasoljuk, hogy a vezérlőt a többértékű, a rövid karakterlánc és az egész szám típusú adatmennyiséggel társítsa. Ez a vezérlő a írásvédett és a frissíthető módot is támogatja.
 
-**Tulajdonságok** :
+**Tulajdonságok**:
 
 - Az összes gyakori tulajdonság: ezekkel a tulajdonságokkal kapcsolatban lásd: <a href="#common-properties">Általános tulajdonságok</a>.
 
-- **Adattípus** : ez egy kötelező, karakterlánc típusú attribútum. Ezt **karakterláncként, egész számként** vagy **datetime** típusúként is megadhatja. Az attribútum a Schema attribútum **adattípus** tulajdonságával is köthető. A többértékű hivatkozási típust a **UOCListView** vagy a **UOCIdentityPicker** kezelheti. A többértékű logikai érték nem támogatott adattípusú.
+- **Adattípus**: ez egy kötelező, karakterlánc típusú attribútum. Ezt **karakterláncként, egész számként** vagy **datetime** típusúként is megadhatja. Az attribútum a Schema attribútum **adattípus** tulajdonságával is köthető. A többértékű hivatkozási típust a **UOCListView** vagy a **UOCIdentityPicker** kezelheti. A többértékű logikai érték nem támogatott adattípusú.
 
-- **Sorok** : ez egy opcionális, integer típusú attribútum. Megadhatja a mező magasságát a karakterek számában. Az alapértelmezett érték értéke 1.
+- **Sorok**: ez egy opcionális, integer típusú attribútum. Megadhatja a mező magasságát a karakterek számában. Az alapértelmezett érték értéke 1.
 
-- **Oszlopok** : ez egy opcionális, egész típusú attribútum. Megadhatja, hogy a mező hány széles legyen a karakterek számában. Az alapértelmezett érték 20.
+- **Oszlopok**: ez egy opcionális, egész típusú attribútum. Megadhatja, hogy a mező hány széles legyen a karakterek számában. Az alapértelmezett érték 20.
 
-- **Érték** : ez egy opcionális, karakterlánc típusú attribútum. Ezt az attribútumot csak adatforrással lehet kötni.
+- **Érték**: ez egy opcionális, karakterlánc típusú attribútum. Ezt az attribútumot csak adatforrással lehet kötni.
 
-**Események** :
+**Események**:
 
-- **ValueListChanged** : ez az esemény akkor aktiválódik, ha a vezérlő aktuális értéke megváltozik.
+- **ValueListChanged**: ez az esemény akkor aktiválódik, ha a vezérlő aktuális értéke megváltozik.
 
 **Példa**
 
@@ -958,30 +958,30 @@ A következő kódrészlet egy **UocCommonMultiValueControl** vezérlőt hoz lé
 
 ### <a name="uocdatetimecontrol"></a>UocDateTimeControl
 
-**Név** : UocDateTimeControl
+**Név**: UocDateTimeControl
 
-**Leírás** : Ez hasonló a szövegmező vezérlőelemhez, de a **Leírás** csak egy bizonyos formátumot fogad el. A csak olvasható módban úgy tűnik, mint egy címkét. A támogatott bemeneti karakterlánc formátuma a jelen szakasz **DateTimeFormat** tulajdonságában található.
+**Leírás**: Ez hasonló a szövegmező vezérlőelemhez, de a **Leírás** csak egy bizonyos formátumot fogad el. A csak olvasható módban úgy tűnik, mint egy címkét. A támogatott bemeneti karakterlánc formátuma a jelen szakasz **DateTimeFormat** tulajdonságában található.
 
-**Tulajdonságok** :
+**Tulajdonságok**:
 
 - Az összes gyakori tulajdonság: ezekkel a tulajdonságokkal kapcsolatban lásd: <a href="#common-properties">Általános tulajdonságok</a>.
 
-- **DateTimeFormat** : ez egy opcionális, karakterlánc típusú attribútum. A támogatott formátumok a **datetime** és a **DateOnly** . Az alapértelmezett érték a **datetime** formátumra van beállítva.
+- **DateTimeFormat**: ez egy opcionális, karakterlánc típusú attribútum. A támogatott formátumok a **datetime** és a **DateOnly**. Az alapértelmezett érték a **datetime** formátumra van beállítva.
 
-  - **Datetime** : az attribútum formátuma HH/NN/ÉÉÉÉ óó: PP: SS am.
-  - **DateOnly** : az attribútum hh/nn/éééé formátumban van formázva.
+  - **Datetime**: az attribútum formátuma HH/NN/ÉÉÉÉ óó: PP: SS am.
+  - **DateOnly**: az attribútum hh/nn/éééé formátumban van formázva.
 
     >[!NOTE]
     >A **datetime** és a **DateOnly** formátum is támogatott, függetlenül attól, hogy melyik felhasználó adta meg a különbséget.
     >
 
-- **Érték** : ez egy opcionális, karakterlánc típusú attribútum. Ezt az attribútumot erőforrás-adatforráshoz kell kötni. Ennek az attribútumnak az értékének a megfelelő datetime formátumnak kell megfelelnie.
+- **Érték**: ez egy opcionális, karakterlánc típusú attribútum. Ezt az attribútumot erőforrás-adatforráshoz kell kötni. Ennek az attribútumnak az értékének a megfelelő datetime formátumnak kell megfelelnie.
 
-**Események** :
+**Események**:
 
-- **DateTimeChanged** : a DateTime érték megváltozásakor az esemény következik be.
+- **DateTimeChanged**: a DateTime érték megváltozásakor az esemény következik be.
 
-**Példa** :
+**Példa**:
 
 ![UocDateTimeControl-vezérlő](media/rcd-configuration-xml-reference/image027.jpg)
 
@@ -1014,39 +1014,39 @@ A következő kódrészlet a második **datetime** vezérlőt állítja elő. Ha
 
 ### <a name="uocdropdownlist"></a>UocDropDownList
 
-**Név** : UocDropDownList
+**Név**: UocDropDownList
 
-**Leírás** : ez egy egyszerű legördülő lista vezérlőelem. Ezzel a vezérlővel választhatók ki a lehetőségek egy meghatározott készletből. A vezérlőhöz tartozó string, Integer, datetime és Boolean adattípusok megfelelő jelöltek.
+**Leírás**: ez egy egyszerű legördülő lista vezérlőelem. Ezzel a vezérlővel választhatók ki a lehetőségek egy meghatározott készletből. A vezérlőhöz tartozó string, Integer, datetime és Boolean adattípusok megfelelő jelöltek.
 
-**Tulajdonságok** :
+**Tulajdonságok**:
 
 - Az összes gyakori tulajdonság: ezekkel a tulajdonságokkal kapcsolatban lásd: <a href="#common-properties">Általános tulajdonságok</a>.
 
-- **ValuePath** : az Value attribútum ItemSource-ből való beolvasására szolgáló tulajdonság. Ha a ItemSource egyéniként van megadva, az érték elérési útja értékre van állítva. A beállítás elemében lévő Value (érték) mezővel kötődik, az ebben a szakaszban leírtak szerint.
+- **ValuePath**: az Value attribútum ItemSource-ből való beolvasására szolgáló tulajdonság. Ha a ItemSource egyéniként van megadva, az érték elérési útja értékre van állítva. A beállítás elemében lévő Value (érték) mezővel kötődik, az ebben a szakaszban leírtak szerint.
 
-- **CaptionPath** : az Value attribútum ItemSource-ből való beolvasására szolgáló tulajdonság. Ha a ItemSource egyéniként van megadva, az érték elérési útja felirat. A beállítás elem Caption mezőjéhez kötődik, az ebben a szakaszban leírtak szerint.
+- **CaptionPath**: az Value attribútum ItemSource-ből való beolvasására szolgáló tulajdonság. Ha a ItemSource egyéniként van megadva, az érték elérési útja felirat. A beállítás elem Caption mezőjéhez kötődik, az ebben a szakaszban leírtak szerint.
 
-- **HintPath** : az Value attribútum ItemSource-ből való beolvasására szolgáló tulajdonság. Ha a ItemSource egyéniként van megadva, az érték elérési útja a tipp. A beállítás elemében a tipp mezőhöz kötődik, az ebben a szakaszban leírtak szerint.
+- **HintPath**: az Value attribútum ItemSource-ből való beolvasására szolgáló tulajdonság. Ha a ItemSource egyéniként van megadva, az érték elérési útja a tipp. A beállítás elemében a tipp mezőhöz kötődik, az ebben a szakaszban leírtak szerint.
 
-- **ItemSource** : a listában szereplő választási lehetőségeket definiáló ListControlItems gyűjteménye. A felhasználó explicit módon beállíthatja ezt az egyéni értékre, és használhatja a kapcsoló elemet a jelen szakaszban leírtak szerint a karakterlánc értékének megadásához.
+- **ItemSource**: a listában szereplő választási lehetőségeket definiáló ListControlItems gyűjteménye. A felhasználó explicit módon beállíthatja ezt az egyéni értékre, és használhatja a kapcsoló elemet a jelen szakaszban leírtak szerint a karakterlánc értékének megadásához.
 
-- **SelectedValue** : a jelenleg kijelölt érték. Ez egy kötelező, karakterlánc típusú tulajdonság. Ezt a tulajdonságot az adatforrásból származó karakterlánc-adatok kötik.
+- **SelectedValue**: a jelenleg kijelölt érték. Ez egy kötelező, karakterlánc típusú tulajdonság. Ezt a tulajdonságot az adatforrásból származó karakterlánc-adatok kötik.
 
-**Események** :
+**Események**:
 
-- **SelectedIndexChanged** : az esemény akkor következik be, amikor a legördülő mezőben a kijelölés változik.
+- **SelectedIndexChanged**: az esemény akkor következik be, amikor a legördülő mezőben a kijelölés változik.
 
-**Beállítások** :
+**Beállítások**:
 
 Egy **Options** elem struktúrájához lásd: <a href="#options-element">Options elem</a>.
 
-- **Érték** : az egyetlen beállítási elem értéke bármely olyan sztring lehet, amely annak az adatforrásnak a érvényes bemenetét adja meg, amelyhez a vezérlő kötődik.
+- **Érték**: az egyetlen beállítási elem értéke bármely olyan sztring lehet, amely annak az adatforrásnak a érvényes bemenetét adja meg, amelyhez a vezérlő kötődik.
 
-- **Caption** : a felirat lehet bármilyen karakterlánc-érték.
+- **Caption**: a felirat lehet bármilyen karakterlánc-érték.
 
-- **Tipp** : a mutató bármilyen sztring lehet.
+- **Tipp**: a mutató bármilyen sztring lehet.
 
-**Példa** :
+**Példa**:
 
 ![UocDropDownList-vezérlő](media/rcd-configuration-xml-reference/image030.jpg)
 
@@ -1082,33 +1082,33 @@ A következő kódrészlet létrehoz egy legördülő listát:
 
 ### <a name="uocfiledownload"></a>UocFileDownload
 
-**Név** : UocFileDownload
+**Név**: UocFileDownload
 
-**Leírás** : Ez a vezérlő hiperhivatkozást tartalmaz. Ha a hiperhivatkozásra kattint, megjelenik a Windows Save file (fájl mentése) oldal. A felhasználó mentheti a fájlt a helyi meghajtóra. Az Open (Megnyitás) lehetőség akkor is támogatott, ha az Internet Explorer megjeleníti a fájlformátumot. A vezérlő használatára javasolt adattípusok a formázott karakterláncok (XML) és a bináris típusok.
+**Leírás**: Ez a vezérlő hiperhivatkozást tartalmaz. Ha a hiperhivatkozásra kattint, megjelenik a Windows Save file (fájl mentése) oldal. A felhasználó mentheti a fájlt a helyi meghajtóra. Az Open (Megnyitás) lehetőség akkor is támogatott, ha az Internet Explorer megjeleníti a fájlformátumot. A vezérlő használatára javasolt adattípusok a formázott karakterláncok (XML) és a bináris típusok.
 
 >[!NOTE]
 >Microsoft Identity Manager 2016 SP1 ezen kiadásában a felhasználónak be kell jelölnie az Internet Explorer ablakát, amelyben megnyitotta a fájlt, majd frissítenie kell a lapot. Az Internet Explorer ablakának frissítése után a felhasználó elindíthatja a letöltést, hogy mentse vagy nyissa meg újra ugyanazt a fájlt az eredeti ablakban.
 
-**Tulajdonságok** :
+**Tulajdonságok**:
 
 - Az összes gyakori tulajdonság: ezekkel a tulajdonságokkal kapcsolatban lásd: <a href="#common-properties">Általános tulajdonságok</a>.
 
-- **Text (szöveg** ): ez egy opcionális, karakterlánc típusú attribútum, amely meghatározza a hiperhivatkozás szövegét. A felhasználó meghatározhat egy explicit karakterláncot ehhez a tulajdonsághoz.
+- **Text (szöveg**): ez egy opcionális, karakterlánc típusú attribútum, amely meghatározza a hiperhivatkozás szövegét. A felhasználó meghatározhat egy explicit karakterláncot ehhez a tulajdonsághoz.
 
-- **Érték** : ez egy kötelező attribútum. Meghatározza az attribútum kötését azon a kiszolgálón, amelynek a tartalmát le szeretné tölteni.
+- **Érték**: ez egy kötelező attribútum. Meghatározza az attribútum kötését azon a kiszolgálón, amelynek a tartalmát le szeretné tölteni.
 
-- **PromptedFileName** : ez egy opcionális, karakterlánc típusú attribútum. Ez a fájl neve, amelyet a rendszer a letöltött fájl mentésekor javasol a felhasználó számára.
+- **PromptedFileName**: ez egy opcionális, karakterlánc típusú attribútum. Ez a fájl neve, amelyet a rendszer a letöltött fájl mentésekor javasol a felhasználó számára.
 
-- **ContentType** : ez egy kötelező, karakterlánc típusú attribútum. Ez az a fájltípus, amelyet az adatment. A szöveg vagy a bináris a két támogatott karakterlánc-beállítás. Ha ez a szöveg, a visszatérési érték hosszú sztringnek tekintendő. Ellenkező esetben a bináris esetében a visszatérési érték bájt []. Ha a szöveg be van jelölve, a felhasználó lehetőségként hozzáadhat egy utótagot a szöveg típusának megadásához. Például a Text/XML érvénytelen.
+- **ContentType**: ez egy kötelező, karakterlánc típusú attribútum. Ez az a fájltípus, amelyet az adatment. A szöveg vagy a bináris a két támogatott karakterlánc-beállítás. Ha ez a szöveg, a visszatérési érték hosszú sztringnek tekintendő. Ellenkező esetben a bináris esetében a visszatérési érték bájt []. Ha a szöveg be van jelölve, a felhasználó lehetőségként hozzáadhat egy utótagot a szöveg típusának megadásához. Például a Text/XML érvénytelen.
 
 >[!NOTE]
 >Ha az ehhez a vezérlőhöz kötött érték üres, a vezérlőből hiányzik a letöltési művelet elindítására szolgáló hivatkozás. Ennek az az oka, hogy semmi nem tölthető le.
 
-**Események** :
+**Események**:
 
 - Nincsenek események ehhez a vezérlőhöz.
 
-**Példa** :
+**Példa**:
 
 ![UocFileDownload-vezérlő](media/rcd-configuration-xml-reference/image035.png)
 
@@ -1133,30 +1133,30 @@ A következő kódrészlet egy fájl letöltésének vezérlőjét hozza létre:
 
 ### <a name="uocfileupload"></a>UocFileUpload
 
-**Név** : UocFileUpload
+**Név**: UocFileUpload
 
-**Leírás** : Ez a vezérlő egy szövegmezőt tartalmaz, amely megjeleníti a feltölteni kívánt helyi fájl helyét, a tallózási fájl gombot és a feltöltés gombot. Amikor a végfelhasználó rákattint egy Tallózás gombra, megjelenik egy Windows Open File (fájl megnyitása) ablak. A végfelhasználó kijelölhet egy fájlt a helyi meghajtón a feltöltéshez. Ha a fájl ki van választva, a fájl helye megjelenik a szövegmezőben. Ha a feltöltés gombra kattint, a rendszer feltölti a fájlt az ügyféloldali helyi adatforrásba. A fájl tartalma még nincs elküldve a kiszolgálónak. A vezérlő használatára javasolt adattípusok a következők: formázott karakterlánc (XML) vagy bináris típusok.
+**Leírás**: Ez a vezérlő egy szövegmezőt tartalmaz, amely megjeleníti a feltölteni kívánt helyi fájl helyét, a tallózási fájl gombot és a feltöltés gombot. Amikor a végfelhasználó rákattint egy Tallózás gombra, megjelenik egy Windows Open File (fájl megnyitása) ablak. A végfelhasználó kijelölhet egy fájlt a helyi meghajtón a feltöltéshez. Ha a fájl ki van választva, a fájl helye megjelenik a szövegmezőben. Ha a feltöltés gombra kattint, a rendszer feltölti a fájlt az ügyféloldali helyi adatforrásba. A fájl tartalma még nincs elküldve a kiszolgálónak. A vezérlő használatára javasolt adattípusok a következők: formázott karakterlánc (XML) vagy bináris típusok.
 
 >[!NOTE]
 >A feltöltési folyamatnak vagy az állapotnak nincs jele. Ha a fájl fel van töltve a helyi adatforrásba, a szövegmező törlődik.
 
-**Tulajdonságok** :
+**Tulajdonságok**:
 
 - Az összes gyakori tulajdonság: ezekkel a tulajdonságokkal kapcsolatban lásd: <a href="#common-properties">Általános tulajdonságok</a>.
 
-- **Érték** : ez egy kötelező attribútum. Meghatározza a séma attribútum kötését azon a kiszolgálón, amelyhez az adatfeltöltés történik.
+- **Érték**: ez egy kötelező attribútum. Meghatározza a séma attribútum kötését azon a kiszolgálón, amelyhez az adatfeltöltés történik.
 
-- **ContentType** : ez egy opcionális, karakterlánc típusú attribútum. Ez az adattípus, amelyet a fájl a kiszolgálón ment. Ezt beállíthatja szövegre vagy binárisra. Ha a tulajdonság hiányzik, az alapértelmezett érték a bináris.
+- **ContentType**: ez egy opcionális, karakterlánc típusú attribútum. Ez az adattípus, amelyet a fájl a kiszolgálón ment. Ezt beállíthatja szövegre vagy binárisra. Ha a tulajdonság hiányzik, az alapértelmezett érték a bináris.
 
-- **MaxFileSize** : ez egy opcionális, karakterlánc típusú attribútum. A MaxFileSize határozza meg, hogy mekkora méretű a feltöltött fájl mérete. Alapértelmezés szerint, ha a tulajdonság hiányzik, a maximális méret 1 megabájt (MB).
+- **MaxFileSize**: ez egy opcionális, karakterlánc típusú attribútum. A MaxFileSize határozza meg, hogy mekkora méretű a feltöltött fájl mérete. Alapértelmezés szerint, ha a tulajdonság hiányzik, a maximális méret 1 megabájt (MB).
 
-- **PromptedForNoValue** : ez egy opcionális, karakterlánc típusú attribútum. Meghatározza azt a szöveget, amely megjelenik a felhasználó számára, ha egy fájl feltöltése nem történik meg.
+- **PromptedForNoValue**: ez egy opcionális, karakterlánc típusú attribútum. Meghatározza azt a szöveget, amely megjelenik a felhasználó számára, ha egy fájl feltöltése nem történik meg.
 
-**Események** :
+**Események**:
 
-- **FileUploaded** : ez az esemény a fájl sikeres feltöltésekor lesz kibocsátva.
+- **FileUploaded**: ez az esemény a fájl sikeres feltöltésekor lesz kibocsátva.
 
-**Példa** :
+**Példa**:
 
 ![UocFileUpload-vezérlő](media/rcd-configuration-xml-reference/image040.png)
 
@@ -1179,29 +1179,29 @@ A következő kódrészlet létrehoz egy feltöltési vezérlőt:
 
 ### <a name="uocfilterbuilder"></a>UocFilterBuilder
 
-**Név** : UocFilterBuilder
+**Név**: UocFilterBuilder
 
-**Leírás** : ez egy összetett vezérlő, amely lehetővé teszi a felhasználó számára, hogy megjelenítse a 2016-es XPath-kifejezést. Egyes XPath-kifejezések nem támogatottak. A Filter Builder használatával kapcsolatos további információkért tekintse meg a Filter Builder súgóját.
+**Leírás**: ez egy összetett vezérlő, amely lehetővé teszi a felhasználó számára, hogy megjelenítse a 2016-es XPath-kifejezést. Egyes XPath-kifejezések nem támogatottak. A Filter Builder használatával kapcsolatos további információkért tekintse meg a Filter Builder súgóját.
 
-**Tulajdonságok** :
+**Tulajdonságok**:
 
 - Az összes gyakori tulajdonság: ezekkel a tulajdonságokkal kapcsolatban lásd: <a href="#common-properties">Általános tulajdonságok</a>.
 
-- **PermittedObjectTypes** : Ez a szűrő-szerkesztő SELECT utasításában megjelenítendő erőforrástípusok listáját határozza meg. A Filter Builder használatával kapcsolatos további információkért tekintse meg a Filter Builder súgóját. A karakterlánc a ResourceTypeA (ResourceTypeB) formátumban van, ahol minden erőforrástípus vesszővel elválasztva (",").
+- **PermittedObjectTypes**: Ez a szűrő-szerkesztő SELECT utasításában megjelenítendő erőforrástípusok listáját határozza meg. A Filter Builder használatával kapcsolatos további információkért tekintse meg a Filter Builder súgóját. A karakterlánc a ResourceTypeA (ResourceTypeB) formátumban van, ahol minden erőforrástípus vesszővel elválasztva (",").
 
-- **Érték** : ez az az érték, amellyel a Filter Builder jelenik meg. Csak a karakterlánc típusú, XPath-kifejezést tartalmazó kötések támogatottak. A Filter attribútum a vezérlő kötéséhez ajánlott attribútum.
+- **Érték**: ez az az érték, amellyel a Filter Builder jelenik meg. Csak a karakterlánc típusú, XPath-kifejezést tartalmazó kötések támogatottak. A Filter attribútum a vezérlő kötéséhez ajánlott attribútum.
 
-- **PreviewButtonVisible** : ez egy nem kötelező, logikai típusú tulajdonság. Ha ez a tulajdonság hamis értékre van állítva, a felhasználó nem lát egy előnézeti gombot. Az alapértelmezett érték TRUE (igaz). Ez a gomb a lista nézet vezérlőelemmel együtt használható egy XPath-kifejezés eredményeinek megtekintéséhez.
+- **PreviewButtonVisible**: ez egy nem kötelező, logikai típusú tulajdonság. Ha ez a tulajdonság hamis értékre van állítva, a felhasználó nem lát egy előnézeti gombot. Az alapértelmezett érték TRUE (igaz). Ez a gomb a lista nézet vezérlőelemmel együtt használható egy XPath-kifejezés eredményeinek megtekintéséhez.
 
-- **ExcludeGroupMembership** : ez egy logikai tulajdonság. Ha ez a tulajdonság TRUE (igaz) értékre van állítva, nem hozhat létre olyan szűrőt, amely \< hivatkozási attribútumot használ \> (például ResourceId) a \< Group objektum tagja \> . Más szóval, ha ez a tulajdonság TRUE (igaz) értékre van beállítva, nem hozhat létre olyan szűrőt, amely a csoporttagság könyvtárat használja.
+- **ExcludeGroupMembership**: ez egy logikai tulajdonság. Ha ez a tulajdonság TRUE (igaz) értékre van állítva, nem hozhat létre olyan szűrőt, amely a \<Reference Attribute\> (például ResourceId) protokollt használja \<Group object\> . Más szóval, ha ez a tulajdonság TRUE (igaz) értékre van beállítva, nem hozhat létre olyan szűrőt, amely a csoporttagság könyvtárat használja.
 
-- **PreviewButtonCaption** : ez egy opcionális karakterlánc. Ha a PreviewButtonVisible értéke TRUE (igaz), akkor ezzel a tulajdonsággal testreszabott szöveget adhat a gombnak. A szöveg megjelenik az előnézet gombon.
+- **PreviewButtonCaption**: ez egy opcionális karakterlánc. Ha a PreviewButtonVisible értéke TRUE (igaz), akkor ezzel a tulajdonsággal testreszabott szöveget adhat a gombnak. A szöveg megjelenik az előnézet gombon.
 
-**Események** :
+**Események**:
 
-- **OnFilterChanged** : ez az esemény akkor aktiválódik, amikor a Filter Builder tartalma megváltozik.
+- **OnFilterChanged**: ez az esemény akkor aktiválódik, amikor a Filter Builder tartalma megváltozik.
 
-**Példa** :
+**Példa**:
 
 ![UocFilterBuilder-vezérlő](media/rcd-configuration-xml-reference/image044.png)
 
@@ -1245,51 +1245,51 @@ Az alábbi mintakód egy UOCLabel vezérlőt, egy egyszerű PermittedObjectTypes
 
 ### <a name="uochtmlsummary"></a>UocHtmlSummary
 
-**Név** : UocHtmlSummary
+**Név**: UocHtmlSummary
 
-**Leírás** : ezzel a vezérlőelemmel definiálhat egy összegző lapot egy RCDC-oldalon. Ez az összefoglaló lap akkor jelenik meg, ha a végfelhasználó kérelmet küld. Ez a vezérlő csak összegző csoportosításban használható, és csak az egyetlen vezérlő lehet. Erősen ajánlott a megadott mintakód használata.
+**Leírás**: ezzel a vezérlőelemmel definiálhat egy összegző lapot egy RCDC-oldalon. Ez az összefoglaló lap akkor jelenik meg, ha a végfelhasználó kérelmet küld. Ez a vezérlő csak összegző csoportosításban használható, és csak az egyetlen vezérlő lehet. Erősen ajánlott a megadott mintakód használata.
 
 >[!NOTE]
 >A vezérlőt nem tesztelték széles körben.
 
-**Tulajdonságok** :
+**Tulajdonságok**:
 
 - Az összes gyakori tulajdonság: ezekkel a tulajdonságokkal kapcsolatban lásd: <a href="#common-properties">Általános tulajdonságok</a>.
 
-- **ModificationsXml** : ezt a tulajdonságot {Binding Source = Delta, Path = DeltaXml} formátumban kell megadni, ahol a különbözet a ObjectDataSource konfigurációs fejlécében van definiálva.
+- **ModificationsXml**: ezt a tulajdonságot {Binding Source = Delta, Path = DeltaXml} formátumban kell megadni, ahol a különbözet a ObjectDataSource konfigurációs fejlécében van definiálva.
 
-- **TransformXsl** : Ez a tulajdonság {Binding Source = SummaryTransformXsl, Path =/} formátumban van formázva, ahol a SummaryTransformXsl a XmlDataSource konfigurációs fejlécében van definiálva.
+- **TransformXsl**: Ez a tulajdonság {Binding Source = SummaryTransformXsl, Path =/} formátumban van formázva, ahol a SummaryTransformXsl a XmlDataSource konfigurációs fejlécében van definiálva.
 
-**Események** :
+**Események**:
 
 - Nincsenek események ehhez a vezérlőhöz.
 
-**Példa** :
+**Példa**:
 
 A vezérlő mintájának megtekintéséhez tekintse meg a jelen dokumentum csoportosítási elemének az összefoglalás csoportosítására vonatkozó példáját.
 
 
 ### <a name="uochyperlink"></a>UocHyperLink
 
-**Név** : UocHyperLink
+**Név**: UocHyperLink
 
-**Leírás** : ez egy egyszerű hiperhivatkozás-vezérlő. A vezérlő használatával hiperhivatkozásként jeleníthet meg információkat.
+**Leírás**: ez egy egyszerű hiperhivatkozás-vezérlő. A vezérlő használatával hiperhivatkozásként jeleníthet meg információkat.
 
-**Tulajdonságok** :
+**Tulajdonságok**:
 
 - Az összes gyakori tulajdonság: ezekkel a tulajdonságokkal kapcsolatban lásd: <a href="#common-properties">Általános tulajdonságok</a>.
 
-- **ObjectReference** : ez egy opcionális, hivatkozási típusú tulajdonság. Ha az ebben a tulajdonságban definiált GUID-azonosító érvényes erőforrásra hivatkozik, a hiperhivatkozás lehetővé teszi a végfelhasználó számára az erőforrás elérését. Ez kölcsönösen kizárható a NavigateUrl tulajdonsággal.
+- **ObjectReference**: ez egy opcionális, hivatkozási típusú tulajdonság. Ha az ebben a tulajdonságban definiált GUID-azonosító érvényes erőforrásra hivatkozik, a hiperhivatkozás lehetővé teszi a végfelhasználó számára az erőforrás elérését. Ez kölcsönösen kizárható a NavigateUrl tulajdonsággal.
 
-- **Text** : ez egy nem kötelező, karakterlánc típusú tulajdonság. Ennek a tulajdonságnak a használatával megadhatja a hiperhivatkozásként megjelenő szöveget.
+- **Text**: ez egy nem kötelező, karakterlánc típusú tulajdonság. Ennek a tulajdonságnak a használatával megadhatja a hiperhivatkozásként megjelenő szöveget.
 
-- **NavigateUrl** : ez egy nem kötelező, karakterlánc típusú tulajdonság. Ezzel a tulajdonsággal határozhatja meg a hiperhivatkozásra mutató teljes elérési út URL-címét. Ez kölcsönösen kizárható a ObjectReference tulajdonsággal.
+- **NavigateUrl**: ez egy nem kötelező, karakterlánc típusú tulajdonság. Ezzel a tulajdonsággal határozhatja meg a hiperhivatkozásra mutató teljes elérési út URL-címét. Ez kölcsönösen kizárható a ObjectReference tulajdonsággal.
 
-**Események** :
+**Események**:
 
 - Nincsenek események ehhez a vezérlőhöz.
 
-**Példa** :
+**Példa**:
 
 ![UocHyperLink-vezérlő](media/rcd-configuration-xml-reference/image049.jpg)
 
@@ -1325,43 +1325,43 @@ A következő kódrészlet létrehoz egy hivatkozást, amely egy erőforrásra h
 
 ### <a name="uocidentitypicker"></a>UocIdentityPicker
 
-**Név** : UocIdentityPicker
+**Név**: UocIdentityPicker
 
-**Leírás** : Ez a vezérlő egy választható feloldási mezőből és egy tallózási ablakból áll. A választható feloldási mező egy opcionális szövegmezőből áll, ahol megadhatja az identitást, a feloldás gombot az identitás feloldásához, valamint egy Tallózás gombot egy előugró ablak megadásához. A Tallózás ablak lehetővé teszi, hogy a felhasználó kiválassza az identitásokat egy lista-nézet vezérlőelem segítségével. A Tallózás ablak kiválasztott identitása megjelenik a feloldási mezőben.
+**Leírás**: Ez a vezérlő egy választható feloldási mezőből és egy tallózási ablakból áll. A választható feloldási mező egy opcionális szövegmezőből áll, ahol megadhatja az identitást, a feloldás gombot az identitás feloldásához, valamint egy Tallózás gombot egy előugró ablak megadásához. A Tallózás ablak lehetővé teszi, hogy a felhasználó kiválassza az identitásokat egy lista-nézet vezérlőelem segítségével. A Tallózás ablak kiválasztott identitása megjelenik a feloldási mezőben.
 
-**Tulajdonságok** :
+**Tulajdonságok**:
 
 - Az összes gyakori tulajdonság: ezekkel a tulajdonságokkal kapcsolatban lásd: <a href="#common-properties">Általános tulajdonságok</a>.
 
-- **UsageKeywords** : ez egy opcionális karakterlánc-tulajdonság. Megadhatja az erőforrás-választóban használandó keresési hatókörök listáját a SearchScopeConfiguration struktúra által támogatott használati kulcsszavak listájának megadásával, ahol minden kulcsszót aposztróf (') választ el egymástól.
+- **UsageKeywords**: ez egy opcionális karakterlánc-tulajdonság. Megadhatja az erőforrás-választóban használandó keresési hatókörök listáját a SearchScopeConfiguration struktúra által támogatott használati kulcsszavak listájának megadásával, ahol minden kulcsszót aposztróf (') választ el egymástól.
 
-- **Filter** : ez egy opcionális karakterlánc-tulajdonság. A felhasználó egy XPath-kifejezést biztosít az erőforrás-választó hatóköréhez, hogy csak azokat az elemeket jelenítse meg, amelyek illeszkednek a megadott hatókörbe. Ez a tulajdonság kölcsönösen kizárható a UsageKeywords tulajdonsággal. A keresési hatókör alkalmazása esetén ennek a tulajdonságnak nincs hatása.
+- **Filter**: ez egy opcionális karakterlánc-tulajdonság. A felhasználó egy XPath-kifejezést biztosít az erőforrás-választó hatóköréhez, hogy csak azokat az elemeket jelenítse meg, amelyek illeszkednek a megadott hatókörbe. Ez a tulajdonság kölcsönösen kizárható a UsageKeywords tulajdonsággal. A keresési hatókör alkalmazása esetén ennek a tulajdonságnak nincs hatása.
 
-- **ResultObjectType** : ez egy opcionális karakterlánc-tulajdonság. Az erőforrástípus a felugró párbeszédpanelek listájában lévő erőforrások megjelenítésére szolgál. Ezt a szűrőt használva az Identity Picker azonosítja, hogy a szűrő milyen típusú erőforrást ad vissza, és ennek megfelelően jeleníti meg az adattípust. Ez a tulajdonság kölcsönösen kizárható a UsageKeywords tulajdonsággal. A keresési hatókör alkalmazása esetén ennek nincs hatása. Az ehhez a tulajdonsághoz elfogadott karakterlánc bármely egyedi, érvényes, erőforrás típusú név, például személy. Ha a szűrőnek több erőforrástípust kell visszaadnia, az erőforrást használja a rendszer.
+- **ResultObjectType**: ez egy opcionális karakterlánc-tulajdonság. Az erőforrástípus a felugró párbeszédpanelek listájában lévő erőforrások megjelenítésére szolgál. Ezt a szűrőt használva az Identity Picker azonosítja, hogy a szűrő milyen típusú erőforrást ad vissza, és ennek megfelelően jeleníti meg az adattípust. Ez a tulajdonság kölcsönösen kizárható a UsageKeywords tulajdonsággal. A keresési hatókör alkalmazása esetén ennek nincs hatása. Az ehhez a tulajdonsághoz elfogadott karakterlánc bármely egyedi, érvényes, erőforrás típusú név, például személy. Ha a szűrőnek több erőforrástípust kell visszaadnia, az erőforrást használja a rendszer.
 
-- **PreviewTitle** : ez az előnézeti cím, amelyet a listanézet használ. A tulajdonsággal kapcsolatos információkért tekintse meg a UocListView szakaszt.
+- **PreviewTitle**: ez az előnézeti cím, amelyet a listanézet használ. A tulajdonsággal kapcsolatos információkért tekintse meg a UocListView szakaszt.
 
-- **ListViewTitle** : ez egy opcionális karakterlánc-tulajdonság. Ennek a tulajdonságnak a segítségével megadhatja a listanézet tetején látható szöveget címként.
+- **ListViewTitle**: ez egy opcionális karakterlánc-tulajdonság. Ennek a tulajdonságnak a segítségével megadhatja a listanézet tetején látható szöveget címként.
 
-- **Érték** : ez egy opcionális karakterlánc-tulajdonság. Azt javasoljuk, hogy ezt egy Schema attribútummal társítsa az érték egy adatforrással való összekapcsolásához.
+- **Érték**: ez egy opcionális karakterlánc-tulajdonság. Azt javasoljuk, hogy ezt egy Schema attribútummal társítsa az érték egy adatforrással való összekapcsolásához.
 
-- **Mode (mód** ): ez egy opcionális karakterlánc-tulajdonság. Ezzel a tulajdonsággal határozható meg, hogy az Identity Picker vagy több identitás közül választhat-e ki egy értéket. A SingleResult és a MultipleResult az engedélyezett értékek. Alapértelmezés szerint a SingleResult értékre van állítva.
+- **Mode (mód**): ez egy opcionális karakterlánc-tulajdonság. Ezzel a tulajdonsággal határozható meg, hogy az Identity Picker vagy több identitás közül választhat-e ki egy értéket. A SingleResult és a MultipleResult az engedélyezett értékek. Alapértelmezés szerint a SingleResult értékre van állítva.
 
-- **ObjectTypes** : ez egy nem kötelező, karakterlánc típusú tulajdonság. Megadhatja azon erőforrástípusok listáját, amelyekkel a végfelhasználó feloldja a bejegyzéseket az Identity Picker feloldási mezőben. A lista az erőforrás típusú nevek listáját tartalmazza, vesszővel elválasztva: ",".
+- **ObjectTypes**: ez egy nem kötelező, karakterlánc típusú tulajdonság. Megadhatja azon erőforrástípusok listáját, amelyekkel a végfelhasználó feloldja a bejegyzéseket az Identity Picker feloldási mezőben. A lista az erőforrás típusú nevek listáját tartalmazza, vesszővel elválasztva: ",".
 
-- **AttributesToSearch** : ez egy nem kötelező, karakterlánc típusú tulajdonság. Megadhatja azon attribútumok listáját, amelyeket a rendszer az Identity választóban lévő elem feloldásához használ, ahol a lista a séma attribútumainak listája, vesszővel elválasztva: ",". Ha például a AttributesToSearch értékre van állítva `DisplayName, Alias` , a felhasználó a vagy a elemmel kereshet `DisplayName = \<search value\>` `Alias=\<search value\>` . Az itt megadott attribútumok nevének érvényes attribútumnak kell lennie az érték tulajdonságban megadott adatforrás cél típusú erőforrásaiban. A cél erőforrástípus a ObjectTypes mezőben található. Az összes attribútumnak érvényesnek kell lennie a ObjectTypes mezőben hivatkozott egyes erőforrástípusok esetében.
+- **AttributesToSearch**: ez egy nem kötelező, karakterlánc típusú tulajdonság. Megadhatja azon attribútumok listáját, amelyeket a rendszer az Identity választóban lévő elem feloldásához használ, ahol a lista a séma attribútumainak listája, vesszővel elválasztva: ",". Ha például a AttributesToSearch értékre van állítva `DisplayName, Alias` , a felhasználó a vagy a elemmel kereshet `DisplayName = \<search value\>` `Alias=\<search value\>` . Az itt megadott attribútumok nevének érvényes attribútumnak kell lennie az érték tulajdonságban megadott adatforrás cél típusú erőforrásaiban. A cél erőforrástípus a ObjectTypes mezőben található. Az összes attribútumnak érvényesnek kell lennie a ObjectTypes mezőben hivatkozott egyes erőforrástípusok esetében.
 
-- **ColumnsToDisplay** : ez egy nem kötelező, karakterlánc típusú tulajdonság. A felhasználó megjeleníti a séma-attribútumok nevét, vesszővel elválasztva a következőt:. Az itt definiált attribútumok teszik elérhetővé az Identity Picker listanézet oszlopát.
+- **ColumnsToDisplay**: ez egy nem kötelező, karakterlánc típusú tulajdonság. A felhasználó megjeleníti a séma-attribútumok nevét, vesszővel elválasztva a következőt:. Az itt definiált attribútumok teszik elérhetővé az Identity Picker listanézet oszlopát.
 
-- **Sorok** : ez egy opcionális, integer tulajdonság. Csak akkor működik, ha a mód MultipleResult értékre van állítva. Ezzel a tulajdonsággal állíthatja be a feloldási szövegmező magasságát a karakteres egységekben megadott méretre.
+- **Sorok**: ez egy opcionális, integer tulajdonság. Csak akkor működik, ha a mód MultipleResult értékre van állítva. Ezzel a tulajdonsággal állíthatja be a feloldási szövegmező magasságát a karakteres egységekben megadott méretre.
 
-- **MainSearchScreenText** : ez egy nem kötelező, karakterlánc típusú tulajdonság. Ez a testreszabott szöveg, amely akkor jelenik meg, amikor a keresés fut a Tallózás ablakban.
+- **MainSearchScreenText**: ez egy nem kötelező, karakterlánc típusú tulajdonság. Ez a testreszabott szöveg, amely akkor jelenik meg, amikor a keresés fut a Tallózás ablakban.
 
-**Események** :
+**Események**:
 
-- **SelectedObjectChanged** : ezt az eseményt akkor bocsátja ki a rendszer, amikor a felhasználó megváltoztatja a kiválasztott erőforrásokat.
+- **SelectedObjectChanged**: ezt az eseményt akkor bocsátja ki a rendszer, amikor a felhasználó megváltoztatja a kiválasztott erőforrásokat.
 
-**Példa** :
+**Példa**:
 
 ![UocIdentityPicker-vezérlés SingleResult módban](media/rcd-configuration-xml-reference/image052.png)
 
@@ -1428,77 +1428,77 @@ A következő kódrészlet MultipleResult módban hoz létre egy identitás-vál
 
 ### <a name="uoclabel"></a>UocLabel
 
-**Név** : UocLabel
+**Név**: UocLabel
 
-**Leírás** : ez egy egyszerű, csak olvasható, szöveg feliratú vezérlőelem. Javasoljuk, hogy ezt a vezérlőt csak olvasható információk megjelenítésére használja.
+**Leírás**: ez egy egyszerű, csak olvasható, szöveg feliratú vezérlőelem. Javasoljuk, hogy ezt a vezérlőt csak olvasható információk megjelenítésére használja.
 
-**Tulajdonságok** :
+**Tulajdonságok**:
 
 - Az összes gyakori tulajdonság: ezekkel a tulajdonságokkal kapcsolatban lásd: <a href="#common-properties">Általános tulajdonságok</a>.
 
-- **Text (szöveg** ): ez egy karakterlánc típusú attribútum. Ezt a tulajdonságot explicit karakterlánc-érték megadásával vagy adatforrással való kötéssel határozhatja meg. A tulajdonság értékét hozzárendelő minta kötés {kötési forrás = objektum, elérési út = \< érvényes attribútum neve \> .
+- **Text (szöveg**): ez egy karakterlánc típusú attribútum. Ezt a tulajdonságot explicit karakterlánc-érték megadásával vagy adatforrással való kötéssel határozhatja meg. A tulajdonság értékét hozzárendelő minta kötés {Binding Source = Object, Path = \<valid attribute name\> .
 
 A UocLabel vezérlőhöz tartozó minta esetében lásd: egyszerű vezérlés az egyszerű vezérlő minták szakaszban.
 
 
 ### <a name="uoclistview"></a>UocListView
 
-**Név** : UocListView
+**Név**: UocListView
 
-**Leírás** : ez egy speciális lista-vezérlőelem. Egyszerű listanézet, választható egyszerű keresés, választható speciális keresési vezérlő, választható kiválasztási előnézet és egy művelet gomb sávja. A választható egyszerű keresés egy keresési hatókörből és egy egyszerű keresési szövegmezőből áll. A speciális keresési vezérlő egy szűrő-szerkesztő. A listanézet megjeleníti az erőforrások előzetesen megjelenített listáját. A vezérlőben található keresési eredményektől érkező keresési eredményeket is megjelenítheti. A művelet gomb sáv határozza meg, hogy milyen műveleteket lehet végrehajtani a listanézet kiválasztása alapján. A kiválasztási előnézet mező megjeleníti, hogy mely elemek vannak kiválasztva a listanézet alapján.
+**Leírás**: ez egy speciális lista-vezérlőelem. Egyszerű listanézet, választható egyszerű keresés, választható speciális keresési vezérlő, választható kiválasztási előnézet és egy művelet gomb sávja. A választható egyszerű keresés egy keresési hatókörből és egy egyszerű keresési szövegmezőből áll. A speciális keresési vezérlő egy szűrő-szerkesztő. A listanézet megjeleníti az erőforrások előzetesen megjelenített listáját. A vezérlőben található keresési eredményektől érkező keresési eredményeket is megjelenítheti. A művelet gomb sáv határozza meg, hogy milyen műveleteket lehet végrehajtani a listanézet kiválasztása alapján. A kiválasztási előnézet mező megjeleníti, hogy mely elemek vannak kiválasztva a listanézet alapján.
 
 >[!IMPORTANT]
 >A UocListView egyértékű hivatkozási attribútumokkal nem működik. Csak többértékű hivatkozási attribútumokkal használható. Az egyértékű hivatkozási attribútumok esetében lásd: UocIdentityPicker ebben a dokumentumban.
 
-**Tulajdonságok** :
+**Tulajdonságok**:
 
 - Az összes gyakori tulajdonság: ezekkel a tulajdonságokkal kapcsolatban lásd: <a href="#common-properties">Általános tulajdonságok</a>.
 
-- **SelectedValue** : ez egy opcionális, karakterlánc típusú tulajdonság, amely egy többértékű hivatkozási attribútumhoz van kötve, elfogadva a GUID-formázott karakterláncok listáját.
+- **SelectedValue**: ez egy opcionális, karakterlánc típusú tulajdonság, amely egy többértékű hivatkozási attribútumhoz van kötve, elfogadva a GUID-formázott karakterláncok listáját.
 
-- **PageSize** : ez egy nem kötelező egész tulajdonság. A felhasználó megadhatja, hogy hány bejegyzés fér el egy lapon a listanézet vezérlőelemben. Az alapértelmezett érték 10 bejegyzés. Minden pozitív egész szám érvényes.
+- **PageSize**: ez egy nem kötelező egész tulajdonság. A felhasználó megadhatja, hogy hány bejegyzés fér el egy lapon a listanézet vezérlőelemben. Az alapértelmezett érték 10 bejegyzés. Minden pozitív egész szám érvényes.
 
-- **UsageKeyword** : ez egy nem kötelező, karakterlánc típusú tulajdonság. A felhasználó megadhatja azoknak a kulcsszavaknak a listáját, amelyek meghatározzák, hogy milyen keresési hatókört használ a lista – keresés vezérlőelem. Keresési hatóköri erőforrások találhatók a FIM 2010-kiszolgálón. A UsageKeyword nevű SearchScopeConfiguration-struktúra attribútuma a keresési hatókörök csoportjának csoportosítására szolgál. A lista nézet a kulcsszavak listáját használja fel. Az egyes kulcsszavak vesszővel (,) vannak elválasztva. Ez a lista nézetben megjeleníteni kívánt keresési hatókörben használt használati kulcsszó. Ez csak akkor érvényes, ha a ShowSearchControl tulajdonság értéke TRUE (igaz).
+- **UsageKeyword**: ez egy nem kötelező, karakterlánc típusú tulajdonság. A felhasználó megadhatja azoknak a kulcsszavaknak a listáját, amelyek meghatározzák, hogy milyen keresési hatókört használ a lista – keresés vezérlőelem. Keresési hatóköri erőforrások találhatók a FIM 2010-kiszolgálón. A UsageKeyword nevű SearchScopeConfiguration-struktúra attribútuma a keresési hatókörök csoportjának csoportosítására szolgál. A lista nézet a kulcsszavak listáját használja fel. Az egyes kulcsszavak vesszővel (,) vannak elválasztva. Ez a lista nézetében megjeleníteni kívánt keresési hatókörben használt használati kulcsszó. Ez csak akkor érvényes, ha a ShowSearchControl tulajdonság értéke TRUE (igaz).
 
-- **SearchControlAutoPostback** : ez egy nem kötelező logikai tulajdonság. Állítsa a tulajdonság értékét True értékre a AutoPostBack végrehajtásához a keresés indításakor. Alapértelmezés szerint a SearchControlAutoPostback hamis értékre van állítva.
+- **SearchControlAutoPostback**: ez egy nem kötelező logikai tulajdonság. Állítsa a tulajdonság értékét True értékre a AutoPostBack végrehajtásához a keresés indításakor. Alapértelmezés szerint a SearchControlAutoPostback hamis értékre van állítva.
 
-- **EmptyResultText** : ez egy nem kötelező, karakterlánc típusú tulajdonság. Alapértelmezés szerint a beállítás értéke nem elem, de bármilyen karakterlánc értékre állítható. Ez a szöveg akkor jelenik meg, ha a keresési eredmény üres.
+- **EmptyResultText**: ez egy nem kötelező, karakterlánc típusú tulajdonság. Alapértelmezés szerint a beállítás értéke nem elem, de bármilyen karakterlánc értékre állítható. Ez a szöveg akkor jelenik meg, ha a keresési eredmény üres.
 
-- **ButtonHeight** : ez egy opcionális, integer típusú tulajdonság. A tulajdonság értékének értékeként adja meg a pozitív egész értéket. Ez a tulajdonság határozza meg a műveleti sávban lévő gombok magasságát képpontban megadva. Az alapértelmezett érték 32 képpont.
+- **ButtonHeight**: ez egy opcionális, integer típusú tulajdonság. A tulajdonság értékének értékeként adja meg a pozitív egész értéket. Ez a tulajdonság határozza meg a műveleti sávban lévő gombok magasságát képpontban megadva. Az alapértelmezett érték 32 képpont.
 
-- **ButtonWidth** : ez egy opcionális, integer típusú tulajdonság. A tulajdonság értékének értékeként adja meg a pozitív egész értéket. Ez a tulajdonság határozza meg a műveleti sávban lévő gombok szélességét képpontban megadva. Az alapértelmezett érték 32 képpont.
+- **ButtonWidth**: ez egy opcionális, integer típusú tulajdonság. A tulajdonság értékének értékeként adja meg a pozitív egész értéket. Ez a tulajdonság határozza meg a műveleti sávban lévő gombok szélességét képpontban megadva. Az alapértelmezett érték 32 képpont.
 
-- **CaptionImageMaxHeight** : ez egy opcionális, integer típusú tulajdonság. Állítsa a tulajdonság értékét bármely pozitív egész számra. Ez a tulajdonság határozza meg az opcionális feliratok maximális ikonjának magasságát. Az alapértelmezett érték 32 képpont.
+- **CaptionImageMaxHeight**: ez egy opcionális, integer típusú tulajdonság. Állítsa a tulajdonság értékét bármely pozitív egész számra. Ez a tulajdonság határozza meg az opcionális feliratok maximális ikonjának magasságát. Az alapértelmezett érték 32 képpont.
 
-- **CaptionImageMaxWidth** : ez egy opcionális, integer típusú tulajdonság. Állítsa a tulajdonság értékét bármely pozitív egész számra. Ez a tulajdonság határozza meg az opcionális feliratok ikonjának maximális szélességét. Az alapértelmezett érték 32 képpont.
+- **CaptionImageMaxWidth**: ez egy opcionális, integer típusú tulajdonság. Állítsa a tulajdonság értékét bármely pozitív egész számra. Ez a tulajdonság határozza meg az opcionális feliratok ikonjának maximális szélességét. Az alapértelmezett érték 32 képpont.
 
-- **CaptionImageUrl** : ez egy nem kötelező, karakterlánc típusú tulajdonság. Ez a tulajdonság egy URL-címet határoz meg, amely a képfelirat képként megjelenő képre hivatkozik.
+- **CaptionImageUrl**: ez egy nem kötelező, karakterlánc típusú tulajdonság. Ez a tulajdonság egy URL-címet határoz meg, amely a képfelirat képként megjelenő képre hivatkozik.
 
-- **PreviewTitle** : ez egy nem kötelező, karakterlánc típusú tulajdonság. Ezzel a tulajdonsággal határozhatja meg a kijelölési előnézet mező tetején megjelenő szöveget.
+- **PreviewTitle**: ez egy nem kötelező, karakterlánc típusú tulajdonság. Ezzel a tulajdonsággal határozhatja meg a kijelölési előnézet mező tetején megjelenő szöveget.
 
-- **EnableSelection** : ez egy nem kötelező, logikai típusú tulajdonság. Ezzel a tulajdonsággal határozhatja meg, hogy a listanézet kiválasztási módban van-e. Ha a listanézet kiválasztó módban van, a listanézet bal oldali oszlopában megjelenik a jelölőnégyzetek egyik oszlopa, és megjelenik a lista nézetének alján látható kiválasztási előnézet mező. A tulajdonság alapértelmezett értéke TRUE (igaz) értékre van állítva.
+- **EnableSelection**: ez egy nem kötelező, logikai típusú tulajdonság. Ezzel a tulajdonsággal határozhatja meg, hogy a listanézet kiválasztási módban van-e. Ha a listanézet kiválasztó módban van, a listanézet bal oldali oszlopában megjelenik a jelölőnégyzetek egyik oszlopa, és megjelenik a lista nézetének alján látható kiválasztási előnézet mező. A tulajdonság alapértelmezett értéke TRUE (igaz) értékre van állítva.
 
-- **SingleSelection** : ez egy nem kötelező, logikai típusú tulajdonság. Ha a kijelölési mód be van kapcsolva a listanézet számára, akkor ez az érték TRUE (igaz) értékűre van állítva, hogy a végfelhasználó csak egy elemet válasszon ki a listából. Alapértelmezés szerint ennek a tulajdonságnak az értéke false (hamis) értékre van állítva. Ez azt jelenti, hogy alapértelmezés szerint a végfelhasználó több elemet is kijelölhet a listából.
+- **SingleSelection**: ez egy nem kötelező, logikai típusú tulajdonság. Ha a kijelölési mód be van kapcsolva a listanézet számára, akkor ez az érték TRUE (igaz) értékűre van állítva, hogy a végfelhasználó csak egy elemet válasszon ki a listából. Alapértelmezés szerint ennek a tulajdonságnak az értéke false (hamis) értékre van állítva. Ez azt jelenti, hogy alapértelmezés szerint a végfelhasználó több elemet is kijelölhet a listából.
 
-- **RedirectUrl** : ez egy nem kötelező, karakterlánc típusú tulajdonság. Ezzel a tulajdonsággal adhatja meg, hogy melyik lapra kell átirányítani, amikor egy hiperhivatkozásos elem kattint a listában. Ez az URL-cím olyan helyőrzőket tartalmazhat, amelyek a tényleges értékkel lesznek lecserélve a futtatókörnyezet során. A helyőrzők a következők:
+- **RedirectUrl**: ez egy nem kötelező, karakterlánc típusú tulajdonság. Ezzel a tulajdonsággal adhatja meg, hogy melyik lapra kell átirányítani, amikor egy hiperhivatkozásos elem kattint a listában. Ez az URL-cím olyan helyőrzőket tartalmazhat, amelyek a tényleges értékkel lesznek lecserélve a futtatókörnyezet során. A helyőrzők a következők:
 
     - {0} Objektumtípus
     - {1} objectID
     - {2} displayName
 
-- **ShowTitleBar** : ez egy nem kötelező, logikai típusú tulajdonság. Ezzel a tulajdonsággal adhatja meg, hogy látható-e a címsor. Ennek a tulajdonságnak az alapértelmezett értéke hamis.
+- **ShowTitleBar**: ez egy nem kötelező, logikai típusú tulajdonság. Ezzel a tulajdonsággal adhatja meg, hogy látható-e a címsor. Ennek a tulajdonságnak az alapértelmezett értéke hamis.
 
-- **ShowActionBar** : ez egy nem kötelező, logikai típusú tulajdonság. Ezzel a tulajdonsággal adhatja meg, hogy látható legyen-e a műveleti sáv. A tulajdonság alapértelmezett értéke TRUE (igaz).
+- **ShowActionBar**: ez egy nem kötelező, logikai típusú tulajdonság. Ezzel a tulajdonsággal adhatja meg, hogy látható legyen-e a műveleti sáv. A tulajdonság alapértelmezett értéke TRUE (igaz).
 
-- **ShowPreview** : ez egy nem kötelező, logikai típusú tulajdonság. Ezzel a tulajdonsággal adhatja meg, hogy látható legyen-e az előnézet területe. A tulajdonság alapértelmezett értéke TRUE (igaz).
+- **ShowPreview**: ez egy nem kötelező, logikai típusú tulajdonság. Ezzel a tulajdonsággal adhatja meg, hogy látható legyen-e az előnézet területe. A tulajdonság alapértelmezett értéke TRUE (igaz).
 
-- **ShowSearchControl** : ez egy nem kötelező, logikai típusú tulajdonság. Ezzel a tulajdonsággal adhatja meg, hogy látható legyen-e a keresési vezérlő. A tulajdonság alapértelmezett értéke TRUE (igaz).
+- **ShowSearchControl**: ez egy nem kötelező, logikai típusú tulajdonság. Ezzel a tulajdonsággal adhatja meg, hogy látható legyen-e a keresési vezérlő. A tulajdonság alapértelmezett értéke TRUE (igaz).
 
-- **ResultObjectType** : ez egy nem kötelező, karakterlánc típusú tulajdonság. Ezzel a tulajdonsággal adhatja meg a keresési eredmények várt objektumának típusát. Ennek a tulajdonságnak az alapértelmezett értéke az erőforrás. Ha a keresési eredmény több erőforrástípust tartalmaz, ezt az értéket erőforrásként kell megadni.
+- **ResultObjectType**: ez egy nem kötelező, karakterlánc típusú tulajdonság. Ezzel a tulajdonsággal adhatja meg a keresési eredmények várt objektumának típusát. Ennek a tulajdonságnak az alapértelmezett értéke az erőforrás. Ha a keresési eredmény több erőforrástípust tartalmaz, ezt az értéket erőforrásként kell megadni.
 
-- **ColumnsToDisplay** : ez egy nem kötelező tulajdonság. Ezzel a tulajdonsággal adhatja meg, hogy mely attribútumok jelenjenek meg a listanézet számára oszlopokként. Ennek a tulajdonságnak az alapértelmezett értéke a DisplayName, a ResourceType. Minden oszlopot egy attribútum rendszerneve képvisel. Minden oszlop vesszővel van elválasztva. Nem kell megadnia a tulajdonság értékét, ha a listanézet a kiválasztási módban van használatban. A kiválasztási módban az oszlop beállítása a jelenleg kiválasztott keresési hatókör SearchScopeColumn attribútumáról származik.
+- **ColumnsToDisplay**: ez egy nem kötelező tulajdonság. Ezzel a tulajdonsággal adhatja meg, hogy mely attribútumok jelenjenek meg a listanézet számára oszlopokként. Ennek a tulajdonságnak az alapértelmezett értéke a DisplayName, a ResourceType. Minden oszlopot egy attribútum rendszerneve képvisel. Minden oszlop vesszővel van elválasztva. Nem kell megadnia a tulajdonság értékét, ha a listanézet a kiválasztási módban van használatban. A kiválasztási módban az oszlop beállítása a jelenleg kiválasztott keresési hatókör SearchScopeColumn attribútumáról származik.
 
-- **ListFilter** : ez egy nem kötelező, karakterlánc típusú tulajdonság. Ez az az XPath, amely a listanézet megjelenítésére szolgál, és csak akkor érvényes, ha a ShowSearchControl tulajdonság hamis értékre van beállítva. Ha ez az érték meg van adva, a listanézet ezt a tulajdonságot használja a lekérdezésekhez, és a listanézet nem kiválasztási módban van. A szűrőt az erőforrás egy karakterlánc-attribútumához lehet kötni:
+- **ListFilter**: ez egy nem kötelező, karakterlánc típusú tulajdonság. Ez az az XPath, amely a listanézet megjelenítésére szolgál, és csak akkor érvényes, ha a ShowSearchControl tulajdonság hamis értékre van beállítva. Ha ez az érték meg van adva, a listanézet ezt a tulajdonságot használja a lekérdezésekhez, és a listanézet nem kiválasztási módban van. A szűrőt az erőforrás egy karakterlánc-attribútumához lehet kötni:
 
     `<my:Property my:Name="ListFilter" my:Value="{Binding Source=object, Path=Filter}"/>`
 
@@ -1506,7 +1506,7 @@ A UocLabel vezérlőhöz tartozó minta esetében lásd: egyszerű vezérlés az
 
     `<my:Property my:Name="ListFilter" my:Value="/Approval[Request=''%ObjectID%'']"/>`
 
-- **TargetAttribute** : ez egy elavult tulajdonság. Az értéknek egy többértékű hivatkozott attribútum rendszerneveként kell lennie. Javasoljuk, hogy ez a tulajdonság ne legyen többé használatban. Például a Group Management szolgáltatásban a használata helyett:
+- **TargetAttribute**: ez egy elavult tulajdonság. Az értéknek egy többértékű hivatkozott attribútum rendszerneveként kell lennie. Javasoljuk, hogy ez a tulajdonság ne legyen többé használatban. Például a Group Management szolgáltatásban a használata helyett:
 
     `<my:Property my:Name="TargetAttribute" my:Value="ExplicitMember"/>`
 
@@ -1514,46 +1514,46 @@ A UocLabel vezérlőhöz tartozó minta esetében lásd: egyszerű vezérlés az
 
     `<my:Property my:Name=”ListFilter” my:Value=”/Group[ObjectID=’%ObjectID%’]/ExplicitMember”/>`
 
-- **ItemClickBehavior** : ez egy nem kötelező, karakterlánc típusú tulajdonság. Ezzel a tulajdonsággal adhatja meg, hogy szeretné-e, ha a lista nézet elemre kattint egy kiszolgáló visszaküldésének elindításához vagy az elem részletes nézetének megjelenítéséhez. Két beállításhalmaz támogatott: ModelessDialog és Server. Az alapértelmezett érték a ModelessDialog.
+- **ItemClickBehavior**: ez egy nem kötelező, karakterlánc típusú tulajdonság. Ezzel a tulajdonsággal adhatja meg, hogy szeretné-e, ha a lista nézet elemre kattint egy kiszolgáló visszaküldésének elindításához vagy az elem részletes nézetének megjelenítéséhez. Két beállításhalmaz támogatott: ModelessDialog és Server. Az alapértelmezett érték a ModelessDialog.
 
-- **SearchOnLoad** : ez egy nem kötelező, logikai típusú tulajdonság, amely megadja, hogy a lista nézet vezérlőelemnek kell-e lekérdezni a terhelést. Ez a tulajdonság csak akkor alkalmazható, ha a listanézet kiválasztó módban van. A tulajdonság alapértelmezett értéke TRUE (igaz). Kikapcsolhatja, ha a felhasználónak általában szöveget kell beírnia a keresésbe, hogy értelmes eredményt kapjon. Ebben az esetben a listanézet először egy üzenetet jelenít meg, amely közli a felhasználóval, hogy hogyan végezhet keresést. A szöveget a következő tulajdonságokkal lehet testreszabni:
+- **SearchOnLoad**: ez egy nem kötelező, logikai típusú tulajdonság, amely megadja, hogy a lista nézet vezérlőelemnek kell-e lekérdezni a terhelést. Ez a tulajdonság csak akkor alkalmazható, ha a listanézet kiválasztó módban van. A tulajdonság alapértelmezett értéke TRUE (igaz). Kikapcsolhatja, ha a felhasználónak általában szöveget kell beírnia a keresésbe, hogy értelmes eredményt kapjon. Ebben az esetben a listanézet először egy üzenetet jelenít meg, amely közli a felhasználóval, hogy hogyan végezhet keresést. A szöveget a következő tulajdonságokkal lehet testreszabni:
 
-- **MainSearchScreenText** : Ez a választható, karakterlánc típusú tulajdonság csak akkor érvényes, ha a SearchOnload értéke TRUE (igaz). Ezzel a tulajdonsággal testreszabható a listanézet közepén megjelenő szöveg, ha a listanézet nem keres automatikusan. Ennek a tulajdonságnak az alapértelmezett értéke az erőforrásoknak a kereséssel való megkeresése az előzőekben leírtak szerint. Megadhat egy értéket, hogy a szöveg jobban legyen a forgatókönyvhöz kapcsolódóan.
+- **MainSearchScreenText**: Ez a választható, karakterlánc típusú tulajdonság csak akkor érvényes, ha a SearchOnload értéke TRUE (igaz). Ezzel a tulajdonsággal testreszabható a listanézet közepén megjelenő szöveg, ha a listanézet nem keres automatikusan. Ennek a tulajdonságnak az alapértelmezett értéke az erőforrásoknak a kereséssel való megkeresése az előzőekben leírtak szerint. Megadhat egy értéket, hogy a szöveg jobban legyen a forgatókönyvhöz kapcsolódóan.
 
-- **SubSearchScreenText** : Ez a választható, karakterlánc típusú tulajdonság a **MainSearchScreenText** tulajdonság után megjelenő szöveg testreszabására szolgál. Általában nem kell értéket megadnia ehhez a tulajdonsághoz, ha további útmutatást szeretne adni a listanézet használatáról.
+- **SubSearchScreenText**: Ez a választható, karakterlánc típusú tulajdonság a **MainSearchScreenText** tulajdonság után megjelenő szöveg testreszabására szolgál. Általában nem kell értéket megadnia ehhez a tulajdonsághoz, ha további útmutatást szeretne adni a listanézet használatáról.
 
-**Események** :
+**Események**:
 
 - Nincsenek események ehhez a vezérlőhöz.
 
-**Példa** :
+**Példa**:
 
 A listanézet-lista UocFilterBuilder-vezérlővel való használatáról a jelen dokumentum korábbi, UocFilterBuilder-mintáit ismertető cikkben talál példákat. A UocListView a Filter Builder nélkül is használható.
 
 
 ### <a name="uocnumericbox"></a>UocNumericBox
 
-**Név** : UocNumericBox
+**Név**: UocNumericBox
 
-**Leírás** : ez egy egyszerű szövegmező, amely csak egész értékeket vesz igénybe. Ez a vezérlő a írásvédett és a frissíthető módot is támogatja.
+**Leírás**: ez egy egyszerű szövegmező, amely csak egész értékeket vesz igénybe. Ez a vezérlő a írásvédett és a frissíthető módot is támogatja.
 
-**Tulajdonságok** :
+**Tulajdonságok**:
 
 - Az összes gyakori tulajdonság: ezekkel a tulajdonságokkal kapcsolatban lásd: <a href="#common-properties">Általános tulajdonságok</a>.
 
-- **MaxValue** : ez egy opcionális, integer típusú tulajdonság. Ezzel a tulajdonsággal határozhatja meg a vezérlő ügyféloldali érvényesítését. A végfelhasználó által megadott érték nem lépheti túl ezt az értéket. Megadhat egy explicit egész számot, vagy összekapcsolhatja azt egy adatforrásból a {bind Source = Schema, Path = IntegerMaximum} használatával.
+- **MaxValue**: ez egy opcionális, integer típusú tulajdonság. Ezzel a tulajdonsággal határozhatja meg a vezérlő ügyféloldali érvényesítését. A végfelhasználó által megadott érték nem lépheti túl ezt az értéket. Megadhat egy explicit egész számot, vagy összekapcsolhatja azt egy adatforrásból a {bind Source = Schema, Path = IntegerMaximum} használatával.
 
-- **MinValue** : ez egy opcionális, integer típusú tulajdonság. Ezzel a tulajdonsággal határozhatja meg a vezérlő ügyféloldali érvényesítését. A végfelhasználó által megadott érték nem lehet kisebb ennél az értéknél. Megadhat egy explicit egész számot, vagy összekapcsolhatja azt egy adatforrásból a {bind Source = Schema, Path = IntegerMinimum} használatával.
+- **MinValue**: ez egy opcionális, integer típusú tulajdonság. Ezzel a tulajdonsággal határozhatja meg a vezérlő ügyféloldali érvényesítését. A végfelhasználó által megadott érték nem lehet kisebb ennél az értéknél. Megadhat egy explicit egész számot, vagy összekapcsolhatja azt egy adatforrásból a {bind Source = Schema, Path = IntegerMinimum} használatával.
 
-- **DefaultValue** : ez egy opcionális, integer típusú tulajdonság. Ezzel a tulajdonsággal határozhatja meg a vezérlő alapértelmezett értékét, ha a vezérlőt új adatértékek létrehozásához használja. Ez az érték csak statikus egész számra adható meg.
+- **DefaultValue**: ez egy opcionális, integer típusú tulajdonság. Ezzel a tulajdonsággal határozhatja meg a vezérlő alapértelmezett értékét, ha a vezérlőt új adatértékek létrehozásához használja. Ez az érték csak statikus egész számra adható meg.
 
-- **Érték** : ez egy opcionális, integer típusú tulajdonság. Ha egy adatforrásból származó egész típusú adatokkal társítja ezt, akkor az adott attribútum értéke jelenik meg, amikor a rendszer betölti a lapot, majd a küldés után menti az adatforrásba.
+- **Érték**: ez egy opcionális, integer típusú tulajdonság. Ha egy adatforrásból származó egész típusú adatokkal társítja ezt, akkor az adott attribútum értéke jelenik meg, amikor a rendszer betölti a lapot, majd a küldés után menti az adatforrásba.
 
-**Események** :
+**Események**:
 
-- **TextChanged** : ezt az eseményt akkor bocsátja ki a rendszer, ha a vezérlőn belüli aktuális érték megváltozik.
+- **TextChanged**: ezt az eseményt akkor bocsátja ki a rendszer, ha a vezérlőn belüli aktuális érték megváltozik.
 
-**Példa** :
+**Példa**:
 
 ![UocNumericBox-vezérlő](media/rcd-configuration-xml-reference/image061.jpg)
 
@@ -1594,31 +1594,31 @@ A következő mintakód a második numerikus mezőt hozza létre.
 
 ### <a name="uocpicturebox"></a>UocPictureBox
 
-**Név** : UocPictureBox
+**Név**: UocPictureBox
 
-**Leírás** : Ez a vezérlő a kép, a bináris típusú adattípusok megjelenítésére szolgál. Javasoljuk, hogy a vezérlőt bináris típusú adattípussal használja. A kép megjeleníthető egy megadott képurl-cím, bináris típusú adatok vagy a képtípust tartalmazó attribútum forrása alapján.
+**Leírás**: Ez a vezérlő a kép, a bináris típusú adattípusok megjelenítésére szolgál. Javasoljuk, hogy a vezérlőt bináris típusú adattípussal használja. A kép megjeleníthető egy megadott képurl-cím, bináris típusú adatok vagy a képtípust tartalmazó attribútum forrása alapján.
 
-**Tulajdonságok** :
+**Tulajdonságok**:
 
 - Az összes gyakori tulajdonság: ezekkel a tulajdonságokkal kapcsolatban lásd: <a href="#common-properties">Általános tulajdonságok</a>.
 
-- **ImageUrl** : ez egy nem kötelező, karakterlánc típusú tulajdonság. Adja meg a cél kép URL-címét.
+- **ImageUrl**: ez egy nem kötelező, karakterlánc típusú tulajdonság. Adja meg a cél kép URL-címét.
 
-- **MaxHeight** : ez egy opcionális, karakterlánc típusú tulajdonság. Meghatározza a képpontban megjelenítendő képek maximális magasságát.
+- **MaxHeight**: ez egy opcionális, karakterlánc típusú tulajdonság. Meghatározza a képpontban megjelenítendő képek maximális magasságát.
 
-- **MaxWidth** : ez egy nem kötelező, karakterlánc típusú tulajdonság. Meghatározza a képpontban megjelenítendő képméret maximális szélességét.
+- **MaxWidth**: ez egy nem kötelező, karakterlánc típusú tulajdonság. Meghatározza a képpontban megjelenítendő képméret maximális szélességét.
 
-- **Képadatok átvitele** : ez egy bináris típusú tulajdonság. Ezzel a tulajdonsággal kötést hozhat létre egy adatforrást a megjelenített képpel. A kötött adatforrásnak bináris típusúnak kell lennie. Ezzel a mezővel explicit módon állíthatja be a képet úgy, hogy bájt [] formátumban adja meg az adattípust.
+- **Képadatok átvitele**: ez egy bináris típusú tulajdonság. Ezzel a tulajdonsággal kötést hozhat létre egy adatforrást a megjelenített képpel. A kötött adatforrásnak bináris típusúnak kell lennie. Ezzel a mezővel explicit módon állíthatja be a képet úgy, hogy bájt [] formátumban adja meg az adattípust.
 
-- **ImageResource** : ez egy opcionális, bináris típusú tulajdonság.
+- **ImageResource**: ez egy opcionális, bináris típusú tulajdonság.
 
-- **AlternativeText** : ez egy nem kötelező, karakterlánc típusú tulajdonság. Ez a tulajdonság alternatív szövegként jelenik meg, ha a kép nem jeleníthető meg.
+- **AlternativeText**: ez egy nem kötelező, karakterlánc típusú tulajdonság. Ez a tulajdonság alternatív szövegként jelenik meg, ha a kép nem jeleníthető meg.
 
-**Események** :
+**Események**:
 
 - Nincsenek események ehhez a vezérlőhöz.
 
-**Példa** :
+**Példa**:
 
 >[!NOTE]
 >A minta használatához meglévő képadatokkal kell kötnie a vezérlőt.
@@ -1654,39 +1654,39 @@ A következő kódrészlet létrehoz egy képmező vezérlőelemet, amely az URL
 
 ### <a name="uocradiobuttonlist"></a>UocRadioButtonList
 
-**Név** : UocRadioButtonList
+**Név**: UocRadioButtonList
 
-**Leírás** : ez egy egyszerű, lehetőség-gomb lista. A lehetőségek kölcsönösen kizárják egymást ezen a listán. Ez a vezérlő akkor javasolt, ha a felhasználók öt vagy kevesebb lehetőség közül választhatnak. Ellenkező esetben a UOCListView használata javasolt.
+**Leírás**: ez egy egyszerű, lehetőség-gomb lista. A lehetőségek kölcsönösen kizárják egymást ezen a listán. Ez a vezérlő akkor javasolt, ha a felhasználók öt vagy kevesebb lehetőség közül választhatnak. Ellenkező esetben a UOCListView használata javasolt.
 
-**Tulajdonságok** :
+**Tulajdonságok**:
 
 - Az összes gyakori tulajdonság: ezekkel a tulajdonságokkal kapcsolatban lásd: <a href="#common-properties">Általános tulajdonságok</a>.
 
-- **ValuePath** : az érték elérési útja értékre van állítva. A beállítás elemében lévő Value (érték) mezővel kötődik, az ebben a szakaszban leírtak szerint.
+- **ValuePath**: az érték elérési útja értékre van állítva. A beállítás elemében lévő Value (érték) mezővel kötődik, az ebben a szakaszban leírtak szerint.
 
-- **CaptionPath** : az érték elérési útjának értéke Caption. A beállítás elemében az ebben a részben leírtak szerint kötődik a "Caption" mezőhöz.
+- **CaptionPath**: az érték elérési útjának értéke Caption. A beállítás elemében az ebben a részben leírtak szerint kötődik a "Caption" mezőhöz.
 
-- **HintPath** : az érték elérési útja a tipp. A beállítás elemében a tipp mezőhöz kötődik, az ebben a szakaszban leírtak szerint.
+- **HintPath**: az érték elérési útja a tipp. A beállítás elemében a tipp mezőhöz kötődik, az ebben a szakaszban leírtak szerint.
 
-- **SelectedValue** : a jelenleg kijelölt érték. Ez egy kötelező, karakterlánc típusú tulajdonság. Ez a tulajdonság az adatforrásból származó karakterlánc-adatokkal kötődik.
+- **SelectedValue**: a jelenleg kijelölt érték. Ez egy kötelező, karakterlánc típusú tulajdonság. Ez a tulajdonság az adatforrásból származó karakterlánc-adatokkal kötődik.
 
-**Események** :
+**Események**:
 
-- **SelectedIndexChanged** : az esemény a kiválasztott választógomb megváltozásakor következik be.
+- **SelectedIndexChanged**: az esemény a kiválasztott választógomb megváltozásakor következik be.
 
-- **CheckedChanged** : Ha a választógomb megváltoztatja az állapotát, az eseményt kibocsátja a rendszer.
+- **CheckedChanged**: Ha a választógomb megváltoztatja az állapotát, az eseményt kibocsátja a rendszer.
 
-**Beállítások** :
+**Beállítások**:
 
 A vezérlőnek csak két **beállítási** eleme lehet. Egy **Options** elem struktúrájához lásd: <a href="#options-element">Options elem</a>.
 
-- **Érték** : egy Option elem Value mezőjének igaz vagy hamis értéket kell beállítania.
+- **Érték**: egy Option elem Value mezőjének igaz vagy hamis értéket kell beállítania.
 
-- **Caption** : ez bármilyen sztring lehet.
+- **Caption**: ez bármilyen sztring lehet.
 
-- **Tipp** : ez lehet bármilyen karakterlánc-érték.
+- **Tipp**: ez lehet bármilyen karakterlánc-érték.
 
-**Példa** :
+**Példa**:
 
 ![UocRadioButtonList-vezérlő](media/rcd-configuration-xml-reference/image063.jpg)
 
@@ -1716,25 +1716,25 @@ A következő kódrészlet létrehoz egy választókapcsoló-listát:
 
 ### <a name="uocsimpleradiobutton"></a>UocSimpleRadioButton
 
-**Név** : UocSimpleRadioButton
+**Név**: UocSimpleRadioButton
 
-**Leírás** : ez egy egyszerű, kapcsoló gombos vezérlő. A vezérlő használata hasonló egy egyszerű jelölőnégyzethez. Két választógomb látható egymás mellett, a szöveg feliratozásával. A vezérlő logikai típusú adattípusra való kötése ajánlott.
+**Leírás**: ez egy egyszerű, kapcsoló gombos vezérlő. A vezérlő használata hasonló egy egyszerű jelölőnégyzethez. Két választógomb látható egymás mellett, a szöveg feliratozásával. A vezérlő logikai típusú adattípusra való kötése ajánlott.
 
-**Tulajdonságok** :
+**Tulajdonságok**:
 
 - Az összes gyakori tulajdonság: ezekkel a tulajdonságokkal kapcsolatban lásd: <a href="#common-properties">Általános tulajdonságok</a>.
 
-- **TrueText** : ez egy nem kötelező, karakterlánc típusú tulajdonság. A választókapcsoló kiválasztásakor megjelenő szöveg.
+- **TrueText**: ez egy nem kötelező, karakterlánc típusú tulajdonság. A választókapcsoló kiválasztásakor megjelenő szöveg.
 
-- **FalseText** : ez egy nem kötelező, karakterlánc típusú tulajdonság. Ez a szöveg jelenik meg, ha a beállítás gomb nincs kiválasztva.
+- **FalseText**: ez egy nem kötelező, karakterlánc típusú tulajdonság. Ez a szöveg jelenik meg, ha a beállítás gomb nincs kiválasztva.
 
-- **SelectedItem** : ez egy nem kötelező, logikai típusú tulajdonság. Ez az érték azt jelzi, hogy a beállítás gomb van kiválasztva. Ez egy adatforrásból származó logikai típusú adatokkal is köthető. Az alapértelmezett érték false (hamis).
+- **SelectedItem**: ez egy nem kötelező, logikai típusú tulajdonság. Ez az érték azt jelzi, hogy a beállítás gomb van kiválasztva. Ez egy adatforrásból származó logikai típusú adatokkal is köthető. Az alapértelmezett érték false (hamis).
 
-**Események** :
+**Események**:
 
-- **CheckedChanged** : Ha a választókapcsoló nem jelölt állapotra változik, vagy fordítva, a rendszer ezt a jelet adja meg.
+- **CheckedChanged**: Ha a választókapcsoló nem jelölt állapotra változik, vagy fordítva, a rendszer ezt a jelet adja meg.
 
-**Példa** :
+**Példa**:
 
 ![UocSimpleRadioButton-vezérlő](media/rcd-configuration-xml-reference/image066.png)
 
@@ -1759,33 +1759,33 @@ A következő kódrészlet létrehoz egy kapcsoló gombot:
 
 ### <a name="uoctextbox"></a>UocTextBox
 
-**Név** : UocTextBox
+**Név**: UocTextBox
 
-**Leírás** : ez egy egyszerű szövegmező, amely támogatja a String típusú bevitelt. Azt javasoljuk, hogy a vezérlőt a karakterlánc típusú adattípusokkal való kötéshez használja.
+**Leírás**: ez egy egyszerű szövegmező, amely támogatja a String típusú bevitelt. Azt javasoljuk, hogy a vezérlőt a karakterlánc típusú adattípusokkal való kötéshez használja.
 
-**Tulajdonságok** :
+**Tulajdonságok**:
 
 - Az összes gyakori tulajdonság: ezekkel a tulajdonságokkal kapcsolatban lásd: <a href="#common-properties">Általános tulajdonságok</a>.
 
-- **MaxLength** : ez egy opcionális, integer típusú attribútum. Ez a tulajdonság határozza meg a karakterlánc-bevitel maximális hosszát. Ennek a tulajdonságnak az alapértelmezett értéke 128 karakter.
+- **MaxLength**: ez egy opcionális, integer típusú attribútum. Ez a tulajdonság határozza meg a karakterlánc-bevitel maximális hosszát. Ennek a tulajdonságnak az alapértelmezett értéke 128 karakter.
 
-- **Text** : ez egy nem kötelező, karakterlánc típusú tulajdonság. Ez a szöveg jelenik meg a szövegmezőben. Megadhat egy explicit karakterláncot, amely megjelenik a szövegmezőben a vezérlő kezdeti betöltése során, vagy egy karakterlánc-típus sémájának attribútumához kötődik.
+- **Text**: ez egy nem kötelező, karakterlánc típusú tulajdonság. Ez a szöveg jelenik meg a szövegmezőben. Megadhat egy explicit karakterláncot, amely megjelenik a szövegmezőben a vezérlő kezdeti betöltése során, vagy egy karakterlánc-típus sémájának attribútumához kötődik.
 
-- **Sorok** : ez egy opcionális, integer típusú tulajdonság. Ez a tulajdonság határozza meg a szövegmező magasságát a karakteres egységben. Az alapértelmezett érték egy karakter.
+- **Sorok**: ez egy opcionális, integer típusú tulajdonság. Ez a tulajdonság határozza meg a szövegmező magasságát a karakteres egységben. Az alapértelmezett érték egy karakter.
 
-- **Oszlopok** : ez egy opcionális, integer típusú tulajdonság. Ez a tulajdonság határozza meg a szövegmező szélességét a karakteres egységekben. Az alapértelmezett érték 20 karakter.
+- **Oszlopok**: ez egy opcionális, integer típusú tulajdonság. Ez a tulajdonság határozza meg a szövegmező szélességét a karakteres egységekben. Az alapértelmezett érték 20 karakter.
 
-- **Tördelés** : ez egy nem kötelező, logikai típusú tulajdonság. Ha a tulajdonság értékét True értékre állítja, a felhasználó engedélyezi a sortörési funkciót a szövegmezőben. A tulajdonság alapértelmezett értéke TRUE (igaz) értékre van állítva.
+- **Tördelés**: ez egy nem kötelező, logikai típusú tulajdonság. Ha a tulajdonság értékét True értékre állítja, a felhasználó engedélyezi a sortörési funkciót a szövegmezőben. A tulajdonság alapértelmezett értéke TRUE (igaz) értékre van állítva.
 
-- **UniquenessValidationXPath** : ez egy nem kötelező, karakterlánc típusú tulajdonság. Érvényes FIM XPath szűrő kifejezést fogad, és biztosítja, hogy a felhasználó által megadott érték egyedi legyen a szűrő hatókörében lévő erőforrásokon belül. Ha például azt szeretné, hogy a felhasználó a FIM Service DB összes levelezésre engedélyezett biztonsági csoportjában a megjelenítendő név egyedi legyen, az XPath-t kell használnia `/Group[DisplayName=’%VALUE%’ and Type=’MailEnabledSecurity’` . Az érvényesítési művelet akkor történik meg, amikor a felhasználó elhagyja a lapot. Ez a tulajdonság csak az erőforrások létrehozásához használható RCDC támogatott.
+- **UniquenessValidationXPath**: ez egy nem kötelező, karakterlánc típusú tulajdonság. Érvényes FIM XPath szűrő kifejezést fogad, és biztosítja, hogy a felhasználó által megadott érték egyedi legyen a szűrő hatókörében lévő erőforrásokon belül. Ha például azt szeretné, hogy a felhasználó a FIM Service DB összes levelezésre engedélyezett biztonsági csoportjában a megjelenítendő név egyedi legyen, az XPath-t kell használnia `/Group[DisplayName=’%VALUE%’ and Type=’MailEnabledSecurity’` . Az érvényesítési művelet akkor történik meg, amikor a felhasználó elhagyja a lapot. Ez a tulajdonság csak az erőforrások létrehozásához használható RCDC támogatott.
 
-- **UniquenessErrorMessage** : ez egy nem kötelező, karakterlánc típusú tulajdonság. Ez a karakterlánc egy hibaüzenetet jelenít meg, ha a UniquenessValidationXPath érvényesítése sikertelen, és lehet explicit szöveg vagy karakterlánc-erőforrás változó. Ha ez a tulajdonság nincs megadva, a sikertelen ellenőrzéshez tartozó alapértelmezett hibaüzenet a következő: "% VALUE% már létezik. Próbálkozzon egy másikkal. "
+- **UniquenessErrorMessage**: ez egy nem kötelező, karakterlánc típusú tulajdonság. Ez a karakterlánc egy hibaüzenetet jelenít meg, ha a UniquenessValidationXPath érvényesítése sikertelen, és lehet explicit szöveg vagy karakterlánc-erőforrás változó. Ha ez a tulajdonság nincs megadva, a sikertelen ellenőrzéshez tartozó alapértelmezett hibaüzenet a következő: "% VALUE% már létezik. Próbálkozzon egy másikkal. "
 
-**Események** :
+**Események**:
 
-- **TextChanged** : ez az esemény a szövegmezőben megjelenő szöveg megváltozásakor lesz kibocsátva.
+- **TextChanged**: ez az esemény a szövegmezőben megjelenő szöveg megváltozásakor lesz kibocsátva.
 
-**Példa** :
+**Példa**:
 
 A vezérlő teljes mintájának megtekintéséhez tekintse meg az egyszerű vezérlő mintáit ismertető szakaszt.
 

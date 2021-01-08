@@ -9,28 +9,25 @@ ms.date: 08/18/2017
 ms.topic: article
 ms.prod: microsoft-identity-manager
 ms.assetid: ''
-ms.openlocfilehash: 521b96c3ef9cae5a5f9151ddf125cfb534ae0332
-ms.sourcegitcommit: a96944ac96f19018c43976617686b7c3696267d7
+ms.openlocfilehash: c02904d7acb5c56e8b1e7f7a267b8d54c0a58d7a
+ms.sourcegitcommit: 89511939730501458295fc8499490b2b378ce637
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "79044021"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98010557"
 ---
 # <a name="deploy-mim-pam-with-windows-server-2016"></a>A MIM PAM telepítése a Windows Server 2016-tal
 
 
-Ez a konfiguráció lehetővé teszi, hogy a MIM 2016 SP1 kihasználja a Windows Server 2016 által a „PRIV” erdő tartományvezérlőjeként nyújtott funkciókat. A konfigurálás után a felhasználók Kerberos-jegye időkorlátossá válik a szerepkör-aktiválásban megmaradt időre. 
-
-> [!Note]
-> A Windows Server 2016 Technical Preview 5 előtti technikai előzetesek nem használhatók ezzel az MIM-kiadással.
+Ez a forgatókönyv lehetővé teszi, hogy a Microsoft Windows Server 2016 vagy újabb funkciói a "PRIV" erdőhöz kapcsolódó PAM-forgatókönyv esetén a (z) 2016 SP2-t használják.  A konfigurálás után a felhasználók Kerberos-jegye időkorlátossá válik a szerepkör-aktiválásban megmaradt időre.
 
 ## <a name="preparation"></a>Előkészítés
 
 A tesztkörnyezetben legalább két virtuális gép szükséges:
 
--   Egy olyan virtuális gép, amelyen a PRIV erdő Windows Server 2016 rendszerű tartományvezérlője fut.
+-   A virtuális gép a Windows Server 2016-es vagy újabb verzióját futtató PRIV tartományvezérlőt üzemelteti.
 
--   Egy olyan virtuális gép, amelyen a MIM szolgáltatás fut; a rendszere Windows Server 2016 (ajánlott) vagy Windows Server 2012 R2 lehet.
+-   A virtuális gép a Windows Server 2016-es vagy újabb verzióját (ajánlott) vagy a Windows Server 2012 R2 rendszert futtató, a fakiszolgáló szolgáltatást futtatja.
 
 > [!NOTE]
 > Ha még nincs „CORP” tartomány a tesztkörnyezetben, szükséges egy további tartományvezérlő ahhoz a tartományhoz. A „CORP” tartományvezérlő Windows Server 2016 és Windows Server 2012 R2 rendszerű is lehet.
@@ -75,7 +72,7 @@ Végezze el a telepítést az [Útmutató az első lépésekhez](privileged-iden
 
   - A delegálás konfigurálása után, de még a kiszolgáló újraindítása előtt jogosítsa fel a rendszergazdákat és a MIM szolgáltatásfiókját árnyéktagok létrehozására és frissítésére.
 
-    a. Nyisson meg egy PowerShell-ablakot, és írja be az ADSIEdit parancsot.
+    a. Nyisson meg egy PowerShell-ablakot, és írja be a ADSIEdit.
 
     b. Kattintson a Műveletek menü „Csatlakozás” elemére. A Kapcsolódási pont beállításnál módosítsa a névhasználati környezetet az „Alapértelmezett névhasználati környezet” beállításról a „Konfiguráció” értékre, majd kattintson az OK gombra.
 
@@ -87,7 +84,7 @@ Végezze el a telepítést az [Útmutató az első lépésekhez](privileged-iden
 
     f. Váltson a speciális biztonsági beállításokra. Kattintson a Szerkesztés gombra a MIMService elérését engedélyező soron. Módosítsa az „Érvényes erre” beállítást az „Ez az objektum és a gyermekobjektumok” értékre. Frissítse az engedély beállítását, és zárja be a Biztonság párbeszédpanelt.
 
-    g. Zárja be az ADSI Edit eszközt.
+    : Zárja be az ADSI Edit eszközt.
 
   - A delegálás konfigurálása után, de még a kiszolgáló újraindítása előtt jogosítsa fel a MIM rendszergazdáit hitelesítési házirend létrehozására és frissítésére.
 
@@ -125,7 +122,7 @@ Végezze el a telepítést az [Útmutató az első lépésekhez](privileged-iden
 
 - Kövesse az [5. lépés – Megbízhatósági kapcsolat létrehozása](step-5-establish-trust-between-priv-corp-forests.md) című szakasz útmutatását a következő eltérésekkel:
 
-  - Az egyirányú megbízhatóság kialakításakor csak az első két PowerShell-parancsot hajtsa végre (get-credential és New-PAMTrust), **a New-PAMDomainConfiguration parancsot ne adja ki**.
+  - Egyirányú megbízhatósági kapcsolat létrehozásakor csak az első két PowerShell-parancsot (Get-hitelesítőadat és New-PAMTrust) hajtsa végre, ne **hajtsa végre az New-PAMDomainConfiguration parancsot**.
 
   - A bizalmi kapcsolat kialakítása után jelentkezzen be a PRIVDC tartományvezérlőre PRIV\\Rendszergazda felhasználóként, indítsa el a PowerShellt, és írja be a következő parancsokat:
     ```

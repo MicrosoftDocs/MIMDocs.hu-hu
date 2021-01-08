@@ -5,24 +5,27 @@ keywords: ''
 author: billmath
 ms.author: billmath
 manager: daveba
-ms.date: 09/13/2017
+ms.date: 01/05/2021
 ms.topic: article
 ms.prod: microsoft-identity-manager
 ms.assetid: bfc7cb64-60c7-4e35-b36a-bbe73b99444b
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: d6cd6c88992dc3c7dc80cd93d21907319ece0136
-ms.sourcegitcommit: 2bbb6815b7dfae877eec966c1dc40ea8da847d62
+ms.openlocfilehash: aeaf82e6875739cb6ff8ee7b7d96ced55e07adab
+ms.sourcegitcommit: 89511939730501458295fc8499490b2b378ce637
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96522149"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98010744"
 ---
 # <a name="planning-a-bastion-environment"></a>Megerősített környezet tervezése
 
-A dedikált felügyeleti erdővel rendelkező megerősített környezetnek az Active Directory-hoz való hozzáadása lehetővé teszi a szervezetek számára a rendszergazdai fiókok, a munkaállomások és a csoportok egyszerű kezelését olyan környezetben, amely erősebb biztonsági rendszabályokat alkalmaz, mint a meglévő éles környezetük.
+Ha egy megerősített felügyeleti erdővel rendelkező megerősített környezetet ad hozzá egy Active Directory, lehetővé teszi a szervezetek számára a rendszergazdai fiókok, munkaállomások és csoportok felügyeletét olyan környezetben, amely erősebb biztonsági szabályozással rendelkezik, mint a meglévő éles környezet.
 
-Ez az architektúra lehetővé teszi számos olyan rendszabály használatát, amely nem vagy nem könnyen konfigurálható az egy erdőt tartalmazó architektúrában. Ez magában foglalja olyan fiókok létesítését rendszerjogosultsággal nem rendelkező, normál felhasználóként a felügyeleti erdőben, amelyek magas szintű jogosultságokkal rendelkeznek az éles környezetben, ami lehetővé teszi a cégirányítási követelmények nagyobb mértékű technikai érvényesítését. Emellett ezzel az architektúrával az adott bizalmi kapcsolatok szelektív hitelesítési képessége révén a bejelentkezések (és a hitelesítő adatok felfedése) az erre jogosult gazdagépekre korlátozható. Ha a teljes újraépítés költségei és összetettsége nélkül szeretnénk fokozni az üzemi erdő biztonságát, a felügyeleti erdő megfelelő környezetet biztosíthat az üzemi környezet biztonságának erősítéséhez.
+> [!NOTE]
+> A felügyeleti csomag által biztosított megerősített környezettel rendelkező PAM-megközelítés arra szolgál, hogy olyan elkülönített környezetekben legyen használatban, ahol az Internet-hozzáférés nem érhető el, ahol ez a konfiguráció szükséges a szabályozáshoz, vagy nagy hatással van az elkülönített környezetekre, például az offline kutatási laboratóriumokra és a leválasztott operatív technológiákra, valamint a felügyeleti és adatgyűjtési környezetekre. Ha a Active Directory egy internetkapcsolattal rendelkező környezet részét képezi, további információért lásd: a [privilegizált hozzáférés biztonságossá tétele](/security/compass/overview) .
+
+Ez az architektúra lehetővé teszi olyan vezérlők használatát, amelyek nem lehetségesek vagy egyszerűen konfigurálhatók egyetlen erdős architektúrában. Ez magában foglalja olyan fiókok létesítését rendszerjogosultsággal nem rendelkező, normál felhasználóként a felügyeleti erdőben, amelyek magas szintű jogosultságokkal rendelkeznek az éles környezetben, ami lehetővé teszi a cégirányítási követelmények nagyobb mértékű technikai érvényesítését. Emellett ezzel az architektúrával az adott bizalmi kapcsolatok szelektív hitelesítési képessége révén a bejelentkezések (és a hitelesítő adatok felfedése) az erre jogosult gazdagépekre korlátozható. Ha a teljes újraépítés költségei és összetettsége nélkül szeretnénk fokozni az üzemi erdő biztonságát, a felügyeleti erdő megfelelő környezetet biztosíthat az üzemi környezet biztonságának erősítéséhez.
 
 A dedikált felügyeleti erdő mellett további technikák is használhatók. Ezek közé tartozik annak korlátozása, hogy hol jelennek meg a rendszergazdai hitelesítő adatok, az adott erdőben található felhasználók szerepkör-jogosultságainak korlátozása, valamint annak biztosítása, hogy a felügyeleti feladatok végrehajtása ne a szokásos felhasználói tevékenységekhez (például a levelezéshez és a webböngészéshez) használt gazdagépeken történjen.
 
@@ -40,7 +43,7 @@ A rendszergazdai jogosultságok felosztásának [rétegmodellje](tier-model-for-
 
 ### <a name="restricted-trust"></a>Korlátozott megbízhatóság
 
-Az éles környezet *CORP* erdőjének megbízhatónak kell tekintenie a felügyeleti *PRIV* erdőt, de ez megfordítva már nem érvényes. Ez lehet tartományi vagy erdőszintű bizalmi kapcsolat. A felügyeleti erdő tartományának nem kell megbízhatónak tekintenie a felügyelt tartományokat és erdőket az Active Directory felügyeletéhez, bár előfordulhat, hogy egyes alkalmazások kétirányú megbízhatósági kapcsolatot, biztonsági ellenőrzést és tesztelést igényelnek.
+Az éles környezet *CORP* erdőjének megbízhatónak kell tekintenie a felügyeleti *PRIV* erdőt, de ez megfordítva már nem érvényes. Ez a megbízhatóság tartományi megbízhatóság vagy erdőszintű megbízhatóság lehet. A felügyeleti erdő tartományának nem kell megbízhatónak tekintenie a felügyelt tartományokat és erdőket az Active Directory felügyeletéhez, bár előfordulhat, hogy egyes alkalmazások kétirányú megbízhatósági kapcsolatot, biztonsági ellenőrzést és tesztelést igényelnek.
 
 Szelektív hitelesítés használatával kell biztosítani, hogy a felügyeleti erdőben lévő fiókok csak a megfelelő gazdagépeket használják az éles környezetben. A tartományvezérlők karbantartásához és a jogosultságoknak az Active Directoryban történő delegálásához ez általában a tartományvezérlők „Bejelentkezés engedélyezett” jogosultságának megadását igényli a felügyeleti erdőben lévő 0. rétegbeli rendszergazdai fiókok számra. További információért lásd a [szelektív hitelesítési beállítások konfigurálása](https://technet.microsoft.com/library/cc816580.aspx) című témakört.
 
@@ -66,7 +69,7 @@ Mivel az alkalmazások felügyelete átkerül a megerősített környezetbe, veg
 
 - Telepítsen Active Directory tartományi szolgáltatásokat több számítógépen a megerősített környezetben. Legalább két kiszolgáló szükséges a folyamatos hitelesítés biztosításához akkor is, ha az egyik kiszolgáló ütemezett karbantartás miatt átmenetileg indul újra. További számítógépekre lehet szükség a nagyobb terheléshez vagy a több földrajzi régióban elhelyezkedő erőforrások és a rendszergazdák kezeléséhez.
 
-- Készítsen elő vészhelyzeti fiókokat a meglévő erdőben és a dedikált felügyeleti erdőben, amelyeket vészhelyzetben lehet használni.
+- Készítse elő a meglévő erdőben és a dedikált felügyeleti erdőben lévő break-Glass fiókokat vészhelyzeti célokra.
 
 - Telepítse az SQL Servert és a MIM szolgáltatást több számítógépre a megerősített környezetben.
 
@@ -86,7 +89,7 @@ A megerősített környezet létrehozásakor a Microsoft Identity Manager telep�
 
 - **Vészhelyzeti fiókok**, amelyek csak a tartományvezérlőkre tudnak bejelentkezni a megerősített környezetben.
 
-- **„Piros kártyás” rendszergazdák**, akik más fiókokat létesíthetnek, és tervezett karbantartást hajthatnak végre. Ezeknek a fiókoknak ne adjon hozzáférést a megerősített környezeten kívüli meglévő erdőkhöz vagy rendszerekhez. A hitelesítő adatokat, például az intelligens kártyákat, fizikai védelemmel kell ellátni, és az ilyen fiókok használatát naplózni kell.
+- **„Piros kártyás” rendszergazdák**, akik más fiókokat létesíthetnek, és tervezett karbantartást hajthatnak végre. Ezeknek a fiókoknak ne adjon hozzáférést a megerősített környezeten kívüli meglévő erdőkhöz vagy rendszerekhez. A hitelesítő adatokat (például egy intelligens kártyát) fizikailag biztosítani kell, és ezeket a fiókokat kell naplózni.
 
 - **Szolgáltatásfiókok** a Microsoft Identity Managerhez, az SQL Serverhez és az egyéb szoftverekhez.
 
@@ -128,7 +131,7 @@ Bár kényelmetlen lehet, különítse el a felhasználók számára kijelölt m
 
 - **Az USB használatára vonatkozó korlátozások** a fizikai fertőzés elleni védelemhez.
 
-- **Hálózati elkülönítés** a hálózati támadásokkal és a nem szándékos rendszergazdai műveletekkel szembeni védelemhez. A gazdagépeken futó tűzfalnak az explicit módon szükségesnek jelölteken kívül le kell tiltania az összes bejövő kapcsolatot, valamint le kell tiltania minden szükségtelen kimenő internet-hozzáférést.
+- **Hálózati elkülönítés** a hálózati támadásokkal és a nem szándékos rendszergazdai műveletekkel szembeni védelemhez. A gazdagépi tűzfalaknak minden bejövő kapcsolatot le kell tiltaniuk, kivéve a kifejezetten szükséges kapcsolatokat, és le kell tiltaniuk az összes szükségtelen kimenő internet-hozzáférést.
 
 - **Kártevők elleni védelem az ismert** fenyegetések és kártevők ellen.
 
@@ -164,7 +167,7 @@ A meglévő tartományok felügyeletének engedélyezésére hét követelmény 
 
 ### <a name="1-a-security-group-on-the-local-domain"></a>1. biztonsági csoport a helyi tartományban
 
-A meglévő tartományban kell lennie egy csoportnak, amelynek neve megegyezik a tartomány NetBIOS-nevével és három dollárjel szerepel a végén, például *CONTOSO$$$*. A csoport hatókörének *tartományi helyi csoportnak*, a típusának pedig *Biztonság* értékűnek kell lennie. Ez az olyan csoportok esetében szükséges, amelyek a dedikált felügyeleti erdőben lesznek létrehozva a tartomány csoportjainak biztonsági azonosítójával megegyező azonosítóval. Ez a csoport a következő PowerShell-paranccsal hozható létre úgy, hogy a parancsot a meglévő tartomány rendszergazdája futtatja a meglévő tartományhoz csatlakoztatott munkaállomáson:
+A meglévő tartományban kell lennie egy csoportnak, amelynek neve megegyezik a tartomány NetBIOS-nevével és három dollárjel szerepel a végén, például *CONTOSO$$$*. A csoport hatókörének *tartományi helyi csoportnak*, a típusának pedig *Biztonság* értékűnek kell lennie. Ez az olyan csoportok esetében szükséges, amelyek a dedikált felügyeleti erdőben lesznek létrehozva a tartomány csoportjainak biztonsági azonosítójával megegyező azonosítóval. Hozza létre ezt a csoportot a következő PowerShell-paranccsal, amelyet a meglévő tartomány rendszergazdája hajt végre, és a meglévő tartományhoz csatlakoztatott munkaállomáson fut:
 
 ```PowerShell
 New-ADGroup -name 'CONTOSO$$$' -GroupCategory Security -GroupScope DomainLocal -SamAccountName 'CONTOSO$$$'
@@ -248,4 +251,4 @@ Tekintse át az adott tartomány Rendszer tárolójában található *AdminSDHol
 
 ## <a name="select-users-and-groups-for-inclusion"></a>A felhasználók és a csoportok kiválasztása
 
-A következő lépése a PAM-szerepkörök konfigurálása, valamint azon felhasználók és csoportok hozzárendelése, amelyekhez a szerepköröknek hozzá kell férniük. Ez általában a megerősített környezetben felügyelt réteg felhasználóinak és csoportjainak részhalmaza lesz. További információ: [Szerepkörök definiálása az emelt szintű hozzáférések felügyeletéhez](defining-roles-for-pam.md).
+A következő lépése a PAM-szerepkörök konfigurálása, valamint azon felhasználók és csoportok hozzárendelése, amelyekhez a szerepköröknek hozzá kell férniük. Ezek a felhasználók és csoportok általában a megerősített környezetben kezeltként azonosított rétegek felhasználóinak és csoportjainak egy részhalmazát fogják használni. További információ: [Szerepkörök definiálása az emelt szintű hozzáférések felügyeletéhez](defining-roles-for-pam.md).

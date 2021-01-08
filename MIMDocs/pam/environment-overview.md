@@ -5,21 +5,22 @@ keywords: ''
 author: billmath
 ms.author: billmath
 manager: daveba
-ms.date: 08/31/2017
+ms.date: 01/05/2021
 ms.topic: article
 ms.prod: microsoft-identity-manager
 ms.assetid: 479db14c-1bfb-4d7c-a344-cd718a01f328
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: c758bd924c6f7272a44567c2e9dc919215cdd273
-ms.sourcegitcommit: a96944ac96f19018c43976617686b7c3696267d7
+ms.openlocfilehash: ca306e7521bbdc2200663889becd91b1ae952d5a
+ms.sourcegitcommit: 89511939730501458295fc8499490b2b378ce637
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "79044004"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98010659"
 ---
-# <a name="environment-overview"></a>A környezet áttekintése
+# <a name="mim-pam-test-lab-environment-overview"></a>A betekintési szolgáltatás PAM-tesztkörnyezet környezetének áttekintése
 
+A következővel állíthatja be a szoftvert a virtuális gépekre.
 A Privileged Access Management olyan virtuális gépekkel (VM) működik, amelyek megosztott hálózaton keresztül kapcsolódnak egymáshoz, és külön meghajtókkal rendelkeznek. Ezek a virtuális gépek Windows 8.1, Windows Server 2012 R2 vagy más operációsrendszer-platformokon is működhetnek.
 
 ![PAM-kiszolgálók: kapcsolatok és támogatott platformok – diagram](media/pam-test-lab-architecture.png)
