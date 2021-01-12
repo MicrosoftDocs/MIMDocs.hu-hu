@@ -1,5 +1,5 @@
 ---
-title: Az önkiszolgáló jelszó-visszaállítás használata | Microsoft Docs
+title: Self-Service jelszó-visszaállítás használata | Microsoft Docs
 description: Ismerje meg, hogy milyen újdonságokat kínál a MIM 2016 önkiszolgáló jelszó-változtatási összetevője, például hogy miként képes együttműködni a többtényezős hitelesítéssel.
 keywords: ''
 author: billmath
@@ -9,14 +9,14 @@ ms.date: 05/11/2019
 ms.topic: article
 ms.prod: microsoft-identity-manager
 ms.assetid: 94a74f1c-2192-4748-9a25-62a526295338
-ms.openlocfilehash: 41aba931111d6ef46e60dfed173362e59c411dfe
-ms.sourcegitcommit: a96944ac96f19018c43976617686b7c3696267d7
+ms.openlocfilehash: 16901978fd5b51a4a986b07e580d8162dd159575
+ms.sourcegitcommit: 41d399b16dc64c43da3cc3b2d77529082fe1d23a
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "79044276"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98104130"
 ---
-# <a name="self-service-password-reset-deployment-options"></a>Önkiszolgáló jelszó-visszaállítás üzembe helyezési lehetőségei
+# <a name="self-service-password-reset-deployment-options"></a>Self-Service jelszó-visszaállítási telepítési lehetőségek
 
 A [prémium szintű Azure Active Directory licenccel rendelkező](https://docs.microsoft.com/azure/active-directory/authentication/concept-sspr-licensing)új ügyfelek esetében javasoljuk, hogy az [Azure ad önkiszolgáló jelszó-visszaállítási funkciójának](/azure/active-directory/authentication/concept-sspr-howitworks) használatával adja meg a végfelhasználói élményt.  Az Azure AD önkiszolgáló jelszavának alaphelyzetbe állítása webes és Windows-integrált felhasználói élményt biztosít a felhasználók számára a saját jelszavának alaphelyzetbe állításához, és számos olyan funkciót támogat, mint a többhelyes hitelesítés, beleértve a másodlagos e-maileket és a Q&A kapukat.  Az Azure AD önkiszolgáló jelszó-visszaállítási szolgáltatásának telepítésekor a Azure AD Connect támogatja [az új jelszavak ad DSba való visszaírását](/azure/active-directory/authentication/concept-sspr-writeback), és a rendszerállapot- [módosítási értesítési szolgáltatás](deploying-mim-password-change-notification-service-on-domain-controller.md) segítségével továbbíthatja a jelszavakat más rendszerekre, például egy másik gyártó címtár-kiszolgálójához is.  A felügyeleti webszolgáltatások [jelszavas felügyeletre](infrastructure/mim2016-password-management.md) való üzembe helyezéséhez nincs szükség a rendszerbe állításhoz, illetve a felügyeleti webszolgáltatások önkiszolgáló jelszó-visszaállítási vagy regisztrációs portálok telepítéséhez.  Ehelyett az alábbi lépéseket követheti el:
 
@@ -29,16 +29,12 @@ Az önkiszolgáló jelszó-visszaállításhoz korábban üzembe helyezett Foref
 
 Az Azure AD önkiszolgáló jelszó-visszaállítást a felhasználók számára még nem központilag használó ügyfelek esetében a (z) az önkiszolgáló jelszó-visszaállítási portálokat is tartalmazza.  A FIM-hez képest a 2016 a következő változásokat tartalmazza:
 
-- Az önkiszolgáló jelszó-visszaállítási portál és a Windows bejelentkezési képernyő lehetővé teszi a felhasználók számára, hogy jelszavaik módosítása nélkül oldják fel a fiókjaikat.
+- A Self-Service jelszó-visszaállítási portál és a Windows bejelentkezési képernyő lehetővé teszi a felhasználók számára, hogy a jelszavuk módosítása nélkül oldják fel a fiókjaikat.
 - Új hitelesítési kaput, telefonos kaput adtak hozzá a webszolgáltatáshoz. Ez lehetővé teszi a felhasználó telefonhívás útján történő használatát a Microsoft Azure Multi-Factor Authentication (MFA) szolgáltatáson keresztül.
 
-A 4.5.26.0 2016-es kiadás az Azure Multi-Factor Authentication szoftverfejlesztői készlet (Azure MFA SDK) letöltésére támaszkodik az ügyfélen.  Ez az SDK elavult, és az Azure MFA SDK-t a meglévő ügyfelek csak a 2018. november 14-én érvényes kivonulási időpontig támogatják. Addig az ügyfeleknek kapcsolatba kell lépniük az Azure ügyfélszolgálatával, hogy megkapják a generált MFA-szolgáltatás hitelesítő adatait tartalmazó csomagot, mivel nem tudják letölteni az Azure MFA SDK-t. 
+A 4.5.26.0 2016-es kiadás az Azure Multi-Factor Authentication szoftverfejlesztői készlet (Azure MFA SDK) letöltésére támaszkodik az ügyfélen.  Az SDK elavult, és az ügyfeleknek a SSPR-t az Azure MFA-kiszolgálóval vagy az Azure AD önkiszolgáló jelszó-visszaállítási szolgáltatásával kell áthelyezniük. Ez a [cikk](working-with-mfaserver-for-mim.md) azt ismerteti, hogyan frissítheti a központi telepítéshez szükséges, önkiszolgáló jelszó-visszaállítási portált és a PAM konfigurációját az Azure multi-Factor Authentication-kiszolgáló a multi-Factor Authentication használatával.
 
-#### <a name="new-update-current-azure-mfa-configuration-to-azure-multi-factor-authentication-server"></a>ÚJ! Az Azure MFA jelenlegi konfigurációjának frissítése az Azure-Multi-Factor Authentication-kiszolgáló
-
-Ez a [cikk](working-with-mfaserver-for-mim.md) azt ismerteti, hogyan frissítheti a központi telepítéshez szükséges, önkiszolgáló jelszó-visszaállítási portált és a PAM konfigurációját az Azure multi-Factor Authentication-kiszolgáló a multi-Factor Authentication használatával.
-
-## <a name="deploying-mim-self-service-password-reset-portal-using-azure-mfa-for-multi-factor-authentication"></a>A webszolgáltatások önkiszolgáló jelszó-visszaállítási portáljának üzembe helyezése az Azure MFA használatával Multi-Factor Authentication
+## <a name="deploying-mim-self-service-password-reset-portal-using-azure-mfa-for-multi-factor-authentication"></a>A Self-Service jelszó-visszaállítási portál üzembe helyezése az Azure MFA használatával Multi-Factor Authentication
 
 A következő szakasz azt ismerteti, hogyan telepítheti a webszolgáltatások önkiszolgáló jelszó-visszaállítási portálját az Azure MFA használatával a többtényezős hitelesítéshez.  Ezek a lépések csak azoknál az ügyfeleknél szükségesek, akik nem használják az Azure AD önkiszolgáló jelszó-visszaállítást a felhasználók számára.
 
@@ -75,17 +71,12 @@ Ehhez a forgatókönyvhöz szükséges, hogy a felhasználókhoz és az Azure MF
 ## <a name="prepare-mim-to-work-with-multi-factor-authentication"></a>A MIM és a többtényezős hitelesítés együttműködésének előkészítése
 Állítsa be a MIM Sync szolgáltatást a jelszó-átállítási és fiókfeloldási funkció támogatásához. További információért lásd: [A FIM beépülő moduljainak és bővítményeinek telepítése](https://technet.microsoft.com/library/ff512688%28v=ws.10%29.aspx), [A FIM SSPR telepítése](https://technet.microsoft.com/library/hh322891%28v=ws.10%29.aspx), [Az SSPR hitelesítési kapui](https://technet.microsoft.com/library/jj134288%28v=ws.10%29.aspx), illetve [Tesztlabor-útmutató az SSPR-hez](https://technet.microsoft.com/library/hh826057%28v=ws.10%29.aspx).
 
-A következő szakaszban az Azure MFA szolgáltató Microsoft Azure Active Directoryben történő beállításához nyújt útmutatást. Ennek keretében létre fog hozni egy fájlt, amely tartalmazza az MFA által az Azure MFA-hoz való kapcsolódáshoz szükséges hitelesítési anyagokat.  A folyamat végrehajtásához Azure-előfizetés szükséges.
-
-### <a name="register-your-multi-factor-authentication-provider-in-azure"></a>A többtényezős hitelesítési szolgáltató regisztrálása az Azure-ban
-
-1.  Hozzon létre egy [MFA-szolgáltatót](/azure/multi-factor-authentication/multi-factor-authentication-get-started-auth-provider).
-
-2. Nyisson meg egy támogatási esetet, és kérje le a Direct SDK-t a ASP.net 2,0 C#-ra. Az SDK-t csak az MFA aktuális felhasználói számára biztosítjuk, mivel a Direct SDK elavult. Az új ügyfeleknek az MFA-kiszolgálóval való integrációt követően el kell fogadniuk a következő verzióját.
-
-3. A letöltött ZIP-fájlt másolja minden rendszerre, ahol a MIM szolgáltatás telepítve van.  Vegye figyelembe, hogy a ZIP-fájl az Azure MFA szolgáltatással való hitelesítésre szolgáló kulcskezelő anyagokat tartalmaz.
 
 ### <a name="update-the-configuration-file"></a>A konfigurációs fájl frissítése
+
+> [!NOTE]
+> Ez a szakasz az Azure MFA SDK által biztosított ZIP-fájlt használó korábbi útmutatáson alapul. Ehelyett használja az [Azure multi-Factor Authentication-kiszolgáló YSE](working-with-mfaserver-for-mim.md)című cikkben található útmutatást.
+
 
 1. A MIM-et telepítő felhasználói fiókkal jelentkezzen be arra a számítógépre, ahol a MIM szolgáltatás telepítve van.
 
@@ -131,7 +122,7 @@ A szervezeti felhasználók ezután már regisztrálhatnak a jelszóváltoztatá
 
 #### <a name="register-users-for-password-reset"></a>Felhasználók regisztrálása jelszóváltoztatásra
 
-1.  A felhasználó elindít egy böngészőt, és a MIM jelszó-változtatási regisztrációs portálra lép.  (A portál jellemzően Windows-hitelesítésre van konfigurálva.)  Identitása megerősítéséhez a portálon ismét meg kell adnia felhasználónevét és jelszavát.
+1.  A felhasználók elindítanak egy webböngészőt, és megnyitják a felhasználói felület jelszavának visszaállítására szolgáló regisztrációs portált.  (A portál jellemzően Windows-hitelesítésre van konfigurálva.)  Identitása megerősítéséhez a portálon ismét meg kell adnia felhasználónevét és jelszavát.
 
     Be kell lépnie a jelszó-regisztrálási portálra, és hitelesítenie kell magát a felhasználónevével és jelszavával.
 
@@ -192,7 +183,6 @@ Ha a MIM beépülő moduljait és bővítményeit olyan tartományhoz csatlakozt
 
 4.  Sikeres hitelesítést követően a felhasználó két lehetőség közül választhat: megtarthatja a jelenlegi jelszavát, vagy új jelszót állíthat be.
 
-5.  ! [A hálózati adapter AC
-6.  rendszerkép zárolásának feloldása sikeres képfájl] (média/MIM-SSPR-account-unlock. JPG)
+5.  ![Kép: Fiók zárolásának sikeres feloldása a MIM-ben](media/MIM-SSPR-account-unlock.JPG)
 
 6.  Ha a felhasználó úgy dönt, hogy megváltoztatja a jelszavát, a módosításhoz kétszer be kell írnia az új jelszót, majd a **Next** (Tovább) gombra kell kattintania.

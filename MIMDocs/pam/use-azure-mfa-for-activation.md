@@ -10,16 +10,16 @@ ms.date: 07/06/2018
 ms.topic: article
 ms.prod: microsoft-identity-manager
 ms.assetid: 5134a112-f73f-41d0-a5a5-a89f285e1f73
-ms.openlocfilehash: 512a1887329f9ec5c93fd69f0ce0b22495ba009c
-ms.sourcegitcommit: a96944ac96f19018c43976617686b7c3696267d7
+ms.openlocfilehash: 1c26147dc1e192804011ee104989a508acb25974
+ms.sourcegitcommit: 41d399b16dc64c43da3cc3b2d77529082fe1d23a
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "79043545"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98104054"
 ---
-# <a name="using-azure-mfa-for-activation"></a>Aktiválás az Azure MFA használatával
+# <a name="using-azure-mfa-for-activation-in-mim-pam"></a>Az Azure MFA használata az aktiváláshoz a webszolgáltatási PAM-ban
 > [!IMPORTANT]
-> Az Azure Multi-Factor Authentication szoftverfejlesztői készlet elavult felmondásának bejelentése miatt az Azure MFA SDK a meglévő ügyfelek számára a 2018. november 14-én esedékes kivonulási időpontig lesz támogatott. Az új ügyfelek és a jelenlegi ügyfelek többé nem tölthetik le az Azure MFA SDK-t a klasszikus Azure portálon keresztül. További információ az Azure MFA-kiszolgáló használatáról: az [Azure MFA-kiszolgáló használata a PAM-ban vagy a SSPR-ben](../working-with-mfaserver-for-mim.md).
+> A webalkalmazás korábbi verziói az Azure Multi-Factor Authentication (MFA) szoftverfejlesztői készletet (SDK) használták az Azure MFA integrálásához.  Az Azure MFA SDK elavulttá váltása miatt a meglévő és az új szakterületi ügyfelek nem tudják többé letölteni az Azure MFA SDK-t. További információ az Azure MFA-kiszolgáló Azure MFA SDK-val való használatáról: az [Azure MFA-kiszolgáló használata a PAM-ban vagy a SSPR](../working-with-mfaserver-for-mim.md).
 
 
 
@@ -33,53 +33,23 @@ Ha egyik ellenőrzési mód sincs engedélyezve, a jelölt felhasználók szerep
 
 A Microsoft Azure Multi-Factor Authentication (MFA) olyan hitelesítési szolgáltatás, amely a bejelentkezési kísérletek mobilalkalmazással, telefonhívással vagy SMS-sel történő megerősítését kéri a felhasználóktól. A szolgáltatás a Microsoft Azure Active Directoryval, valamint felhőalapú és helyszíni nagyvállalati alkalmazásokkal is használható. A PAM-forgatókönyv esetén az Azure MFA további hitelesítési mechanizmust biztosít. Az Azure MFA használható hitelesítésre, függetlenül attól, hogy a felhasználók hogyan hitelesítve vannak a Windows PRIV-tartományba.
 
+> [!NOTE]
+> A felügyeleti csomag által biztosított megerősített környezettel rendelkező PAM-megközelítés arra szolgál, hogy olyan elkülönített környezetekben legyen használatban, ahol az Internet-hozzáférés nem érhető el, ahol ez a konfiguráció szükséges a szabályozáshoz, vagy nagy hatással van az elkülönített környezetekre, például az offline kutatási laboratóriumokra és a leválasztott operatív technológiákra, valamint a felügyeleti és adatgyűjtési környezetekre.  Mivel az Azure MFA egy Internet-szolgáltatás, ez az útmutató kizárólag a meglévő fakiszolgálói PAM-ügyfelek vagy olyan környezetekben nyújt segítséget, ahol ez a konfiguráció szükséges a szabályozáshoz. Ha a Active Directory egy internetkapcsolattal rendelkező környezet részét képezi, további információért lásd: a [privilegizált hozzáférés biztonságossá tétele](/security/compass/overview) .
+
 ## <a name="prerequisites"></a>Előfeltételek
 
-Ahhoz, hogy az Azure MFA-t a webszolgáltatással együtt használhassa, a következőkre lesz szüksége:
+Ahhoz, hogy az Azure MFA-t a (z) a következővel használja:
 
 - Internet-hozzáférés minden, a PAM megoldást használó MIM szolgáltatás esetén az Azure MFA szolgáltatás eléréséhez
 - Azure-előfizetés
-- Azure Active Directory Premium licenc vagy valamilyen alternatív, Azure MFA-licencet biztosító megoldás a jelölt felhasználóknál
+- Azure MFA
+- prémium szintű Azure Active Directory-licencek a tagjelölt felhasználók számára
 - Telefonszám az összes jelölt felhasználó esetén
-
-## <a name="creating-an-azure-mfa-provider"></a>Azure MFA-szolgáltató létrehozása
-
-Ebben a szakaszban az Azure MFA-szolgáltatót Microsoft Azure Active Directoryban állíthatja be.Ha már használja az Azure MFA-t – akár önállóan, akár az Azure Active Directory Premiummal konfigurálva – ugorjon a következő bekezdéshez.
-
-1.  Nyisson meg egy webböngészőt, és jelentkezzen be a [klasszikus Azure portálra](https://manage.windowsazure.com) Azure előfizetés-adminisztrátorként.
-
-2.  A bal alsó sarokban kattintson a **New** (Új) gombra.
-
-3.  Válassza az **App Services > Active Directory > Multi-Factor Auth Provider > Quick Create** (Alkalmazásszolgáltatások > Active Directory > Többtényezős hitelesítési szolgáltató > Gyorslétrehozás) lehetőséget.
-
-4.  A **Name** (Név) mezőbe írja be **PAM** szót, és a Usage Model (Használati modell) mezőben válassza a Per Enabled User (Engedélyezett felhasználónként) lehetőséget. Ha már rendelkezik Azure AD-címtárral, válassza azt a címtárat. Végül kattintson a **Create** (Létrehozás) gombra.
 
 ## <a name="downloading-the-azure-mfa-service-credentials"></a>Az Azure MFA szolgáltatás hitelesítő adatainak letöltése
 
-> [!IMPORTANT]
-> Az Azure MFA SDK már nem érhető el. További információ az Azure MFA-kiszolgáló használatáról: az [Azure MFA-kiszolgáló használata a PAM-ban vagy a SSPR](../working-with-mfaserver-for-mim.md) .
+Korábban az Azure MFA-hoz való kapcsolatfelvételhez egy olyan ZIP-fájlt kell letöltenie, amely tartalmazza a többtényezős hitelesítéshez szükséges hitelesítési anyagokat. Mivel azonban az Azure MFA SDK már nem érhető el, lásd: az Azure MFA [-kiszolgáló használata a PAM-ban vagy a SSPR](../working-with-mfaserver-for-mim.md) az Azure MFA-kiszolgáló használatával kapcsolatos információkhoz.
 
-
-Korábban létrehoz egy fájlt, amely tartalmazza a PAM hitelesítési anyagát, hogy kapcsolatba lépjen az Azure MFA-val.
-
-1. Nyisson meg egy webböngészőt, és jelentkezzen be a [klasszikus Azure portálra](https://manage.windowsazure.com) Azure előfizetés-adminisztrátorként.
-
-2.  Az Azure portál menüjében kattintson az **Active Directory** elemre, majd lépjen a **Multi-Factor Auth Providers** (Többtényezős hitelesítési szolgáltatók) lapra.
-
-3.  Kattintson a PAM-hoz használni kívánt Azure MFA-szolgáltatóra, majd kattintson a **Manage** (Kezelés) gombra.
-
-4.  Az új ablak bal oldali paneljének **Konfigurálás**területén kattintson a **Beállítások**elemre.
-
-5.  Az **Azure Multi-Factor Authentication** ablakban kattintson az **SDK** elemre a **Downloads** (Letöltések) területen.
-
-6.  Kattintson a **Download (Letöltés** ) hivatkozásra az **ASP.net\#2,0 C nyelvi SDK**-val rendelkező fájl zip oszlopában.
-
-![A Multi-Factor Authentication SDK letöltése – képernyőkép](media/PAM-Azure-MFA-Activation-Image-1.png)
-
-7.  A letöltött ZIP-fájlt másolja minden rendszerre, ahol a MIM szolgáltatás telepítve van. 
-
->[!NOTE]
-> A ZIP-fájl az Azure MFA szolgáltatással való hitelesítésre szolgáló kulcsanyagokat tartalmazza.
 
 ## <a name="configuring-the-mim-service-for-azure-mfa"></a>A MIM szolgáltatás konfigurálása az Azure MFA használatára
 
@@ -89,9 +59,9 @@ Korábban létrehoz egy fájlt, amely tartalmazza a PAM hitelesítési anyagát,
 
 3.  A Windows Intéző használatával navigáljon az ```pf\certs``` előző szakaszban letöltött zip-fájl mappájába. Másolja a fájlt ```cert\_key.p12``` az új könyvtárba.
 
-4.  A Windows Intéző segítségével navigáljon a ```pf``` zip mappájába, és nyissa meg a ```pf\_auth.cs``` fájlt egy szövegszerkesztőben, például a WordPadben.
+4.  A Windows Intéző segítségével navigáljon a ```pf``` zip mappájába, és nyissa meg a fájlt ```pf\_auth.cs``` egy szövegszerkesztőben, például a Jegyzettömbben.
 
-5. Keresse meg a következő három ```LICENSE\_KEY```paramétert:, ```GROUP\_KEY```, ```CERT\_PASSWORD```.
+5. Keresse meg a következő három paramétert: ```LICENSE\_KEY``` , ```GROUP\_KEY``` , ```CERT\_PASSWORD``` .
 
 ![Értékek másolása a pf\_auth.cs fájlból – képernyőkép](media/PAM-Azure-MFA-Activation-Image-2.png)
 
@@ -99,7 +69,7 @@ Korábban létrehoz egy fájlt, amely tartalmazza a PAM hitelesítési anyagát,
 
 7. A pf\_auth.cs fájlból másolja a LICENSE\_KEY, GROUP\_KEY és a CERT\_PASSWORD paraméter értékét az MfaSettings.xml fájl megfelelő XML-elemeibe.
 
-8. Az **<CertFilePath>** XML-elemben adja meg a korábban kibontott CERT\_Key. P12 fájl teljes elérési útját.
+8. Az **<CertFilePath>** XML-elemben adja meg a \_ korábban kibontott CERT Key. P12 fájl teljes elérési útját.
 
 9. A **<username>** elemben adjon meg egy tetszőleges felhasználónevet.
 
@@ -124,7 +94,7 @@ Set-PAMUser (Get-PAMUser -SourceDisplayName Jen) -SourcePhoneNumber 12135551212
 
 ## <a name="configure-pam-roles-for-azure-mfa"></a>PAM-szerepkörök konfigurálása az Azure MFA számára
 
-Ha már az adott PAM-szerepkörre jelölt összes felhasználó telefonszáma tárolva van a MIM szolgáltatás adatbázisában, a szerepkör konfigurálható az Azure MFA hitelesítés megkövetelésére. Ez a `New-PAMRole` vagy a `Set-PAMRole` paranccsal tehető meg. Például:
+Ha már az adott PAM-szerepkörre jelölt összes felhasználó telefonszáma tárolva van a MIM szolgáltatás adatbázisában, a szerepkör konfigurálható az Azure MFA hitelesítés megkövetelésére. Ez a `New-PAMRole` vagy a `Set-PAMRole` paranccsal tehető meg. Példa:
 
 ```PowerShell
 Set-PAMRole (Get-PAMRole -DisplayName "R") -MFAEnabled 1
@@ -136,27 +106,12 @@ Egy adott szerepkör esetében az „-MFAEnabled 0” paraméternek a `Set-PAMRo
 
 A következő események a Privileged Access Management eseménynaplójában jelenhetnek meg:
 
-| ID (Azonosító)  | Severity | Létrehozója | Leírás |
+| ID (Azonosító)  | Súlyosság | Létrehozója | Description |
 |-----|----------|--------------|-------------|
 | 101 | Hiba       | MIM szolgáltatás            | A felhasználó nem végezte el az Azure MFA hitelesítést (például nem vette fel a telefont) |
-| 103 | Információ | MIM szolgáltatás            | A felhasználó aktiválás közben hajtotta végre az Azure MFA hitelesítést                       |
+| 103 | Tájékoztatás | MIM szolgáltatás            | A felhasználó aktiválás közben hajtotta végre az Azure MFA hitelesítést                       |
 | 825 | Figyelmeztetés     | A PAM figyelőszolgáltatása | A telefonszám megváltozott                                |
-
-A sikertelen telefonhívások okára (101-es esemény) vonatkozó további információkért megtekinthet vagy letölthet egy Azure MFA-jelentést is.
-
-1.  Nyisson meg egy webböngészőt, és jelentkezzen be a [klasszikus Azure portálra](https://manage.windowsazure.com) globális Azure AD-rendszergazdaként.
-
-2.  Az Azure-Portal menüjében válassza az **Active Directory** lehetőséget, majd lépjen a **Multi-Factor Auth Providers** (Többtényezős hitelesítési szolgáltatók) lapra.
-
-3.  Kattintson a PAM-hoz használni kívánt Azure MFA-szolgáltatóra, majd kattintson a **Manage** (Kezelés) gombra.
-
-4.  Kattintson az új ablakban a **Usage** (Használat), majd a **User Details** (Felhasználó adatai) lehetőségre.
-
-5.  Válassza ki az időtartományt, és jelölje be a jelölőnégyzetet a **Name** (Név) pont mellett, a további jelentések oszlopában. Kattintson az **Exportálás CSV-fájlba** elemre.
-
-6.  A jelentést a létrehozását követően megtekintheti a portálon, illetve, ha az MFA-jelentés túl hosszú, letöltheti CSV-fájlként. Az **AUTH TYPE** oszlopban található **SDK**-értékek jelölik azokat a sorokat, amelyek a PAM-aktivációs kérésekhez kapcsolódnak: ezek a MIM-től vagy más helyszíni szoftvertől származó események. A **USERNAME** mező a MIM szolgáltatás adatbázisában található felhasználóobjektum GUID-azonosítója. Ha egy hívás sikertelen volt, az **AUTHD** oszlop értéke **No** lesz, a **CALL RESULT** oszlop pedig tartalmazza a hiba okát, és annak részleteit.
 
 ## <a name="next-steps"></a>Következő lépések
 
 - [Mi az Azure Multi-Factor Authentication](https://docs.microsoft.com/azure/multi-factor-authentication/multi-factor-authentication)
-- [Hozzon létre ingyenes Azure-fiókot még ma](https://azure.microsoft.com/free/)

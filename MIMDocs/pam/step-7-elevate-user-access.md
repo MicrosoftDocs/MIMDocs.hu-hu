@@ -8,12 +8,12 @@ ms.date: 01/17/2018
 ms.topic: article
 ms.prod: microsoft-identity-manager
 ms.assetid: 5325fce2-ae35-45b0-9c1a-ad8b592fcd07
-ms.openlocfilehash: bdb02eed8e22b373c6cfa5028153cad6aee9a536
-ms.sourcegitcommit: 80507a128d2bc28ff3f1b96377c61fa97a4e7529
+ms.openlocfilehash: 0d7e9a1111e41008a989ff2bfd52c9d79debf104
+ms.sourcegitcommit: 41d399b16dc64c43da3cc3b2d77529082fe1d23a
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83279963"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98104037"
 ---
 # <a name="step-7--elevate-a-users-access"></a>7. lépés – Felhasználó jogosultságszintjének emelése
 
@@ -36,10 +36,10 @@ Emelt szintű jogosultságok nélkül Ilona nem férhet hozzá a CORP erdőben t
 ## <a name="request-privileged-access-from-mim"></a>Kérjen emelt szintű hozzáférést a MIM-ből.
 
 > [!NOTE]
-> Javasoljuk, hogy a munkaállomás legyen Kiemelt munkaállomás (PAW).  További információ: [Paw](https://docs.microsoft.com/windows-server/identity/securing-privileged-access/privileged-access-workstations).
+> Javasoljuk, hogy a munkaállomás legyen Kiemelt munkaállomás (PAW).  További információ: az [eszközök biztonságossá tétele](/security/compass/privileged-access-devices).
 
 1. PRIVWKSTN, bejelentkezés PRIV\priv.jen.
-2. Kattintson a **Start**gombra, majd a **Futtatás**parancsra, és írja be a **PowerShell. exe**parancsot.
+2. Kattintson a **Start** gombra, majd a **Futtatás** parancsra, és írja be a **PowerShell.exe**.
 3. Írja be a következő parancsot.
 
     ```cmd

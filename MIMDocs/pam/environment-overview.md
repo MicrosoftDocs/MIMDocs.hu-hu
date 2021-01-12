@@ -11,14 +11,17 @@ ms.prod: microsoft-identity-manager
 ms.assetid: 479db14c-1bfb-4d7c-a344-cd718a01f328
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: ca306e7521bbdc2200663889becd91b1ae952d5a
-ms.sourcegitcommit: 89511939730501458295fc8499490b2b378ce637
+ms.openlocfilehash: fb38ee26d829acd5c54bf690f7a80f0659baaa85
+ms.sourcegitcommit: 41d399b16dc64c43da3cc3b2d77529082fe1d23a
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98010659"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98104071"
 ---
 # <a name="mim-pam-test-lab-environment-overview"></a>A betekintési szolgáltatás PAM-tesztkörnyezet környezetének áttekintése
+
+> [!NOTE]
+> A felügyeleti csomag PAM-alapú megközelítése olyan elszigetelt környezetek egyéni architektúrájában használható, ahol az Internet-hozzáférés nem érhető el, ahol ez a konfiguráció szükséges a szabályozáshoz, vagy nagy hatással van az elkülönített környezetekre, például az offline kutatási laboratóriumokra és a leválasztott operatív technológiákra, illetve a felügyeleti és adatgyűjtési környezetekre. Ha a Active Directory egy internetkapcsolattal rendelkező környezet részét képezi, további információért lásd a [privilegizált hozzáférés biztonságossá](/security/compass/overview) tételét ismertető témakört.
 
 A következővel állíthatja be a szoftvert a virtuális gépekre.
 A Privileged Access Management olyan virtuális gépekkel (VM) működik, amelyek megosztott hálózaton keresztül kapcsolódnak egymáshoz, és külön meghajtókkal rendelkeznek. Ezek a virtuális gépek Windows 8.1, Windows Server 2012 R2 vagy más operációsrendszer-platformokon is működhetnek.
@@ -32,7 +35,7 @@ A virtuális gépek lemezképeit tároló meghajtókon legalább 120 GB szabad l
 > [!IMPORTANT]
 > A tárterületet a megerősített környezetnek kell dedikáltnak lennie. A tárterület a megerősített környezeten kívüli egyéb munkaterhelésekkel való megosztása nem ajánlott, mivel ez veszélyeztetheti a megerősített környezet integritását.
 
-## <a name="next-steps"></a>További lépések
+## <a name="next-steps"></a>Következő lépések
 
 - A [Active Directory tartományi szolgáltatások Privileged Access Management](privileged-identity-management-for-active-directory-domain-services.md) a PAM áttekintése és működése.
 - [A PAM összetevőinek megismerése](principles-of-operation.md) a PAM különböző összetevőinek áttekintése.

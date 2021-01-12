@@ -11,12 +11,12 @@ ms.prod: microsoft-identity-manager
 ms.assetid: 82a9085c-9667-4b3b-8079-657eab1d1e58
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: b54a8eeaaa76db1c1bfe6b234028e0396210ecf7
-ms.sourcegitcommit: 80507a128d2bc28ff3f1b96377c61fa97a4e7529
+ms.openlocfilehash: 417f26b123aec7e8ab1b8cf254e0771f799dcb9d
+ms.sourcegitcommit: 41d399b16dc64c43da3cc3b2d77529082fe1d23a
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83280082"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98103969"
 ---
 # <a name="hardware-and-software-requirements"></a>Hardver- és szoftverkövetelmények
 
@@ -49,7 +49,7 @@ Ha Ön nem rendelkezik Windows-, SQL Server- vagy Windows Server-licenccel, let�
 
 ### <a name="technet-evaluation-center"></a>TechNet Evaluation Center
 
-- [Windows Server 2012 R2](https://www.microsoft.com/evalcenter/evaluate-windows-server-2012-r2)
+- Windows Server 2012 R2 vagy újabb
 - [Windows 10 Enterprise](https://www.microsoft.com/evalcenter/evaluate-windows-10-enterprise)
 
 ### <a name="microsoft-download-center"></a>Microsoft letöltőközpontból
