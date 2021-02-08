@@ -11,12 +11,12 @@ ms.prod: microsoft-identity-manager
 ms.assetid: bfabc562-a2f0-4cff-ac31-36927f41e102
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: 91409b0272c0b21cac90dbc4c162e5bf4d9f8464
-ms.sourcegitcommit: a96944ac96f19018c43976617686b7c3696267d7
+ms.openlocfilehash: c6e4e03524983944ee25343c24fa8247d770af27
+ms.sourcegitcommit: 78f3f18f0b7afb44fcf7444e446a4edffb1f8f12
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "79042134"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99835660"
 ---
 # <a name="enroll-smart-cards-for-non-administrators"></a>Intelligens kártyák regisztrálása nem rendszergazdák számára
 Ha a felhasználó nem helyi rendszergazda, akkor alapesetben nem jogosult intelligens kártyát regisztrálni a saját számítógépén. A következő folyamat bemutatja, miként lehet áthidalni ezt a korlátozást.
@@ -25,7 +25,7 @@ Ha a felhasználó nem helyi rendszergazda, akkor alapesetben nem jogosult intel
 
 1.  **Csomagolja ki az appx-fájlt**
 
-    Igényeljen aláíró tanúsítványt. Kövesse a következő leírást: [Sign Windows 8 applications using an internal PKI](http://blogs.technet.com/b/deploymentguys/archive/2013/06/14/signing-windows-8-applications-using-an-internal-pki.aspx) (Windows 8-alkalmazások aláírása belső nyilvános kulcsú infrastruktúrával). A „Sign the Application” (Az alkalmazás aláírása) lépésnél álljon meg. Nevezze el az exportált PFX-fájlt. Exportáljon egy CER-fájlba is, majd importálja az ügyfélre az új aláíró tanúsítvány CER-fájljával.
+    Igényeljen aláíró tanúsítványt. Kövesse a következő leírást: [Sign Windows 8 applications using an internal PKI](https://blogs.technet.com/b/deploymentguys/archive/2013/06/14/signing-windows-8-applications-using-an-internal-pki.aspx) (Windows 8-alkalmazások aláírása belső nyilvános kulcsú infrastruktúrával). A „Sign the Application” (Az alkalmazás aláírása) lépésnél álljon meg. Nevezze el az exportált PFX-fájlt. Exportáljon egy CER-fájlba is, majd importálja az ügyfélre az új aláíró tanúsítvány CER-fájljával.
 
     Az appx-fájl kicsomagolásához futtassa a következő parancsot:
 
@@ -49,7 +49,7 @@ Ha a felhasználó nem helyi rendszergazda, akkor alapesetben nem jogosult intel
 
     4.  Szerkessze az AppxManifest.xml nevű fájlt.
 
-    5.  Az &lt;Identity (&gt; identitás) elemnél módosítsa a közzétevő attribútum értékét az aláíró tanúsítvány tárgyára, például: "CN = ABCD"
+    5.  Az &lt; Identity (identitás &gt; ) elemnél módosítsa a közzétevő attribútum értékét az aláíró tanúsítvány tárgyára, például: "CN = ABCD"
 
         A tulajdonos ugyanaz legyen, mint az alkalmazás aláírásához használt aláíró tanúsítvány tulajdonosa.
 
@@ -69,7 +69,7 @@ Ha a felhasználó nem helyi rendszergazda, akkor alapesetben nem jogosult intel
 
     1.  Rendszergazdai jogosultsággal jelentkezzen be a Tanúsítványkezelő portálra.
 
-    2.  Lépjen az **Administration (Felügyelet) ** &gt; ** Manage Profile Templates (Profilsablonok kezelése)** területre, és győződjön meg arról, hogy a létrehozott profil melletti négyzet be van jelölve, majd kattintson a Copy a selected profile template (Kijelölt profilsablon másolása) lehetőségre.
+    2.  Lépjen az **Administration (Felügyelet)** &gt; **Manage Profile Templates (Profilsablonok kezelése)** területre, és győződjön meg arról, hogy a létrehozott profil melletti négyzet be van jelölve, majd kattintson a Copy a selected profile template (Kijelölt profilsablon másolása) lehetőségre.
 
     3.  Írja be a profilsablon nevét, adja hozzá a „nonAdmin” elemet, majd kattintson az **OK** gombra.
 

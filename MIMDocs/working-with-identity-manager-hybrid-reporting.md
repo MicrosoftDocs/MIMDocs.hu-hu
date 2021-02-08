@@ -10,12 +10,12 @@ ms.topic: article
 ms.prod: microsoft-identity-manager
 ms.assetid: 68df2817-2040-407d-b6d2-f46b9a9a3dbb
 ms.suite: ems
-ms.openlocfilehash: fd0efd3e3d5c42f4b67d0abd42f6dab8254573e5
-ms.sourcegitcommit: a96944ac96f19018c43976617686b7c3696267d7
+ms.openlocfilehash: 0b0a3adcf1651f6a431eec02488e0ab75347b3ca
+ms.sourcegitcommit: 78f3f18f0b7afb44fcf7444e446a4edffb1f8f12
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "79044344"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99835574"
 ---
 # <a name="work-with-hybrid-reporting-in-identity-manager"></a>Hibrid jelentéskészítés használata az Identity Managerben
 
@@ -37,7 +37,7 @@ A Azure Active Directory (Azure AD)-ben elérhető első három Microsoft Identi
 > [!NOTE]
 > * A jelentések jelenleg legfeljebb egy hónapos tevékenységben jelennek meg.
 > * Az előző hibrid jelentéskészítő ügynököt el kell távolítani.
-> * A hibrid jelentések eltávolításához távolítsa el a MIMreportingAgent. msi ügynököt.
+> * A hibrid jelentések eltávolításához távolítsa el a MIMreportingAgent.msi ügynököt.
 
 ## <a name="prerequisites"></a>Előfeltételek
 
@@ -60,7 +60,7 @@ Az Identity Manager hibrid jelentéskészítés használatának követelményeit
 |                         Kimenő kapcsolat IP-címek alapján                         |                                                                                                                                                                                                                      A tűzfalakon alapuló IP-címek szűréséhez tekintse meg az [Azure IP-tartományokat](https://www.microsoft.com/download/details.aspx?id=41653).                                                                                                                                                                                                                      |
 |                 A kimenő forgalom SSL-ellenőrzése szűrve vagy Letiltva                 |                                                                                                                                                                                                               Előfordulhat, hogy az ügynök regisztrációs lépése vagy az adatfeltöltés művelete meghiúsul, ha a hálózati rétegben a kimenő forgalom SSL-ellenőrzése vagy leállítása történik.                                                                                                                                                                                                                |
 |                      Az ügynököt futtató kiszolgálón található tűzfal portjai                       |                                                                                                                                                                                                          Az Azure szolgáltatási végpontokkal folytatott kommunikációhoz az ügynöknek a következő tűzfal-portok megnyitására van szüksége:<ul><li>443-as TCP-port</li><li>5671-es TCP-port</li></ul>                                                                                                                                                                                                          |
-|          Bizonyos webhelyek engedélyezése, ha az Internet Explorer fokozott biztonsága engedélyezve van           |                                                                                Ha az Internet Explorer fokozott biztonsága engedélyezve van, az alábbi webhelyeket engedélyezni kell azon a kiszolgálón, amelyen az ügynök telepítve van:<ul><li><https://login.microsoftonline.com></li><li><https://secure.aadcdn.microsoftonline-p.com></li><li><https://login.windows.net></li><li>A szervezet Azure Active Directory által megbízhatónak tartott összevonási kiszolgálója (például: <https://sts.contoso.com>).</li></ul>                                                                                |
+|          Bizonyos webhelyek engedélyezése, ha az Internet Explorer fokozott biztonsága engedélyezve van           |                                                                                Ha az Internet Explorer fokozott biztonsága engedélyezve van, az alábbi webhelyeket engedélyezni kell azon a kiszolgálón, amelyen az ügynök telepítve van:<ul><li><https://login.microsoftonline.com></li><li><https://secure.aadcdn.microsoftonline-p.com></li><li><https://login.windows.net></li><li>A szervezet Azure Active Directory által megbízhatónak tartott összevonási kiszolgálója (például: <https://sts.contoso.com> ).</li></ul>                                                                                |
 
 </BR>
 
@@ -71,7 +71,7 @@ A jelentéskészítő ügynök telepítése után az Identity Manager-tevékenys
 
 2.  Töltse le az Identity Manager Reporting Agent ügynököt, majd tegye a következőket:
 
-    a. Jelentkezzen be az Azure AD felügyeleti portálra, majd válassza a **Active Directory**lehetőséget.
+    a. Jelentkezzen be az Azure AD felügyeleti portálra, majd válassza a **Active Directory** lehetőséget.
 
     b. Kattintson duplán arra a könyvtárra, amelyhez Ön globális rendszergazda, és rendelkeznie kell prémium szintű Azure AD előfizetéssel.
 
@@ -79,9 +79,9 @@ A jelentéskészítő ügynök telepítése után az Identity Manager-tevékenys
 
 3.  A jelentéskészítő ügynök telepítése a következő módon:
 
-    a.  Töltse le a [MIMHReportingAgentSetup. exe fájlt](http://download.microsoft.com/download/7/3/1/731D81E1-8C1D-4382-B8EB-E7E7367C0BF2/MIMHReportingAgentSetup.exe) az Identity Manager szolgáltatás-kiszolgálóhoz.
+    a.  Töltse le az Identity Manager szolgáltatási kiszolgálójának [MIMHReportingAgentSetup.exe-fájlját](https://download.microsoft.com/download/7/3/1/731D81E1-8C1D-4382-B8EB-E7E7367C0BF2/MIMHReportingAgentSetup.exe) .
 
-    b.  Futtassa az `MIMHReportingAgentSetup.exe` parancsot. 
+    b.  Futtassa a `MIMHReportingAgentSetup.exe` parancsot. 
 
     c.  Futtassa az ügynök telepítőjét.
 
@@ -97,11 +97,11 @@ A jelentéskészítő ügynök telepítése után az Identity Manager-tevékenys
 
 1.  Jelentkezzen be a [Azure Portalba](https://portal.azure.com/) a bérlőhöz tartozó globális rendszergazdai fiókkal.
 
-2.  Válassza a **Azure Active Directory**lehetőséget.
+2.  Válassza a **Azure Active Directory** lehetőséget.
 
 3.  Az előfizetéshez elérhető címtárak listájában válassza ki a bérlői könyvtárat.
 
-4.  Válassza a **Naplók** lehetőséget.
+4.  Válassza a **naplók** lehetőséget.
 
 5.  Győződjön meg arról, hogy a **Kategória** legördülő listában be van jelölve a **webkiszolgáló szolgáltatás** .
 
@@ -112,9 +112,9 @@ A jelentéskészítő ügynök telepítése után az Identity Manager-tevékenys
 Ha le szeretné állítani a jelentéskészítési naplózási adatok feltöltését az Identity Managerből az Azure AD-be, távolítsa el a hibrid jelentéskészítő ügynököt. A Windows programok telepítése és törlése eszköz használatával távolítsa el az Identity Manager hibrid jelentéskészítést.
 
 ## <a name="windows-events-used-for-hybrid-reporting"></a>A hibrid jelentéskészítéshez használt Windows-események
-Az Identity Manager által generált eseményeket a Windows eseménynaplója tárolja. Az eseményeket a **eseménynaplóban** tekintheti meg az **alkalmazás és szolgáltatások naplók** > **Identity Manager-kérelmek naplójának**kiválasztásával. Az egyes Identity Manager-kérelmeket a rendszer a JSON-struktúra Windows-eseménynaplójában lévő eseményként exportálja. Exportálhatja az eredményt a biztonsági információ és az Event Management (SIEM) rendszerébe.
+Az Identity Manager által generált eseményeket a Windows eseménynaplója tárolja. Az eseményeket a **eseménynaplóban** tekintheti meg az **alkalmazás és szolgáltatások naplók**  >  **Identity Manager-kérelmek naplójának** kiválasztásával. Az egyes Identity Manager-kérelmeket a rendszer a JSON-struktúra Windows-eseménynaplójában lévő eseményként exportálja. Exportálhatja az eredményt a biztonsági információ és az Event Management (SIEM) rendszerébe.
 
 |Eseménytípus|ID (Azonosító)|Esemény részletei|
 |--------------|------|-----------------|
-|Információ|4121|Az összes kérelem adatait tartalmazó Identity Manager-esemény adatai.|
-|Információ|4137|Az Identity Manager-esemény 4121-bővítménye, ha túl sok az adatok egyetlen eseményhez. Az esemény fejléce a következő formátumban jelenik meg: `"Request: <GUID> , message <xxx> out of <xxx>`.|
+|Tájékoztatás|4121|Az összes kérelem adatait tartalmazó Identity Manager-esemény adatai.|
+|Tájékoztatás|4137|Az Identity Manager-esemény 4121-bővítménye, ha túl sok az adatok egyetlen eseményhez. Az esemény fejléce a következő formátumban jelenik meg: `"Request: <GUID> , message <xxx> out of <xxx>` .|
