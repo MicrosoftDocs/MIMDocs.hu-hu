@@ -9,12 +9,12 @@ ms.date: 01/05/2018
 ms.topic: reference
 ms.prod: microsoft-identity-manager
 ms.assetid: ''
-ms.openlocfilehash: 72b77034d5591d0bc2ab420f185acee719fe8324
-ms.sourcegitcommit: a96944ac96f19018c43976617686b7c3696267d7
+ms.openlocfilehash: 71ac80f10fd01e7c784ec1462a9383295e5f8ddb
+ms.sourcegitcommit: 78f3f18f0b7afb44fcf7444e446a4edffb1f8f12
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "79043001"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99835867"
 ---
 # <a name="microsoft-identity-manager-2016-best-practices"></a>Microsoft Identity Manager 2016 – Gyakorlati tanácsok
 
@@ -26,17 +26,17 @@ A következőkben a Microsoft Identity Manager 2016 (MIM) telepítésével és m
 
 A Structured Query Language- (SQL-) kiszolgáló konfigurálása alapvető fontosságú a rendszer optimális teljesítményéhez. Az optimális MIM teljesítmény elérése nagy léptékű környezetekben az SQL-t futtató kiszolgálókra vonatkozó ajánlott eljárások alkalmazásától függ. További információk az SQL-lel kapcsolatos ajánlott eljárásokról következő témakörökben olvashatók:
 
--   [A tárolással kapcsolatos 10 legfontosabb gyakorlati tanács](http://go.microsoft.com/fwlink/?LinkID=183663) (angol nyelven)
+-   [A tárolással kapcsolatos 10 legfontosabb gyakorlati tanács](https://go.microsoft.com/fwlink/?LinkID=183663) (angol nyelven)
 
--   [Optimizing tempdb Performance](http://go.microsoft.com/fwlink/?LinkID=188267) (A tempdb teljesítményének optimalizálása)
+-   [Optimizing tempdb Performance](https://go.microsoft.com/fwlink/?LinkID=188267) (A tempdb teljesítményének optimalizálása)
 
--   [SQL Server – Gyakorlati tanácsok cikk](http://go.microsoft.com/fwlink/?LinkID=188268) (angol nyelven)
+-   [SQL Server – Gyakorlati tanácsok cikk](https://go.microsoft.com/fwlink/?LinkID=188268) (angol nyelven)
 
--   [Reorganizing and Rebuilding Indexes](http://go.microsoft.com/fwlink/?LinkID=188269) (Indexek átszervezése és újraépítése)
+-   [Reorganizing and Rebuilding Indexes](https://go.microsoft.com/fwlink/?LinkID=188269) (Indexek átszervezése és újraépítése)
 
 ### <a name="presize-data-and-log-files"></a>Adat- és naplófájlok előzetes méretezése
 
-Ne támaszkodjon az automatikus növekedés használatára. Ehelyett kezelje manuálisan ezen fájlok méretnövekedését. Biztonsági okokból bekapcsolva hagyhatja az automatikus növekedési funkciót, de proaktívan felügyelje az adatfájlok méretének növekedését. A MIM-adatbázis példaméreteit a [FIM kapacitástervezési útmutatóban](http://go.microsoft.com/fwlink/?LinkID=185246) találja (angol nyelven).
+Ne támaszkodjon az automatikus növekedés használatára. Ehelyett kezelje manuálisan ezen fájlok méretnövekedését. Biztonsági okokból bekapcsolva hagyhatja az automatikus növekedési funkciót, de proaktívan felügyelje az adatfájlok méretének növekedését. A MIM-adatbázis példaméreteit a [FIM kapacitástervezési útmutatóban](https://go.microsoft.com/fwlink/?LinkID=185246) találja (angol nyelven).
 
 ### <a name="to-presize-sql-data-and-log-files"></a>Az adat- és naplófájlok előzetes méretezéséhez:
 
@@ -56,7 +56,7 @@ Az optimális teljesítmény érdekében processzormagonként egy adatfájlt aj�
 
 ### <a name="to-create-additional-tempdb-files"></a>További tempdb-fájlok létrehozásához:
 
-1.  Indítsa el az SQL Server Management Studio eszközt.
+1.  Indítsa el az SQL Server Management Studiót.
 
 2.  Keresse meg az adatbázishoz tartozó tempdb-fájlt a rendszeradatbázisok között, kattintson jobb gombbal a tempdb-fájlra, és válassza a Properties (Tulajdonságok) parancsot.
 
@@ -64,7 +64,7 @@ Az optimális teljesítmény érdekében processzormagonként egy adatfájlt aj�
 
 ### <a name="ensure-adequate-space-for-log-files"></a>Elegendő szabad hely biztosítása a naplófájlok számára
 
-Fontos a helyreállítási modell lemezkövetelményeinek ismerete. Az egyszerű helyreállítási mód a kezdeti rendszerbetöltés során megfelelő lehet a használt lemezterület korlátozására, de a legutóbbi biztonsági mentés után létrehozott adatok adatvesztésnek vannak kitéve. Teljes helyreállítási mód használatakor szükséges a lemezterület biztonsági másolatokra való használatának felügyelete, többek között a tranzakciónapló gyakori biztonsági mentései magas lemezterület-használatának megakadályozására. További információt a [Recovery Model Overview](http://go.microsoft.com/fwlink/?LinkID=185370) (A helyreállítási modell áttekintése) című részben talál.
+Fontos a helyreállítási modell lemezkövetelményeinek ismerete. Az egyszerű helyreállítási mód a kezdeti rendszerbetöltés során megfelelő lehet a használt lemezterület korlátozására, de a legutóbbi biztonsági mentés után létrehozott adatok adatvesztésnek vannak kitéve. Teljes helyreállítási mód használatakor szükséges a lemezterület biztonsági másolatokra való használatának felügyelete, többek között a tranzakciónapló gyakori biztonsági mentései magas lemezterület-használatának megakadályozására. További információt a [Recovery Model Overview](https://go.microsoft.com/fwlink/?LinkID=185370) (A helyreállítási modell áttekintése) című részben talál.
 
 ### <a name="limit-sql-server-memory"></a>Az SQL Server memóriájának korlátozása
 
@@ -112,7 +112,7 @@ Attól függően, hogy mennyi memóriát használ az SQL Server, és hogy megosz
 - Ha a növekményes naplófájlok biztonsági mentései nem tervezettek, az egyszerű helyreállítási módot kell beállítani az adatbázishoz. 
 - Győződjön meg arról, hogy tisztában van a különböző helyreállítási modellek következményeivel a biztonsági mentési stratégia megvalósítása előtt. Ismerje meg a modellek lemezterület-követelményeit. A teljes helyreállítási modell a naplók gyakori biztonsági mentéseit igényli a magas lemezterület-használat elkerülése érdekében. 
 
-További információt a [Recovery Model Overview](http://go.microsoft.com/fwlink/?LinkID=185370) (A helyreállítási modell áttekintése) és a [FIM 2010 Backup and Restore Guide](http://go.microsoft.com/fwlink/?LinkID=165864) (FIM 2010 biztonsági mentési és visszaállítási útmutató) című részben talál.
+További információt a [Recovery Model Overview](https://go.microsoft.com/fwlink/?LinkID=185370) (A helyreállítási modell áttekintése) és a [FIM 2010 Backup and Restore Guide](https://go.microsoft.com/fwlink/?LinkID=165864) (FIM 2010 biztonsági mentési és visszaállítási útmutató) című részben talál.
 
 ## <a name="create-a-backup-administrator-account-for-the-fim-service-after-installation"></a>Biztonsági mentési rendszergazdai fiók létrehozása a FIM szolgáltatáshoz a telepítés után
 
@@ -135,11 +135,11 @@ Az alábbi javasolt megoldásokkal konfigurálhatja a Microsoft Exchange Servert
 
 3.  Jelölje be **Az összes feladó hitelesítése szükséges** jelölőnégyzetet.
 
-További információkért lásd: [Configure Message Delivery Restrictions](http://go.microsoft.com/fwlink/?LinkID=183625) (Üzenetkézbesítési korlátozások konfigurálása).
+További információkért lásd: [Configure Message Delivery Restrictions](https://go.microsoft.com/fwlink/?LinkID=183625) (Üzenetkézbesítési korlátozások konfigurálása).
 
--   Konfigurálja a szolgáltatásfiókot az 1 MB-nál nagyobb méretű levelek elutasítására. Kövesse az [üzenetek méretkorlátjának konfigurálása](http://go.microsoft.com/fwlink/?LinkID=183626) ajánlott eljárást (angol nyelvű cikk) a postafiókhoz vagy olyan nyilvános mappához, amelynél engedélyezve van a levelezés.
+-   Konfigurálja a szolgáltatásfiókot az 1 MB-nál nagyobb méretű levelek elutasítására. Kövesse az [üzenetek méretkorlátjának konfigurálása](https://go.microsoft.com/fwlink/?LinkID=183626) ajánlott eljárást (angol nyelvű cikk) a postafiókhoz vagy olyan nyilvános mappához, amelynél engedélyezve van a levelezés.
 
--   Konfigurálja a szolgáltatásfiókot 5 GB-os tárolási kvótára a postafiókhoz. Az optimális eredmények elérése érdekében kövesse a [Configure Storage Quotas for a Mailbox](http://go.microsoft.com/fwlink/?LinkID=156929) (Postafiókok tárolási kvótáinak konfigurálása) című cikkben felsorolt ajánlott eljárásokat.
+-   Konfigurálja a szolgáltatásfiókot 5 GB-os tárolási kvótára a postafiókhoz. Az optimális eredmények elérése érdekében kövesse a [Configure Storage Quotas for a Mailbox](https://go.microsoft.com/fwlink/?LinkID=156929) (Postafiókok tárolási kvótáinak konfigurálása) című cikkben felsorolt ajánlott eljárásokat.
 
 ## <a name="mim-portal"></a>MIM-portál
 
@@ -169,7 +169,7 @@ Ajánlott letiltani a Microsoft Office SharePoint® indexelését. Nincsenek ind
 Ez a szakasz egy sor lépésből áll, amelyekkel növelheti a kezdeti adatterhelések teljesítményét a külső rendszerről a webhelyre. Fontos tisztában lenni azzal, hogy ezek a lépések csak a rendszer kezdeti populációjában hajthatók végre. A betöltés befejezését követően alaphelyzetbe kell állítani őket. Ez egy egyszeri művelet, és nem folyamatos szinkronizálás.
 
 > [!NOTE]
-> További információ a felhasználók és a Active Directory tartományi szolgáltatások közötti szinkronizálásról (AD DS): Hogyan a [felhasználók szinkronizálása Active Directoryról a FIM](http://go.microsoft.com/fwlink/?LinkID=188277) -be a FIM-dokumentációban.
+> További információ a felhasználók és a Active Directory Domain Services közötti szinkronizálásról (AD DS): Hogyan a [felhasználók szinkronizálása Active Directoryról a FIM](https://go.microsoft.com/fwlink/?LinkID=188277) -be a FIM-dokumentációban.
 > 
 > [!IMPORTANT]
 > Győződjön meg arról, hogy alkalmazta a jelen útmutató SQL-telepítéssel foglalkozó szakaszában tárgyalt ajánlott eljárásokat. 
@@ -191,7 +191,7 @@ ALTER FULLTEXT INDEX ON [fim].[ObjectValueXml] SET CHANGE_TRACKING = MANUAL
 ```
 
 > [!IMPORTANT]
-> Ezen eljárások elmulasztása magas lemezterület-használatot eredményezhet, és előfordulhat, hogy elfogy a szabad lemezterület. További információt ebben a témakörben a [Recovery Model Overview](http://go.microsoft.com/fwlink/?LinkID=185370) (A helyreállítási modell áttekintése) című részben találhat. A [FIM biztonsági mentési és visszaállítási útmutatója](http://go.microsoft.com/fwlink/?LinkID=165864) további információkat tartalmaz (angol nyelven).
+> Ezen eljárások elmulasztása magas lemezterület-használatot eredményezhet, és előfordulhat, hogy elfogy a szabad lemezterület. További információt ebben a témakörben a [Recovery Model Overview](https://go.microsoft.com/fwlink/?LinkID=185370) (A helyreállítási modell áttekintése) című részben találhat. A [FIM biztonsági mentési és visszaállítási útmutatója](https://go.microsoft.com/fwlink/?LinkID=165864) további információkat tartalmaz (angol nyelven).
 
 ### <a name="step-2-apply-the-minimum-necessary-mim-configuration-during-the-load-process"></a>2. lépés: A minimálisan szükséges MIM-konfiguráció alkalmazása a betöltési folyamat során
 
@@ -199,7 +199,7 @@ A kezdeti betöltése során csak a FIM-konfigurációhoz a felügyeletiháziren
 
 ### <a name="step-3-configure-and-populate-the-fim-service-with-external-identity-data"></a>3. lépés: A FIM szolgáltatás konfigurálása és feltöltése külső azonosító adatokkal
 
-Ekkor kövesse a következő témakörben ismertetett eljárásokat: Hogyan lehet szinkronizálni a felhasználókat a Active Directory tartományi szolgáltatásokról a FIM-útmutatóba a rendszer a Active Directory felhasználókkal való konfigurálásához és szinkronizálásához. Ha szinkronizálni szeretné a csoport adatait, az adott folyamat eljárásai a [Hogyan szinkronizálhatók a csoportok Active Directory tartományi szolgáltatásokról a FIM](https://technet.microsoft.com/library/ff686936(v=ws.10).aspx) -útmutatóra.
+Ekkor kövesse a következő témakörben ismertetett eljárásokat: Hogyan lehet szinkronizálni a felhasználókat a Active Directory Domain Servicesról a FIM-útmutatóba a rendszer a Active Directory felhasználókkal való konfigurálásához és szinkronizálásához. Ha szinkronizálni szeretné a csoport adatait, az adott folyamat eljárásai a [Hogyan szinkronizálhatók a csoportok Active Directory Domain Servicesról a FIM](https://technet.microsoft.com/library/ff686936(v=ws.10).aspx) -útmutatóra.
 
 #### <a name="synchronization-and-export-sequences"></a>A szinkronizálás és az exportálás sorrendje
 
@@ -222,7 +222,7 @@ Az alkalmazási helyzettől függően ebbe beletartozik a további készletek, M
 
 ### <a name="step-5-reconfigure-sql-to-previous-settings"></a>5. lépés: Az SQL újrakonfigurálása az előző beállításokra
 
-Ne felejtse el módosítani az SQL-beállításokat a normál beállításokra. Az érintett műveletek közé tartoznak az alábbiak:
+Ne felejtse el módosítani az SQL-beállításokat a normál beállításokra. Ide tartoznak az alábbiak:
 
 -   A teljes szöveges keresés bekapcsolása
 
@@ -236,7 +236,7 @@ ALTER FULLTEXT INDEX ON [fim].[ObjectValueString] SET CHANGE_TRACKING = AUTO
 ALTER FULLTEXT INDEX ON [fim].[ObjectValueXml] SET CHANGE_TRACKING = AUTO
 ```
 
-Ha egyszerű helyreállítási módra kell váltani, győződjön meg arról, hogy újrakonfigurálta a biztonsági mentési ütemezését a szervezet biztonsági mentési szabályzatának megfelelően. A FIM biztonsági mentési ütemezésről további részleteket a [FIM biztonsági mentési és visszaállítás útmutatójában](http://go.microsoft.com/fwlink/?LinkID=165864) talál (angol nyelven).
+Ha egyszerű helyreállítási módra kell váltani, győződjön meg arról, hogy újrakonfigurálta a biztonsági mentési ütemezését a szervezet biztonsági mentési szabályzatának megfelelően. A FIM biztonsági mentési ütemezésről további részleteket a [FIM biztonsági mentési és visszaállítás útmutatójában](https://go.microsoft.com/fwlink/?LinkID=165864) talál (angol nyelven).
 
 ## <a name="configuration-migration"></a>Konfiguráció migrálása
 
@@ -356,9 +356,9 @@ Az SSL implementálásához:
 
 28. Kattintson a Tevékenység, majd a Másodlagos címek leképezése elemre.
 
-29. Kattintson a http://servername gombra.
+29. Kattintson a https://servername gombra.
 
-30. Váltson http://servername a https://servernameértékre, majd kattintson az OK gombra.
+30. Váltson https://servername a értékre https://servername , majd kattintson az OK gombra.
 
 31. Kattintson a Start gombra, majd a Futtatás parancsra, írja be az iisreset parancsot, majd kattintson az OK gombra.
 
@@ -394,7 +394,8 @@ A MIM kétféle MPR-t használ, a kérelmet és a készletátmenetet:
   - Akkor alkalmazza a rendszer, amikor egy erőforrás belép egy kapcsolódó készletbe, vagy elhagyja azt.
   - Hatóköre a készlet tagjaira terjed ki.
 
->[MEGJEGYZÉS] További részletekért lásd: [Üzleti szabályok tervezése](http://go.microsoft.com/fwlink/?LinkID=183691).
+> [!NOTE]
+> További részletekért tekintse meg az [üzleti házirend szabályainak megtervezése](https://go.microsoft.com/fwlink/?LinkID=183691)című témakört.
 
 #### <a name="only-enable-mprs-as-necessary"></a>Csak szükség esetén engedélyezze az MPR-eket
 
@@ -514,7 +515,7 @@ Ha a beállításkulcs értéke igaz, a felhasználó nagy valószínűséggel v
 
 Lehetőség van a tiszta szöveges jelszavak naplózására a diagnosztikai szolgáltatásiszint-nyomkövetés bekapcsolásával a Windows
 
-Communication Foundation (WCF) szolgáltatásban. Ez a beállítás nincs bekapcsolva alapértelmezés szerint, és az éles környezetben bekapcsolása nem ajánlott. Ezek a jelszavak tiszta szöveges elemekként jelennek meg a titkosított SOAP-üzenetekben, amikor a felhasználók a jelszó-visszállításra regisztrálnak. További információ: [Configuring Message Logging](http://go.microsoft.com/fwlink/?LinkID=168572) (Az üzenetnaplózás konfigurálása).
+Communication Foundation (WCF) szolgáltatásban. Ez a beállítás nincs bekapcsolva alapértelmezés szerint, és az éles környezetben bekapcsolása nem ajánlott. Ezek a jelszavak tiszta szöveges elemekként jelennek meg a titkosított SOAP-üzenetekben, amikor a felhasználók a jelszó-visszállításra regisztrálnak. További információ: [Configuring Message Logging](https://go.microsoft.com/fwlink/?LinkID=168572) (Az üzenetnaplózás konfigurálása).
 
 #### <a name="do-not-map-an-authorization-workflow-to-the-password-reset-process"></a>Az engedélyezési munkafolyamat nem feleltethető meg a jelszó-visszállítási folyamatnak
 
@@ -532,7 +533,7 @@ A meglévő munkafolyamatban a hitelesítési tevékenységek hozzáadásakor, e
 
 #### <a name="consider-adding-a-privacy-disclaimer-to-the-user-profile-page"></a>Érdemes megfontolni egy adatvédelmi nyilatkozat hozzáadását a felhasználói profil oldalához
 
-A MIM-ben alapértelmezés szerint egyes felhasználói profilok adatai megjelenhetnek más felhasználók számára. A felhasználók segítése érdekében a rendszergazdáknak fontolóra kell venniük a cég szabályzataival összhangban lévő egyéni szöveg hozzáadását a Felhasználói profil oldalhoz. Egyéni szöveg MIM-portál oldalaihoz történő hozzáadásával kapcsolatos további információkért lásd: Introduction to [Configuring and Customizing the FIM Portal](http://go.microsoft.com/fwlink/?LinkID=165848) (Bevezetés a FIM-portál konfigurálásába és testreszabásába).
+A MIM-ben alapértelmezés szerint egyes felhasználói profilok adatai megjelenhetnek más felhasználók számára. A felhasználók segítése érdekében a rendszergazdáknak fontolóra kell venniük a cég szabályzataival összhangban lévő egyéni szöveg hozzáadását a Felhasználói profil oldalhoz. Egyéni szöveg MIM-portál oldalaihoz történő hozzáadásával kapcsolatos további információkért lásd: Introduction to [Configuring and Customizing the FIM Portal](https://go.microsoft.com/fwlink/?LinkID=165848) (Bevezetés a FIM-portál konfigurálásába és testreszabásába).
 
 ### <a name="schema"></a>Séma
 
@@ -550,7 +551,7 @@ Bár a Személy és Csoport erőforrástípusok nem alapvető erőforrástípuso
 
 -   DeletedTime
 
--   Leírás
+-   Description
 
 -   DetectedRulesList • DisplayName
 
@@ -632,7 +633,7 @@ A webszolgáltatások célja, hogy feldolgozza azokat a kérelmeket, amelyeket a
 
 További információ: a [FIM Service Partitions ismertetése](https://social.technet.microsoft.com/wiki/contents/articles/2363.understanding-fim-service-partitions.aspx).
 
-## <a name="next-steps"></a>További lépések
-- [FIM biztonsági mentési és visszaállítási útmutató](http://go.microsoft.com/fwlink/?LinkID=165864)
-- [Hogyan felhasználók szinkronizálása Active Directoryról a FIM-be](http://go.microsoft.com/fwlink/?LinkID=188277) 
-- A [helyreállítási modell áttekintése](http://go.microsoft.com/fwlink/?LinkID=185370).
+## <a name="next-steps"></a>Következő lépések
+- [FIM biztonsági mentési és visszaállítási útmutató](https://go.microsoft.com/fwlink/?LinkID=165864)
+- [Hogyan felhasználók szinkronizálása Active Directoryról a FIM-be](https://go.microsoft.com/fwlink/?LinkID=188277) 
+- A [helyreállítási modell áttekintése](https://go.microsoft.com/fwlink/?LinkID=185370).

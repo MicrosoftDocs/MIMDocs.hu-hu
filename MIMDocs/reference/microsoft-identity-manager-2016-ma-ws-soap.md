@@ -9,12 +9,12 @@ ms.date: 11/30/2017
 ms.topic: conceptual
 ms.prod: microsoft-identity-manager
 ms.assetid: ''
-ms.openlocfilehash: 54f9eb08ce8c400aac5c66467a797bcd3cb097a0
-ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
+ms.openlocfilehash: 455988722b3aeb9e29b00696342e1800e9ad82c7
+ms.sourcegitcommit: 78f3f18f0b7afb44fcf7444e446a4edffb1f8f12
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/10/2020
-ms.locfileid: "92760847"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99835971"
 ---
 # <a name="web-service-connector-workflow-guide-for-soap"></a>Webszolgáltatás-összekötő munkafolyamati útmutatója a SOAP-hez
 
@@ -28,7 +28,7 @@ Ez a cikk azt ismerteti, hogyan hozható létre új projekt az adatforráshoz a 
 
     ![SOAP-projekt](media/microsoft-identity-manager-2016-ma-ws-soap/web-service-configuration-tool-02.png)
 
-3.  A következő lapon adja meg a következő adatokat, majd válassza a **Next (tovább** ) gombot:
+3.  A következő lapon adja meg a következő adatokat, majd válassza a **Next (tovább**) gombot:
 
     - Az új webszolgáltatás neve
     - Címe (WSDL elérési útja) a közzétett szolgáltatások, végpontok és műveletek beolvasásához
@@ -43,7 +43,7 @@ Ez a cikk azt ismerteti, hogyan hozható létre új projekt az adatforráshoz a 
 
     ![webszolgáltatás-letöltési folyamat képernyője](media/microsoft-identity-manager-2016-ma-ws-soap/web-service-progress.png)
 
-6.  A felderítés elvégzése után a rendszer felsorolja a végpontot és a felderített műveleteket. Válassza a **Befejezés** lehetőséget.
+6.  A felderítés elvégzése után a rendszer felsorolja a végpontot és a felderített műveleteket. Válassza a **Befejezés** gombot.
 
     ![SOAP szolgáltatási végpontok és felderített műveletek](media/microsoft-identity-manager-2016-ma-ws-soap/soap-service-endpoints.png)
 
@@ -59,7 +59,7 @@ Ez a cikk azt ismerteti, hogyan hozható létre új projekt az adatforráshoz a 
 
     ![Kibontott végpontok](media/microsoft-identity-manager-2016-ma-ws-soap/get-employee-byid.png)
 
-10. A következő lépés az összekötő terület sémájának definiálása, amely az objektum típusának létrehozásával és az Objektumtípusok definiálásával érhető el. Válassza az **Objektumtípusok** lehetőséget, majd kattintson a **Hozzáadás** gombra. Az új ablakban adjon hozzá egy új objektumtípust, és adjon meg egy nevet. Kattintson az **OK** gombra.
+10. A következő lépés az összekötő terület sémájának definiálása, amely az objektum típusának létrehozásával és az Objektumtípusok definiálásával érhető el. Válassza az **Objektumtípusok** lehetőséget, majd kattintson a **Hozzáadás** gombra. Az új ablakban adjon hozzá egy új objektumtípust, és adjon meg egy nevet. Válassza az **OK** lehetőséget.
 
     ![Objektumtípus definiálása](media/microsoft-identity-manager-2016-ma-ws-soap/object-types.png)
 
@@ -67,7 +67,7 @@ Ez a cikk azt ismerteti, hogyan hozható létre új projekt az adatforráshoz a 
 
     ![újonnan létrehozott objektum típusának megtekintése](media/microsoft-identity-manager-2016-ma-ws-soap/object-type-employee.png)
 
-12. Az objektumtípus megfelelő panelje lehetővé teszi az attribútumok és a hozzájuk tartozó tulajdonságok fenntartását a kiválasztott objektumtípus számára. Válassza a **Hozzáadás** elemet. Az attribútumok hozzáadásához új ablak nyílik meg:
+12. Az objektumtípus megfelelő panelje lehetővé teszi az attribútumok és a hozzájuk tartozó tulajdonságok fenntartását a kiválasztott objektumtípus számára. Válassza a **Hozzáadás** lehetőséget. Az attribútumok hozzáadásához új ablak nyílik meg:
 
     ![Attribútum és adattípus](media/microsoft-identity-manager-2016-ma-ws-soap/object-type-firstname.png)
 
@@ -105,7 +105,7 @@ A következő lépés az Objektumtípus munkafolyamatainak konfigurálása. A mu
 - A kapcsolódás tesztelése: konfigurálja a munkafolyamatot annak ellenőrzéséhez, hogy az adatforrás-kiszolgálóval létesített kapcsolatok sikeresen létrejöttek-e.
 
 >[!NOTE]
->Megadhatja a projekthez tartozó munkafolyamatokat, vagy letöltheti az alapértelmezett projektet a [Microsoft letöltőközpontból](http://www.microsoft.com/download/details.aspx?id=29944).
+>Megadhatja a projekthez tartozó munkafolyamatokat, vagy letöltheti az alapértelmezett projektet a [Microsoft letöltőközpontból](https://www.microsoft.com/download/details.aspx?id=29944).
 
 
 ### <a name="workflow-designer"></a>Munkafolyamat-tervező
@@ -115,33 +115,33 @@ A Munkafolyamat-tervező úgy nyitja meg a munkaterületet, hogy követelményk�
 
 A Munkafolyamat-tervező a következő felhasználói felületi elemekből áll:
 
-   - **Csomópontok a bal oldali panelen** : Ezek segítenek kiválasztani, hogy melyik munkafolyamatot szeretné megtervezni.
+   - **Csomópontok a bal oldali panelen**: Ezek segítenek kiválasztani, hogy melyik munkafolyamatot szeretné megtervezni.
 
-   - **Központi Munkafolyamat-tervező** : itt elvégezheti a munkafolyamatok konfigurálásához szükséges tevékenységek eldobását. A különböző webszolgáltatási műveletek (exportálás, importálás, jelszavas kezelés) elvégzéséhez használhatja a .NET workflow Framework 4 standard és egyéni munkafolyamat-tevékenységeit. A webszolgáltatás-konfigurációs eszköz szabványos és egyéni munkafolyamat-tevékenységeket használ. A szokásos tevékenységekről további információt a következő témakörben talál: [Activity designerek használata](http://msdn.microsoft.com/library/ee829528.aspx).
+   - **Központi Munkafolyamat-tervező**: itt elvégezheti a munkafolyamatok konfigurálásához szükséges tevékenységek eldobását. A különböző webszolgáltatási műveletek (exportálás, importálás, jelszavas kezelés) elvégzéséhez használhatja a .NET workflow Framework 4 standard és egyéni munkafolyamat-tevékenységeit. A webszolgáltatás-konfigurációs eszköz szabványos és egyéni munkafolyamat-tevékenységeket használ. A szokásos tevékenységekről további információt a következő témakörben talál: [Activity designerek használata](https://msdn.microsoft.com/library/ee829528.aspx).
 
       - A központi Munkafolyamat-tervezőben egy olyan piros kör, amelynél a felkiáltójel mellett felkiáltójel található, azt jelzi, hogy a művelet el lett dobva, és nincs megfelelően és teljesen meghatározva. A pontos hiba megállapításához vigye a kurzort a vörös kör fölé. A tevékenység helyes meghatározása után a piros kör a sárga információs jelre változik.
       
       - A központi Munkafolyamat-tervezőben a sárga háromszög információs jelzése a tevékenység mellett azt jelzi, hogy a tevékenység definiálva van, de a tevékenység befejezéséhez több lehetőség is van. További információk megjelenítéséhez vigye a kurzort a sárga háromszög fölé.
 
-   - **Eszközkészlet** : az összes eszköz, például a rendszerek és az egyéni tevékenységek, valamint az előre definiált utasítások csomagjainak megtervezése a munkafolyamat kialakításához. További információ: [eszközkészlet](http://msdn.microsoft.com/library/aa480213.aspx).
+   - **Eszközkészlet**: az összes eszköz, például a rendszerek és az egyéni tevékenységek, valamint az előre definiált utasítások csomagjainak megtervezése a munkafolyamat kialakításához. További információ: [eszközkészlet](https://msdn.microsoft.com/library/aa480213.aspx).
    
-   - **Eszközkészletek részei** : az eszközkészlet a következő fejezetekkel és kategóriákkal rendelkezik:
+   - **Eszközkészletek részei**: az eszközkészlet a következő fejezetekkel és kategóriákkal rendelkezik:
    
-      - **Leírás** : az eszközkészlet fejléce. Az egyik lapon elérheti az eszközkészletet és a kiválasztott munkafolyamat-tevékenység tulajdonságait. 
+      - **Leírás**: az eszközkészlet fejléce. Az egyik lapon elérheti az eszközkészletet és a kiválasztott munkafolyamat-tevékenység tulajdonságait. 
 
-      - **Munkafolyamat importálása** : egyéni tevékenységek az importálási munkafolyamatok konfigurálásához.
+      - **Munkafolyamat importálása**: egyéni tevékenységek az importálási munkafolyamatok konfigurálásához.
       
-      - **Munkafolyamat exportálása** : egyéni tevékenységek az exportálási munkafolyamatok konfigurálásához.
+      - **Munkafolyamat exportálása**: egyéni tevékenységek az exportálási munkafolyamatok konfigurálásához.
       
-      - **Gyakori** : egyéni tevékenységek a munkafolyamatok konfigurálásához.
+      - **Gyakori**: egyéni tevékenységek a munkafolyamatok konfigurálásához.
       
-      - **Hibakeresés** : rendszermunkafolyamat-tevékenységek a 4. munkafolyamatban definiált hibakereséshez. Ezek a tevékenységek lehetővé teszik a munkafolyamatok nyomon követését.
+      - **Hibakeresés**: rendszermunkafolyamat-tevékenységek a 4. munkafolyamatban definiált hibakereséshez. Ezek a tevékenységek lehetővé teszik a munkafolyamatok nyomon követését.
       
-      - **Utasítások** : rendszermunkafolyamat-tevékenységek definiálva a 4. munkafolyamatban. További információ: [using Activity Designers](http://msdn.microsoft.com/library/ee829528.aspx).            
+      - **Utasítások**: rendszermunkafolyamat-tevékenységek definiálva a 4. munkafolyamatban. További információ: [using Activity Designers](https://msdn.microsoft.com/library/ee829528.aspx).            
 
-   - **Tulajdonságok** : a Tulajdonságok lapon egy adott munkafolyamat-tevékenység tulajdonságai láthatók, amelyeket a rendszer eldobott a Designer területére. A bal oldali ábrán a **hozzárendelési** tevékenység tulajdonságai láthatók. Minden tevékenység esetében a tulajdonságok eltérnek, és az egyéni munkafolyamat konfigurálásakor használatosak. Ezen a lapon megadhatja a kijelölt eszköz azon attribútumait, amelyeket a központi munkafolyamat-tervezőbe vetettek el. További információ: Properties ( [Tulajdonságok](http://msdn.microsoft.com/library/ee342461.aspx)).
+   - **Tulajdonságok**: a Tulajdonságok lapon egy adott munkafolyamat-tevékenység tulajdonságai láthatók, amelyeket a rendszer eldobott a Designer területére. A bal oldali ábrán a **hozzárendelési** tevékenység tulajdonságai láthatók. Minden tevékenység esetében a tulajdonságok eltérnek, és az egyéni munkafolyamat konfigurálásakor használatosak. Ezen a lapon megadhatja a kijelölt eszköz azon attribútumait, amelyeket a központi munkafolyamat-tervezőbe vetettek el. További információ: Properties ( [Tulajdonságok](https://msdn.microsoft.com/library/ee342461.aspx)).
 
-   - **Feladat sávja:** A feladatsor három elemet tartalmaz: **változók** , **argumentumok** és **importálások** . Ezeket az elemeket a munkafolyamat-tevékenységekkel együtt használják. További információkért tekintse [meg a fejlesztői bevezetés a .net 4 Windows Workflow Foundation (WF)](http://msdn.microsoft.com/library/ee342461.aspx)című témakört.
+   - **Feladat sávja:** A feladatsor három elemet tartalmaz: **változók**, **argumentumok** és **importálások**. Ezeket az elemeket a munkafolyamat-tevékenységekkel együtt használják. További információkért tekintse [meg a fejlesztői bevezetés a .net 4 Windows Workflow Foundation (WF)](https://msdn.microsoft.com/library/ee342461.aspx)című témakört.
 
 
 <h2 id="full-import-workflows">Teljes importálási munkafolyamat konfigurálása a webszolgáltatás konfigurációs eszközében</h2>
@@ -162,7 +162,7 @@ A következő lépések bemutatják, hogyan konfigurálhatja a SOAP-hez készül
    
     ![Sequence tevékenység](media/microsoft-identity-manager-2016-ma-ws-soap/full-import-sequence.png)
 
-3. Változó hozzáadásához keresse meg a **create változót** . Írja _wsResponse_ be a wsResponse **nevet a név** mezőbe, válassza a **változó típusa** legördülő listát, majd válassza a **Tallózás a típusok között** lehetőséget. Megjelenik egy párbeszédpanel. Válassza a **generált**  >  **alapértelmezett**  >  **Válasz** lehetőséget. A **hatókör** és az **alapértelmezett** értékek ne legyenek kiválasztva. Másik lehetőségként állítsa be ezeket az értékeket a **Tulajdonságok** nézet használatával.
+3. Változó hozzáadásához keresse meg a **create változót**. Írja  be a wsResponse **nevet a név** mezőbe, válassza a **változó típusa** legördülő listát, majd válassza a **Tallózás a típusok között** lehetőséget. Megjelenik egy párbeszédpanel. Válassza a **generált**  >  **alapértelmezett**  >  **Válasz** lehetőséget. A **hatókör** és az **alapértelmezett** értékek ne legyenek kiválasztva. Másik lehetőségként állítsa be ezeket az értékeket a **Tulajdonságok** nézet használatával.
 
    ![Alapértelmezett válasz](media/microsoft-identity-manager-2016-ma-ws-soap/default-response.png)
 
@@ -180,15 +180,15 @@ A következő lépések bemutatják, hogyan konfigurálhatja a SOAP-hez készül
 
    A webszolgáltatás művelet használatához állítsa be a következő tulajdonságokat:
    
-      - **Szolgáltatás neve** : adja meg a webszolgáltatás nevét.
-      - **Végpont neve** : adjon meg egy végpont nevét a kiválasztott szolgáltatáshoz.
-      - **Művelet neve** : adja meg a megfelelő műveletet a szolgáltatáshoz.
-      - **Argumentum** : válassza az **argumentumok** lehetőséget. A következő párbeszédpanelen rendelje hozzá az argumentum értékeit az alábbi ábrán látható módon:
+      - **Szolgáltatás neve**: adja meg a webszolgáltatás nevét.
+      - **Végpont neve**: adjon meg egy végpont nevét a kiválasztott szolgáltatáshoz.
+      - **Művelet neve**: adja meg a megfelelő műveletet a szolgáltatáshoz.
+      - **Argumentum**: válassza az **argumentumok** lehetőséget. A következő párbeszédpanelen rendelje hozzá az argumentum értékeit az alábbi ábrán látható módon:
       
          ![Argumentumok kiosztása](media/microsoft-identity-manager-2016-ma-ws-soap/get-employeebyid.png)
 
          >[!IMPORTANT]
-         >Az argumentum **nevét** , **irányát** vagy **típusát** ne módosítsa a párbeszédpanel használatával. Ha bármelyik érték módosul, a tevékenység érvénytelenné válik. Csak az argumentum **értékét** állítsa be. Ahogy az ábrán is látható, a *wsResponse* érték van beállítva.
+         >Az argumentum **nevét**, **irányát** vagy **típusát** ne módosítsa a párbeszédpanel használatával. Ha bármelyik érték módosul, a tevékenység érvénytelenné válik. Csak az argumentum **értékét** állítsa be. Ahogy az ábrán is látható, a *wsResponse* érték van beállítva.
 
 7. Vegyen fel egy **foreach** -tevékenységet közvetlenül a **WebServiceCallActivity alá.** Ezzel a tevékenységgel lehet megismételni az objektumtípus összes attribútumát (a horgonyokat és a nem horgonyokat is). Ha a tevékenységet a Munkafolyamat-tervező felületére húzza, az automatikusan enumerálja az objektum összes attribútumának nevét. Állítsa be a kötelező értékeket a következő képernyőn látható módon:
 
@@ -198,7 +198,7 @@ A következő lépések bemutatják, hogyan konfigurálhatja a SOAP-hez készül
 
     ![A CS bejegyzés módosítási hatókörének létrehozása tevékenység](media/microsoft-identity-manager-2016-ma-ws-soap/createcsentrychangescope.png)
 
-9.  A DN kifejezés értékének beállítása a következőképpen: `‘string.Concat ("Employee",item.EmployeeID)’` . Állítsa be az _AlkalmazottKód_ **AnchorValue** az **"Convert. tostring (tétel) értékre. Alkalmazottkód) "** . Állítsa be **ObjectTypeName** a ObjectTypeName _alkalmazottként_ . A módosítások végrehajtása után a következő képernyő jelenik meg:
+9.  A DN kifejezés értékének beállítása a következőképpen: `‘string.Concat ("Employee",item.EmployeeID)’` . Állítsa be az _AlkalmazottKód_ **AnchorValue** az **"Convert. tostring (tétel) értékre. Alkalmazottkód) "**. Állítsa be  a ObjectTypeName _alkalmazottként_. A módosítások végrehajtása után a következő képernyő jelenik meg:
 
     ![Az alkalmazott AZONOSÍTÓjának beolvasása](media/microsoft-identity-manager-2016-ma-ws-soap/get-employeebyid.png)
 
@@ -262,7 +262,7 @@ Az exportálási munkafolyamatok hozzáadásához kövesse ezeket a lépéseket 
 
     ![A ForEach tevékenység tulajdonságainak beállítása](media/microsoft-identity-manager-2016-ma-ws-soap/foreach-sequence.png)
 
-5. **DisplayName** beállítása **foreach \< AnchorAttribute \>**
+5. **DisplayName** beállítása **foreach \<AnchorAttribute\>**
 
    ![Megjelenítendő név beállítása](media/microsoft-identity-manager-2016-ma-ws-soap/add-sequence.png)
 
@@ -302,7 +302,7 @@ Az exportálási munkafolyamatok hozzáadásához kövesse ezeket a lépéseket 
 
     ![Új eset hozzáadása a sorozatban](media/microsoft-identity-manager-2016-ma-ws-soap/switch-firstname.png)
 
-15. Adja meg a szükséges attribútumok értékeit, például a **LastName** , az **e-mail** és így tovább. 
+15. Adja meg a szükséges attribútumok értékeit, például a **LastName**, az **e-mail** és így tovább. 
 
     ![Értékek hozzáadása a szükséges attribútumokhoz](media/microsoft-identity-manager-2016-ma-ws-soap/foreach-switch-anchor.png)
 
@@ -311,7 +311,7 @@ Az exportálási munkafolyamatok hozzáadásához kövesse ezeket a lépéseket 
     ![Webszolgáltatás hívási tevékenységének hozzáadása és az értékek beállítása](media/microsoft-identity-manager-2016-ma-ws-soap/add-employee-attribute.png)
 
     >[!IMPORTANT]
-    >Az argumentum **nevét** , **irányát** vagy **típusát** ne módosítsa a párbeszédpanel használatával. Ha bármelyik érték módosul, a tevékenység érvénytelenné válik. Csak az argumentum **értékét** állítsa be. Ahogy az ábrán is látható, a *wsResponse* érték van beállítva.
+    >Az argumentum **nevét**, **irányát** vagy **típusát** ne módosítsa a párbeszédpanel használatával. Ha bármelyik érték módosul, a tevékenység érvénytelenné válik. Csak az argumentum **értékét** állítsa be. Ahogy az ábrán is látható, a *wsResponse* érték van beállítva.
 
 17.  Végül vegyen fel egy **IF** tevékenységet a webszolgáltatási művelet által visszaadott válaszok vizsgálatához.
 
@@ -371,7 +371,7 @@ A webszolgáltatások konfigurációs eszközében a következő lépésekkel t�
     ![Webszolgáltatás hívási tevékenységének hozzáadása és az értékek beállítása](media/microsoft-identity-manager-2016-ma-ws-soap/delete-employee.png)
 
     >[!IMPORTANT]
-    >Az argumentum **nevét** , **irányát** vagy **típusát** ne módosítsa a párbeszédpanel használatával. Ha bármelyik érték módosul, a tevékenység érvénytelenné válik. Csak az argumentum **értékét** állítsa be. Ahogy az ábrán is látható, az *AlkalmazottKód* érték van beállítva.
+    >Az argumentum **nevét**, **irányát** vagy **típusát** ne módosítsa a párbeszédpanel használatával. Ha bármelyik érték módosul, a tevékenység érvénytelenné válik. Csak az argumentum **értékét** állítsa be. Ahogy az ábrán is látható, az *AlkalmazottKód* érték van beállítva.
 
 12. Végül vegyen fel egy **IF** tevékenységet, hogy ellenőrizze a webszolgáltatási művelet által visszaadott válaszokat.
 
@@ -393,9 +393,9 @@ Cserélje le az exportálási munkafolyamatokat a webszolgáltatás-konfiguráci
 
 2. Adja hozzá a **Sequence** tevékenységet.
 
-3. Húzzon egy **foreach** tevékenységet a **\< AnchorAttribute>.**
+3. Húzzon egy **foreach** tevékenységet a következőhöz: **\<AnchorAttribute> .**
 
-4. Adjon hozzá egy másik **foreach \< AttributeChange>** tevékenységet a nem rögzített értékek hozzárendeléséhez.
+4. Adjon hozzá egy másik **foreach \<AttributeChange>** tevékenységet a nem rögzített értékek hozzárendeléséhez.
 
 5. Végül a képernyő az alábbi ábrához hasonlóan néz ki. A tevékenység konfigurálására vonatkozó utasításokat az <a href="#attribute-change-anchor">exportálási munkafolyamatok hozzáadását</a>ismertető szakaszban találja.
 
@@ -406,7 +406,7 @@ Cserélje le az exportálási munkafolyamatokat a webszolgáltatás-konfiguráci
    ![Webszolgáltatás hívási tevékenységének hozzáadása és az értékek beállítása](media/microsoft-identity-manager-2016-ma-ws-soap/wsresponse.png)
 
    >[!IMPORTANT]
-   >Az argumentum **nevét** , **irányát** vagy **típusát** ne módosítsa a párbeszédpanel használatával. Ha bármelyik érték módosul, a tevékenység érvénytelenné válik. Csak az argumentum **értékét** állítsa be. Ahogy az ábrán is látható, az *alkalmazott* érték van beállítva.
+   >Az argumentum **nevét**, **irányát** vagy **típusát** ne módosítsa a párbeszédpanel használatával. Ha bármelyik érték módosul, a tevékenység érvénytelenné válik. Csak az argumentum **értékét** állítsa be. Ahogy az ábrán is látható, az *alkalmazott* érték van beállítva.
 
 7. Végül vegyen fel egy **IF** tevékenységet a webszolgáltatási művelet által visszaadott válaszok vizsgálatához.
 
@@ -442,13 +442,13 @@ A szövegmezőben írja be az üzenetet, amelyet látni szeretne az író célj�
 
 Az **WriteLine** -tevékenység használatához állítsa be a következő tulajdonságokat: A tulajdonságok akkor láthatók, ha kiválasztja a tevékenységet a Munkafolyamat-tervezőben, és megtekinti a tevékenység **tulajdonságait** .
 
-- **Naplózási szint** : a log értékbe írandó tartalom mennyiségét határozza meg. Lehetséges értékek:
+- **Naplózási szint**: a log értékbe írandó tartalom mennyiségét határozza meg. Lehetséges értékek:
 
     - Magas: írja a **LogText** üzenetet a naplófájlba, ha a napló súlyossága magas értékre van állítva.
     - Részletes: írja be a **LogText** üzenetet a naplófájlba, ha a napló súlyossága részletes értékre van állítva.
     - Letiltva: ne írjon a naplófájlba.
-- **LogText** : a naplóba írandó szöveges tartalmat adja meg.
-- **Címke** : címkét szúr be a szövegbe a naplóban írt tartalom típusának azonosításához. A lehetséges értékek a következők: hiba, nyomkövetés vagy figyelmeztetés.
+- **LogText**: a naplóba írandó szöveges tartalmat adja meg.
+- **Címke**: címkét szúr be a szövegbe a naplóban írt tartalom típusának azonosításához. A lehetséges értékek a következők: hiba, nyomkövetés vagy figyelmeztetés.
 
 <!-- log severity is not defined in this document -->
 

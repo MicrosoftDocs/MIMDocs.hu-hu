@@ -15,12 +15,12 @@ ms.topic: article
 ms.prod: microsoft-identity-manager
 ms.date: 06/26/2018
 ms.author: billmath
-ms.openlocfilehash: bb6460ebf4106aa8c9295be0db3ce9da426b0778
-ms.sourcegitcommit: 78c2d7e5ba4bec276d5a9bf8860bc126d9bd9c33
+ms.openlocfilehash: 5b19b4fd9d45797fcc6b02091386a27aec3c0abf
+ms.sourcegitcommit: 78f3f18f0b7afb44fcf7444e446a4edffb1f8f12
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94492497"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99835723"
 ---
 # <a name="generic-ldap-connector-technical-reference"></a>Általános LDAP-összekötő – műszaki útmutató
 Ez a cikk az általános LDAP-összekötőt ismerteti. A cikk a következő termékekre vonatkozik:
@@ -29,7 +29,7 @@ Ez a cikk az általános LDAP-összekötőt ismerteti. A cikk a következő term
 * Forefront Identity Manager 2010 R2 (FIM2010R2)
   * A gyorsjavítási 4.1.3671.0 vagy újabb [KB3092178](https://support.microsoft.com/kb/3092178)kell használnia.
 
-A MIM2016 és a FIM2010R2 esetében az összekötő letölthető a [Microsoft letöltőközpontból](http://go.microsoft.com/fwlink/?LinkId=717495).
+A MIM2016 és a FIM2010R2 esetében az összekötő letölthető a [Microsoft letöltőközpontból](https://go.microsoft.com/fwlink/?LinkId=717495).
 
 Az IETF RFC-k használatára való hivatkozáskor a dokumentum a következő formátumot használja: (RFC [RFC Number]/[szakasz az RFC-dokumentumban]), például (RFC 4512/4.3).
 További információkat itt talál: [https://tools.ietf.org/](https://tools.ietf.org/) . A bal oldali panelen adjon meg egy RFC-számot a **doc beolvasás** párbeszédpanelen, és ellenőrizze, hogy érvényes-e.
@@ -43,11 +43,11 @@ A címtárakhoz való csatlakozáshoz a root/admin fiókot használjuk.  Ha más
 
 Magas szintű perspektívából a következő funkciókat támogatja az összekötő jelenlegi kiadása:
 
-| Jellemző | Támogatás |
+| Szolgáltatás | Támogatás |
 | --- | --- |
-| Csatlakoztatott adatforrás |Az összekötő minden LDAP v3-kiszolgáló (RFC 4510-kompatibilis) esetében támogatott. A következővel lett tesztelve: <li>Microsoft Active Directory Lightweight Directory-szolgáltatások (AD LDS)</li><li>Microsoft Active Directory globális katalógus (AD GC)</li><li>389 Directory-kiszolgáló</li><li>Apache Directory-kiszolgáló</li><li>IBM Tivoli DS</li><li>Isode könyvtár</li><li>NetIQ eDirectory</li><li>Novell eDirectory</li><li>DJ megnyitása</li><li>A DS megnyitása</li><li>Az LDAP megnyitása (openldap.org)</li><li>Oracle (korábban Sun) Directory Server Enterprise Edition</li><li>RadiantOne Virtual Directory-kiszolgáló (VDS)</li><li>Sun One Directory-kiszolgáló</li><li>Microsoft Active Directory tartományi szolgáltatások (AD DS)</li><ul><li>A legtöbb esetben a beépített Active Directory-összekötőt kell használnia, mivel előfordulhat, hogy egyes funkciók nem működnek</li></ul>**A jelentős ismert könyvtárak vagy szolgáltatások nem támogatottak:**<li>Microsoft Active Directory tartományi szolgáltatások (AD DS)<ul><li>Jelszó-módosítási értesítési szolgáltatás (PCN)</li><li>Exchange-kiépítés</li><li>Aktív szinkronizáló eszközök törlése</li><li>A nTDescurityDescriptor támogatása</li></ul></li><li>Oracle Internet Directory (OID)</li> |
+| Csatlakoztatott adatforrás |Az összekötő minden LDAP v3-kiszolgáló (RFC 4510-kompatibilis) esetében támogatott. A következővel lett tesztelve: <li>Microsoft Active Directory Lightweight Directory-szolgáltatások (AD LDS)</li><li>Microsoft Active Directory globális katalógus (AD GC)</li><li>389 Directory-kiszolgáló</li><li>Apache Directory-kiszolgáló</li><li>IBM Tivoli DS</li><li>Isode könyvtár</li><li>NetIQ eDirectory</li><li>Novell eDirectory</li><li>DJ megnyitása</li><li>A DS megnyitása</li><li>Az LDAP megnyitása (openldap.org)</li><li>Oracle (korábban Sun) Directory Server Enterprise Edition</li><li>RadiantOne Virtual Directory-kiszolgáló (VDS)</li><li>Sun One Directory-kiszolgáló</li><li>Microsoft Active Directory Domain Services (AD DS)</li><ul><li>A legtöbb esetben a beépített Active Directory-összekötőt kell használnia, mivel előfordulhat, hogy egyes funkciók nem működnek</li></ul>**A jelentős ismert könyvtárak vagy szolgáltatások nem támogatottak:**<li>Microsoft Active Directory Domain Services (AD DS)<ul><li>Jelszó-módosítási értesítési szolgáltatás (PCN)</li><li>Exchange-kiépítés</li><li>Aktív szinkronizáló eszközök törlése</li><li>A nTDescurityDescriptor támogatása</li></ul></li><li>Oracle Internet Directory (OID)</li> |
 | Forgatókönyvek |<li>Objektumok életciklusának kezelése</li><li>Csoportkezelés</li><li>Jelszókezelés</li> |
-| Műveletek |Az összes LDAP-címtárban a következő műveletek támogatottak: <li>Teljes importálás</li><li>Exportálás</li>A következő műveletek csak a megadott címtárakban támogatottak:<li>Különbözeti importálás</li><li>Jelszó beállítása, jelszó módosítása</li> |
+| Üzemeltetés |Az összes LDAP-címtárban a következő műveletek támogatottak: <li>Teljes importálás</li><li>Exportálás</li>A következő műveletek csak a megadott címtárakban támogatottak:<li>Különbözeti importálás</li><li>Jelszó beállítása, jelszó módosítása</li> |
 | Séma |<li>A rendszer az LDAP-sémából észlelt sémát (RFC3673 és RFC4512/4.2)</li><li>Támogatja a strukturális osztályokat, az AUX-osztályokat és a extensibleObject objektumosztály (RFC4512/4.3)</li> |
 
 ### <a name="delta-import-and-password-management-support"></a>Különbözeti Importálás és jelszavas kezelés támogatása
@@ -272,4 +272,4 @@ A Novell eDirectory esetében a különbözeti importálás egyetlen objektum t�
 A dátum/idő alapú különbözeti változási naplóval rendelkező címtárak esetében erősen ajánlott teljes importálást futtatni rendszeres időközönként. Ez a folyamat lehetővé teszi, hogy a szinkronizálási motor megkeresse és különbséget tegyen az LDAP-kiszolgáló és a jelenleg az összekötő terület között.
 
 ## <a name="troubleshooting"></a>Hibaelhárítás
-* További információ az összekötők hibakeresésének engedélyezéséről: [ETW-nyomkövetés engedélyezése összekötők számára](http://go.microsoft.com/fwlink/?LinkId=335731).
+* További információ az összekötők hibakeresésének engedélyezéséről: [ETW-nyomkövetés engedélyezése összekötők számára](https://go.microsoft.com/fwlink/?LinkId=335731).

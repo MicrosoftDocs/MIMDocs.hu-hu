@@ -9,12 +9,12 @@ ms.date: 11/27/2017
 ms.topic: conceptual
 ms.prod: microsoft-identity-manager
 ms.assetid: ''
-ms.openlocfilehash: e0c00972983d964a489d7c76e06e271bdf91b79e
-ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
+ms.openlocfilehash: 9b1a65d6604f434d3619ad7964caa8ce202092a0
+ms.sourcegitcommit: 78f3f18f0b7afb44fcf7444e446a4edffb1f8f12
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/10/2020
-ms.locfileid: "92760846"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99835954"
 ---
 # <a name="web-service-connector-workflow-guide-for-a-rest-api-sample"></a>Webszolgáltatási összekötő munkafolyamati útmutatója REST API minta
 
@@ -78,7 +78,7 @@ A következő lépések bemutatják, hogyan hozhat létre új projektet az adatf
 
    A **biztonsági mód** beállítása _none_ értékre. Állítsa be a **címeket** az Azure-ban üzemeltetett JSON-kiszolgálóra.
 
-5. Kattintson az **OK** gombra. A webszolgáltatások konfigurációs eszközében felsorolt REST-projekt.
+5. Válassza az **OK** lehetőséget. A webszolgáltatások konfigurációs eszközében felsorolt REST-projekt.
 
    ![REST-projekt a Web Services konfigurációs eszközében](media/microsoft-identity-manager-2016-ma-ws-restgeneric/rest-discovery.png)
 
@@ -86,13 +86,13 @@ A következő lépések bemutatják, hogyan hozhat létre új projektet az adatf
 
    1. Bontsa ki a **Rest projektet** , és válassza ki a _RESTSAMPLE_ szolgáltatást.
 
-   2. Válassza a **Hozzáadás** elemet. A rendszer két érték hozzáadását kéri:
+   2. Válassza a **Hozzáadás** lehetőséget. A rendszer két érték hozzáadását kéri:
    
       ![Adja meg a REST-szolgáltatás értékeit](media/microsoft-identity-manager-2016-ma-ws-restgeneric/rest-service-highlights.png)
       
-      1. Adja meg a **nevet** . Ez a lépés 3ként van megjelölve a képernyőképen.
-      2. Adja meg a **címeket** . Ez a lépés 4ként van megjelölve a képernyőképen.
-      3. Kattintson az **OK** gombra. A rendszer hozzáad egy REST-erőforrást a _RESTSAMPLE_ szolgáltatás leírásához.
+      1. Adja meg a **nevet**. Ez a lépés 3ként van megjelölve a képernyőképen.
+      2. Adja meg a **címeket**. Ez a lépés 4ként van megjelölve a képernyőképen.
+      3. Válassza az **OK** lehetőséget. A rendszer hozzáad egy REST-erőforrást a _RESTSAMPLE_ szolgáltatás leírásához.
 
 7. Az **erőforrások** mezőben válassza ki az IMÉNT hozzáadott Rest-erőforrást. Adja hozzá a következő metódust:
 
@@ -105,7 +105,7 @@ A következő lépések bemutatják, hogyan hozhat létre új projektet az adatf
 
    ![](media/microsoft-identity-manager-2016-ma-ws-restgeneric/rest-samples.png)
 
-10. Válassza a **Mentés** lehetőséget. Mentse a projektet a következőre: `C:\Program Files\Microsoft Forefront Identity Manager\2010\Synchronization Service\Extensions` . 
+10. Kattintson a **Mentés** gombra. Mentse a projektet a következőre: `C:\Program Files\Microsoft Forefront Identity Manager\2010\Synchronization Service\Extensions` . 
 
 >[!NOTE]
 >A projekt mentése után létrejön a WsConfig fájl. A konfigurációs fájl több olyan fájlt tartalmaz, amelyek a webszolgáltatás áttekintésében korábban vannak meghatározva.
@@ -158,7 +158,7 @@ A következő lépés az Objektumtípus munkafolyamatainak konfigurálása. A mu
 - A kapcsolódás tesztelése: konfigurálja a munkafolyamatot annak ellenőrzéséhez, hogy az adatforrás-kiszolgálóval létesített kapcsolatok sikeresen létrejöttek-e.
 
 >[!NOTE]
->Megadhatja a projekthez tartozó munkafolyamatokat, vagy letöltheti az alapértelmezett projektet a [Microsoft letöltőközpontból](http://www.microsoft.com/download/details.aspx?id=29944).
+>Megadhatja a projekthez tartozó munkafolyamatokat, vagy letöltheti az alapértelmezett projektet a [Microsoft letöltőközpontból](https://www.microsoft.com/download/details.aspx?id=29944).
 
 
 ### <a name="workflow-designer"></a>Munkafolyamat-tervező
@@ -168,33 +168,33 @@ A Munkafolyamat-tervező úgy nyitja meg a munkaterületet, hogy követelményk�
 
 A Munkafolyamat-tervező a következő felhasználói felületi elemekből áll:
 
-   - **Csomópontok a bal oldali panelen** : Ezek segítenek kiválasztani, hogy melyik munkafolyamatot szeretné megtervezni.
+   - **Csomópontok a bal oldali panelen**: Ezek segítenek kiválasztani, hogy melyik munkafolyamatot szeretné megtervezni.
 
-   - **Központi Munkafolyamat-tervező** : itt elvégezheti a munkafolyamatok konfigurálásához szükséges tevékenységek eldobását. A különböző webszolgáltatási műveletek (exportálás, importálás, jelszavas kezelés) elvégzéséhez használhatja a .NET workflow Framework 4 standard és egyéni munkafolyamat-tevékenységeit. A webszolgáltatás-konfigurációs eszköz szabványos és egyéni munkafolyamat-tevékenységeket használ. A szokásos tevékenységekről további információt a következő témakörben talál: [Activity designerek használata](http://msdn.microsoft.com/library/ee829528.aspx).
+   - **Központi Munkafolyamat-tervező**: itt elvégezheti a munkafolyamatok konfigurálásához szükséges tevékenységek eldobását. A különböző webszolgáltatási műveletek (exportálás, importálás, jelszavas kezelés) elvégzéséhez használhatja a .NET workflow Framework 4 standard és egyéni munkafolyamat-tevékenységeit. A webszolgáltatás-konfigurációs eszköz szabványos és egyéni munkafolyamat-tevékenységeket használ. A szokásos tevékenységekről további információt a következő témakörben talál: [Activity designerek használata](https://msdn.microsoft.com/library/ee829528.aspx).
 
       - A központi Munkafolyamat-tervezőben egy olyan piros kör, amelynél a felkiáltójel mellett felkiáltójel található, azt jelzi, hogy a művelet el lett dobva, és nincs megfelelően és teljesen meghatározva. A pontos hiba megállapításához vigye a kurzort a vörös kör fölé. A tevékenység helyes meghatározása után a piros kör a sárga információs jelre változik.
       
       - A központi Munkafolyamat-tervezőben a sárga háromszög információs jelzése a tevékenység mellett azt jelzi, hogy a tevékenység definiálva van, de a tevékenység befejezéséhez több lehetőség is van. További információk megjelenítéséhez vigye a kurzort a sárga háromszög fölé.
 
-   - **Eszközkészlet** : az összes eszköz, például a rendszerek és az egyéni tevékenységek, valamint az előre definiált utasítások csomagjainak megtervezése a munkafolyamat kialakításához. További információ: [eszközkészlet](http://msdn.microsoft.com/library/aa480213.aspx).
+   - **Eszközkészlet**: az összes eszköz, például a rendszerek és az egyéni tevékenységek, valamint az előre definiált utasítások csomagjainak megtervezése a munkafolyamat kialakításához. További információ: [eszközkészlet](https://msdn.microsoft.com/library/aa480213.aspx).
    
-   - **Eszközkészletek részei** : az eszközkészlet a következő fejezetekkel és kategóriákkal rendelkezik:
+   - **Eszközkészletek részei**: az eszközkészlet a következő fejezetekkel és kategóriákkal rendelkezik:
    
-      - **Leírás** : az eszközkészlet fejléce. Az egyik lapon elérheti az eszközkészletet és a kiválasztott munkafolyamat-tevékenység tulajdonságait. 
+      - **Leírás**: az eszközkészlet fejléce. Az egyik lapon elérheti az eszközkészletet és a kiválasztott munkafolyamat-tevékenység tulajdonságait. 
 
-      - **Munkafolyamat importálása** : egyéni tevékenységek az importálási munkafolyamatok konfigurálásához.
+      - **Munkafolyamat importálása**: egyéni tevékenységek az importálási munkafolyamatok konfigurálásához.
       
-      - **Munkafolyamat exportálása** : egyéni tevékenységek az exportálási munkafolyamatok konfigurálásához.
+      - **Munkafolyamat exportálása**: egyéni tevékenységek az exportálási munkafolyamatok konfigurálásához.
       
-      - **Gyakori** : egyéni tevékenységek a munkafolyamatok konfigurálásához.
+      - **Gyakori**: egyéni tevékenységek a munkafolyamatok konfigurálásához.
       
-      - **Hibakeresés** : rendszermunkafolyamat-tevékenységek a 4. munkafolyamatban definiált hibakereséshez. Ezek a tevékenységek lehetővé teszik a munkafolyamatok nyomon követését.
+      - **Hibakeresés**: rendszermunkafolyamat-tevékenységek a 4. munkafolyamatban definiált hibakereséshez. Ezek a tevékenységek lehetővé teszik a munkafolyamatok nyomon követését.
       
-      - **Utasítások** : rendszermunkafolyamat-tevékenységek definiálva a 4. munkafolyamatban. További információ: [using Activity Designers](http://msdn.microsoft.com/library/ee829528.aspx).
+      - **Utasítások**: rendszermunkafolyamat-tevékenységek definiálva a 4. munkafolyamatban. További információ: [using Activity Designers](https://msdn.microsoft.com/library/ee829528.aspx).
 
-   - **Tulajdonságok** : a Tulajdonságok lapon egy adott munkafolyamat-tevékenység tulajdonságai láthatók, amelyeket a rendszer eldobott a Designer területére. A bal oldali ábrán a **hozzárendelési** tevékenység tulajdonságai láthatók. Minden tevékenység esetében a tulajdonságok eltérnek, és az egyéni munkafolyamat konfigurálásakor használatosak. Ezen a lapon megadhatja a kijelölt eszköz azon attribútumait, amelyeket a központi munkafolyamat-tervezőbe vetettek el. További információ: Properties ( [Tulajdonságok](http://msdn.microsoft.com/library/ee342461.aspx)).
+   - **Tulajdonságok**: a Tulajdonságok lapon egy adott munkafolyamat-tevékenység tulajdonságai láthatók, amelyeket a rendszer eldobott a Designer területére. A bal oldali ábrán a **hozzárendelési** tevékenység tulajdonságai láthatók. Minden tevékenység esetében a tulajdonságok eltérnek, és az egyéni munkafolyamat konfigurálásakor használatosak. Ezen a lapon megadhatja a kijelölt eszköz azon attribútumait, amelyeket a központi munkafolyamat-tervezőbe vetettek el. További információ: Properties ( [Tulajdonságok](https://msdn.microsoft.com/library/ee342461.aspx)).
 
-   - **Feladat sávja:** A feladatsor három elemet tartalmaz: **változók** , **argumentumok** és **importálások** . Ezeket az elemeket a munkafolyamat-tevékenységekkel együtt használják. További információkért tekintse [meg a fejlesztői bevezetés a .net 4 Windows Workflow Foundation (WF)](http://msdn.microsoft.com/library/ee342461.aspx)című témakört.
+   - **Feladat sávja:** A feladatsor három elemet tartalmaz: **változók**, **argumentumok** és **importálások**. Ezeket az elemeket a munkafolyamat-tevékenységekkel együtt használják. További információkért tekintse [meg a fejlesztői bevezetés a .net 4 Windows Workflow Foundation (WF)](https://msdn.microsoft.com/library/ee342461.aspx)című témakört.
 
 
 
@@ -216,7 +216,7 @@ A következő lépések bemutatják, hogyan konfigurálhatja a REST API teljes i
    
     ![Sequence tevékenység](media/microsoft-identity-manager-2016-ma-ws-restgeneric/imports.png)
 
-3. Változó hozzáadásához keresse meg a **create változót** . Írja _wsResponse_ be a wsResponse **nevet a név** mezőbe, válassza a **változó típusa** legördülő listát, majd válassza a **Tallózás a típusok között** lehetőséget. Megjelenik egy párbeszédpanel. Válassza ki a **generált**  >  **GETALL**  >  **választ** . A **hatókör** és az **alapértelmezett** értékek ne legyenek kiválasztva. Másik lehetőségként állítsa be ezeket az értékeket a **Tulajdonságok** nézet használatával.
+3. Változó hozzáadásához keresse meg a **create változót**. Írja  be a wsResponse **nevet a név** mezőbe, válassza a **változó típusa** legördülő listát, majd válassza a **Tallózás a típusok között** lehetőséget. Megjelenik egy párbeszédpanel. Válassza ki a **generált**  >  **GETALL**  >  **választ**. A **hatókör** és az **alapértelmezett** értékek ne legyenek kiválasztva. Másik lehetőségként állítsa be ezeket az értékeket a **Tulajdonságok** nézet használatával.
 
    ![Alapértelmezett válasz](media/microsoft-identity-manager-2016-ma-ws-restgeneric/employee-list.png)
 
@@ -228,15 +228,15 @@ A következő lépések bemutatják, hogyan konfigurálhatja a REST API teljes i
 
    A webszolgáltatás művelet használatához állítsa be a következő tulajdonságokat:
    
-      - **Szolgáltatás neve** : adja meg a webszolgáltatás nevét.
-      - **Végpont neve** : adjon meg egy végpont nevét a kiválasztott szolgáltatáshoz.
-      - **Művelet neve** : adja meg a megfelelő műveletet a szolgáltatáshoz.
-      - **Argumentum** : válassza az **argumentumok** lehetőséget. A következő párbeszédpanelen rendelje hozzá az argumentum értékeit az alábbi ábrán látható módon:
+      - **Szolgáltatás neve**: adja meg a webszolgáltatás nevét.
+      - **Végpont neve**: adjon meg egy végpont nevét a kiválasztott szolgáltatáshoz.
+      - **Művelet neve**: adja meg a megfelelő műveletet a szolgáltatáshoz.
+      - **Argumentum**: válassza az **argumentumok** lehetőséget. A következő párbeszédpanelen rendelje hozzá az argumentum értékeit az alábbi ábrán látható módon:
       
          ![Argumentumok kiosztása](media/microsoft-identity-manager-2016-ma-ws-restgeneric/get-all.png)
 
          >[!IMPORTANT]
-         >Az argumentum **nevét** , **irányát** vagy **típusát** ne módosítsa a párbeszédpanel használatával. Ha bármelyik érték módosul, a tevékenység érvénytelenné válik. Csak az argumentum **értékét** állítsa be. Ahogy az ábrán is látható, a *wsResponse* érték van beállítva.
+         >Az argumentum **nevét**, **irányát** vagy **típusát** ne módosítsa a párbeszédpanel használatával. Ha bármelyik érték módosul, a tevékenység érvénytelenné válik. Csak az argumentum **értékét** állítsa be. Ahogy az ábrán is látható, a *wsResponse* érték van beállítva.
 
 6. Vegyen fel egy **foreach** -tevékenységet közvetlenül a **WebServiceCallActivity alá.** Ezzel a tevékenységgel lehet megismételni az objektumtípus összes attribútumát (a horgonyokat és a nem horgonyokat is). Ha a tevékenységet a Munkafolyamat-tervező felületére húzza, az automatikusan enumerálja az objektum összes attribútumának nevét. Állítsa be a kötelező értékeket a következő képernyőn látható módon:
 
@@ -250,7 +250,7 @@ A következő lépések bemutatják, hogyan konfigurálhatja a REST API teljes i
 
     ![Alkalmazotti lista kódja](media/microsoft-identity-manager-2016-ma-ws-restgeneric/employee-list-code.png)
 
-    Ezután adja hozzá ezt a visszalépést a munkafolyamat **foreach** :
+    Ezután adja hozzá ezt a visszalépést a munkafolyamat **foreach**:
 
     ![Alkalmazottak listájának hozzáadása a ForEach-munkafolyamathoz](media/microsoft-identity-manager-2016-ma-ws-restgeneric/foreach-employee-list.png)
 

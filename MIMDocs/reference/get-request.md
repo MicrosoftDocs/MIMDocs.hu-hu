@@ -12,12 +12,12 @@ ms.assetid: dcacf36c-0670-44d7-9f40-388667235271
 audience: developer
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: ad660c562b457890ea75d33325ada8d0f63feb8f
-ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
+ms.openlocfilehash: 1bc42eb0fb1e54a3425586350ae5ad20495534c5
+ms.sourcegitcommit: 78f3f18f0b7afb44fcf7444e446a4edffb1f8f12
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/10/2020
-ms.locfileid: "92760637"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99835705"
 ---
 # <a name="get-request"></a>Kérelem kérése
 Egy vagy több megadott Microsoft Identity Manager (felügyeleti pont) tanúsítvány-kezelési (CM) kérelem beolvasása.
@@ -27,7 +27,7 @@ Egy vagy több megadott Microsoft Identity Manager (felügyeleti pont) tanúsít
 
 ## <a name="request"></a>Kérés
 
-Módszer  |URL-cím kérése  
+Metódus  |URL-cím kérése  
 ---------|---------
 GET     |/CertificateManagement/api/v1.0/requests/{id}
 
@@ -41,11 +41,11 @@ id| Választható. A lekérdezni kívánt kérelem GUID azonosítója.
 
 Tulajdonság| Leírás
 ---------|--------
-targetuser| Választható. A kérelem céljának felhasználója. Ha nincs megadva cél, a rendszer az összes kérelmet a célként megadott felhasználótól függetlenül visszaadja. <br/><br/>**Megjegyzés** : jelenleg csak a "current" érték támogatott.
+targetuser| Választható. A kérelem céljának felhasználója. Ha nincs megadva cél, a rendszer az összes kérelmet a célként megadott felhasználótól függetlenül visszaadja. <br/><br/>**Megjegyzés**: jelenleg csak a "current" érték támogatott.
 status| Választható. A lekérdezni kívánt kérelem állapotát jelzi. A lehetséges állapotok a következők: "jóváhagyva", "megszakítva", "befejezett", "tagadás", "végrehajtás", "sikertelen", "nincs" és "függő". <br/>Ha nem ad meg állapotot, a rendszer az összes kérelmet visszaadja a visszaadott állapottól függetlenül.
 
 ### <a name="request-headers"></a>Kérésfejlécek
-A gyakori kérelmek fejléceit lásd: [http-kérelem és válasz-fejlécek](certificate-management-rest-api-service-details.md#http-request-and-response-headers) a *cm REST API szolgáltatás részleteiben* .
+A gyakori kérelmek fejléceit lásd: [http-kérelem és válasz-fejlécek](certificate-management-rest-api-service-details.md#http-request-and-response-headers) a *cm REST API szolgáltatás részleteiben*.
 
 ### <a name="request-body"></a>A kérés törzse
 Nincsenek.
@@ -55,7 +55,7 @@ Ez a szakasz a választ ismerteti.
 
 ### <a name="response-codes"></a>Reagálási kódok
 
-Kód  |Leírás  
+Code  |Description  
 ---------|---------
 200 | OK
 204 | Nincs tartalom
@@ -63,7 +63,7 @@ Kód  |Leírás
 500 | Belső hiba
 
 ### <a name="response-headers"></a>Válaszfejlécek
-Gyakori válasz-fejlécek esetén lásd: [http-kérés és-válasz fejlécek](certificate-management-rest-api-service-details.md#http-request-and-response-headers) *cm REST API szolgáltatás részletei* .
+Gyakori válasz-fejlécek esetén lásd: [http-kérés és-válasz fejlécek](certificate-management-rest-api-service-details.md#http-request-and-response-headers) *cm REST API szolgáltatás részletei*.
 
 ### <a name="response-body"></a>Választörzs
 Sikeres művelet esetén egy vagy több [kérelem](https://msdn.microsoft.com/library/windows/desktop/microsoft.clm.shared.requests.request.aspx) -objektumot ad vissza a következő tulajdonságokkal:
@@ -71,7 +71,7 @@ Sikeres művelet esetén egy vagy több [kérelem](https://msdn.microsoft.com/li
 Név | Leírás
 -----|------------
 Megjegyzés | Az MIM CM kérelemhez társított Megjegyzés.
-Befejezve | Az MIM CM kérés befejezésének időpontja.
+Befejeződött | Az MIM CM kérés befejezésének időpontja.
 Datacollection objektumot | Az MIM CM kérelemhez társított adatgyűjtési elemek.
 DataCollectionFlags | Az MIM CM kérelem adatgyűjtési lehetőségei.
 Zászlók | A MIM CM kérelemhez társított beállítások.
@@ -87,7 +87,7 @@ Prioritás | Az MIM CM-kérelem prioritása.
 ProfileTemplateUuid | Annak a profil-sablonnak az identitása, amelyhez a MIM CM kérelmet létrehozták.
 RequestType | A MIM CM kérelem típusa.
 SecurityDescriptor | Az MIM CM-kérelem biztonsági leírója.
-status | Az MIM CM kérelem állapota.
+Állapot | Az MIM CM kérelem állapota.
 Elküldve | Az MIM CM kérelem elküldésének időpontja.
 TargetUserUuid | A MIM CM kérelemhez tartozó cél felhasználó identitása.
 UUID | A MIM CM kérelem azonosítója.
@@ -176,6 +176,6 @@ HTTP/1.1 200 OK
 
 ## <a name="see-also"></a>Lásd még
 
-- [Microsoft. CLM. kiépítés. FindOperations. FindRequest metódus](http://msdn.microsoft.com/library/windows/desktop/microsoft.clm.provision.findoperations.findrequests.aspx)
-- [Microsoft. CLM. Shared. RequestPermission enumerálás](http://msdn.microsoft.com/library/windows/desktop/microsoft.clm.shared.requestpermission.aspx)
+- [Microsoft. CLM. kiépítés. FindOperations. FindRequest metódus](https://msdn.microsoft.com/library/windows/desktop/microsoft.clm.provision.findoperations.findrequests.aspx)
+- [Microsoft. CLM. Shared. RequestPermission enumerálás](https://msdn.microsoft.com/library/windows/desktop/microsoft.clm.shared.requestpermission.aspx)
 - [Microsoft. CLM. Shared. requests. Request osztály](https://msdn.microsoft.com/library/windows/desktop/microsoft.clm.shared.requests.request.aspx)
