@@ -12,12 +12,12 @@ ms.assetid: 68beeec1-8350-4e0e-946f-d94606e1e756
 audience: developer
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: 6668ac823607436c2472a076f7c5ea2d9c727b04
-ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
+ms.openlocfilehash: 5e21cd92496fd31ec12044f3b69599bf96bef62a
+ms.sourcegitcommit: 78f3f18f0b7afb44fcf7444e446a4edffb1f8f12
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/10/2020
-ms.locfileid: "92760397"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99835609"
 ---
 # <a name="get-smart-card-diversified-admin-key"></a>Intelligens kártya változatos rendszergazdai kulcsának beolvasása
 Beolvassa a megadott intelligens kártyához tartozó változatos rendszergazdai kulcsot.
@@ -30,7 +30,7 @@ Beolvassa a megadott intelligens kártyához tartozó változatos rendszergazdai
 
 ## <a name="request"></a>Kérés
 
-Módszer  |URL-cím kérése  
+Metódus  |URL-cím kérése  
 ---------|---------
 GET     |/CertificateManagement/api/v1.0/requests/{reqid}/smartcards/{scid}/diversifiedkey
 
@@ -39,7 +39,7 @@ GET     |/CertificateManagement/api/v1.0/requests/{reqid}/smartcards/{scid}/dive
 Paraméter | Leírás
 ---------|------------
 reqid | Kötelező. Az Microsoft Identity Manager (felügyeleti pont) tanúsítványkezelő (CM) számára megadott kérelem-azonosító.
-scid | Kötelező. Az MIM CMre vonatkozó intelligens kártya azonosítója. A scid a [Microsoft. CLM. Shared. smartcards. SmartCard](http://msdn.microsoft.com/library/microsoft.clm.shared.smartcards.smartcard.aspx) objektumból szerezhető be.
+scid | Kötelező. Az MIM CMre vonatkozó intelligens kártya azonosítója. A scid a [Microsoft. CLM. Shared. smartcards. SmartCard](https://msdn.microsoft.com/library/microsoft.clm.shared.smartcards.smartcard.aspx) objektumból szerezhető be.
 
 ### <a name="query-parameters"></a>Lekérdezési paraméterek
 
@@ -49,7 +49,7 @@ ATR | Választható. Az intelligens kártya válasz-visszaállítási (ATR) kara
 cardid | Kötelező. A kártya azonosítója.
 
 ### <a name="request-headers"></a>Kérésfejlécek
-A gyakori kérelmek fejléceit lásd: [http-kérelem és válasz-fejlécek](certificate-management-rest-api-service-details.md#http-request-and-response-headers) a *cm REST API szolgáltatás részleteiben* .
+A gyakori kérelmek fejléceit lásd: [http-kérelem és válasz-fejlécek](certificate-management-rest-api-service-details.md#http-request-and-response-headers) a *cm REST API szolgáltatás részleteiben*.
 
 ### <a name="request-body"></a>A kérés törzse
 Nincsenek.
@@ -59,7 +59,7 @@ Ez a szakasz a választ ismerteti.
 
 ### <a name="response-codes"></a>Reagálási kódok
 
-Kód  |Leírás  
+Code  |Description  
 ---------|---------
 200 | OK
 204 | Nincs tartalom
@@ -68,7 +68,7 @@ Kód  |Leírás
 
 
 ### <a name="response-headers"></a>Válaszfejlécek
-Gyakori válasz-fejlécek esetén lásd: [http-kérés és-válasz fejlécek](certificate-management-rest-api-service-details.md#http-request-and-response-headers) *cm REST API szolgáltatás részletei* .
+Gyakori válasz-fejlécek esetén lásd: [http-kérés és-válasz fejlécek](certificate-management-rest-api-service-details.md#http-request-and-response-headers) *cm REST API szolgáltatás részletei*.
 
 ### <a name="response-body"></a>Választörzs
 A sikeres művelet után egy bájtos BLOBot ad vissza, amely a diverzifikált rendszergazdai kulcsot jelképezi.

@@ -12,12 +12,12 @@ ms.assetid: 598dace3-c6f2-447a-9301-c0b63ee38276
 audience: developer
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: fe6d59377ef3218fde0df99365506ef9ec143a6f
-ms.sourcegitcommit: 7e8c3b85dd3c3965de9cb407daf74521e4cc5515
+ms.openlocfilehash: 2c49c86fd57d363bec0eb2fd6d1fbe9ee261ee7a
+ms.sourcegitcommit: 78f3f18f0b7afb44fcf7444e446a4edffb1f8f12
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 03/10/2020
-ms.locfileid: "92760967"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99835910"
 ---
 # <a name="update-smart-card-status"></a>Intelligens kártya állapotának frissítése
 Egy intelligens kártya állapotának frissítése.
@@ -27,7 +27,7 @@ Egy intelligens kártya állapotának frissítése.
 
 ## <a name="request"></a>Kérés
 
-Módszer  |URL-cím kérése  
+Metódus  |URL-cím kérése  
 ---------|---------
 GET     |/CertificateManagement/api/v1.0/requests/{reqid}/smartcards/{scid}
 
@@ -36,10 +36,10 @@ GET     |/CertificateManagement/api/v1.0/requests/{reqid}/smartcards/{scid}
 Paraméter | Leírás
 ---------|------------
 reqid | Kötelező. Az Microsoft Identity Manager (felügyeleti pont) tanúsítványkezelő (CM) számára megadott kérelem-azonosító.
-scid | Kötelező. Az MIM CMre vonatkozó intelligens kártya azonosítója. Az érték a [Microsoft. CLM. Shared. smartcards. SmartCard](http://msdn.microsoft.com/library/microsoft.clm.shared.smartcards.smartcard.aspx) objektum "UUID" mezőjének felel meg.
+scid | Kötelező. Az MIM CMre vonatkozó intelligens kártya azonosítója. Az érték a [Microsoft. CLM. Shared. smartcards. SmartCard](https://msdn.microsoft.com/library/microsoft.clm.shared.smartcards.smartcard.aspx) objektum "UUID" mezőjének felel meg.
 
 ### <a name="request-headers"></a>Kérésfejlécek
-A gyakori kérelmek fejléceit lásd: [http-kérelem és válasz-fejlécek](certificate-management-rest-api-service-details.md#http-request-and-response-headers) a *cm REST API szolgáltatás részleteiben* .
+A gyakori kérelmek fejléceit lásd: [http-kérelem és válasz-fejlécek](certificate-management-rest-api-service-details.md#http-request-and-response-headers) a *cm REST API szolgáltatás részleteiben*.
 
 ### <a name="request-body"></a>A kérés törzse
 A kérelem törzse a következő tulajdonságokat tartalmazza:
@@ -53,7 +53,7 @@ Ez a szakasz a választ ismerteti.
 
 ### <a name="response-codes"></a>Reagálási kódok
 
-Kód  |Leírás  
+Code  |Description  
 ---------|---------
 200     | OK
 204 | Nincs tartalom
@@ -61,10 +61,10 @@ Kód  |Leírás
 500 | Belső hiba
 
 ### <a name="response-headers"></a>Válaszfejlécek
-Gyakori válasz-fejlécek esetén lásd: [http-kérés és-válasz fejlécek](certificate-management-rest-api-service-details.md#http-request-and-response-headers) *cm REST API szolgáltatás részletei* .
+Gyakori válasz-fejlécek esetén lásd: [http-kérés és-válasz fejlécek](certificate-management-rest-api-service-details.md#http-request-and-response-headers) *cm REST API szolgáltatás részletei*.
 
 ### <a name="response-body"></a>Választörzs
-Sikeres művelet esetén egy JSON-Serialized [Microsoft. CLM. Shared. smartcards. SmartCard](http://msdn.microsoft.com/library/microsoft.clm.shared.smartcards.smartcard.aspx) objektumot ad vissza, amely a következő tulajdonságokkal rendelkezik:
+Sikeres művelet esetén egy JSON-Serialized [Microsoft. CLM. Shared. smartcards. SmartCard](https://msdn.microsoft.com/library/microsoft.clm.shared.smartcards.smartcard.aspx) objektumot ad vissza, amely a következő tulajdonságokkal rendelkezik:
 
 Név | Leírás
 -----|-----------
@@ -79,7 +79,7 @@ PrimarySmartcardUuid | Az elsődleges intelligens kártya azonosítója.
 ProfileTemplateUuid | A profil sablonjának azonosítója, amely az intelligens kártyát szabályozó házirendeket és beállításokat tartalmazza.
 ProfileTemplateVersion | A profil sablonjának verziója az intelligens kártya profiljának létrehozásakor.
 Sorozatszám | Az intelligens kártya sorozatszáma.
-status | Az intelligens kártya állapota.
+Állapot | Az intelligens kártya állapota.
 UUID | Az intelligens kártya profiljának azonosítója.
 
 ## <a name="example"></a>Példa
