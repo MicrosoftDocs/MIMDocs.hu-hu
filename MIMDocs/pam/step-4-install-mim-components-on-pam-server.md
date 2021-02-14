@@ -5,19 +5,19 @@ keywords: ''
 author: billmath
 ms.author: billmath
 manager: daveba
-ms.date: 09/13/2017
+ms.date: 02/09/2021
 ms.topic: article
 ms.prod: microsoft-identity-manager
 ms.assetid: ef605496-7ed7-40f4-9475-5e4db4857b4f
 ROBOTS: noindex,nofollow
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: 070e85177a28c3091834cafd2e61611aa9043ea8
-ms.sourcegitcommit: 80507a128d2bc28ff3f1b96377c61fa97a4e7529
+ms.openlocfilehash: 8f81f592beff9ab952d1a42760e06a4f622316e8
+ms.sourcegitcommit: 0e2b4b47a8050737c78e3b0ad088358e5de7e929
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83280014"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100395469"
 ---
 # <a name="step-4--install-mim-components-on-pam-server-and-workstation"></a>4. lépés – MIM-összetevők telepítése PAM-kiszolgálóra és -munkaállomásra
 
@@ -53,9 +53,9 @@ Az útmutatást követve végezze el a telepítést.
    - Service Account Name (Szolgáltatásfiók neve) – *MIMService*  
    - Szolgáltatásfiók jelszava: <em>Pass@word1</em> (vagy a 2. lépésben létrehozott jelszó)  
    - Service Account Domain (Szolgáltatásfiók-tartomány): *PRIV*  
-   - Szolgáltatás e-mail-fiókja:<em>MIMService@priv.contoso.local</em>  
+   - Szolgáltatás e-mail-fiókja: <em>MIMService@priv.contoso.local</em>  
 
-6. A szinkronizálási kiszolgáló állomásnevénél fogadja el az alapértelmezett beállításokat, a MIM Management Agent Account (MIM-kezelőügynök fiókja) mezőben pedig adja meg a *PRIV\MIMMA* fiókot. Egy megjelenő üzenet arra figyelmezteti, hogy a MIM szinkronizálási szolgáltatása nem létezik. Ez nem probléma, mivel ebben az esetben a MIM-szinkronizálási szolgáltatást nem használjuk.
+6. A szinkronizálási kiszolgáló állomásnevénél fogadja el az alapértelmezett beállításokat, a MIM Management Agent Account (MIM-kezelőügynök fiókja) mezőben pedig adja meg a *PRIV\MIMMA* fiókot. Egy megjelenő üzenet arra figyelmezteti, hogy a MIM szinkronizálási szolgáltatása nem létezik. Erre a figyelmeztetésre azért van szükség, mert ebben a forgatókönyvben nem használja a következőt:.
 
 7. A *PAMSRV* beállításánál adja meg a MIM szolgáltatás kiszolgálójának címét.
 
@@ -121,29 +121,29 @@ A tűzfalnak engedélyeznie kell a bejövő kapcsolatokat az 5725-ös, az 5726-o
 3.  Győződjön meg arról, hogy az alábbi két szabály szerepel a listában:  
     - Forefront Identity Manager Service (STS)
     - Forefront Identity Manager Service (Webservice)  
-4.  Kattintson az **új szabály**  >  **port**  >  **TCP**elemre, és írja be az *8086* -es és a *8090*-es helyi portot. A varázsló alapértelmezett értékeit elfogadva haladjon végig a folyamaton, adjon a szabálynak egy nevet, és kattintson **Befejezés** gombra.  
+4.  Kattintson az **új szabály**  >  **port**  >  **TCP** elemre, és írja be az *8086* -es és a *8090*-es helyi portot. A varázsló alapértelmezett értékeit elfogadva haladjon végig a folyamaton, adjon a szabálynak egy nevet, és kattintson **Befejezés** gombra.  
 5.  A varázsló befejezése után zárja be a Windows tűzfalat.
 
 6.  Nyissa meg a **Vezérlőpultot**.  
-7.  A Hálózat és internet csoportban válassza a **Hálózati állapot és hálózati feladatok megjelenítése** elemet.  
-8.  Győződjön meg arról, hogy a listában szerepel egy priv.contoso.local nevű aktív hálózat, tartományi hálózatként.  
-9. A **Vezérlőpult ablakának**bezárásához.
+7.  A hálózat és Internet területen válassza a **hálózati állapot és feladatok megtekintése** lehetőséget.
+8.  Ellenőrizze, hogy van-e olyan aktív hálózat, amely priv. contoso. local és tartományi hálózatként van felsorolva.
+9. A **Vezérlőpult ablakának** bezárásához.
 
-## <a name="set-up-the-sample-web-application"></a>A minta webalkalmazás beállítása
+## <a name="optional-set-up-the-sample-web-application"></a>Nem kötelező: a minta webalkalmazás beállítása
 
-Az útmutató ezen szakasza a MIM PAM REST API minta webalkalmazásának telepítéséhez és konfigurálásához nyújt segítséget.
+Ebben a szakaszban telepítheti és konfigurálhatja a webalkalmazás mintáját a fakiszolgálói PAM REST API számára.  Ezt az összetevőt csak akkor kell megtanulnia, ha szeretné megismerni, hogyan kell használni a REST API. Ha a PowerShellt a hozzáférés kéréséhez és jóváhagyásához kívánja használni, folytassa a következő szakasszal, és telepítse a kipróbálható PAM-kérő parancsmagokat.
 
 1. A minta webalkalmazások archívumából töltse le az [Identity Management samples](https://github.com/Azure/identity-management-samples) (Identity Management-minták) csomagot .zip fájlként.
 
 2. Bontsa ki az **identity-management-samples-master\Privileged-Access-Management-Portal\src** mappa tartalmát egy új mappába, a **C:\Program Files\Microsoft Forefront Identity Manager\2010\Privileged Access Management Portal** helyre.
 
-3. Hozzon létre az IIS-ben egy új webhelyet MIM Privileged Access felügyeleti példaportál néven, melynek fizikai elérési útja: C:\Program Files\Microsoft Forefront Identity Manager\2010\Privileged Access Management Portal, illetve a 8090-es port.  A beállítás a következő PowerShell-paranccsal végezhető el:
+3. Hozzon létre az IIS-ben egy új webhelyet MIM Privileged Access felügyeleti példaportál néven, melynek fizikai elérési útja: C:\Program Files\Microsoft Forefront Identity Manager\2010\Privileged Access Management Portal, illetve a 8090-es port.  A webhely létrehozása a következő PowerShell-paranccsal végezhető el:
 
    ```PowerShell
    New-WebSite -Name "MIM Privileged Access Management Example Portal" -Port 8090   -PhysicalPath "C:\Program Files\Microsoft Forefront Identity Manager\2010\Privileged Access Management Portal\"
    ```
 
-4. Állítsa be úgy a minta webalkalmazást, hogy az a felhasználókat át tudja irányítani a MIM PAM REST API-hoz. Szövegszerkesztő, például a Jegyzettömb használatával szerkessze a **C:\Program Files\Microsoft Forefront Identity Manager\2010\Privileged Access Management Rest API\web.config**fájlt. A **<System. webserver>** szakaszban adja hozzá a következő sorokat:
+4. Állítsa be úgy a minta webalkalmazást, hogy az a felhasználókat át tudja irányítani a MIM PAM REST API-hoz. Szövegszerkesztő, például a Jegyzettömb használatával szerkessze a **C:\Program Files\Microsoft Forefront Identity Manager\2010\Privileged hozzáférés-kezelési REST API\web.config** fájlt. A **<System. webserver>** szakaszban adja hozzá a következő sorokat:
 
    ```XML
    <httpProtocol>

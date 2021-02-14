@@ -5,25 +5,25 @@ keywords: ''
 author: billmath
 ms.author: billmath
 manager: daveba
-ms.date: 09/06/2017
+ms.date: 02/09/2021
 ms.topic: article
 ms.prod: microsoft-identity-manager
 ms.assetid: 82a9085c-9667-4b3b-8079-657eab1d1e58
 ms.reviewer: mwahl
 ms.suite: ems
-ms.openlocfilehash: 417f26b123aec7e8ab1b8cf254e0771f799dcb9d
-ms.sourcegitcommit: 41d399b16dc64c43da3cc3b2d77529082fe1d23a
+ms.openlocfilehash: 8d3c266c78df21c6ddb24f62618621c55820bd6f
+ms.sourcegitcommit: 0e2b4b47a8050737c78e3b0ad088358e5de7e929
 ms.translationtype: MT
 ms.contentlocale: hu-HU
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98103969"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100395452"
 ---
 # <a name="hardware-and-software-requirements"></a>Hardver- és szoftverkövetelmények
 
-A mögöttes szoftverplatformok rendszerkövetelményein kívül a Privileged Access Management nem rendelkezik további hardverkövetelményekkel. Ügyeljen rá, hogy rendelkezésre álljon elegendő memória vagy lemezterület, és hogy elérhető legyen a hálózati kapcsolat.
+Privileged Access Management a mögöttes szoftveres platformokra vonatkozó követelményeken felül nincs hardverkövetelmények. Ügyeljen rá, hogy rendelkezésre álljon elegendő memória vagy lemezterület, és hogy elérhető legyen a hálózati kapcsolat.
 
 > [!IMPORTANT]
-> Ez a cikk az alapszintű telepítéshez szükséges minimális követelményeket ismerteti. Nem alkalmas a teljesítmény, a méretezhetőség és a magas rendelkezésre állás bemutatására. A nagyméretű vállalatok vagy éles környezetek esetében nem ajánlott központi telepítési topológiát jelent.
+> Ez a cikk egy elszigetelt hálózaton található alapszintű telepítés minimális követelményeit ismerteti. Nem célja a teljesítmény, a skálázhatóság és a magas rendelkezésre állás bemutatása, és nem ismerteti a nagyvállalati vagy üzemi környezetben végzett telepítésekhez javasolt topológiát.  Ha a Active Directory egy internetkapcsolattal rendelkező környezet részét képezi, a további tudnivalókat lásd: az emelt [szintű hozzáférés biztonságossá tétele](/security/compass/overview) című útmutató.
 
 ## <a name="installing-from-software-packages"></a>Telepítés szoftvercsomagokból
 
@@ -33,29 +33,15 @@ A következő szoftver letölthető a TechNet Evaluation Center vagy az MSDN web
   - Szolgáltatás és portál: tartalmazza a MIM szolgáltatáshoz és a MIM-portálhoz, illetve a PAM-telepítéshez szükséges telepítőfájlokat
   - Beépülő modulok és bővítmények: tartalmazzák a kérelmező PowerShell-parancsmagok telepítőjét
 
-A következő szoftver letölthető a GitHub webhelyről:
+A GitHubról a következő opcionális szoftvereket töltheti le:
 
 - [PAMSamplePortal](https://github.com/Azure/identity-management-samples): minta webalkalmazást tartalmaz a REST API
 
 ## <a name="required-software"></a>Szükséges szoftverek
 
-- Windows Server 2012 R2
+- Windows Server 2016
 - Windows 10 Enterprise
 - SQL Server 2012 Service Pack 1 vagy SQL Server 2014
-
-## <a name="evaluation-software"></a>Próbaszoftver
-
-Ha Ön nem rendelkezik Windows-, SQL Server- vagy Windows Server-licenccel, letöltheti ezek próbaverzióit.
-
-### <a name="technet-evaluation-center"></a>TechNet Evaluation Center
-
-- Windows Server 2012 R2 vagy újabb
-- [Windows 10 Enterprise](https://www.microsoft.com/evalcenter/evaluate-windows-10-enterprise)
-
-### <a name="microsoft-download-center"></a>Microsoft letöltőközpontból
-
-- [SQL Server](https://www.microsoft.com/sql-server/sql-server-downloads)  
-- [A SharePoint Foundation 2013 SP1 és előfeltételei](https://www.microsoft.com/download/details.aspx?id=42039)
 
 ## <a name="hardware-requirements"></a>Hardverkövetelmények
 
@@ -71,9 +57,9 @@ A CORPWKSTN géphez:
 
 A PRIVDC géphez:
 
-- [Windows Server 2012 R2](https://technet.microsoft.com/library/dn303418.aspx)
+- Windows Server 2016
 
 A PAMSRV géphez:
 
-- [Windows Server 2012 R2](https://technet.microsoft.com/library/dn303418.aspx)
+- Windows Server 2016
 - [SQL Server 2012](https://msdn.microsoft.com/library/ms143506(sql.110).aspx) vagy [SQL Server 2014](https://msdn.microsoft.com/library/ms143506(v=sql.120).aspx)
